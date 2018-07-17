@@ -1,0 +1,35 @@
+\section{Eigenvalues, eigenvectors, and similarity}
+
+\subsection{Introduction}
+
+  \paragraph{1.}
+  \begin{proof}
+    Let $S=\{x\in\mathbb{R}^n\,:\,x^Tx=1\}$, which is clearly a compact subset
+    of $\mathbb{R}^n$. Consider the function $f:x\mapsto x^TAx$. Since,
+    \[
+      \|f(x+\delta)-f(x)\| = \|(x^TA)\delta + \delta^T(Ax) + \delta^TA\delta\|
+      \le K\|\delta\|
+    \]
+    for every $x\in\mathbb{R}$ and some fixed $K$, $f$ is continuous. Hence,
+    by Weierstrass's theorem, $f$ attains its maximum value at some point $x\in 
+    S$. Namely, (1.0.3) has a solution $x$. Therefore, there exists some 
+    $\lambda\in\mathbb{R}$ such that $2(Ax-\lambda x)=0$, implying that every
+    real symmetric matrix has at least one real eigenvalue.
+  \end{proof}
+
+  \paragraph{2.}
+  \begin{proof}
+    Let $S=\{x\in\mathbb{R}^n\,:\,x^Tx=1\}$ and $m$ be the maximum value of $x
+    \mapsto x^TAx$ in $S$. Suppose $\lambda$ is an eigenvalue of $A$ and $u\ne0$ 
+    is its associated eigenvector, then
+    \[
+      Au=\lambda u \quad\Rightarrow\quad 
+      u^TAu=\lambda\|u\|^2 \quad\Rightarrow\quad
+      (u/\|u\|)^T A (u/\|u\|) = \lambda \quad\Rightarrow\quad
+      m \ge \lambda.
+    \]
+    Meanwhile, by the previous discussion, $m$ itself is a eigenvalue of $A$.
+    Hence, it is the largest real eigenvalue of $A$.
+  \end{proof}
+
+% end
