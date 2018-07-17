@@ -1,0 +1,39 @@
+\section{Common Families of Distributions}
+\paragraph{5.}
+\begin{solution}
+  Assuming that the two kinds of drugs are equally effective and let 
+  $X = $ the number of effective cases. Then with the binomial distribution
+  \[
+    P(X\ge 85|n=100,p=0.8) 
+    = \sum_{k=85}^{100}\binom{100}{k}0.8^k0.2^{100-k}
+    = 0.1285.
+  \]
+  Hence, there is still some possibility that the new drugs is no better than
+  the old ones.
+\end{solution}
+
+\paragraph{7.}
+\begin{solution}
+  \begin{align*}
+    P(X\ge 2) > 0.99
+    \quad\Rightarrow\quad
+    e^{-\lambda}(1+\lambda) < 0.01
+    \quad\Rightarrow\quad
+    \lambda \ge 6.6384.
+  \end{align*}
+  Hence, the mean of the distribution is $\lambda = 6.6484$.
+\end{solution}
+
+\paragraph{13.(a)}
+\begin{solution}
+  $P(X=0)=e^{-\lambda}$ and therefore $P(X>0) = 1-e^{-\lambda}$. Hence,
+  \begin{align*}
+    P(X_T=x) &= \frac{P(X=x)}{1-P(X=0)} = \frac{\lambda^x}{x!(e^\lambda-1)}, \\
+    \E X_T &= \frac{1}{P(X>0)}\sum_{x=1}^\infty xP(X=x) 
+            = \frac{\lambda}{1-e^{-\lambda}}, \\
+    \Var X_T &= \frac{1}{1-e^{-\lambda}} \lambda(\lambda+1) - 
+                \left(\frac{\lambda}{1-e^{-\lambda}}\right)^2.
+  \end{align*}
+\end{solution}
+
+
