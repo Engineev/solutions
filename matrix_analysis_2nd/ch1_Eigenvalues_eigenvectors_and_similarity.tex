@@ -33,3 +33,86 @@
   \end{proof}
 
 % end
+
+\subsection{The eigenvalue-eigenvector equation}
+  \paragraph{1.}
+  \begin{proof}
+    It follows from
+    \[
+      (A^{-1}-\lambda^{-1}I)x 
+      = (A^{-1}-\lambda^{-1}A^{-1}A)x 
+      = \lambda^{-1}A^{-1}(\lambda I-A)x = 0.
+    \]
+  \end{proof}
+
+  \paragraph{3.}
+  \begin{proof}
+    Since $A\in M_n(\mathbb{R})$, $u,v\in\mathbb{R}^n$ and $\lambda\in
+    \mathbb{R}$, 
+    \[
+      Ax=\lambda x\quad\Rightarrow\quad
+      Au + iAv = \lambda u + i\lambda v
+    \]
+    implies $Au=\lambda u$ and $Av=\lambda v$. As $x\ne 0$, at least one of $u$
+    and $v$ is nonzero and therefore $A$ has a real eigenvector associated with
+    $\lambda$. It can happen that only one of $u$ and $v$ is an eigenvector of 
+    $A$, because if $x\in\mathbb{R}^n$, which may happen as we discussed above,
+    the imaginary part of $x$ is $0$. Finally, if $x$ is a real eigenvector of 
+    $A$, then the eigenvalue $\lambda$ it associated with must be real. 
+    Otherwise, at least one entry of $\lambda x$ is not real as $x\ne 0$, 
+    contradicting with the fact that $Ax$ is real. 
+  \end{proof}
+
+  \paragraph{5.}
+  \begin{proof}
+    Let $p(t)=t^2-t$. Since $A$ is idempotent, $p(A)=A^2-A=0$. Hence, $0$ is the
+    only eigenvalue of $p(A)$. By Theorem 1.1.6, the only values the eigenvalues
+    of $A$ can be are the zeros of $p$, namely, $0$ and $1$. \par
+    Suppose $A$ is nonsingular, then multiplying $A^{-1}$ on the both sides of
+    $A^2=A$ yields $A=I$.
+  \end{proof}
+
+  \paragraph{7.}
+  \begin{proof}
+    Suppose $\lambda\in\sigma(A)$ and $x$ is its associated eigenvector, then
+    \begin{align*}
+       & 0 = (A-\lambda I)x = x^*(A^*-\bar{\lambda}I) = x^*(A-\bar{\lambda}I) \\
+      \Rightarrow\quad&
+      0 = x^*(A-\bar{\lambda}I)x = x^*Ax - \bar{\lambda}x^*x = 
+      (\lambda-\bar{\lambda}) \|x\|^2.
+    \end{align*}
+    Hence, $\lambda=\bar{\lambda}$, implying all eigenvalues of $A$ are real.
+  \end{proof}
+
+  \paragraph{9.}
+  \begin{solution}
+    Solve the equation $\det(A-\lambda I) = 0$ and we get $\lambda=\pm i$.
+  \end{solution}
+
+  \paragraph{11.}
+  \begin{proof}
+    If $\rank(A-\lambda I)<n-1$, then $\adj(A-\lambda I)=0$ by (0.8.2) and 
+    therefore we can always choose $y$ to be the $0$ and the other parts of the 
+    proposition clearly hold. Hence, in the following discussion, we assume that
+    $\rank(A-\lambda I)=n-1$. \par
+    Apply the full-rank factorization and we get $\adj(A-\lambda I)=\alpha xy^*$
+    for some nonzero $\alpha\in\mathbb{C}$ and $x,y\in\mathbb{C}^n$. Replacing 
+    $x$ with $\alpha x$ and $\alpha$ with $1$ proves the first part.\par
+    Suppose $\adj(A-\lambda I)=[\beta_1,\dots,\beta_n]$, then
+    \[
+      (A-\lambda I)\adj(A-\lambda I) \quad\Rightarrow\quad
+      (A-\lambda I)\beta_k = 0 \quad(k=1,2,\dots,n),
+    \]
+    implying that $\beta_k$ is an eigenvector of $A$ associated with $\lambda$ 
+    as long as it is nonzero.
+  \end{proof}
+
+  \paragraph{13.}
+  \begin{proof}
+    If $\rank A < n -1$, then $x$ is always an eigenvector of $\adj A$ 
+    associated with $0$ as $\adj A = 0$. Hence, we may assume that $\rank = n - 
+    1$. Then $\adj A = (\det A)A^{-1}$. By Exercise 1, $x$ is an eigenvector of 
+    $A^{-1}$ and therefore an eigenvector of $\adj A$.
+  \end{proof}
+  
+% end
