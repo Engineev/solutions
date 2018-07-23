@@ -1,4 +1,5 @@
 \section{Eigenvalues, eigenvectors, and similarity}
+\setcounter{subsection}{-1}
 
 \subsection{Introduction}
 
@@ -116,3 +117,155 @@
   \end{proof}
   
 % end
+
+\subsection{The characteristic polynomial and algebraic multiplicity}
+  \paragraph{2.}
+  \begin{proof}
+    Suppose $A = [a_{ij}]_{m,n} = [\alpha_1,\dots,\alpha_n]^T$ and $B = 
+    [b_{ij}]_{n,m} = [\beta_1,\dots,\beta_n]$, then
+    \[
+      \tr(AB)=\sum_{i=1}^n\alpha_i\beta_i
+      =\sum_{i=1}^n\sum_{j=1}^ma_{ij}b_{ji}
+      =\sum_{j=1}^m\sum_{i=1}^nb_{ji}a_{ij}
+      =\tr(BA).
+    \]
+    Hence, for nonsingular $S\in M_n$, $\tr(S^{-1}AS)=\tr(S(S^{-1}A)) = \tr(A)$.
+    \par For $A\in M_n$, $\det(S^{-1}AS) = \det(S)\det(S^{-1})\det(A)=\det(A)$,
+    which means the determinant function on $M_n$ is similarity invariant.
+  \end{proof}
+
+  \paragraph{4.}
+  \begin{proof}
+    It follows immediately from the fact that $\sigma(A)\subset\{0, 1\}$ and 
+    $S_k(A)$ is the sum of some $\prod\lambda_{i_j}$. 
+  \end{proof}
+
+  \paragraph{6.}
+  \begin{proof}
+    $\rank(A-\lambda I)=n-1$ implies the matrix $A-\lambda I$ is singular, and
+    therefore $\lambda$ is an eigenvalue of $A$. TODO
+  \end{proof}
+
+  \paragraph{8.}
+  \begin{proof}
+    $p_{A+\lambda I}(t)=\det(tI-(A+\lambda I))=\det((t-\lambda)I-A)=p_A(t-
+    \lambda)$ and hence the eigenvalues of $A+\lambda I$, the zeros of $p_{A+
+    \lambda}(t)$, are $\lambda_1+\lambda,\dots, \lambda_n+\lambda$.
+  \end{proof}
+
+  \paragraph{10.}
+  \begin{proof}
+    Since $p_A(t)$ has $n$ roots and non-real roots of a polynomial come in 
+    paris, at least one of the roots is real. Hence, $A$ has at least one real
+    eigenvalue.
+  \end{proof}
+
+  \paragraph{12.} TODO
+    
+  \paragraph{14.}
+  \begin{proof}
+    Suppose $C=\begin{bsmallmatrix} \mu & 0 \\ * & B \end{bsmallmatrix}$. By the
+    exercise on p52,
+    \[
+      p_A(t) = (t-\lambda)p_C(t) = (t-\lambda)p_{C^T}(t) 
+      = (t-\lambda)(t-\mu)p_B(t).
+    \]
+  \end{proof}
+
+  \paragraph{16.}
+  \begin{proof}
+    $f(t)=\det(A+(tx)y^T = \det A + y^T(\adj A)tx = \det A + t\beta$ where 
+    $\beta = y^T(\adj A)x$, a constant independent of $t$. Hence, for $t_1\ne
+    t_2$
+    \[
+      \frac{t_2f(t_1)-t_1f(t_2)}{t_2-t_1} 
+      = \frac{t_2(\det A + t_1\beta) - t_1(\det A + t_2\beta)}{t_2-t_1}
+      = \det A.
+    \]
+    For the second part, we can get from calculation that
+    \[
+      f(-b)=\det(A-b[1,\dots,1]^T[1,\dots,1]) = (d_1-b)\cdots(d_n-b)=q(b)
+    \]
+    and $f(-c)=q(-c)$. Hence, if $b\ne c$,
+    \[
+      \det A = \frac{(-c)f(-b)- (-b)f(-c)}{(-c)-(-b)}=\frac{bq(c)-cq(b)}{b-c}.
+    \]
+    Now suppose $b=c$. Note that $f(t)$ is a liner function of $t$, which is 
+    differentiable, implying that 
+    \[
+      \det A = \lim_{t_2\to t_1}\frac{t_2f(t_1)-t_1f(t_2)}{t_2-t_1} 
+      = f\hp(t_1)t_1 - f(t_1).
+    \]
+    Meanwhile, since $q(t)$ is continuous, $q(t)\to f(-b)$ as $t\to b$. Thus,
+    \[
+      \det A = \lim_{c\to b}\frac{(-c)f(-b)- (-b)f(-c)}{(-c)-(-b)}
+      = q(b) - bq\hp(b).
+    \]
+    Let 
+    \[
+      A_* = \lambda I - A = 
+      \begin{bmatrix}
+        \lambda & -b      & \cdots & -b \\
+        -c      & \lambda & \ddots & \vdots \\
+        \vdots  & \ddots  & \ddots & -b \\
+        -c      & \cdots  & -c     & \lambda 
+      \end{bmatrix}.
+    \]
+    and $q_*(t)=(\lambda - t)^n$, then by the previous result,
+    \begin{align*}
+      p_A(\lambda) &= \frac{-bq_*(-c) - (-c)q_*(-b)}{-c-(-b)} 
+                    = \frac{b(\lambda+c)^n - c(\lambda+b)^n}{b-c}, 
+                      & \text{if } b\ne c, \\ 
+      p_A(\lambda) &= q_*(-b)-(-b)q_*\hp(-b) 
+                    = (\lambda+b)^{n-1}(\lambda-(n-1)b),
+                      & \text{if } b=c. 
+    \end{align*}
+  \end{proof}
+
+  \paragraph{18.}
+  \begin{proof}
+    The identity can be derived immediately from Observation 1.2.4 and the 
+    identity $a_1 = (-1)^{n-1}\tr\adj(A)$, the proof of which can be found on 
+    p53.
+  \end{proof}
+
+  \paragraph{20.}
+  \begin{proof}
+    By (1.2.13), 
+    \[
+      \det(I+A) = (-1)^n p_A(-1) = 
+      (-1)^n\left((-1)^n + \sum_{k=1}^n(-1)^{n-k}E_k(A)(-1)^k \right)
+      = 1 + \sum_{k=1}^n E_k(A).
+    \]
+  \end{proof}
+
+  \paragraph{22.} 
+  \begin{proof}
+    Suppose
+    \[
+      A = 
+      \begin{bmatrix}
+        t    & -1     &        & 0 \\
+             & \ddots & \ddots &   \\
+             &        & \ddots & -1 \\
+             &        &        & t
+      \end{bmatrix},
+    \]
+    then
+    \begin{align*}
+      p_{C_n(\vep)}(t)
+      &= \det(A + [0,\dots,0,1]^T [-\vep,0,\dots,0]) \\
+      &= \det A - \vep [1, 0,\dots,0](\adj A) [0,\dots,0,1]^T \\
+      &= \det A - \vep ((\adj A)[1,n]) \\
+      &= \det A - \vep \det A[\{n\}^c, \{1\}^c] \\
+      &= t^n - \vep.
+    \end{align*}
+    And its spectrum, namely the set of roots of $p_{C_n(\vep)}$, is $\{
+    \vep^{1/n} e^{2\pi ik/n}\,:\,k=0,1,\dots,n-1\}$. Hence,
+    \[
+      \rho(I+C_n(\vep)) = 1 + \rho(C_n(\vep)) = 1+\vep^{1/n}.
+    \]
+  \end{proof}  
+
+% end
+
