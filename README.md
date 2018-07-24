@@ -5,6 +5,6 @@ My personal solutions to some textbook problems
 * Chapter 1. Eigenvalues, Eigenvectors and Similarity
   * Introduction (Completed)
   * The eigenvalue-eigenvector equation (Odd)
-  * The characteristic polynomial and algebraic multiplicity (Even - {6, 12}) 
+  * The characteristic polynomial and algebraic multiplicity (Even - {12}) 
 
 ## George Casella, Roger L. Berger, *Statistical Inference*, 2nd ed
