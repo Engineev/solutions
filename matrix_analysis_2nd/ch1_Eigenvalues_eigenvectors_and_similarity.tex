@@ -194,7 +194,7 @@
     \[
       \det A = \frac{(-c)f(-b)- (-b)f(-c)}{(-c)-(-b)}=\frac{bq(c)-cq(b)}{b-c}.
     \]
-    Now suppose $b=c$. Note that $f(t)$ is a liner function of $t$, which is 
+    Now suppose $b=c$. Note that $f(t)$ is a linear function of $t$, which is 
     differentiable, implying that 
     \[
       \det A = \lim_{t_2\to t_1}\frac{t_2f(t_1)-t_1f(t_2)}{t_2-t_1} 
@@ -270,6 +270,264 @@
       \rho(I+C_n(\vep)) = 1 + \rho(C_n(\vep)) = 1+\vep^{1/n}.
     \]
   \end{proof}  
+
+% end
+
+\subsection{Similarity}
+  \paragraph{1.}
+  \begin{proof}
+    (a) Since $A$ and $B$ are diagonalizable and commute, by Theorem 1.3.21, 
+    they are simultaneously diagonalizable. Hence, there exists some nonsingular
+    $S\in M_n$ such that
+    \begin{align*}
+      A+B &=
+      S\inv\diag(\lambda_1,\dots,\lambda_n)S 
+      + S\inv\diag(\mu_{i_1},\dots,\mu_{i+n }) S \\
+      &= S\inv\diag(\lambda_1+\mu_{i_1},\dots, \lambda_n+\mu_{i_n})S.
+    \end{align*}
+    Therefore, $\sigma(A+B)=\{\lambda_1+\mu_{i_1},\dots, \lambda_n+\mu_{i_n}\}$.
+    \\ (b) By Exercise 1.1.6, $\sigma(B)=\{0\}$, completing the proof. \\
+    (c) $\sigma(AB) = \{\lambda_1\mu_{i_1},\dots,\lambda_n\mu_{i_n}\}$, because
+    \[
+      S\inv(AB)S = (S\inv AS)(S\inv BS) = 
+      \diag(\lambda_1\mu_{i_1},\dots,\lambda_n\mu_{i_n}).
+    \]
+  \end{proof}
+
+  \paragraph{3.}
+  \begin{proof}
+    \[
+      \sum_{k=0}^n a_k A^k = \sum){k=0}^n S\inv (a_k\Lambda^k)S
+      = S\inv p(\Lambda)S.
+    \]
+  \end{proof}
+
+  \paragraph{5.}
+  \begin{proof}
+    Let $A=\begin{bsmallmatrix} 0 & 1 \\ 0 & 0\end{bsmallmatrix}$ and $B=I$.
+    Clear that $A$ and $B$ commute but are not simultaneously diagonalizable 
+    since $A$ can not be diagonalized. This does not violate 1.3.12 because
+    in 1.3.12, $A$ and $B$ are required to be diagonalizable.
+  \end{proof}
+
+  \paragraph{7.}
+  \begin{proof}
+    Suppose $B=\diag(b_1,\dots,b_n)$, then clear that $A=\diag(\sqrt{b_1},\dots,
+    \sqrt{b_n})$ is a square root of $B$.\par
+    Assume that such $A$ exists, then by Theorem 1.1.6, $\sigma(A)=\{0\}$, 
+    implying that 
+    \[
+      A = \begin{bmatrix}
+        0 & a \\ b & 0        
+      \end{bmatrix}.
+    \]
+    Therefore,
+    \[
+      A^2 = \begin{bmatrix}
+        ab & 0 \\ 0 & ab
+      \end{bmatrix} \ne B.
+    \]
+    Contradiction.
+  \end{proof}
+
+  \paragraph{9.}
+  \begin{proof}
+    By Theorem 1.3.22, $AB$ and $BA$ have the same eigenvalues. And as similar
+    matrices are of the same rank, $AB$ and $BA$ are not similar.
+  \end{proof}
+
+  \paragraph{11.}
+  \begin{proof}
+    Suppose that $A,B\in M_n$ commute and $Ax=\lambda x$ where $x\ne 0$ and $k$
+    the is the smallest integer such that $B^kx \in \text{span}\{x,Bx,\dots,
+    B^{k-1}x\} = \mathcal{S}$. For every $u=\sum_{i=0}^{k-1} x_iB^ix \in
+    \mathcal{S}$, $Bu$ is a linear combination of $\sum_{i=0}^{k-2} x_iB^{i+1}x$
+    and $x_{k-1}B^kx \in\mathcal{S}$. Hence $Bu\in\mathcal{S}$ and therefore 
+    $\mathcal{S}$ is $B$-invariant. By Observation 1.3.18, there exists some 
+    $0\ne y\in\mathcal{S}$ which is an eigenvector of $B$. Meanwhile, since
+    \[
+      A\sum_{i=0}^{k-1} x_iB^i x = \sum_{i=0}^{k-1} x_i(AB^i)x =
+      \sum_{i=0}^{k-1} x_i B^i\lambda x = \lambda\sum_{i=0}^{k-1} x_iB^i x,
+    \]
+    every nonzero vector in $\mathcal{S}$ is a eigenvector of $A$ and so does 
+    $y$. Hence, $A$ and $B$ have a common eigenvector $y$.\par
+    Now we argue by induction on $m$, the size of the finite commuting family 
+    $\mathcal{F}=\{A_1,\dots,A_m\}$. Suppose that $y\ne 0$ is a common 
+    eigenvector of $A_1,\dots,A_{m-1}$ and let $k$ be the smallest integer such
+    that $A^k_my\in \text{span}\{y,A_my,\dots, A_m^{k-1}y\}=\mathcal{S}$. Then 
+    by some argument similar to the previous one, $\mathcal{S}$ is 
+    $A_m$-invariant and hence contains a eigenvector $z$ of $A_m$. Meanwhile, 
+    since $A_i$ and $A_m$ commute, every nonzero vector in $\mathcal{S}$ is an
+    eigenvector of $A_i$ for $i=1,\dots,m-1$ and so does $z$, concluding that 
+    matrices in a finite commuting families share a common eigenvector.\par
+    $M_n$ is linear space of dimension $n^2$ and $\mathcal{F}$ is a subspace of 
+    $M_n$ since for any $A,B,C\in\mathcal{F}$ and $a,b\in\mathbb{C}$,
+    \[
+      (aA+bB)C = a(AC) + b(BC) = a(CA) + b(CB) = C(aA+bB).
+    \]
+    Let $\mathcal{B}=\{B_1,\dots,B_k\}$ be a basis of $\mathcal{F}$. Since 
+    $\mathcal{B}$ is finite and commuting, (b) shows that the matrices in 
+    $\mathcal{B}$ have a common eigenvector $x$. Hence, supposing $B_ix=
+    \lambda_i x$,
+    \[
+      \left(\sum_{i=1}^k b_iB_i\right)x = \sum_{i=1}^k b_i(B_ix) = 
+      \left(\sum_{i=1}^k b_i\lambda_i\right)x
+    \]
+    where $b_i$ are some scalars. Thus, $x$ is a eigenvector of every $A\in
+    \mathcal{F}$.
+  \end{proof}
+
+  \paragraph{13.}
+  \begin{proof}
+    Since similar diagonalizable matrices have the same eigenvalues and 
+    multiplicities, their characteristic polynomials are therefore the same and
+    vice versa.\par
+    However, this is not true for two matrices which are not both 
+    diagonalizable. For example, $\begin{bsmallmatrix} 0 & 1 \\ 0 & 0 
+    \end{bsmallmatrix}$ and $0_{2\times 2}$ have the same characteristic 
+    polynomial but they are not similar.
+  \end{proof}
+
+  \paragraph{15.}
+  \begin{proof}
+    Suppose that $A=S\Lambda S\inv$ where $\Lambda$ is a diagonal matrix, then
+    \[
+      p(A) = \sum_{k=0}^n a_k(S\Lambda S\inv)^k = 
+      \sum_{k=0}^n a_kS\Lambda^kS\inv = Sp(\Lambda)S\inv.
+    \]
+    Clear that $p(\Lambda)$ is again a diagonal matrix. Hence, $p(A)$ is also
+    diagonalizable. \par
+    However the converse is not true. For example, $A = \begin{bsmallmatrix} 
+    0 & 1 \\ 0 & 0 \end{bsmallmatrix}$ is not diagonalizable but $A^2 = 0$ 
+    itself is a diagonal matrix.
+  \end{proof}
+
+  \paragraph{17.}
+  \begin{proof}
+    Suppose that $A=TBT\inv$ where $T\in M_n(\mathbb{R})$ is nonsingular, then
+    $\bar{A}=\overline{TBT\inv} = \bar{T}\bar{B}\bar{T}\inv = T\bar{B}T\inv$ 
+    since $T$ is real. And the converse is obviously true.
+  \end{proof}
+
+  \paragraph{19.}
+  \begin{proof}
+    Clear that $Q=Q^T$ and $Q^2 = I$, implying $Q=Q\inv$.\\
+    (a) Suppose that $A=\begin{bsmallmatrix} A_{11} & A_{12} \\ A_{21} & A_{22}
+    \end{bsmallmatrix}$. 
+    \[
+      0=K_{2n}A - AK_{2n} = 
+      \begin{bmatrix}
+        A_{21} - A_{12} & A_{22}-A_{11} \\ A_{11}-A_{22} & A_{12} - A_{21}
+      \end{bmatrix}.
+    \]
+    Hence, $A$ is $2$-by-$2$ block centrosymmetric. And the proof of the 
+    converse is trivial. If $A$ is nonsingular, then we have $A\inv K_{2n}=
+    K_{2n}A\inv$, which implies $A\inv$ is $2$-by-$2$ block centrosymmetric. 
+    Meanwhile, since $K_{2n}\inv = K_{2n}$, $K_{2n}AK_{2n} = A$. Suppose $B$ is 
+    a $2$-by-$2$ block centrosymmetric matrix, then
+    \[
+      K_{2n}AB = K_{2n}A(K_{2n}BK_{2n}) = (K_{2n}AK_{2n})B_{2n}K_{2n} 
+      = ABK_{2n}.
+    \]
+    Therefore, $AB$ is a $2$-by-$2$ block centrosymmetric matrix as well.\\
+    (b)
+    \begin{align*}
+      Q\inv AQ &= \frac{1}{2}
+      \begin{bmatrix} I_n & I_n \\ I_n & -I_n \end{bmatrix}
+      \begin{bmatrix} B & C \\ C & B \end{bmatrix}
+      \begin{bmatrix} I_n & I_n \\ I_n & -I_n \end{bmatrix} \\
+      &= \begin{bmatrix} B+C & 0 \\ 0 & B+C \end{bmatrix} 
+        = (B+C) \oplus (B-C).
+    \end{align*} 
+    (c) 
+    \[
+      \det A = \det(Q\inv AQ) = \det\begin{bmatrix}
+        B+C & 0 \\ 0 & B+C
+      \end{bmatrix} = \det(B^2+CB - BC-C^2)
+    \]
+    and $\rank A =\rank(B+C)+\rank(B-C)$ follows immediately from $Q\inv AQ=
+    (B+C)\oplus(B-C)$.\\
+    (d) $Q\inv \begin{bsmallmatrix} 0 & C \\ C & 0 \end{bsmallmatrix} = C\oplus
+    (-C)$. Since $p_{C\oplus(-C)}(t)=p_C(t)p_{-C}(t)$, the eigenvalues occur in 
+    $\pm$ pairs.
+  \end{proof}
+
+  \paragraph{23.}
+  \begin{proof}
+    Suppose that there exists some $X\in M_{n,m}$ such that $C=BX$ and let 
+    $S=\begin{bsmallmatrix} I_n & X \\ 0 & I_m \end{bsmallmatrix}$. Clear that
+    $S$ is nonsingular and $S\inv=\begin{bsmallmatrix} I_n & -X \\ 0 & I_m 
+    \end{bsmallmatrix}$. Since
+    \[
+      S\begin{bmatrix}B & BX \\ 0_n & 0_m\end{bmatrix}S\inv = 
+      \begin{bmatrix} B & 0 \\ 0 & 0_m\end{bmatrix},
+    \]
+    $A$ is similar to $B\oplus 0_m$.\par
+    Now we suppose that $A$ is similar to $B\oplus 0_m$. Since similar matrices
+    have the same rank, $\rank[B\,C] = \rank B$.    
+  \end{proof}
+
+  \paragraph{25.}
+  \begin{proof}
+    TODO
+  \end{proof}
+
+  \paragraph{29.}
+  \begin{proof}
+    Since $\det A=\sum_\sigma(\text{sgn}\sigma \prod_{i=1}^n a_{i\sigma(i)})$, 
+    where $\sigma$ is any permutation of $\{1,2,\dots, n\}$, the determinant of 
+    a matrix whose entries are integers is an integer.\par
+    Suppose that the $a_{ij}$ is changed from $-1$ to $1$ and denote the new 
+    matrix by $\tilde{A}$. Let $x,y\in\mathbb{C}^n$ be two vectors such that 
+    $x_i=1$ and $y_j=2$, then $\tilde{A} = A + xy^T$. By Cauchy's identity,
+    \[
+      \det\tilde{A} = \det A + y^T(\adj A)x = \det A + 2\det A[\{i\}^c,\{j\}^c].
+    \]
+    Hence, the parity of $\det A$ is unchanged.\par
+    \footnote{I don't know what $J_n$ actually is here and assume it to be the 
+    matrix whose entries are all $1$.} Since changing a $-1$ entry to $1$ does 
+    not change the parity of the determinant, we can change all the entries to 
+    $1$. Hence, the parity of $\det A$ is the same as the parity of $\det(J_n-
+    I)$. Induction on $n$ yields that it is opposite to the parity of $n$. Thus,
+    if $n$ is even, then $\det A$ is odd and therefore nonzero, implying $A$ is 
+    nonsingular.
+  \end{proof}
+
+  \paragraph{31.}
+  \begin{proof}
+    The characteristic polynomial of the matrix is $p(t)=(t-a)^2+b^2=
+    (t-a-ib)(t-a+ib)$. Hence its eigenvalues are $a\pm ib$.
+  \end{proof}
+
+  \paragraph{33.}
+  \begin{proof}
+    $\,$\\
+    (a) Since $A$ is real, $A\bar{x} = \overline{\bar{A}x} = \overline{Ax} = 
+    \overline{\lambda x} = \bar{\lambda}\bar{x}$.\\
+    (b) Since $\lambda$ is not real, $x$ and $\bar{x}$ are associated with
+    different eigenvalues. Hence, $x$ and $\bar{x}$ are linear independent.
+    Suppose that $mu+nv=0$. Then
+    \[
+      0= m(x+\bar{x})-in(x-\bar{x}) = (m-in)x + (m+in)\bar{x}.
+    \]
+    Since $m-in=0$ and $m+in=0$, $m=n=0$. Thus, $u$ and $v$ are also linear 
+    independent.\\
+    (c) 
+    \[
+      Au = \frac{1}{2}A(x+\bar{x})=\frac{1}{2}(\lambda x+\bar{\lambda}\bar{x})
+      = \frac{1}{2}[(a+ib)(u+iv)+(a-bi)(u-iv)] = au-bv.
+    \]
+    Similarly, $Av=bu+av$. Hence,
+    \[
+      A[u, v] = [Au, Av] = [au-bv, bu+av] = [u, v]B.
+    \]\\
+    (d) Since $S\begin{bsmallmatrix} I_2 \\ 0 \end{bsmallmatrix} = [u\,v]$, 
+    $S\inv[u\,v]=\begin{bsmallmatrix} I_2 \\ 0 \end{bsmallmatrix}$ and the proof
+    of the next result is trivial. \\
+    (e) Since $p_A(t) = p_B(t)p_{A_1}(t)$, the result amounts to the fact that
+    $\lambda$ and $\bar{\lambda}$ are two roots of $p_B(t)$.
+  \end{proof}
+  
 
 % end
 

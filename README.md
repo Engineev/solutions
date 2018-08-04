@@ -6,5 +6,6 @@ My personal solutions to some textbook problems
   * Introduction (Completed)
   * The eigenvalue-eigenvector equation (Odd)
   * The characteristic polynomial and algebraic multiplicity (Even - {12}) 
+  * Similarity (Odd - {21, 35, 37, 39, 41})
 
 ## George Casella, Roger L. Berger, *Statistical Inference*, 2nd ed
