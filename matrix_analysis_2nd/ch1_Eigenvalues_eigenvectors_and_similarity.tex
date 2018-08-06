@@ -531,3 +531,111 @@
 
 % end
 
+\subsection{Left and right eigenvectors and geometric multiplicity}
+  \paragraph{2.}
+  \begin{proof}
+    Since
+    \[
+      p_A(t)=p_{A^T}(t)=p_{-A}(t)=\det(tI+A)=(-1)^n\det((-t)I-A)=(-1)^np_A(-t),
+    \]
+    $-\lambda$ is an eigenvalue of $A$ with multiplicity $k$ as long as 
+    $\lambda$ is. Thus, if $n$ is odd, $0\in\sigma(A)$ as the nonzero eigenvalues 
+    come in pairs. Hence, $A$ is singular. Since the principal submatrices of a 
+    skew symmetric matrix are still skew symmetric, the ones with odd size are
+    singular. Finally, since skew symmetric matrices are rank principal, having
+    a nonsingular principal submatrix of size $r\times r$ if its rank is $r$, 
+    $\rank A$ is even.
+  \end{proof}
+
+  \paragraph{4.}
+  \begin{proof}
+    Note that $S\inv = S$ and multiplying $S$ on the left and right are 
+    respectively equivalent to changing the sign of the odd rows and columns.
+    Hence, $S\inv AS = SAS = -A$. Since $p_{-A}(t)=(-1)^np_A(-t)$ and similar
+    matrices have the same eigenvalues with the same multiplicities, $-\lambda$
+    is an eigenvalue of $A$ with multiplicity $k$ as long as $\lambda$ is. Since
+    the eigenvalues of $A$ come in $\pm$ paris, $0\in\sigma(A)$, hence $A$ is 
+    singular, if $n$ is odd.
+  \end{proof}
+
+  \paragraph{6.}
+  \begin{proof}
+    (a) Since $x$ and $y$ are entrywise positive, $y^*x>0$. Hence, by Theorem 
+    1.4.7, the subspace $\text{span}(x)$ and the orthogonal complement $W$ of 
+    $y^*$ are both $A$-invariant. Let $u$ be an entrywise nonnegative right 
+    eigenvector of $A$ associated with eigenvalue $\mu$. It belongs to some 
+    $A$-invariant subspace. Since $y^*u>0$, it does not belong to $W$ and 
+    therefore $u \in\text{span}(x)$. Thus, $\mu = \lambda$. If $u$ is a left 
+    eigenvector, the argument is similar. \\
+    (b) Since the algebraic multiplicity is no less than the geometric 
+    multiplicity, $\lambda$ has geometric multiplicity $1$.
+  \end{proof}
+
+  \paragraph{10.}
+  \begin{proof}
+    Suppose $T=[\beta_1,\dots,\beta_n]$. Then
+    \[
+      T^*A = 
+      \begin{bmatrix}
+        \beta_1^* \\ \vdots \\ \beta_n^*
+      \end{bmatrix}
+      A =
+      \begin{bmatrix}
+        \beta_1^* A \\ \vdots \\ \beta_n^* A
+      \end{bmatrix}
+      =
+      \begin{bmatrix}
+        \lambda_1\beta_1^* \\ \vdots \\ \lambda_n\beta_n^*
+      \end{bmatrix}
+      = \Lambda T^*.
+    \]
+    where $\Lambda = \diag(\lambda_1,\dots,\lambda_n)$. Therefore, $AT^{-*}=
+    T^{-*}\Lambda$, implying that $T^{-*}$ are the right eigenvectors of $A$.
+  \end{proof}
+
+  \paragraph{12.}
+  \begin{proof}
+    \noindent 
+    (a) First suppose that every list of $n-1$ columns of $A-\lambda I=[\beta_1,
+    \dots,\beta_n]$ is linearly independent and let $x\ne 0$ be an eigenvector 
+    of $A$ associated with $\lambda$. We argue by contradiction, assuming that 
+    $x_i$, the $i$-th entry of $x$, is zero. Then 
+    \[
+      0 = (A-\lambda)x = 
+      x_1\beta_1 + \cdots + x_{i-1}\beta_{i-1} + x_{i+1}\beta_{i+1} + \cdots +
+      x_n\beta_n.
+    \]
+    As $\beta_1,\dots,\beta_{i-1},\beta_{i+1},\dots,\beta_n$ are linearly 
+    independent, this implies $x_i=0$ for each $i=1,\dots,n$, contradicting with
+    the assumption $x\ne 0$. \\
+    To prove the converse part, we continue to argue by contradiction and assume
+    that $\beta_1,\dots,\beta_{i-1},\beta_{i+1},\dots,\beta_n$ are linearly 
+    dependent. Consider the equation $[\beta_1,\dots,\beta_n]x = 0$. Even if we 
+    restrict the $i$-th entry of $x$ to be $0$, the equation is still solvable,
+    leading to a contradiction and completing the proof. \\
+    (b) The previous result shows that every list of $n-1$ columns of $A-\lambda
+    I$ is linearly independent. Since $A-\lambda I$ is singular, this implies
+    $\rank(A-\lambda I)=n-1$. By the rank-nullity theorem, the geometric 
+    multiplicity of $\lambda$ is $1$.
+  \end{proof}
+
+  \paragraph{14.}
+  \begin{proof}
+    \noindent
+    (a) It follows immediately from
+    \[
+      (A-\lambda I)\adj(A-\lambda I)=p_A(\lambda)I=0 \quad\Rightarrow\quad
+      A\adj(A-\lambda I) = \lambda\adj(A-\lambda I).
+    \] \\
+    (b) The proof is similar to the one of (a).\\
+    (c) Given $\lambda\in\sigma(A)$, $\adj(A-\lambda)\ne 0$ iff $\rank(A-\lambda
+    I)=n-1$ iff $\lambda$ has geometric multiplicity $1$.\\
+    (d) It follows from 
+    \[
+      \adj(A-\lambda I) = 
+      \begin{bmatrix} d-\lambda & -b \\ -c & a-\lambda \end{bmatrix}
+    \]
+    and the results of (a) and (b).
+  \end{proof}
+% ebd
+
