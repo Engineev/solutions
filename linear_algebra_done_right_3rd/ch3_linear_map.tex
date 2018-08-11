@@ -1,0 +1,55 @@
+\section{Linear Map}
+\subsection{The Vector Space of Linear Maps}
+  \paragraph{1.}
+  \begin{proof}
+    If $T$ is linear, then $T(0,0,0)=0$ and therefore $b=0$. Meanwhile, 
+    $T(2,2,2)=2T(1,1,1)$ implies $12+8c=12+2c$. Hence, $c=0$. The proof of the 
+    converse part is trivial.
+  \end{proof}
+
+  \paragraph{3.}
+  \begin{proof}
+    Let $e_i$ be the $i$-th vector in the standard base of $\mathbb{F}^n$ and 
+    suppose that $Te_i = \sum_{j=1}^n A_{1,j}e_j$. Then for $x=(x_1,\dots,x_n)^T 
+    \in\mathbb{F}^n$,
+    \[
+      Tx = T\left(\sum_{i=1}^n x_ie_i\right) = \sum_{i=1}^n x_iTe_i =
+      \sum_{i=1}^n x_i\sum_{j=1}^nA_{j,i}e_j = 
+      \sum_{j=1}^n\left(\sum_{i=1}^nA_{j,i}x_i\right) e_j.
+    \]
+  \end{proof}
+
+  \paragraph{5.}
+  \begin{proof}
+    Too lengthy to write it down...
+  \end{proof}
+
+  \paragraph{7.}
+  \begin{proof}
+    Let $\{x_0\}$ be a basis of $V$ and $\lambda$ be a scalar such that $Tx_0=
+    \lambda x_0$. By the linearity of $T$, for every $x=kx_0$ in $V$, $Tx=kTx_0
+    =k\lambda x_0=\lambda(kx_0)=\lambda x$.
+  \end{proof}
+
+  \paragraph{9.}
+  \begin{solution}
+    TODO
+  \end{solution}
+
+  \paragraph{11.}
+  \begin{proof}
+    Let $\{\alpha_1,\dots,\alpha_p\}$ and $\{\alpha_1,\dots,\alpha_p,\beta_1,
+    \dots,\beta_q\}$ be bases of $U$ and $V$ respectively. Then the linear map 
+    which maps $\alpha_i$ to $T\alpha_i$ and maps $\beta$ to $0$. Clear that
+    it is the desired linear map. 
+  \end{proof}
+
+  \paragraph{13.}
+  \begin{proof}
+    Suppose that $v_k$ is in the span of the other vectors and let $w_i=0$ for 
+    each $i\ne k$ and $w_k\ne 0$. No $T\in\mathcal{L}(V, W)$ can maps $v_i$ to 
+    $w_i$ since the linearity of $T$ would force $w_k$ to be $0$, leading to a 
+    contradiction.
+  \end{proof}
+
+% end
