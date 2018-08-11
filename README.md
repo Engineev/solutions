@@ -1,6 +1,9 @@
 # solutions
 My personal solutions to some textbook problems
 
+## Sheldon Axler, *Linear Algebra Done Right*, 3rd ed
+
+
 ## Roger A. Horn, Charles R. Johnson, *Matrix Analysis*, 2nd ed
 
 * Chapter 1. Eigenvalues, Eigenvectors and Similarity
