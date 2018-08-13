@@ -56,3 +56,137 @@
   \end{proof}
 
 % end
+
+\subsection{Null Spaces and Ranges}
+  \paragraph{2.}
+  \begin{proof}
+    Since $S$ maps every vector of $V$ into the null space of $T$, the map $TS$
+    is the zero map. Hence $(ST)^2 = S(TS)T = 0$.
+  \end{proof}
+
+  \paragraph{4.}
+  \begin{proof}
+    Suppose $S,T\in\mathcal{L}(\mathbb{R}^5,\mathbb{R}^4)$ maps and only maps 
+    $e_1,e_2,e_3$ and $e_3,e_4,e_5$ to the zero vector respectively. Then $e_1,
+    e_2,e_4,e_5\notin\nul(S+T)$, implying that $\dim\nul(S+T)<2$. Hence $\{T\in
+    \mathcal{L}(\mathbb{R}^5,\mathbb{R}^4\,:\,\dim\nul T>2)\}$ is not a subspace
+    of $\mathcal{L}(\mathbb{R}^5,\mathbb{R}^4)$.
+  \end{proof}
+
+  \paragraph{6.}
+  \begin{proof}
+    It follows immediately from the rank-nullity theorem and the fact that $\dim
+    \nul T$ and $\dim\range T$ are integers.
+  \end{proof}
+
+  \paragraph{8.}
+  \begin{proof}
+    Let $\{w_1,\dots,w_m\}$ be a basis of $W$ and $S,T\in\mathcal{L}(V,W)$ be 
+    two linear maps such that $\range S=\spn(w_1)$ and $\range T=\spn(w_2,\dots,
+    w_n)$. Clear that $\range(S+T)=W$. Hence, the set described is not a 
+    subspace of $\mathcal{L}(V,W)$.
+  \end{proof}
+
+  \paragraph{10.}
+  \begin{proof}
+    For every $y\in\range T$ there exists some $x=\sum x_iv_i\in V$ such that 
+    \[
+      y=Ty = T\left(\sum_{i=1}^n x_iv_i\right) = \sum_{i=1}^n x_iTv_i.
+    \]
+    Hence, $\range T=\spn(Tv_1,\dots,Tv_n)$.
+  \end{proof}
+
+  \paragraph{12.}
+    For readers who familiar with the orbit-stabilizer theorem or just the 
+    (group) homomorphism, the proof should be straightforward.
+  \begin{proof}
+    For every nonzero $y$ in $\range T$, there exists some $x\in V$ such that 
+    $Tx=y$. For each $y\ne 0$, we choose one such $x$, put them all together and 
+    put $0$ into them to get $U$. By the construction, clear that $T(U) = 
+    \range T$ and , $U\cap\nul T=\{0\}$.
+  \end{proof}
+
+  \paragraph{14.}
+  \begin{proof}
+   By the rank-nullity theorem, 
+   \[
+     \dim\nul T + \dim\range T = 8 \quad\Rightarrow\quad
+     \dim\range T = 5 = \dim\mathbb{R}^5.
+   \]
+   Hence, $\range T = \mathbb{R}^5$ and therefore $T$ is surjective.
+  \end{proof}
+
+  \paragraph{16.}
+    Actually, the cosets of the kernel partition the whole space.
+  \begin{proof}
+    Let $\{v_1,\dots,v_n\}$ be a basis of $\range T$ and $Tu_i=v_i$ for $i=1,2,
+    \dots,n$. Denote $\spn(u_1,\dots,u_n)$ by $U$. We now prove that $V=U+\nul
+    T$. For every $x\in V$, suppose that $Tx=y=\sum y_iv_i$ and $\tilde{x}=\sum
+    y_iu_i$. Note that $\tilde{x}\in U$ and $T(x-\tilde{x})=Tx-T\tilde{x}=0$, 
+    i.e., $x-\tilde{x}\in\nul T$. Hence, $V=U+\nul T$. As both of $U$ and $\nul
+    T$ are finite-dimensional, so is $V$.
+  \end{proof}
+
+  \paragraph{18.}
+  \begin{proof}
+    By the rank-nullity theorem, clear that $\dim V \ge \dim\range T =\dim W$ if
+    there exists some surjective $T\in\mathcal{L}(V,W)$. \par
+    Assume that $\dim V\ge\dim W$ and let $\{v_1,\dots,v_n\}$ and $\{w_1,\dots,
+    w_m\}$ be bases of $V$ and $W$ respectively. Then the linear map which
+    maps $v_i$ to $w_i$ for each $1\le i\le m$ is surjective.
+  \end{proof}
+
+  \paragraph{20.}
+  \begin{proof}
+    If $T$ is injective, then for every $y\in\range T$, there exists exactly 
+    one $x\in V$ such that $y=Tx$. Let $S$ be the map which maps $y$ to such
+    $x$. It is linear since for every $y_1,y_2\in\range T$ and scalar $a,b$,
+    supposing $Sy_i = x_i$,
+    \[
+      T(ax_1+bx_2) = aTx_1 + bTx_2 = ay_1 + by_2.
+    \]
+    implying $S(ay_1+by_2) = ax_1+bx_2 = aSy_1 + bSy_2$. For every $x\in V$,
+    $(ST)x = S(Tx) = x$. \par
+    Suppose there exists some $S\in \mathcal{L}(W,V)$ such that $ST=I$. Then
+    \[
+      Tx_1 = Tx_2 \quad\Rightarrow\quad
+      STx_1 = STx_2 \quad\Rightarrow\quad
+      x_1 = x_2.
+    \]
+    Hence, $T$ is injective.
+  \end{proof}
+
+  \paragraph{22.}
+  \begin{proof}
+    Let $\tilde{T}$ be the restriction of $T$ to $\nul ST$. It is still a linear
+    map since $\nul ST$ is a subspace of $U$. Note that $x\in\nul ST$ iff $(ST)x
+    =0$ iff $Tx\in\nul S$. Hence, $\range\tilde{T}\subset\nul S$. Thus, by the 
+    rank-nullity theorem,
+    \[
+      \dim\range\tilde{T} \le \dim\nul S \quad\Rightarrow\quad
+      \dim\nul ST - \dim\nul\tilde{T} \le \dim\nul S.
+    \]
+    Since $\nul\tilde{T} \le \nul T$, this implies $\dim\nul ST \le \dim\nul S +
+    \dim\nul T$.
+  \end{proof}
+
+  \paragraph{24.}
+  \begin{proof}
+    If there exists $S\in\mathcal{L}(W,W)$ such that $T_2=ST_1$, then $\nul T_2
+    =\nul ST_1$. Hence for every $x\in\nul T_1$, as $S(T_1x)=S0 = 0$, $x\in\nul
+    T_2$. Therefore, $\nul T_1\subset\nul T_2$.\par
+    Now we suppose $\nul T_1\subset\nul T_2$ and construct $S$. Note that all we
+    concerns is its behavior on some basis of $\range T_1$. Let $\{w_1, \dots, 
+    w_n\}$ be a basis of $\range T_1$ and $T_1v_i = w_i$ for $i=1,\dots,n$. For
+    each $x\in V$, let $U_x = \{x+y\,:\,y\in\nul T_2\}$ and $Sw_k=T_2x$ if $v_k
+    \in U_x$. It can be verified that $S$ is well-defined and does satisfy the
+    requirement as long as $\nul T_1\subset\nul T_2$.
+  \end{proof}
+
+  \paragraph{26.} TODO
+
+  \paragraph{28.} TODO
+
+  \paragraph{30.} TODO
+
+% end

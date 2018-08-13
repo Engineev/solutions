@@ -4,7 +4,8 @@ My personal solutions to some textbook problems
 ## Sheldon Axler, *Linear Algebra Done Right*, 3rd ed
 
 * Chapter 3. Linear Maps
-  * 3.A The Vector Space of Linear Maps (Odd-{9})
+  * 3.A The Vector Space of Linear Maps (Odd)
+  * 3.B Null Spaces and Ranges (Even - {26, 28, 30})
 
 ## Roger A. Horn, Charles R. Johnson, *Matrix Analysis*, 2nd ed
 
