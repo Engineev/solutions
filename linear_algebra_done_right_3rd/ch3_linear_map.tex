@@ -183,10 +183,129 @@
     requirement as long as $\nul T_1\subset\nul T_2$.
   \end{proof}
 
-  \paragraph{26.} TODO
+  \paragraph{26.}
+  \begin{proof}
+    Let $\mathcal{P}_n(\mathbb{R})=\{p\in\mathcal{P}(\mathbb{R})\,\,:\,\deg p 
+    \le n\}$, which are some subspaces of $\mathcal{P}(\mathbb{R})$. We now 
+    prove that $D$ is a surjective linear map onto $\mathcal{P}_n(\mathbb{R})$
+    for every nonnegative integer $n$ by induction. \par
+    Suppose $Dx = c_0 \ne 0$, then for any $0\ne c\in\mathcal{P}_0(\mathbb{R})$,
+    $D(cx / c_0) = c$. Hence, $D$ is a surjective map onto $\mathcal{P}_0
+    (\mathbb{R})$. Assume that $D$ is a surjective map onto $\mathcal{P}_{k-1}
+    (\mathbb{R})$ and suppose $Dx^{k+1} = p=a_0 + a_1x + \cdots + a_kx^k$ where
+    $a_k\ne 0$. For every nonzero $b_k$ and $q = b_0+b_1x+\cdots+b_kx^k \in
+    \mathcal{P}_k(\mathbb{R})$, let $r$ be a polynomial with degree $\le k-1$ 
+    such that $q=b_k/a_k p + r$. By our induction hypothesis, there exists some 
+    polynomial $\tilde{r}$ such that $D\tilde{r}=r$. Then
+    \[
+      D(b_k/a_k x^{k+1} + \tilde{r}) = \frac{b_k}{a_k}Dx^{k+1} + D\tilde{r} = 
+      \frac{b_k}{a_k}p+r = q.
+    \]
+    Hence, $D$ is also a surjective map onto $\mathcal{P}_k(\mathbb{R})$. Thus,
+    $D$ is surjective.
+  \end{proof}
 
   \paragraph{28.} TODO
 
   \paragraph{30.} TODO
 
+% end
+
+\setcounter{subsection}{3}
+\subsection{Invertibility and Isomorphic Vector Spaces}
+
+  \paragraph{1.}
+  \begin{proof}
+    Clear that the linear map $T\inv S\inv$ is right and left inverse of $ST$
+    and therefore $ST$ is invertible. And by the uniqueness of the inverse, 
+    $(ST)\inv = T\inv S\inv$.
+  \end{proof}
+
+  \paragraph{3.}
+  \begin{proof}
+    First we suppose the existence of such an operator, then $T\inv$ is also the
+    inverse of $S$. Hence $S$ is invertible and therefore injective. \par
+    Now we suppose $S$ is injective. Let $\{u_1,\dots,u_m\}$ and $\{u_1,\dots, 
+    u_m, u_{m+1},\dots,u_n\}$ be bases of $U$ and $V$ respectively. $\{Su_1,
+    \dots, Su_m\}$ is linearly independent as $S$ is injective and therefore we
+    can expand it to a basis, $\{Su_1,\dots,Su_m,v_{m+1},\dots,v_n\}$, of $V$.
+    Let $T\in\mathcal{L}(V)$ maps $u_i$ to $Su_i$ for $i=1,\dots,m$ and $u_j$ to
+    $v_j$ for $j=m+1,\dots,n$. $T$ is obviously injective and therefore 
+    invertible as $V$ is finite-dimensional. 
+  \end{proof}
+
+  \paragraph{5.}
+  \begin{proof}
+    Suppose that such an $S$ exists. Since $S$ is invertible, $\range S=V$.
+    Hence, $\range T_2 = \range T_2S = \range T_1$. \par
+    Now we suppose that $\range T_1=\range T_2$ and construct $S$ by defining
+    its behavior on a basis of $V$. Let $\{v_1,\dots,v_m\}$ be a basis of $\nul
+    T_1$. As $\range T_1=\range T_2$ implies $\dim\nul T_1=\dim\nul T_2$, we can
+    set $Sv_i = u_i$ for $i=1,\dots,m$ where $\{u_1,\dots,u_m\}$ is a basis of 
+    $\nul T_2$. \par
+    Let $\{v_1,\dots,v_m,v_{m+1},\dots,v_n\}$ be a basis of $V$. Clear that $\{
+    T_1v_{m+1},\dots,T_1v_n\}$ spans $\range T_1$. It is linearly independent
+    since 
+    \begin{align*}
+      & x_{m+1}T_1v_{m+1}+\cdots+x_nT_1v_n = 0 \\
+      \Rightarrow\quad& T_1(x_{m+1}v_{m+1}+\cdots+x_nv_n) = 0 \\
+      \Rightarrow\quad& x_{m+1}v_{m+1}+\cdots+x_nv_n \in \nul T_1 \\
+      \Rightarrow\quad& x_{m+1} = \cdots = x_n = 0.
+    \end{align*}
+    Hence, it is a basis of $\range T_1$. Since $\range T_1=\range T_2$, there 
+    exists $u_{m+1},\dots,u_n$ such that $T_2u_i = T_1v_i$ for $i=m+1,\dots,n$.
+    It is easy to verify that $u_1,\dots,u_m,u_{m+1},\dots,u_n$ are linearly
+    independent. Finally, for $i=m+1,\dots,n$, we also set $Sv_i = u_i$. Clear 
+    that $S$ is invertible and satisfies the requirement.
+  \end{proof}
+
+  \paragraph{7.}
+  \begin{proof}
+    $\,$\\
+    (a) For any $A,B\in E$ and scalar $a,b$,
+    \[
+      (aA+bB)v = a(Av) + b(Bv) = 0.
+    \]
+    Hence, $E$ is a subspace of $\mathcal{L}(V,W)$. \\
+    (b) Since $v\ne 0$, putting $v_1=v$, there exists some vectors in $V$ such
+    that $\{v_1,\dots,v_n\}$ is a basis of $V$. Let $U=\spn(v_2,\dots,v_n)$. It
+    can be shown that $E$ is isomorphic to $\mathcal{U,W}$. Hence, $\dim E = 
+    (\dim V-1)\dim W$.
+  \end{proof}
+
+  \paragraph{9.}
+  \begin{proof}
+    If $S$ and $T$ are invertible, then clear that $T\inv S\inv$ is the inverse
+    of $ST$. Meanwhile, if $S$ or $T$ is not invertible, therefore not 
+    surjective, then 
+    \[
+      \dim\range ST\le\min\{\dim\range S,\dim\range T\}<\dim V.
+    \]
+    Hence, $ST$ is not surjective and hence not invertible as $V$ is 
+    finite-dimensional. Thus, $ST$ is invertible iff $S$ and $T$ are invertible.
+  \end{proof}
+
+  \paragraph{11.}
+  \begin{proof}
+    Since $V$ is finite-dimensional and $S(TU)=(ST)U=I$, both $S$ and $U$ are 
+    invertible and the inverses of which are $TU$ and $ST$ respectively. Hence,
+    \[
+      STU=I \quad\Rightarrow\quad T = S\inv U\inv,
+    \]
+    implying that $T$ is also invertible and $T\inv = US$.
+  \end{proof}
+
+  \paragraph{13.}
+  \begin{proof}
+    It follows almost immediately from Exercise 9 that all of $R$, $S$ and $T$
+    are invertible and therefore $S$ is injective.
+  \end{proof}
+
+  \paragraph{15.}
+  \begin{proof}
+    Let $\{e_1,\dots,e_n\}$ be the standard basis of $\mathbb{F}^{n,1}$ and 
+    suppose $Te_i = u_i$. It is easy to verify that $A=\begin{bsmallmatrix}
+    u_1 & \cdots & u_n \end{bsmallmatrix}$ is a $m$-by-$n$ matrix such that 
+    $Tx=Ax$ for every $x\in\mathbb{F}^{n,1}$.
+  \end{proof}
 % end
