@@ -7,6 +7,7 @@ My personal solutions to some textbook problems
   * 3.A The Vector Space of Linear Maps (Odd)
   * 3.B Null Spaces and Ranges (Even - {28, 30})
   * 3.D Invertibility and Isomorphic Vector Spaces (Odd - {17, 19})
+  * 3.E Products and Quotients of Vector Spaces (Even - {14, 18, 20})
 
 ## Roger A. Horn, Charles R. Johnson, *Matrix Analysis*, 2nd ed
 

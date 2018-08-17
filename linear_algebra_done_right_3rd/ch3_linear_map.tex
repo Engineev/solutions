@@ -304,8 +304,117 @@
   \paragraph{15.}
   \begin{proof}
     Let $\{e_1,\dots,e_n\}$ be the standard basis of $\mathbb{F}^{n,1}$ and 
-    suppose $Te_i = u_i$. It is easy to verify that $A=\begin{bsmallmatrix}
-    u_1 & \cdots & u_n \end{bsmallmatrix}$ is a $m$-by-$n$ matrix such that 
-    $Tx=Ax$ for every $x\in\mathbb{F}^{n,1}$.
+    suppose $Te_i = u_i$. It is easy to verify that $A=(u_1, \dots, u_n)$ is a 
+    $m$-by-$n$ matrix such that $Tx=Ax$ for every $x\in\mathbb{F}^{n,1}$.
+  \end{proof}
+% end
+
+\subsection{Products and Quotients of Vector Spaces}
+  \paragraph{2.}
+  \begin{proof}
+    We only prove the result for $m=2$. It is easy to prove it for arbitrary $m$
+    in a similar manner. Suppose that $V=V_1\times V_2$ is finite-dimensional. 
+    Then $V_1\times\{0\}$, a subspace of $V$, is finite-dimensional. Clear that 
+    $V_1$ is isomorphic to $V_1\times \{0\}$ and hence it is also of finite 
+    dimension. Similarly, $V_2$ is finite-dimensional. 
+  \end{proof}
+
+  \paragraph{4.}
+  \begin{proof}
+    We construct the isomorphism $S:\mathcal{L}(V_1\times\cdots\times V_n,W)\to
+    \mathcal{L}(V_1,w)\times\cdots\times\mathcal{L}(V_n,W)$ explicitly. For 
+    every $T\in\mathcal{L}(V_1\times\cdots\times V_n,W)$, suppose $T(v_1,\dots,
+    v_n) = w$. Let $T_i(v_i)=w$ for $i=1,\dots,n$ and $ST = (T_1,\dots, T_n)$.
+    Clear that $T_i\in\mathcal{L}(V_i, W)$ and $S$ is invertible.
+  \end{proof}
+
+  \paragraph{6.}
+  \begin{proof}
+    We may interpret the elements in $\mathcal{L}(\mathbb{F}^n,V)$ as mappings
+    from the "coordinates" to "abstract vectors". With this in mind, we 
+    construct the isomorphism $S$. For every $(v_1,\dots,v_n)\in V^n$ and $(x_1,
+    \dots,x_n)^T\in\mathbb{F}^n$, let 
+    \[
+      (S(v_1,\dots,v_n))
+      \begin{bmatrix}
+        x_1 \\ \vdots \\ x_n
+      \end{bmatrix}
+      = \sum_{i=1}^n x_iv_i.
+    \]
+    It is easy to verify that $S$ does satisfy the requirement.
+  \end{proof}
+
+  \paragraph{8.}
+    We may interpret the set of all possible $\lambda v+(1-\lambda w)$ as the 
+    "line" through $v$ and $w$. And the idea behind the proof is illustrated in
+    the picture below.
+    \begin{figure}[htbp]
+      \centering
+      \includegraphics[height=5cm]{./image/3-d-8.png}
+    \end{figure}
+  \begin{proof}
+    If $A$ is an affine subset, i.e., there exists some subspace $U$ and $a\in
+    V$ such that $A=a+U$, then for all $\lambda\in\mathbb{F}$ and $v,w\in A$,
+    \[
+      \lambda v+(1-\lambda)w = \lambda(a+u_1) + (1-\lambda)(a+u_2) = 
+      a + (u_1+(1-\lambda)u_2) \in A
+    \]
+    where $u_1$ and $u_2$ are some elements in $U$. \par
+    Now we suppose $\lambda v+(1-\lambda)w\in A$ holds, fix $a\in A$ and let $U=
+    \{a_1-a \,:\, a_1\in A\}$. By the hypothesis, for every scalar $\lambda$ and 
+    $a_1\in A$, $a + \lambda(a_1-a)\in A$. Therefore, for every $u_1 = a_1-a \in
+    U$, $\lambda u_1\in U$. Meanwhile, let $u_2=a_2-a\in U$, $(u_1 +u_2)/2\in U$
+    as 
+    \[
+      a+\frac{1}{2}(u_1+u_2) = a + \frac{1}{2}(a_1+a_2-2a) = 
+      \frac{1}{2}a_1+\frac{1}{2}a_2.
+    \]
+    Hence, by the previous result, $u_1+u_2\in U$. Thus, $U$ is a subspace and 
+    $A=a+U$ is an affine subset.
+  \end{proof}
+
+  \paragraph{10.}
+  \begin{proof}
+    Let $A$ be the intersection of every collection of affine subsets of $V$ and
+    suppose $A$ is nonempty. Let $v,w\in A$ and $\lambda\in\mathbb{F}$. Then, by
+    Exercise 8, for every affine subset $A_{\alpha}$ of $V$, $\lambda v+ (1-
+    \lambda)w\in A_\alpha$. Hence it also belongs to $A$. Thus, $A$ is also an
+    affine subset of $A$ (as long as nonempty).
+  \end{proof}
+
+  \paragraph{12.}
+  \begin{proof}
+    Let $\{a_1+U,\dots, a_m+U\}$ be a basis of $V/U$ and we first prove a small
+    result: for every $v\in V$, there exists an unique list of $v_1,\dots,v_m\in
+    \mathbb{F}$ such that $v - (v_1a_1 + \cdots v_ma_m)\in U$. Suppose that 
+    $v_1\hp,\dots, v_m\hp$ is such a list as well. Then 
+    \[
+      (v - (v_1a_1+\cdots+v_ma_m))-(v - (v_1\hp a_1+\cdots+v_m\hp a_m)) \in U.
+    \]
+    Therefore,
+    \[
+      (v_1-v_1\hp)a_1+\cdots+(v_m-v_m\hp)a_m \in U = 0+U,
+    \]
+    Hence $v_i\hp = v_i$ for each $i=1,\dots,m$, completing the proof.\par
+    Therefore, for every $v\in V$, denoting $v_1a_i+\cdots+v_ma_m$ as $a_v$, we 
+    may define $S$ to be map which maps $v$ to $(v-a_v,a_v+U)$. Now we show that
+    $S$ is linear and bijective. For every $u,v\in V$ and scalar $a, b$, 
+    \begin{align*}
+      aSu + bSv
+      &= a(u-a_u,a_u+U) + b(v-a_v,a_v+U)  \\
+      &= ((au+bv)-(aa_u+ba_v), (aa_u+ba_v) + U) \\
+      &= S(au+bv).
+    \end{align*}
+    $Su = 0$ iff $(u-a_u,a_u+U) = 0$ iff $u=a_u=0$ and therefore $S$ is 
+    injective. Clear that $S$ is surjective. Thus, $S$ is an isomorphism and 
+    $V$ is isomorphic to $U\times(V/U)$.
+  \end{proof}
+
+  \paragraph{16.}
+  \begin{proof}
+    Clear that every vector space with dimension $1$ over field $\mathbb{F}$ is
+    isomorphic to $\mathbb{F}$. Hence, it suffices to prove there exists 
+    $\varphi\in\mathcal{L}(V,V/U)$ such that $\nul\varphi = U$ and the quotient
+    map is just the map we want.
   \end{proof}
 % end
