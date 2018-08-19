@@ -8,6 +8,7 @@ My personal solutions to some textbook problems
   * 3.B Null Spaces and Ranges (Even - {28, 30})
   * 3.D Invertibility and Isomorphic Vector Spaces (Odd - {17, 19})
   * 3.E Products and Quotients of Vector Spaces (Even - {14, 18, 20})
+  * 3.F Duality ({1, 3, 9, 11, 15, 19, 25, 29, 31, 37})
 
 ## Roger A. Horn, Charles R. Johnson, *Matrix Analysis*, 2nd ed
 

@@ -418,3 +418,141 @@
     map is just the map we want.
   \end{proof}
 % end
+
+\subsection{Duality}
+  \paragraph{1.}
+  \begin{proof}
+    Suppose that $\varphi\in V\hp$ and is not the zero map. Then, $\varphi(v)=c
+    \ne 0$ for some $v\in V$. By the linearity of $\varphi$, for every $0\ne a
+    \in\mathbb{F}$, $\varphi(av/c)=a$ and $\varphi(0)=0$, completing the proof.
+  \end{proof}
+
+  \paragraph{3.}
+  \begin{proof}
+    It suffices to prove that there exists $\varphi\in V\hp$ which maps $v$ to
+    a nonzero element of $\mathbb{F}$. We argue by contradiction. Assume that
+    for all $\varphi\in V\hp$, $\varphi(v)=0$. Then $\{v\}^0 = V\hp$. Hence, 
+    $\dim \{v\} = \dim V-\dim \{v\}^0 = 0$, implying that $v=0$. Contradiction.
+  \end{proof}
+
+  \paragraph{9.}
+  \begin{proof}
+    For every $v=\sum x_iv_i \in V$ and $\psi\in V\hp$,
+    \begin{align*}
+      \psi(v) 
+      &= \psi(x_1v_1+\cdots+ x_nv_n) \\
+      &= \psi(v_1)x_1 + \cdots + \psi(v_n)x_n \\
+      &= \psi(v_1)\varphi_1(v) + \cdots + \psi(v_n)\varphi_n(v) \\
+      &= (\psi(v_1)\varphi_1 + \cdots + \psi(v_n)\varphi_n)(v),
+    \end{align*}
+    where the third equality comes from the definition of the dual space and the
+    last one comes from the linearity of $\varphi_1,\dots,\varphi_n$.
+  \end{proof}
+
+  \paragraph{11.}
+  \begin{proof}
+    $\rank A = 1$ iff there exists some nonzero $\alpha\in\mathbb{F}^m$ such 
+    that $A = [d_1\alpha\,\dots\, d_n\alpha]$ iff $A = \alpha [d_1\, \dots \,
+    d_n]$.
+  \end{proof}
+
+  \paragraph{15.}
+  \begin{proof}
+    $T\hp=0$ iff $\dim W\hp = \dim\nul T\hp$ iff $\dim W = \dim(\range T)^0$ iff
+    $\range T = 0$ iff $T=0$.
+  \end{proof}
+
+  \paragraph{19.}
+  \begin{proof}
+    As $U\subset V$ and $V$ is finite-dimensional, $U=V$ iff $\dim U=\dim V$ iff
+    $\dim U^0 = 0$ by 3.106 iff $U^0 = \{0\}$.
+  \end{proof}
+
+  \paragraph{25.}
+  \begin{proof}
+    Note that the RHS of the equality equals to
+    \[
+      \tilde{U} = \bigcap_{\varphi\in U^0}\nul\varphi.
+    \]
+    For every $u\in U$, since $u\in\nul\varphi$ for every $\varphi\in U^0$ by 
+    definition. Hence, $U\subset\tilde{U}$. And let $\psi\in U^0$ be a linear 
+    functional such that $\nul\psi = U$. Then $\dim\tilde{U}\le\dim\nul\psi=
+    \dim U$. Hence, $U=\tilde{U}$.
+  \end{proof}
+
+  \paragraph{29.}
+  \begin{proof}
+    By the hypothesis, for every $\psi\in W\hp$, $T\hp(\psi)=\psi\circ T
+    =k\varphi$ for some scalar $k$. By 3.109, $\dim\range T =\dim\range T\hp=1$.
+    Hence, there exists $\psi\in W\hp$ whose restriction to $\range T$ is an 
+    one-to-one map to $\mathbb{F}$. Thus,
+    \[
+      \nul\varphi = \nul k\varphi = \nul(\psi\circ T) = \nul T.  
+    \]
+  \end{proof}
+
+  \paragraph{31.}
+    In brief, we choose an arbitrary basis of $V$ and try to express the 
+    required basis with it by solving a system of linear equations.
+  \begin{proof}
+    Let $u_1,\dots,u_n$ be a basis of $V$ and $A=[\varphi_i(u_j)]$. Now we prove
+    that $A$ is invertible. Suppose
+    \[
+      x_1\begin{bmatrix}
+        \varphi_1(u_1) \\ \vdots \\ \varphi_n(u_1)
+      \end{bmatrix}
+      + \cdots +
+      x_n\begin{bmatrix}
+        \varphi_1(u_n) \\ \vdots \\ \varphi_n(u_n)
+      \end{bmatrix}
+      = 0.
+    \]
+    and $u=x_1u_1+\cdots+x_nu_n$. Then, $\varphi_i(u) = 0$ for $i=1,\dots,n$.
+    As $\varphi_1,\dots,\varphi_n$ is a basis of $V\hp$, this implies 
+    $(\spn(u))^0 = V\hp$. Hence, by 3.106, $\dim\spn(u)=0$ and therefore $u=0$.
+    Thus, the columns of $A$ are linearly independent and therefore $A$ is 
+    invertible.  \par
+    Let
+    \begin{equation}
+      \label{eq:3.F.31.1}
+      \begin{bmatrix}
+        v_1 & \cdots & v_n
+      \end{bmatrix} =
+      \begin{bmatrix}
+        u_1 & \cdots & u_n
+      \end{bmatrix}A\inv 
+    \end{equation}
+    and now we prove that $v_1,\dots,v_n$ is a basis of $V$ and the dual basis 
+    of it is exactly $\varphi_1,\dots,\varphi_n$. Since $u_1,\dots,u_n$ are 
+    linearly independent and $A\inv$ is nonsingular, so do $v_1,\dots,v_n$. 
+    Hence, $v_1,\dots,v_n$ is a basis of $V$. \eqref{eq:3.F.31.1} also implies
+    \[
+      u_k = \varphi_1(u_k)v_1 + \cdots + \varphi_n(u_1)v_n.
+    \]
+    Applying $\varphi_i$ on the both sides for each $k=1,\dots,n$ yields 
+    \[
+      \begin{bmatrix}
+        \varphi_i(u_1) \\ \vdots \\ \varphi_i(u_n)
+      \end{bmatrix} =
+      \begin{bmatrix}
+        \varphi_1(u_1) & \cdots & \varphi_n(u_1) \\
+        \vdots         & \ddots & \vdots         \\
+        \varphi_1(u_n) & \cdots & \varphi_n(u_n)
+      \end{bmatrix}
+      \begin{bmatrix}
+        \varphi_i(v_1) \\ \vdots \\ \varphi_i(v_n)
+      \end{bmatrix}.
+    \]
+    Again, since $A$ is nonsingular, the system of linear equations has exactly 
+    one solution $\varphi_i(v_j) = 0$ for $i\ne j$ and $\varphi_i(v_i)=1$. 
+    Namely, $\varphi_1,\dots,\varphi_n$ is the dual basis of $v_1,\dots,v_n$.
+  \end{proof}
+
+  \paragraph{37.}
+  \begin{proof}
+    $\,$\\
+    (a) Since $\pi$ is surjective, $\pi\hp$ is injective by 3.108. \\
+    (b) $\range\pi\hp = (\nul\pi)^0 = U^0$. \\
+    (c) It follows immediately from (a) and (b).
+  \end{proof}
+% end
