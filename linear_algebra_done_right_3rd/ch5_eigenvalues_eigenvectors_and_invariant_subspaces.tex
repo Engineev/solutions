@@ -1,0 +1,111 @@
+\section{Eigenvalues, Eigenvectors and Invariant Subspaces}
+\setcounter{subsection}{1}
+
+\subsection{Eigenvectors and Upper-Triangular Matrices}
+  \begin{lemma}
+    \label{lemma:eigenvalue,polynomial}
+    If $\lambda$ is an eigenvalue of $T\in\mathcal{L}(V)$ and $p$ is a 
+    polynomial, then $p(\lambda)$ is an eigenvalue of $p(T)$. Note that unlike
+    the statement in exercise 11, $\mathbb{F}$ does not required to be 
+    $\mathbb{C}$.
+  \end{lemma}
+  \begin{proof}
+    Suppose that $Tv=\lambda v$ for some $0\ne v\in V$, then
+    \[
+      p(T)v = \left(\sum_{k=0}^n a_kT^k \right)v =
+      \sum_{k=0}^n a_kT^kv = \sum_{k=0}^n a_k\lambda^k v = p(\lambda)v.
+    \]
+    Hence, $p(\lambda)$ is an eigenvalue of $p(T)$.
+  \end{proof}
+
+  \paragraph{1.}
+  \begin{proof}
+    $\,$\\
+    (a) Since $T^n=0$ and 
+    \[
+      (I-T)(I+T+\cdots+T^{n-1}) = I+T+\cdots+T^{n-1} - T-\cdots-T^n
+      = I - T^n = I,
+    \]
+    $I-T$ is invertible and $(I-T)\inv=I+T+\cdots+T^{n-1}$. \\
+    (b) The power series expansion of the function $(1-x)\inv$ at $x=0$ is
+    $1 + x + \cdots + x^n + \cdots$. 
+  \end{proof}
+
+  \paragraph{3.}
+  \begin{proof}
+    Since $1$ is the only eigenvalue of $T^2=I$ and $-1$ is not an eigenvalue of
+    $T$, by \lemmaref{lemma:eigenvalue,polynomial}, $1$ is the only eigenvalue 
+    of $T$ and therefore $T=I$.
+  \end{proof}
+
+  \paragraph{5.}
+  \begin{proof}
+    Since $(STS\inv)^k = S(T(S\inv S)TS\inv\cdots ST)S\inv = ST^kS\inv$,
+    \[
+      p(STS\inv) = \sum_{k=0}^n a_k(STS\inv)^k = \sum_{k=0}^n a_kST^kS\inv 
+      = Sp(T)S\inv.
+    \]
+  \end{proof}
+
+  \paragraph{7.}
+  \begin{proof}
+    It follows immediately from \lemmaref{lemma:eigenvalue,polynomial}.
+  \end{proof}
+
+  \paragraph{9.}
+  \begin{proof}
+    Since $p(T)v=0=0v$, $0$ is an eigenvalue of $T$. Then by 
+    \lemmaref{lemma:eigenvalue,polynomial}, some of the zeros of $p$ are the 
+    eigenvalues of $T$. Assume that there exists some zero $x_0$ of $p$ that is
+    not an eigenvalue of $p$. Then $q=p/(x-x_0)$ is a polynomial of degree less
+    than $p$ and such that $q(T)v=0$. Contradiction. Hence, every zero of $p$ is
+    an eigenvalue of $p$.
+  \end{proof}
+
+  \paragraph{11.}
+    Note that the proof does not rely on 5.21.
+  \begin{proof}
+    Suppose that $\alpha$ is an eigenvalue of $p(T)$. If $p$ is a constant 
+    polynomial, then there is nothing to be proved. If $p$ is non-constant, then
+    $p(x)-\alpha = c(x-\lambda_1)\cdots(x-\lambda_m)$ where $m\ge 1$. Since 
+    $\alpha$ is an eigenvalue of $p(T)$, 
+    \[
+      (p-\alpha)(T)=c(T-\lambda_1 I)\cdots(T-\lambda_m I)
+    \]
+    is singular. Hence, at least one of $T-\lambda_1 I,\dots,T-\lambda_m T$, 
+    denoted by $T-\lambda_k I$, is singular and therefore $\lambda_k$ is an 
+    eigenvalue of $T$ and $p(\lambda_k)=\alpha$. \\
+    The converse part is just \lemmaref{lemma:eigenvalue,polynomial}.
+  \end{proof}
+
+  \paragraph{13.}
+  \begin{proof}
+    Suppose that $U$ is a finite-dimensional $T$-invariant subspace of $W$. Then
+    $T|_U$ is an operator on $U$, a complex vector space. Hence it has an 
+    eigenvalue as long as $U=\{0\}$. However, it does not and therefore $U = 
+    \{0\}$.
+  \end{proof}
+
+  \paragraph{15.}
+  \begin{proof}
+    $\begin{bsmallmatrix} 1 & 1 \\ 1 & 1 \end{bsmallmatrix}$.
+  \end{proof}
+
+  \paragraph{17.}
+  \begin{proof}
+    Let $\varphi$ be the map which takes $p\in\mathcal{P}_{n^2}(\mathbb{C})$ to
+    $p(T)\in\mathcal{L}(V)$. It is linear since
+    \[
+      \varphi(a_1p_1+a_2p_2) = (a_1p_1+a_2p_2)(T) = a_1p_1(T)+a_2p_2(T)=
+      a_1\varphi(p_1)+a_2\varphi(p_2).
+    \]
+    Since $\dim\mathcal{P}_{n^2}(\mathbb{C})=n^2+1$ ans $\dim\mathcal{L}(V) =
+    n^2$, $\varphi$ is not injective by 3.23. Namely, there exsits nonequal $p_1
+    ,p_2\in\mathcal{P}_{n^2}(\mathbb{C})$ such that $\varphi(p_1)=\varphi(p_2)$.
+    Hence, $\varphi(p_1-p_2)=(p_1-p_2)(T)=0$ where $p_1-p_2$ is a nonzero 
+    polynomial, having zeros in $\mathbb{C}$. Since $0$ is the eigenvalue of 
+    $(p_1-p_2)(T)$, one of its zeros is an eigenvalue of $T$ by exercise 11.
+  \end{proof}
+
+% end
+
