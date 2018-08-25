@@ -109,3 +109,62 @@
 
 % end
 
+\iffalse
+\subsection{Eigenspaces and Diagonal Matrices}
+  \paragraph{1.}
+  \begin{proof}
+    Since $T$ is diagonalizable, $V$ has a basis $(v_1,\dots,v_n)$ consisting of
+    eigenvectors of $T$. Suppose that $\lambda_1,\dots,\lambda_n$ are the 
+    eigenvalues corresponding to $v_1,\dots,v_n$ respectively and assume without
+    loss of generality that $v_1,\dots,v_m\in\nul T$. For every $v\in V$,
+    \[
+      v=x_1v_1+\cdots+x_nv_n
+      =(x_1v_1+\cdots+x_mv_m) 
+      +T\left( \frac{x_{m+1}}{\lambda_{m+1}}v_{m+1}+\cdots
+      +\frac{x_n}{\lambda_n}v_n \right).
+    \]
+    Hence, $V=\nul T + \range T$. \par
+    Meanwhile, as $\range T\subset E(\lambda_{m+1},T)\oplus\cdots\oplus 
+    E(\lambda_n, T)$, $\dim\range T\le n-m$. And clear that $\dim\nul T=m$. 
+    Hence, $\dim V\ge \dim\nul T+\dim\range T$ and therefore $V=\nul T\oplus
+    \range T$.
+  \end{proof}
+
+  \paragraph{3.}
+  \begin{proof}
+    Clear that (a) implies (b) and (c); (b), together with the rank-nullity 
+    theorem, implies (a). Meanwhile, if $\nul T\cap\range T=\{0\}$, then 
+    \begin{align*}
+      \dim(\nul T+\range T) 
+      &= \dim\nul T+\dim\range T-\dim(\nul T-\cap\range T) \\
+      &= \dim\nul T+\dim\range T = \dim V.    
+    \end{align*}
+    Namely, $V=\nul T\oplus\range T$. Hence, (a), (b) and (c) are equivalent.
+    
+
+  \end{proof}
+
+  \paragraph{5.}
+  \begin{proof}
+    TODO
+  \end{proof}
+
+  \paragraph{7.}
+  \begin{proof}
+    TODO
+  \end{proof}
+
+  \paragraph{9.}
+  \begin{proof}
+    Since $T$ is invertible $v\in E(\lambda, T)$ iff $(T-\lambda I)v=0$ iff $Tv
+    -\lambda v = 0$ iff $\lambda\inv v - T\inv v = 0$ iff $(T\inv-\lambda\inv)v
+    =0$ iff $v\in E(\lambda\inv, T\inv)$.
+  \end{proof}
+
+  \paragraph{11.}
+  \begin{proof}
+    
+  \end{proof}
+
+% end
+\fi

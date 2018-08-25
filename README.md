@@ -12,6 +12,7 @@ My personal solutions to some textbook problems
 * Chapter 5. Eigenvalues, Eigenvectors, and Invariant Subspaces
   * 5.B Eigenvectors and Upper-Triangular Matrices (Odd - {19})
 
+
 ## Roger A. Horn, Charles R. Johnson, *Matrix Analysis*, 2nd ed
 
 * Chapter 1. Eigenvalues, Eigenvectors and Similarity
