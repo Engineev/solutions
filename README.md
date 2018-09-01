@@ -11,6 +11,10 @@ My personal solutions to some textbook problems
   * 3.F Duality ({1, 3, 9, 11, 15, 19, 25, 29, 31, 37})
 * Chapter 5. Eigenvalues, Eigenvectors, and Invariant Subspaces
   * 5.B Eigenvectors and Upper-Triangular Matrices (Odd - {19})
+* Chapter 7. Operators on Inner Product Spaces
+  * 7.A Self-Adjoint and Normal Operators ({2, 4, 8, 10, 12, 16})
+  * 7.B The Spectral Theorem ({4, 6, 8, 12, 14})
+  * 7.C Positive Operators and Isometries (Even - {10, 12})
 
 
 ## Roger A. Horn, Charles R. Johnson, *Matrix Analysis*, 2nd ed
