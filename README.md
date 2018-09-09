@@ -10,8 +10,6 @@ My personal solutions to some textbook problems
   * 1.3 Similarity (Odd - {21, 35, 37, 39, 41})
   * 1.4 Left and right eigenvectors and geometric multiplicity (Even - {8, 16})
 
-## Morris Hirsch, Stephen Smale, *Differential Equations, Dynamical Systems, and Linear Algebra*, 1st ed
+## Morris W. Hirsch, Stephen Smale, Robert L. Devaney, *Differential Equations, Dynamical Systems, and an Introduction to Chaos*, 2nd ed
 
-* Chapter 1. First Examples
-  * 1.2 Liner systems with constant coefficients (Even)
-* Chapter 2. Newton's Equation and Kepler's Law (Even)
+* Chapter 2. Planar Liner Systems (2.b, 5, 7)
