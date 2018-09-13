@@ -15,6 +15,9 @@ My personal solutions to some textbook problems
   * 7.A Self-Adjoint and Normal Operators ({2, 4, 8, 10, 12, 16})
   * 7.B The Spectral Theorem ({4, 6, 8, 12, 14})
   * 7.C Positive Operators and Isometries (Even - {10, 12})
+  * 7.D Polar Decomposition and Singular Value Decomposition (ongoing)
+* Chapter 8. Operators on Complex Vector Spaces
+  * 8.A Generalized Eigenvectors and Nilpotent Operators ({3, 5, 7, 9, 13, 15})
 
 
 ## Roger A. Horn, Charles R. Johnson, *Matrix Analysis*, 2nd ed

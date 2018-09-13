@@ -206,3 +206,50 @@
     Therefore, $-T$ is a positive operator.
   \end{proof}
 % end
+
+\subsection{Polar Decomposition and Singular Value Decomposition}
+  \paragraph{3.}
+  \begin{proof}
+    As $\sqrt{T^*T}$ is positive, $(\sqrt{T^*T})^*=\sqrt{T^*T}$. The polar 
+    decomposition asserts that there exists an isometry $S_1$ such that
+    $T=S_1\sqrt{T^*T}$. Replacing $T$ with $T^*$ yields
+    \[
+      T^*=S_2\sqrt{TT^*} \quad\Rightarrow\quad
+      T=\sqrt{TT^*}S_2^*,
+    \]
+    where $S_2^*$ is also an isometry.
+  \end{proof}
+
+  \paragraph{8.}
+    This result can be used to prove Exercise 1 in a simple way.
+  \begin{proof}
+    Note that $R^2$ and $T^*T$ are both positive (and thereby self-adjoint). 
+    Hence, $R^2-T^*T$ is also self-adjoint. For all $v\in V$,
+    \begin{align*}
+      \langle(R^2-T^*T)v,v\rangle 
+      = \langle R^2v,v\rangle - \langle T^*Tv,v\rangle 
+      = \|Rv\|^2 - \|Tv\|^2.
+    \end{align*}
+    Since $S$ is an isometry, $\|Rv\| = \|SRv\| = \|Tv\|$. Therefore, $\langle
+    (R^2-T^*T)v,v\rangle=0$. Thus, $R^2=T^*T$ and so does their unique positive
+    square roots.
+  \end{proof}
+
+  \paragraph{9.}
+  \begin{proof}
+    As $T=S\sqrt{T^*T}$ for some isometry $S$ and every isometry is invertible,
+    $T$ is invertible iff $\sqrt{T^*T}$ is invertible. If $T$ is invertible and
+    $T=S_1\sqrt{T^*T}=S_2\sqrt{T^*T}$, multiplying $(\sqrt{T^*T})\inv$ on the 
+    both sides yields $S_1=S_2$. \par
+    Now we suppose that such an isometry $S$ is not unique and show that 
+    $\sqrt{T^*T}$ is not invertible to complete the proof. Suppose $T=S_1
+    \sqrt{T^*T}=S_2\sqrt{T^*T}$ where $S_1\ne S_2$. Then, since $S_1-S_2\ne 0$
+    but $(S_1-S_2)\sqrt{T^*T}=0$, $\sqrt{T^*T}$ is not invertible and so is $T$.
+  \end{proof}
+
+  \paragraph{13.}
+  \begin{proof}
+    By the discussion in Exercise 9, $T$ is invertible iff $\sqrt{T^*T}$ is 
+    invertible iff $0$ is not an eigenvalue of $\sqrt{T^*T}$.
+  \end{proof}
+% end
