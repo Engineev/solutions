@@ -24,5 +24,44 @@
     Suppose that $mA<\infty$. Then $mA=m(A\cup\varnothing)=mA+m\varnothing$, 
     implying that $m\varnothing=0$.
   \end{proof}
+% end
 
+\subsection{Outer Measure}
+  \paragraph{5.}
+  \begin{proof}
+    We show that $\{I_n\}$ must cover the entire $[0,1]$ by contradiction. 
+    Assume that $x\notin I_k$ for $k=1,2,\dots,n$. Then, as $I_k$ are open and 
+    $n$ is finite, there exists some $\vep>0$ such that $(x-\vep,x+\vep)$ and 
+    $I_k$ are disjoint for every $k$. Since $\mathbb{Q}$ is dense in 
+    $\mathbb{R}$, there exists some rational number in $(x-\vep, x+\vep)$, 
+    contradicting with the hypothesis that $\{I_k\}$ covers all rational numbers
+    between $0$ and $1$.
+  \end{proof}
+
+  \paragraph{6.}
+  \begin{proof}
+    By the definition of the outer measure, for every $\vep > 0$, there exists 
+    some collection $\{I_n\}$ of open intervals that covers $A$ and $\sum l(I_n)
+    \le m^*A+\vep$. Let $O=\bigcup I_n$. $O$ is a countable union of open sets 
+    and therefore is also open. And by Proposition 2, $m^*O\le \sum l(I_n)$. 
+    Thus, $m^*O\le m^*A+\vep$. \par
+    Let $\vep_n = 1/n$ and for each $n$, by the previous discussion, we can 
+    always get an open set $O_k$ such that $A\subset O_k$ and $m^*O\le m^*A+
+    \vep_m$. Let $G$ be the countable intersection of these open sets. Clear 
+    that $G$ is a $G_\delta$ set covering $A$ and $m^*A=m^*G$.
+  \end{proof}
+
+  \paragraph{7.}
+  \begin{proof}
+    If $m^*E=\infty$, it is trivial. Suppose that $m^*E\le\infty$. For any $x\in
+    \mathbb{R}$, collection $\{I_n\}$ of open intervals covers $E+x$ iff $\{I_n
+    -x\}$ covers $E$. Since the length of intervals is translation invariant, 
+    this implies $m^*(E+x)=m^*E$.
+  \end{proof}
+
+  \paragraph{8.}
+  \begin{proof}
+    Clear that $m^*A\le m^*(A\cup B)$. Meanwhile, $m^*(A\cup B) = m^*A + m^*B =
+    m^*B$. Hence, $m^*(A\cup B)=m^*B$.
+  \end{proof}
 % end
