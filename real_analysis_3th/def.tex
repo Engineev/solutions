@@ -1,0 +1,34 @@
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{
+    color,
+    clrscode,
+    amssymb,
+    amsmath,
+    listings,
+    fontspec,
+    xcolor,
+    supertabular,
+    multirow,
+    mathtools,
+    mathrsfs,
+    amsthm,
+    systeme,
+    amsfonts
+}
+\definecolor{bgGray}{RGB}{36, 36, 36}
+\usepackage[
+    colorlinks,
+    linkcolor=bgGray,
+    anchorcolor=blue,
+    citecolor=green
+]{hyperref}
+\newfontfamily\courier{Courier}
+
+\newenvironment{solution}
+  {\begin{proof}[Solution]}
+  {\end{proof}}
+\newcommand{\rd}{\mathrm{d}}
+
+

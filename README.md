@@ -29,6 +29,12 @@ My personal solutions to some textbook problems
   * 1.3 Similarity (Odd - {21, 35, 37, 39, 41})
   * 1.4 Left and right eigenvectors and geometric multiplicity (Even - {8, 16})
 
+## H.L. Royden, *Real Analysis*, 3rd ed
+
+* Chapter 3. Lebesgue Measure
+  * 1.1 Introduction ({1, 2, 3})
+
+
 ## Morris W. Hirsch, Stephen Smale, Robert L. Devaney, *Differential Equations, Dynamical Systems, and an Introduction to Chaos*, 2nd ed
 
 * Chapter 2. Planar Liner Systems (2.b, 5, 7)

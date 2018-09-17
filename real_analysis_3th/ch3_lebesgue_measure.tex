@@ -1,0 +1,28 @@
+\section{Lebesgue Measure}
+\subsection{Introduction}
+  \paragraph{1.}
+  \begin{proof}
+    Since $\mathfrak{M}$ is an $\sigma$-algebra, $B\backslash A \in\mathfrak{M}$
+    as long as $A,B\in\mathfrak{M}$. Since $B\backslash A$ and $A$ are disjoint,
+    $mB=mA+m(B\backslash A)\ge mA$ since $m$ is nonnegative.
+  \end{proof}
+
+  \paragraph{2.}
+  \begin{proof}
+    Let $A_0 = E_0$ and $E_k=A_k\backslash A_{k-1}$ for $k\ge 1$. Clear that 
+    $E_i$ and $E_j$ are disjoint for distinct $i$ and $j$, $\bigcup A_n=\bigcup
+    E_n$ and $A_i\subset E_i$ for every $i$. Hence,
+    \[
+      m\left(\bigcup E_n\right) = m\left(\bigcup A_n\right)
+      = \sum mA_n \le \sum mE_n,
+    \]
+    where the last inequality comes from Exercise 1.
+  \end{proof}
+
+  \paragraph{3.}
+  \begin{proof}
+    Suppose that $mA<\infty$. Then $mA=m(A\cup\varnothing)=mA+m\varnothing$, 
+    implying that $m\varnothing=0$.
+  \end{proof}
+
+% end
