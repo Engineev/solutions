@@ -2,14 +2,14 @@
 \subsection{Introduction}
   \paragraph{1.}
   \begin{proof}
-    Since $\mathfrak{M}$ is an $\sigma$-algebra, $B\backslash A \in\mathfrak{M}$
-    as long as $A,B\in\mathfrak{M}$. Since $B\backslash A$ and $A$ are disjoint,
-    $mB=mA+m(B\backslash A)\ge mA$ since $m$ is nonnegative.
+    Since $\mathfrak{M}$ is an $\sigma$-algebra, $B\setminus A \in\mathfrak{M}$
+    as long as $A,B\in\mathfrak{M}$. Since $B\setminus A$ and $A$ are disjoint,
+    $mB=mA+m(B\setminus A)\ge mA$ since $m$ is nonnegative.
   \end{proof}
 
   \paragraph{2.}
   \begin{proof}
-    Let $A_0 = E_0$ and $E_k=A_k\backslash A_{k-1}$ for $k\ge 1$. Clear that 
+    Let $A_0 = E_0$ and $E_k=A_k\setminus A_{k-1}$ for $k\ge 1$. Clear that 
     $E_i$ and $E_j$ are disjoint for distinct $i$ and $j$, $\bigcup A_n=\bigcup
     E_n$ and $A_i\subset E_i$ for every $i$. Hence,
     \[
@@ -64,4 +64,94 @@
     Clear that $m^*A\le m^*(A\cup B)$. Meanwhile, $m^*(A\cup B) = m^*A + m^*B =
     m^*B$. Hence, $m^*(A\cup B)=m^*B$.
   \end{proof}
+% end
+
+\subsection{Measurable Sets and Lebesgue Measure}
+  \paragraph{10.}
+  \begin{proof}
+    \begin{align*}
+      mE_1+mE_2 
+      &= mE_1 + m(E_2\setminus E_1) + m(E_1\cap E_2) \\
+      &= m(E_1\cup(E_2\setminus E_1)) + m(E_1\cap E_2) \\
+      &= m(E_1\cup E_2) + m(E_1\cap E_2).
+    \end{align*}
+  \end{proof}
+    
+  \paragraph{11.}
+  \begin{proof}
+    $E_n = (n,\infty)$.
+  \end{proof}
+
+  \paragraph{12.}
+    This is the countable version of Lemma 9.
+  \begin{proof}
+    It suffices to prove $m^*(A\cap \bigcup E_i) \ge \sum m^*(A\cap E_i)$. Since
+    $\bigcup_{i=1}^\infty E_i\supset \bigcup_{i=1}^n E_i$ for every $n$, 
+    \begin{align*}
+      m^*\left(A\cap \bigcup_{i=1}^\infty E_i\right)
+      \ge m^*\left(A\cap \bigcup_{i=1}^n E_i\right)
+      = \sum_{i=1}^n m^*(A\cap E_i),
+    \end{align*}
+    where the equality comes from Lemma 9. Since the left hand side is 
+    independent of $n$, we have
+    \[
+      m^*\left(A\cap \bigcup_{i=1}^\infty E_i\right) \ge
+      \sum_{i=1}^\infty m^*(A\cap E_i),
+    \]
+    completing the proof.
+  \end{proof}
+
+  \paragraph{13.}
+  \begin{proof}
+    First we suppose that $m^*E<\infty$. By Proposition 5, there exists some 
+    open set $O\supset E$ such that $m^*O\le m^*E+\vep$. If $E$ is measurable,
+    then by the definition,
+    \[
+      m^*(O\setminus E) = m^*O-m^*E \le \vep.
+    \]
+    Namely, (ii) holds. Meanwhile, $O\subset\mathbb{R}$ is a countable union of 
+    disjoint open intervals $\{I_n\}$. Since $mO=m^*O$ is bounded and $mO=\sum
+    l(I_n)$, there exists some integer $N>0$ such that $mO-\sum_{n=1}^N l(I_n)<
+    \vep$. Let $U=\bigcup_{n=1}^N I_n$.
+    \begin{align*}
+      m^*(U\bigtriangleup E) 
+      &= m^*((U\cup E) \setminus (U\cap E)) \\
+      & \le m^*(O\setminus (U\cap E))  \\
+      & = m^*((O\setminus U) \cup (O\setminus E)) \\
+      &\le m^*(O\setminus U) + m^*(O\setminus E)  \\
+      &\le 2\vep.
+    \end{align*}
+    Hence, (ii) implies (vi). Now we show that (vi) implies (ii). If $m^*(U
+    \bigtriangleup E)<\vep $, then there exists some countable collection $\{J_n
+    \}$ of open interval such that 
+    \[
+      \sum l(J_n)\le m^*(U\bigtriangleup E)+\vep<2\vep.
+    \]
+    Let $J=\bigcup J_n$ and $O= U\cup J$. $m^*J < 2\vep$. And $O$ is open and 
+    covers $E$. Meanwhile,
+    \[
+      m^*(O\setminus E) \le m^*(U\setminus E)+m^*(J\setminus E) < 3\vep.
+    \]
+    Hence, (ii) holds.\par
+    Now, let $E$ be an arbitrary set and $E_n=E\cap(-n, n)$, which is a set with
+    finite measure. Then by the previous discussion, there exists some open set
+    $O_n\supset E_n$ with $m^*(O_n\setminus E_n)<\vep/2^n$. Let $O=\bigcup 
+    O_n$, an open set covering $E$ and
+    \[
+      m^*(O\setminus E) \le \sum m^*(O_n\setminus E_n) < 2\vep. 
+    \]
+    Hence, (i) implies (ii). Now we suppose (ii) holds and let $\vep_n=1/n$, 
+    then there exists a sequence of open sets $<O_n>$ such that $m^*(O_n
+    \setminus E)<1/n$. Let $G=\bigcap O_n\in G_\delta$. $m^*(G\setminus E)\le
+    m^*(O_n\setminus E)\le 1/n$. Since the left hand side is independent of 
+    $n$, $m^*(G\setminus E)=0$. If (iv) holds, then by Lemma 6, $G\setminus E$
+    is measurable. Since $G\in G_\delta$ is also measurable, $E$ is measurable.
+    Hence, (iv) implies (i).\par
+    By the previous result, for any measurable $E$, there exists some closed set
+    $F\subset E$ such that $\bar{F}$, which is open, contains $bar{E}$ and $m^*(
+    \bar{F}\setminus \bar{E})<\vep$. Hence, $m^*(E\setminus F)<\vep$. We can 
+    proceed in a similar manner as we did in the last paragraph to prove that
+    (iii) $\Rightarrow$ (v) $\Rightarrow$ (i), leading to the final conclusion.
+  \end{proof}
+
 % end

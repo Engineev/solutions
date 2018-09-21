@@ -32,8 +32,9 @@ My personal solutions to some textbook problems
 ## H.L. Royden, *Real Analysis*, 3rd ed
 
 * Chapter 3. Lebesgue Measure
-  * 3.1 Introduction ({1, 2, 3})
-  * 3.2 Outer Measure (Completed)
+  * 3.1 Introduction (1, 2, 3)
+  * 3.2 Outer Measure (5, 6, 7, 8)
+  * 3.3 Measurable Sets and Lebesgue Measure (10, 11, 12, 13)
 
 
 ## Morris W. Hirsch, Stephen Smale, Robert L. Devaney, *Differential Equations, Dynamical Systems, and an Introduction to Chaos*, 2nd ed
