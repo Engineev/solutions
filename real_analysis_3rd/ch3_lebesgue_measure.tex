@@ -257,3 +257,40 @@
 
 
 % end
+
+\subsection{Littlewood's Three Principles}
+  \paragraph{30.}
+  \begin{proof}
+    Let $\vep_n=1/n$ and $\delta_n =\eta/2^n$ ($n=0,1,\dots$). By Proposition
+    24, for each $n$, there exists some $A_n$ with measure less than $\delta_n$
+    such that for all $x\in E_n\setminus A_n$, $|f_m(x) - f(x)|<\vep_n$ for $m$
+    large enough. Let $A=\bigcup_{n=1}^\infty A_n$, the measure of which is less
+    than $\sum \eta/2^n=\delta$. Meanwhile, for any $\vep>0$, by construction, 
+    for all $x\in E\setminus A$, $|f_m(x)-f(x)|<\vep$ for $m$ large enough. 
+    Namely, $f_n$ converges to $f$ uniformly on $E\setminus A$.
+  \end{proof}
+    
+  \paragraph{31.}
+  \begin{proof}
+    Let $\vep_n=\delta/2^n$ ($n\ge 0$), then by Proposition 22, there exists 
+    continuous $g_n$ such that $E_n=\{x:\,|f(x)-g_n(x)|\ge\vep_n\}$ is of 
+    measure less than $\vep_n$. Let $E=\bigcup E_n$, the measure of which is 
+    less than $\delta$ and $g_n$ converges to $f$ on $[a,b]\setminus E$.\par
+    By Egoroff's Theorem, there exists some $A\subset [a,b]\setminus E$ with $m
+    A<\delta$ such that $g_n$ converges to $f$ uniformly on $[a,b]\setminus(E
+    \cup A)]$. Since $E\cup A$ is measurable, by Proposition 15, there exists 
+    some open set $O\supset E\cup A$ such that $m(O\setminus(E\cup A))<\delta$.
+    Let $F=[a,b]\setminus O$. We know that 
+    \begin{enumerate}
+      \item $F$ is a closed set.
+      \item $mF < 3\delta$.
+      \item $g_n$ converges to $f$ uniformly on $F$.
+    \end{enumerate}
+    Hence, $f$ is continuous on $F$ And by Problem 2.40, there exists some 
+    continuous function on $\mathbb{R}$ such that $\varphi(x) = f(x)$ for $x\in
+    F$.\par
+    If $f$ is defined on $(-\infty,\infty)$, we can apply the previous result on
+    each $[n,n+1]$ and "stick" the functions together as we did in Problem 23(c)
+    to get the function required.
+  \end{proof}
+% end
