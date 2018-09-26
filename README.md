@@ -37,6 +37,8 @@ My personal solutions to some textbook problems
   * 3.3 Measurable Sets and Lebesgue Measure (10, 11, 12, 13)
   * 3.5 Measurable Functions (19, 21, 22.(d), 23, 24)
   * 3.6 Littlewood's Three Principles (30, 31)
+* Chapter 4. The Lebesgue Integral
+  * 3.2 The Lebesgue Integral of a Bounded Function (2)
 
 
 ## Morris W. Hirsch, Stephen Smale, Robert L. Devaney, *Differential Equations, Dynamical Systems, and an Introduction to Chaos*, 2nd ed

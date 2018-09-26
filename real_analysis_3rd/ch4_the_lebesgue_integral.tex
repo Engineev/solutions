@@ -1,0 +1,38 @@
+\section{The Lebesgue Integral}
+\setcounter{subsection}{1}
+
+\subsection{The Lebesgue Integral of a Bounded Function}
+  \paragraph{2.}
+  \begin{proof}
+    $\,$\par
+    (a) By Problem 2.51, $h$ is upper semicontinuous as $f$ is bounded and by 
+    Problem 2.50, ${x:\, h(x)<\lambda}$ is open and hence measurable for every
+    $\lambda\in\mathbb{R}$. Thus, $h$ is measurable.\par
+    Let $\varphi(x)\ge f(x)$ be a step function and $x_0$ any point other 
+    than the endpoints of the intervals occurring in $\varphi$. Then there 
+    exists some $\delta>0$ such that for all $x\in(x_0-\delta,x_0+\delta)$, 
+    $\varphi(x_0) = \varphi(x) \ge f(x)$. Hence,
+    \[
+      h(x_0) = \inf_{\delta<0}\sup_{|x-x_0|<\delta}f(x) \le \varphi(x_0).
+    \]
+    Namely, $\varphi\ge h$ except at a finite number of points. Hence, $\int_a^b
+    \varphi \ge \int_a^b h$ and therefore
+    \[
+      R\upint_a^b f = \inf_{\varphi\ge f}\int_a^b\varphi(x)\rd x \ge \int_a^b h.
+    \]\par
+    We can also derive from the previous discussion that there is a sequence of 
+    $<\varphi_n>$ of step functions satisfying $\varphi \downarrow h$. By 
+    Proposition 6,
+    \[
+      \int_a^b h = \lim\int_a^b\varphi_n \ge R\upint_a^b f.
+    \]
+    Hence, $R\upint_a^b f = \int_a^b h$.\par
+    (b) First suppose that $f$ is Riemann integrable and let $h$ and $g$ be the 
+    upper and lower envelope of $f$ respectively. By part (a), $f$ is Riemann 
+    integrable implies $\int_a^b(h-g) = 0$. Together with the fact that $h\ge 
+    g$, we conclude that $h=g$ a.e.. Therefore, by Problem 2.50, $f$ is 
+    continuous except on a set of measure zero.\par
+    Note that the argument remains true if we reverse the order, verifying the 
+    converse part. Hence, the proposition holds.
+  \end{proof}
+% end
