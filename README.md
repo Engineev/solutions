@@ -42,6 +42,8 @@ My personal solutions to some textbook problems
   * 3.3 The Integral of a Nonnegative Function (3, 5, 6, 7, 8, 9)
   * 3.4 The General Lebesgue Integral (12, 13, 15.a, 16, 18)
 
+## Stephen Boyd, Lieven Vandenberghe, *Convex Optimization*
+* Chapter 2. Convex Sets (1, 2, 8, 9(a, b), 16)
 
 ## Morris W. Hirsch, Stephen Smale, Robert L. Devaney, *Differential Equations, Dynamical Systems, and an Introduction to Chaos*, 2nd ed
 

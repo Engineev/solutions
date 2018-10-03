@@ -1,0 +1,145 @@
+\section{Convex Sets}
+
+\paragraph{2.1}
+\begin{proof}
+  For $k=2$, $\theta_1x_1+\theta_2x_2\in C$ holds by by definition. We argue by
+  induction on $k$ and assume that the inclusion holds for $k<m$. When $k=m$,
+  denoting $\sum_{i=1}^{m-1}\theta_i$ by $s$,
+  \[
+    \sum_{i=1}^m \theta_ix_i = 
+    s\sum_{i=1}^{m-1}\frac{\theta_ix_i}{s} + \theta_mx_m.
+  \]
+  Since $\sum_{i=1}^{m-1}\theta_i/s=1$, by the induction hypothesis,
+  $\sum_{i=1}^{m-1}\theta_ix_i/s\in C$ . Meanwhile, as $s+\theta_m=1$, 
+  $\sum_{i=1}^m\theta_ix_i\in C$, completing the proof.
+\end{proof}
+
+\paragraph{2.2}
+\begin{proof}
+  Clear that the intersection of two convex sets is still convex. Hence, the 
+  intersection of $C\subset\mathbb{R}^n$ and any line is convex as long as $C$
+  is convex.\par
+  Now we suppose that the intersection of $C$ and any line is convex. For any 
+  $x_1,x_2\in C$, $C_l=C\cap\{\theta x_1+(1-\theta)x_2:\,\theta\in\mathbb{R}\}$
+  is convex and therefore $\theta x_1+(1-\theta)x_2\in C_l\subset C$ for every 
+  $0\le\theta\le 1$. Thus, $C$ is convex.
+\end{proof}
+
+\paragraph{2.8}
+\begin{proof}
+  $\,$\par
+  (a) It is trivial when $a_1$ and $a_2$ are linearly dependent, so we assume 
+  that $a_1$ and $a_2$ are linearly independent. We first tackle the problem for
+  orthonormal $a_1$ and $a_2$ and then reduce the general situation to it.\par
+  Suppose that $a_1$ and $a_2$ are orthonormal. Let $S_0=\spn(a_1,a_2)$ and 
+  $(b_1,\dots,b_{n-2})$ a basis of $S_0^\perp$. Then
+  \[
+    x\in S_0 \quad\Leftrightarrow\quad
+    \begin{bmatrix}
+      b_1^T \\ \vdots \\ b_{n-2}^T 
+    \end{bmatrix}x = Bx = 0.
+  \]
+  For $y=(y_1,y_2)^T\in S_0$, $y_1\le 1$ iff $a_1^Ty \le 1$ as $(a_1,a_2)$ is an
+  orthonormal basis of $S_0$. Hence, 
+  \[
+    -1\le y_1,y_2\le 1 \quad\Leftrightarrow\quad
+    \begin{bmatrix}
+      a_1^T \\ a_2^T \\ -a_1^T \\ -a_2^T
+    \end{bmatrix}y = Ay \preceq \mathbf{1}.
+  \]
+  Thus, for orthonormal $a_1$ and $a_2$, $S=\{x:\, Bx=0,\, Ax\preceq\mathbf{1}\}
+  $, a polyhedron.\par
+  Now we only assume the liner independence of $a_1$ and $a_2$. We know that
+  there exists some invertible $n$ by $n$ matrix\footnote{We can use $QR$ 
+  factorization to construct the matrix explicitly} $R$ such that $[\tilde{a}_1,
+  \tilde{a_2}]=R[a_1,a_2]$ and $\tilde{a}_1$ and $\tilde{a}_2$ are orthonormal. 
+  Denoting the set described in the problem with respect to $u_1$ and $u_2$ by
+  $S(u_1,u_2)$, $x\in S(a_1,a_2)$ iff $Rx\in S(\tilde{a}_1,\tilde{a_2})$ iff
+  $Rx \in \{x:\,\tilde{B}x=0,\, \tilde{A}x\preceq 1\}$ where the meaning of 
+  $\tilde{A}$ and $\tilde{B}$ are described in the previous passage. Namely, 
+  \[
+    S(a_1,a_2) = \{x:\, \tilde{B}Rx=0,\, \tilde{A}Rx\preceq 1\}.
+  \]
+  
+  (b) Yes, and the provided form has already satisfied the requirement.\par
+  (c) No. Note that $\langle x,y\rangle_2\le1$ for all $y$ with $2$-norm $1$ 
+  implies
+  \[
+    \|x\|_2 = \langle x,x/\|x\|\rangle_2 \le 1.
+  \]
+  And by the Cauchy-Schwarz inequality, for every $\|x\|\le 1$, $\langle x,y
+  \rangle_2$ holds for every $\|y\|_2=1$. Hence, $S$ is the intersection of the
+  unit ball and $\{x:\,x\succeq 0\}$, which is not a polyhedron.\par
+  (d) Yes. Let $\tilde{S}=\{x\in\mathbb{R}^n:\,x\succeq 0,\,\|x\|_\infty\le1\}$, 
+  which is clearly a polyhedron since when $x\succeq 0$, $\|x\|_\infty\le 1$ is 
+  equivalent to $[e_1,\dots,e_n]x\preceq \mathbf{1}$ where $e_i$ is the $i$-th 
+  vector in the standard basis of $\mathbb{R}^n$.\par
+  Now we show that $S=\tilde{S}$. Suppose that $x\succeq 0$. If $\langle x,y
+  \rangle_2\le 1$ for all $y$ with $1$-norm $1$, then $x_i = \langle x,e_i
+  \rangle_2 \le 1$. Namely, $\|x\|_\infty\le 1$. Meanwhile, if $\|x\|_\infty\le 
+  1$, 
+  \[
+    \langle x,y\rangle \le \sum_{i=1}^n x_i|y_i| \le 1
+  \]
+  as it is just the weighted average of $x_1,\dots,x_n$. Hence, $S=\tilde{S}$,
+  completing the proof.
+\end{proof}
+
+
+\paragraph{2.9}
+\begin{proof}
+  $\,$\par
+  (a) By the definition, 
+  \begin{align*}
+    x\in V &\Leftrightarrow \|x-x_0\|_2^2-\|x-x_i\|_2^2 \le 0  \\
+    &\Leftrightarrow 2\langle x,x_i-x_0\rangle 
+      \le \langle x_i,x_i\rangle - \langle x_0,x_0\rangle
+      \quad\text{for $i=1,\dots,K$}\\
+    &\Leftrightarrow
+      2\begin{bmatrix}
+        \langle x,x_1-x_0 \rangle \\ \vdots \\ \langle x,x_K-x_0 \rangle
+      \end{bmatrix}
+      \preceq\begin{bmatrix}
+        \|x_1\|_2^2-\|x_0\|_2^2 \\ \vdots \\ \|x_K\|_2^2-\|x_0\|_2^2
+      \end{bmatrix} \\
+    &\Leftrightarrow
+    2\begin{bmatrix}
+      (x_1-x_0)^T \\ \vdots \\ (x_K-x_0)^T
+    \end{bmatrix}x
+    \preceq\begin{bmatrix}
+      \|x_1\|_2^2-\|x_0\|_2^2 \\ \vdots \\ \|x_K\|_2^2-\|x_0\|_2^2
+    \end{bmatrix}
+  \end{align*}
+  Hence, $V$ is a polyhedron. Intuitively, the border of a Voronoi set are the 
+  lines with the same distances to $x_0$ and $x_i$. \par
+  (b) Suppose that $P=\{x:\,\alpha_k^Tx\le b_k, k=1,\dots,K\}$. Let $x_0$ be any
+  point of $P$ and we construct the other points by reflection. For each $k$, 
+  let $\tilde{x}_k$ be any point of $\{x:\,\alpha_k^Tx=b_k\}$, $U_k=I-2\alpha_k
+  \alpha_k^T/\|\alpha_k\|^2_2$, the Householder matrix, and 
+  \[
+    R_k(x) = U_k(x-\tilde{x}_k)+\tilde{x}_k = 
+    x + 2\frac{\alpha_k}{\|\alpha_k\|_2^2}(b_k-\alpha_k^Tx).
+  \]
+  It is easy to verified that $P$ is the Voronoi region of $x_0$ with respect to
+  $R_1(x_0),\dots,R_K(x_0)$.
+\end{proof}
+
+\paragraph{2.16}
+\begin{proof}
+  For every $(a,b_1+b_2),(c,d_1+d_2)\in S$ and $0\le\theta\le 1$, let 
+  \[
+    z_\theta = \theta(a,b_1+b_2)+(1-\theta)(c,d_1+d_2) = (x,y_1+y_2)
+  \]
+  where
+  \begin{align*}
+    x = \theta a+(1-\theta) c,\quad
+    y_i = \theta b_i+(1-\theta)d_i\quad\text{for $i=1,2$}.
+  \end{align*}
+  Since $S_i$ is convex and $(a,b_i),(c,d_i)\in S_i$,
+  \[
+    (x,y_i)=\theta(a,b_i) + (1-\theta)(c,d_i)\in S_i.
+  \]
+  Hence, $S$ is convex.
+\end{proof}
+
+% end
