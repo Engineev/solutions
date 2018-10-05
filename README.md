@@ -46,7 +46,3 @@ My personal solutions to some textbook problems
 
 ## Stephen Boyd, Lieven Vandenberghe, *Convex Optimization*
 * Chapter 2. Convex Sets (1, 2, 8, 9(a, b), 16)
-
-## Morris W. Hirsch, Stephen Smale, Robert L. Devaney, *Differential Equations, Dynamical Systems, and an Introduction to Chaos*, 2nd ed
-
-* Chapter 2. Planar Liner Systems (2.b, 5, 7)
