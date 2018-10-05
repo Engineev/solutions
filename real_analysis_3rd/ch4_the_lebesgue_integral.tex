@@ -1,0 +1,204 @@
+\section{The Lebesgue Integral}
+\setcounter{subsection}{1}
+
+\subsection{The Lebesgue Integral of a Bounded Function}
+  \paragraph{2.}
+  \begin{proof}
+    $\,$\par
+    (a) By Problem 2.51, $h$ is upper semicontinuous as $f$ is bounded and by 
+    Problem 2.50, ${x:\, h(x)<\lambda}$ is open and hence measurable for every
+    $\lambda\in\mathbb{R}$. Thus, $h$ is measurable.\par
+    Let $\varphi(x)\ge f(x)$ be a step function and $x_0$ any point other 
+    than the endpoints of the intervals occurring in $\varphi$. Then there 
+    exists some $\delta>0$ such that for all $x\in(x_0-\delta,x_0+\delta)$, 
+    $\varphi(x_0) = \varphi(x) \ge f(x)$. Hence,
+    \[
+      h(x_0) = \inf_{\delta<0}\sup_{|x-x_0|<\delta}f(x) \le \varphi(x_0).
+    \]
+    Namely, $\varphi\ge h$ except at a finite number of points. Hence, $\int_a^b
+    \varphi \ge \int_a^b h$ and therefore
+    \[
+      R\upint_a^b f = \inf_{\varphi\ge f}\int_a^b\varphi(x)\rd x \ge \int_a^b h.
+    \]\par
+    We can also derive from the previous discussion that there is a sequence of 
+    $\langle\varphi_n\rangle$ of step functions satisfying $\varphi \downarrow h$. By 
+    Proposition 6,
+    \[
+      \int_a^b h = \lim\int_a^b\varphi_n \ge R\upint_a^b f.
+    \]
+    Hence, $R\upint_a^b f = \int_a^b h$.\par
+    (b) First suppose that $f$ is Riemann integrable and let $h$ and $g$ be the 
+    upper and lower envelope of $f$ respectively. By part (a), $f$ is Riemann 
+    integrable implies $\int_a^b(h-g) = 0$. Together with the fact that $h\ge 
+    g$, we conclude that $h=g$ a.e.. Therefore, by Problem 2.50, $f$ is 
+    continuous except on a set of measure zero.\par
+    Note that the argument remains true if we reverse the order, verifying the 
+    converse part. Hence, the proposition holds.
+  \end{proof}
+% end
+
+\subsection{The Integral of a Nonnegative Function}
+  \paragraph{3.}
+  \begin{proof}
+    Suppose that $E_n=\{x:\, f(x)>1/n\}$. Then, 
+    \[
+      0=\int f \ge \int_{E_n} f \ge \frac{mE_n}{n}
+    \]
+    implies $mE_n=0$. Hence, $m\{x:\, f(x)>0\}=m(\bigcup E_n)\le\sum mE_n=0$. 
+    Namely, $f=0$ a.e.
+  \end{proof}
+
+  \paragraph{5.}
+  \begin{proof}
+    For any fixed $x_0\in\mathbb{R}$, let $f_n(x) = f\cdot\chi_{(-\infty,x_0-
+    1/n]}$, which is a increasing sequence of nonnegative measurable function
+    whose limit is $f\cdot\chi_{-\infty,x_0}$. Then by Theorem 10, 
+    \[
+      F(x_0)=\int_{-\infty}^{x_0} f = \int f\cdot\chi_{-\infty,x_0}
+      = \lim\int f\cdot\chi_{(-\infty,x_0-1/n]} = \lim F(x_0-1/n).
+    \]
+    Meanwhile, since 
+    \[
+      |F(x_0)-F(x_0+1/n)| = \left|\int_{x_0}^{x_0+1/n}f(x)\rd x\right|=
+      \left|\int_{-1/n}^0 g(x)\rd x \right|,
+    \]
+    where $g(x)=f(x_0-x)$, arguing on $g$ in a similar manner yields $F(x_0)=
+    \lim F(x_0+1/n)$. Thus, $F$ is continuous.
+  \end{proof}
+
+  \paragraph{6.}
+  \begin{proof}
+    By Theorem 9, $\int f \le \lowlim\int f_n$. Meanwhile, $f_n\le f$ implies
+    $\int f_n\le \int f$ and therefore $\uplim \int f_n \le \int f$. Hence, 
+    $\int f =\lim\int f_n$.
+  \end{proof}
+
+  \paragraph{7.}
+  \begin{solution}
+    $\,$\par
+    (a) Let $f_n(x)=n\cdot\chi_{[0,1/n]}$. $f_n$ converges to $f=0$ except on 
+    $x=0$. For each $n$, $\int f_n = 1$ but $\int f=0$. Hence, the inequality
+    could be strict.\par
+    (b) Let $f_n(x)=\chi_{[n,\infty)}$. Then $\langle f_n\rangle$ is a 
+    decreasing sequence which converges to $f=0$, the integral of which is $0$.
+    However, for every $n$, $\int f_n = \infty$.
+  \end{solution}
+
+  \paragraph{8.}
+  \begin{proof}
+    Let $g_n = \inf\{f_n,f_{n+1},\dots\}$. Clear that 
+    \begin{equation}
+      \label{eq:4.3.8}
+      \int g_n \le \int f_n.
+    \end{equation}
+    Meanwhile $\langle g_n\rangle$ is a increasing sequence converging to 
+    $\lowlim f_n$. Hence, by the Monotone Convergence Theorem and 
+    \eqref{eq:4.3.8}
+    \[
+      \int \lowlim f_n = \int \lim_{n\to\infty}g_n = 
+      \lim_{n\to\infty}\int g_n \le \lowlim\int f_n.
+    \]
+  \end{proof}
+
+  \paragraph{9.}
+  \begin{proof}
+    By Fatou's Lemma,
+    \begin{equation}
+      \label{eq:4.3.9}
+      \int_E f \le \lowlim\int_E f_n.
+    \end{equation}
+    Similarly, $\int_{\bar{E}}f \le \lowlim\int_{\bar{E}} f_n$ and therefore
+    \[
+      \int_E f_n = \int f_n-\int_{\bar{E}} f_n\quad\Rightarrow\quad
+      \uplim\int_E f_n \le \int f- \int_{\bar{E}} f = \int_{\bar{E}} f.
+    \]
+    \eqref{eq:4.3.9} and the inequality above together implies $\int_E f_n\to
+    \int f$.
+  \end{proof}
+% end
+
+\subsection{The General Lebesgue Integral}
+  \paragraph{12.}
+  \begin{proof}
+    Note that $\langle g+f_n\rangle$ is a sequence of nonnegative measurable
+    functions. Hence by Problem 8,
+    \[
+      \int_E\lowlim(g+f_n) \le \lowlim\int_E(g+f_n) \quad\Rightarrow\quad
+      \int_E\lowlim f_n \le \lowlim\int_E f_n.
+    \]
+    The second inequality follows immediately from the definition of lower and
+    upper limit. Replacing $g+f_n$ with $g-f_n$ and arguing in a similar manner
+    gives the last inequality.
+  \end{proof}
+
+  \paragraph{13.}
+  \begin{proof}
+    $f_n\ge -h$ implies $f_n+h\ge 0$. Hence, $\int(f_n+h)$ always has a meaning.
+    And since $g$ is integrable, $\int f_n = \int(f_n+h)-\int h$ also has a
+    meaning. Similarly, $\int f$ has a meaning. Meanwhile,
+    \[
+      \int f = \int(f+h) - \int h \le \lowlim\int(f_n+h) - \int h 
+      = \lowlim\int f_n.
+    \]
+  \end{proof}
+
+
+  \paragraph{15.}
+  \begin{proof}
+    $\,$\par
+    (a) By Problem 4, for every $\vep>0$, there exists some simple functions 
+    $\varphi_1\le f^+$ and $\varphi_2\le f^-$ such that 
+    \[
+      \int_E f^+ - \int_E\varphi_1 < \vep \quad\text{and}\quad
+      \int_E f^- - \int_E\varphi_2 < \vep.
+    \]
+    Let $\varphi=\varphi_1-\varphi_2$, which is also a simple function. 
+    Meanwhile,
+    \[
+      \int_E|f-\varphi| \le \int_E(f^+-\varphi_1) + \int_E(f^--\varphi_2) < 2\vep.
+    \]
+  \end{proof}
+  
+  \paragraph{16.}
+  \begin{proof}
+    For every integrable $f$, by Problem 15, there exists some step function $\psi
+    =\sum_{k=1}^N c_k\chi_{E_k}$ such that $\int|f-\psi|<\vep$. Note that
+    \begin{equation}
+      \label{eq:4.4.16}
+      \lim_{n\to\infty}\int_{-\infty}^\infty \psi(x)\cos nx\rd x =
+      \lim_{n\to\infty}\sum_{k=1}^N c_k\int_{E_k}\cos nx\rd x = 0.      
+    \end{equation}
+    Hence,
+    \begin{align*}
+      \left|\int_{-\infty}^\infty f(x)\cos nx\rd x \right|
+      &= \left|\int_{-\infty}^\infty (f(x)-\psi(x)+\psi(x))\cos nx\rd x\right|\\
+      &\le \int_{-\infty}^\infty |f(x)-\psi(x)||\cos nx|\rd x + 
+           \left|\int_{-\infty}^\infty \psi(x)\cos nx\rd x\right| \\
+      &\le \vep + \left|\int_{-\infty}^\infty \psi(x)\cos nx\rd x\right| \\
+      &\to 0 \text{ as }n\to\infty.
+    \end{align*}
+  \end{proof}
+
+  \paragraph{18.}
+  \begin{proof}
+    Let $\langle t_n\rangle$ be any sequence with $t_n\ne 0$ and tending to $0$.
+    Then $\langle f(x,t_n)\rangle$ is sequence of functions satisfying the 
+    hypotheses of Lebesgue Convergence Theorem. Meanwhile, $f(x,t_n)\to f$ as 
+    $n\to\infty$. Hence,
+    \[
+      \lim_{n\to\infty}\int f(x,t_n)\rd x = \int f(x)\rd x.
+    \]
+    Since the choice of $\langle t_n\rangle$ is arbitrary, by Problem 2.49f, 
+    \[
+      \lim_{t\to 0}\int f(x,t)\rd x = \int f(x)\rd x.
+    \]
+    If $f$ is continuous in $t$ for each $x$, then $\lim_{\Delta t\to 0}f(x,t+
+    \Delta t)=f(x,t)$ holds for every $t$. Therefore, replacing $t$ with 
+    $\Delta t$ in the previous result yields
+    \[
+      \lim_{\Delta t\to 0}\int f(x,t+\Delta t)\rd x = \int f(x,t)\rd x.
+    \]
+    Namely, $h(t)$ is continuous.
+  \end{proof}
+
+% end

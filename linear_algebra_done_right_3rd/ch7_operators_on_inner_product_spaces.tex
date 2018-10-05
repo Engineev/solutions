@@ -1,0 +1,255 @@
+\section{Operators on Inner Product Spaces}
+  Note that on the first page of this chapter, the author says that all the
+  inner product spaces appeared in this chapter should be assumed to be 
+  finite-dimensional if not specified.
+
+\subsection{Self-Adjoint and Normal Operators}
+  \paragraph{2.}
+  \begin{proof}
+    $\nul(T-\lambda I) = (\range(T-\lambda I)^*)^\perp = (\range(T^*-
+    \bar{\lambda}I))^\perp$. Hence, $\dim\nul(T-\lambda I)>0$ iff $\dim\range(
+    T^*-\bar{\lambda}I)<\dim V$ iff $\dim\nul(T^*-\bar{\lambda}I)>0$. Thus, 
+    $\lambda$ is an eigenvalue of $T$ iff $\bar{\lambda}$ is an eigenvalue of
+    $T^*$.
+  \end{proof}
+
+  \paragraph{4.}
+  \begin{proof}
+    If follows immediately from 7.7.
+  \end{proof}
+
+  \paragraph{8.}
+  \begin{proof}
+    Let $S,T\in\mathcal{L}(V)$ be self-adjoint and $a,b\in\mathbb{R}$. Then
+    by 7.5,
+    \[
+      (aS+bT)^* = \bar{a}S^*+\bar{b}T^* = aS+bT.
+    \]
+    Hence, the set of self-adjoint operators on $V$ is a subspace of 
+    $\mathcal{L}(V)$.
+  \end{proof}
+
+  \paragraph{10.}
+  \begin{proof}
+    The $n$-by-$n$ matrices
+    \[
+      A=
+      \begin{bmatrix}
+        1 &        &        & \\
+          & \ddots &        & \\
+          &        & \ddots & \\
+          &        &        & 1
+      \end{bmatrix}
+      \quad\text{and}\quad
+      B=
+      \begin{bmatrix}
+        1 & 1      &        &   \\
+          & \ddots & \ddots &   \\
+          &        & \ddots & 1 \\
+          &        &        & 1
+      \end{bmatrix}
+    \]
+    are both normal, but $C=B-A$, which is nilpotent, is not.
+  \end{proof}
+
+  \paragraph{12.}
+  \begin{proof}
+    Since $T$ is normal and $3$ and $4$ are two eigenvalues of $T$, there exists
+    an orthonormal list $u_1,u_2$ such that $Tu_1=3u_1$ and $Tu_2=4u_2$. Let $v
+    =u_1+u_2$. Then $\|v\|=\sqrt{2}$ and
+    \[
+      \|Tv\| = \|3u_1+4u_2)\| = 5.
+    \]
+  \end{proof}
+
+  \paragraph{16.}
+  \begin{proof}
+    7.20 implies $\nul T=\nul T^*$ and therefore, by 7.7, $\range T=\range T^*$.
+  \end{proof}
+% end
+
+\subsection{The Spectral Theorem}
+  \paragraph{4.}
+  \begin{proof}
+    If $T$ is normal, then by the complex spectral theorem, clear that all pairs
+    of eigenvectors corresponding to distinct eigenvalues of $T$ are orthogonal
+    and $V=E(\lambda_1,T)\oplus\cdots\oplus E(\lambda_m,T)$.\par
+    Now we show the converse. Clear that the union of the orthonormal bases of
+    each $E(\lambda_i,T)$ is an orthonormal basis consisting of eigenvectors of
+    $T$.
+  \end{proof}
+
+  \paragraph{6.}
+  \begin{proof}
+    Suppose $T\in\mathbb{L}(V)$ is self-adjoint and $Tu=\lambda u$ for some $u
+    \ne 0$. Then by 7.21, $\lambda u = Tu=T^*u=\bar{\lambda}u$. Hence, $\lambda
+    =\bar{\lambda}$ and therefore $\lambda$ is real.\par
+    By the complex spectral theorem, $T$ has a matrix $M=\diag(\lambda_1,\dots,
+    \lambda_n)$ with respect to some orthonormal basis. If $\lambda_i$, the 
+    eigenvalues of $T$, are all real. Then the conjugate transpose of $M$ is 
+    still $M$. Hence, $T=T^*$. Namely, $T$ is self-adjoint.
+  \end{proof}
+
+  \paragraph{8.}
+  \begin{proof}
+    Let
+    \[
+      A = \begin{bmatrix}
+        0 & 1      &        &   \\
+          & \ddots & \ddots &   \\
+          &        & \ddots & 1 \\
+          &        &        & 0
+      \end{bmatrix}      
+    \]
+    be an $8$-by-$8$ matrix. $A^9=A^8=0$ but $A^2\ne A$.
+  \end{proof}
+
+  \paragraph{12.}
+  \begin{proof}
+    We argue by contradiction. Assume that for every eigenvalue $\lambda\hp$ of 
+    $T$, $|\lambda-\lambda\hp|>\vep$. Since $T$ is self-adjoint, there exists an
+    orthonormal basis $e_1,\dots,e_n$ such that $Te_i=\lambda_ie_i$ for $i=1,
+    \dots,n$. Then
+    \[
+      Tv-\lambda v = \sum_{i=1}^n\langle v,e_i\rangle(\lambda_i-\lambda)e_i.
+    \]
+    Hence, 
+    \[
+      \|Tv-\lambda v\|^2 
+      = \sum_{i=1}^n |\langle v,e_i\rangle|^2|\lambda_i-\lambda|^2
+      \ge \vep^2\sum_{i=1}^n |\langle v,e_i\rangle|^2 = \vep^2.
+    \]
+    Contradiction. Hence, $T$ has an eigenvalue $\lambda\hp$ such that $|\lambda
+    -\lambda\hp|<\vep$.
+  \end{proof}
+
+  \paragraph{14.}
+  \begin{proof}
+    If there exists an inner product on $U$ which makes $T$ into a self-adjoint
+    operator, then by the spectral theorem, $U$ has a basis consisting of 
+    eigenvectors of $T$. Now we suppose that such a basis, denoted by $u_1,
+    \dots, u_n$, exists. Define $\langle e_i,e_j\rangle$ to be $0$ if $i\ne j$
+    and $1$ if $i=j$. It is easy to verify that it does define an inner product
+    and $u_1,\dots,u_n$ is an orthonormal basis.
+  \end{proof}
+% end
+
+\subsection{Positive Operators and Isometries}
+  \paragraph{2.}
+  \begin{proof}
+    The hypothesis implies $T^2v=v$ and therefore $1$ is an eigenvalue of $T^2$
+    and $v$ is its associated eigenvector. Note that $T^2$ is still a positive
+    operator and $T$ is its positive square root. Hence, $v$ is also an 
+    eigenvector of $T$ associated with eigenvalue $1$. Namely, $v=Tv=w$. 
+  \end{proof}
+
+  \paragraph{4.}
+  \begin{proof}
+    $\langle T^*Tv,v\rangle=\langle Tv,Tv\rangle = \|Tv\|^2\ge 0$ for all $v\in
+    V$. Hence, $T^*T$ is a positive operator on $V$. Similarly, $TT^*$ is a 
+    positive operator on $W$.
+  \end{proof}
+
+  \paragraph{6.}
+  \begin{proof}
+    If $T$ is positive, $T$ is self-adjoint and so does $T^k$. Meanwhile, $T$
+    has a diagonal matrix $\diag(\lambda_1,\dots,\lambda_n)$ with respect to 
+    some orthonormal basis and $\lambda_i\ge 0$ for each $i=1,\dots,n$. With
+    respect to the same basis, $T^k$ has the matrix $\diag(\lambda_1^k,\dots,
+    \lambda_n^k)$. Since $\lambda_i^k\ge 0$, $T^k$ is positive by 7.35.
+  \end{proof}
+
+  \paragraph{8.}
+  \begin{proof}
+    Suppose $T$ is positive and invertible. Then $\langle v,v\rangle_T=\langle
+    Tv,v\rangle\ge 0$. By 7.35, $T=R^*R$ for some $R\in\mathcal{L}(V)$. Since
+    $T$ is invertible, both $R^*$ and $R$ are invertible. Hence, $0=\langle v,v
+    \rangle_T=\langle Tv,v\rangle=\|Rv\|^2$ iff $Rv=0$ iff $v=0$. Meanwhile,
+    for every $u,v\in V$ and scalar $a,b$
+    \[
+      \langle au+bv,w\rangle_T = a\langle Tu,w\rangle + b\langle Tv,w\rangle = 
+      a\langle v,w\rangle_T + b\langle v,w\rangle_T.
+    \]
+    Finally, 
+    \[
+      \langle u,v\rangle_T = \langle Ru,Rv\rangle = 
+      \overline{\langle Rv,Ru\rangle} = \overline{\langle v,u\rangle_T}.
+    \]
+    Thus, $\langle\cdot,\cdot\rangle_T$ is an inner product on $V$.\par
+    Now we suppose $\langle\cdot,\cdot\rangle_T$ is an inner product on $V$.
+    Hence, by the positivity of inner product, $T$ is positive and by the 
+    previous discussion, $Tv=0$ iff $v=0$. Hence, $T$ is invertible.
+  \end{proof}
+
+  \paragraph{14.}
+  \begin{proof}
+    As $T$ is self-adjoint by Exercise 21 of Section 7.A, so does $-T$.
+    Suppose that
+    \[
+      f(x)=x_0 + x_1\cos x +\cdots+ x_n\cos nx + y_1\sin x +\cdots+ y_n\sin nx.
+    \]
+    Then
+    \[
+      f^{\prime\prime}(x)
+      = -\sum_{k=1}^nx_kk^2\cos kx - \sum_{k=1}^ny_kk^2\sin kx.
+    \]
+    Note that for all $i\ne j$, the integral of $(\cos ix\sin jx)$ is $0$. Thus,
+    \begin{align*}
+      \langle f,f^{\prime\prime}\rangle &= 
+      -\int_{-\pi}^\pi
+      \left(x_0 + \sum_{k=1}^n(x_k\cos kx + y_k\sin kx) \right)
+      \sum_{k=1}^n(k^2x_k\cos kx+ k^2y_k\sin kx)\rd x\\
+      &= -\int_{-\pi}^\pi\left( \sum_{k=1}^n x_k^2k^2\cos^2kx +
+      \sum_{k=1}^ny_k^2k^2\sin^2kx \right)\rd x \\
+      &= -2\pi\sum_{k=1}^n k^2(x_k^2+y_k^2) \le 0.
+    \end{align*}
+    Therefore, $-T$ is a positive operator.
+  \end{proof}
+% end
+
+\subsection{Polar Decomposition and Singular Value Decomposition}
+  \paragraph{3.}
+  \begin{proof}
+    As $\sqrt{T^*T}$ is positive, $(\sqrt{T^*T})^*=\sqrt{T^*T}$. The polar 
+    decomposition asserts that there exists an isometry $S_1$ such that
+    $T=S_1\sqrt{T^*T}$. Replacing $T$ with $T^*$ yields
+    \[
+      T^*=S_2\sqrt{TT^*} \quad\Rightarrow\quad
+      T=\sqrt{TT^*}S_2^*,
+    \]
+    where $S_2^*$ is also an isometry.
+  \end{proof}
+
+  \paragraph{8.}
+    This result can be used to prove Exercise 1 in a simple way.
+  \begin{proof}
+    Note that $R^2$ and $T^*T$ are both positive (and thereby self-adjoint). 
+    Hence, $R^2-T^*T$ is also self-adjoint. For all $v\in V$,
+    \begin{align*}
+      \langle(R^2-T^*T)v,v\rangle 
+      = \langle R^2v,v\rangle - \langle T^*Tv,v\rangle 
+      = \|Rv\|^2 - \|Tv\|^2.
+    \end{align*}
+    Since $S$ is an isometry, $\|Rv\| = \|SRv\| = \|Tv\|$. Therefore, $\langle
+    (R^2-T^*T)v,v\rangle=0$. Thus, $R^2=T^*T$ and so does their unique positive
+    square roots.
+  \end{proof}
+
+  \paragraph{9.}
+  \begin{proof}
+    As $T=S\sqrt{T^*T}$ for some isometry $S$ and every isometry is invertible,
+    $T$ is invertible iff $\sqrt{T^*T}$ is invertible. If $T$ is invertible and
+    $T=S_1\sqrt{T^*T}=S_2\sqrt{T^*T}$, multiplying $(\sqrt{T^*T})\inv$ on the 
+    both sides yields $S_1=S_2$. \par
+    Now we suppose that such an isometry $S$ is not unique and show that 
+    $\sqrt{T^*T}$ is not invertible to complete the proof. Suppose $T=S_1
+    \sqrt{T^*T}=S_2\sqrt{T^*T}$ where $S_1\ne S_2$. Then, since $S_1-S_2\ne 0$
+    but $(S_1-S_2)\sqrt{T^*T}=0$, $\sqrt{T^*T}$ is not invertible and so is $T$.
+  \end{proof}
+
+  \paragraph{13.}
+  \begin{proof}
+    By the discussion in Exercise 9, $T$ is invertible iff $\sqrt{T^*T}$ is 
+    invertible iff $0$ is not an eigenvalue of $\sqrt{T^*T}$.
+  \end{proof}
+% end

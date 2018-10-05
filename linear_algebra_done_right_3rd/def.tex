@@ -1,0 +1,51 @@
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{
+    color,
+    clrscode,
+    amssymb,
+    amsmath,
+    listings,
+    fontspec,
+    xcolor,
+    supertabular,
+    multirow,
+    mathtools,
+    mathrsfs,
+    amsthm,
+    systeme
+}
+\definecolor{bgGray}{RGB}{36, 36, 36}
+\usepackage[
+    colorlinks,
+    linkcolor=bgGray,
+    anchorcolor=blue,
+    citecolor=green
+]{hyperref}
+\newfontfamily\courier{Courier}
+
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\adj}{adj}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\nul}{null}
+\DeclareMathOperator{\range}{range}
+\DeclareMathOperator{\spn}{span}
+% \DeclareMathOperator{\deg}{deg}
+
+\newenvironment{solution}
+  {\begin{proof}[Solution]}
+  {\end{proof}}
+\newcommand{\hp}{^\prime}
+\newcommand{\vep}{\varepsilon}
+\newcommand{\inv}{^{-1}}
+\newcommand{\rd}{\mathrm{d}}
+
+\renewcommand{\Im}{\text{Im}}
+\renewcommand{\Re}{\text{Re}}
+\renewcommand{\thesubsection}{\thesection.\Alph{subsection}}
+
+\newtheorem{lemma}{Lemma}
+\newcommand\lemmaref[1]{Lemma~\ref{#1}}
+

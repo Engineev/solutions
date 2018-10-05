@@ -1,0 +1,296 @@
+\section{Lebesgue Measure}
+\subsection{Introduction}
+  \paragraph{1.}
+  \begin{proof}
+    Since $\mathfrak{M}$ is an $\sigma$-algebra, $B\setminus A \in\mathfrak{M}$
+    as long as $A,B\in\mathfrak{M}$. Since $B\setminus A$ and $A$ are disjoint,
+    $mB=mA+m(B\setminus A)\ge mA$ since $m$ is nonnegative.
+  \end{proof}
+
+  \paragraph{2.}
+  \begin{proof}
+    Let $A_0 = E_0$ and $E_k=A_k\setminus A_{k-1}$ for $k\ge 1$. Clear that 
+    $E_i$ and $E_j$ are disjoint for distinct $i$ and $j$, $\bigcup A_n=\bigcup
+    E_n$ and $A_i\subset E_i$ for every $i$. Hence,
+    \[
+      m\left(\bigcup E_n\right) = m\left(\bigcup A_n\right)
+      = \sum mA_n \le \sum mE_n,
+    \]
+    where the last inequality comes from Exercise 1.
+  \end{proof}
+
+  \paragraph{3.}
+  \begin{proof}
+    Suppose that $mA<\infty$. Then $mA=m(A\cup\varnothing)=mA+m\varnothing$, 
+    implying that $m\varnothing=0$.
+  \end{proof}
+% end
+
+\subsection{Outer Measure}
+  \paragraph{5.}
+  \begin{proof}
+    We show that $\{I_n\}$ must cover the entire $[0,1]$ by contradiction. 
+    Assume that $x\notin I_k$ for $k=1,2,\dots,n$. Then, as $I_k$ are open and 
+    $n$ is finite, there exists some $\vep>0$ such that $(x-\vep,x+\vep)$ and 
+    $I_k$ are disjoint for every $k$. Since $\mathbb{Q}$ is dense in 
+    $\mathbb{R}$, there exists some rational number in $(x-\vep, x+\vep)$, 
+    contradicting with the hypothesis that $\{I_k\}$ covers all rational numbers
+    between $0$ and $1$.
+  \end{proof}
+
+  \paragraph{6.}
+  \begin{proof}
+    By the definition of the outer measure, for every $\vep > 0$, there exists 
+    some collection $\{I_n\}$ of open intervals that covers $A$ and $\sum l(I_n)
+    \le m^*A+\vep$. Let $O=\bigcup I_n$. $O$ is a countable union of open sets 
+    and therefore is also open. And by Proposition 2, $m^*O\le \sum l(I_n)$. 
+    Thus, $m^*O\le m^*A+\vep$. \par
+    Let $\vep_n = 1/n$ and for each $n$, by the previous discussion, we can 
+    always get an open set $O_k$ such that $A\subset O_k$ and $m^*O\le m^*A+
+    \vep_m$. Let $G$ be the countable intersection of these open sets. Clear 
+    that $G$ is a $G_\delta$ set covering $A$ and $m^*A=m^*G$.
+  \end{proof}
+
+  \paragraph{7.}
+  \begin{proof}
+    If $m^*E=\infty$, it is trivial. Suppose that $m^*E\le\infty$. For any $x\in
+    \mathbb{R}$, collection $\{I_n\}$ of open intervals covers $E+x$ iff $\{I_n
+    -x\}$ covers $E$. Since the length of intervals is translation invariant, 
+    this implies $m^*(E+x)=m^*E$.
+  \end{proof}
+
+  \paragraph{8.}
+  \begin{proof}
+    Clear that $m^*A\le m^*(A\cup B)$. Meanwhile, $m^*(A\cup B) = m^*A + m^*B =
+    m^*B$. Hence, $m^*(A\cup B)=m^*B$.
+  \end{proof}
+% end
+
+\subsection{Measurable Sets and Lebesgue Measure}
+  \paragraph{10.}
+  \begin{proof}
+    \begin{align*}
+      mE_1+mE_2 
+      &= mE_1 + m(E_2\setminus E_1) + m(E_1\cap E_2) \\
+      &= m(E_1\cup(E_2\setminus E_1)) + m(E_1\cap E_2) \\
+      &= m(E_1\cup E_2) + m(E_1\cap E_2).
+    \end{align*}
+  \end{proof}
+    
+  \paragraph{11.}
+  \begin{proof}
+    $E_n = (n,\infty)$.
+  \end{proof}
+
+  \paragraph{12.}
+    This is the countable version of Lemma 9.
+  \begin{proof}
+    It suffices to prove $m^*(A\cap \bigcup E_i) \ge \sum m^*(A\cap E_i)$. Since
+    $\bigcup_{i=1}^\infty E_i\supset \bigcup_{i=1}^n E_i$ for every $n$, 
+    \begin{align*}
+      m^*\left(A\cap \bigcup_{i=1}^\infty E_i\right)
+      \ge m^*\left(A\cap \bigcup_{i=1}^n E_i\right)
+      = \sum_{i=1}^n m^*(A\cap E_i),
+    \end{align*}
+    where the equality comes from Lemma 9. Since the left hand side is 
+    independent of $n$, we have
+    \[
+      m^*\left(A\cap \bigcup_{i=1}^\infty E_i\right) \ge
+      \sum_{i=1}^\infty m^*(A\cap E_i),
+    \]
+    completing the proof.
+  \end{proof}
+
+  \paragraph{13.}
+  \begin{proof}
+    First we suppose that $m^*E<\infty$. By Proposition 5, there exists some 
+    open set $O\supset E$ such that $m^*O\le m^*E+\vep$. If $E$ is measurable,
+    then by the definition,
+    \[
+      m^*(O\setminus E) = m^*O-m^*E \le \vep.
+    \]
+    Namely, (ii) holds. Meanwhile, $O\subset\mathbb{R}$ is a countable union of 
+    disjoint open intervals $\{I_n\}$. Since $mO=m^*O$ is bounded and $mO=\sum
+    l(I_n)$, there exists some integer $N>0$ such that $mO-\sum_{n=1}^N l(I_n)<
+    \vep$. Let $U=\bigcup_{n=1}^N I_n$.
+    \begin{align*}
+      m^*(U\bigtriangleup E) 
+      &= m^*((U\cup E) \setminus (U\cap E)) \\
+      & \le m^*(O\setminus (U\cap E))  \\
+      & = m^*((O\setminus U) \cup (O\setminus E)) \\
+      &\le m^*(O\setminus U) + m^*(O\setminus E)  \\
+      &\le 2\vep.
+    \end{align*}
+    Hence, (ii) implies (vi). Now we show that (vi) implies (ii). If $m^*(U
+    \bigtriangleup E)<\vep $, then there exists some countable collection $\{J_n
+    \}$ of open interval such that 
+    \[
+      \sum l(J_n)\le m^*(U\bigtriangleup E)+\vep<2\vep.
+    \]
+    Let $J=\bigcup J_n$ and $O= U\cup J$. $m^*J < 2\vep$. And $O$ is open and 
+    covers $E$. Meanwhile,
+    \[
+      m^*(O\setminus E) \le m^*(U\setminus E)+m^*(J\setminus E) < 3\vep.
+    \]
+    Hence, (ii) holds.\par
+    Now, let $E$ be an arbitrary set and $E_n=E\cap(-n, n)$, which is a set with
+    finite measure. Then by the previous discussion, there exists some open set
+    $O_n\supset E_n$ with $m^*(O_n\setminus E_n)<\vep/2^n$. Let $O=\bigcup 
+    O_n$, an open set covering $E$ and
+    \[
+      m^*(O\setminus E) \le \sum m^*(O_n\setminus E_n) < 2\vep. 
+    \]
+    Hence, (i) implies (ii). Now we suppose (ii) holds and let $\vep_n=1/n$, 
+    then there exists a sequence of open sets $<O_n>$ such that $m^*(O_n
+    \setminus E)<1/n$. Let $G=\bigcap O_n\in G_\delta$. $m^*(G\setminus E)\le
+    m^*(O_n\setminus E)\le 1/n$. Since the left hand side is independent of 
+    $n$, $m^*(G\setminus E)=0$. If (iv) holds, then by Lemma 6, $G\setminus E$
+    is measurable. Since $G\in G_\delta$ is also measurable, $E$ is measurable.
+    Hence, (iv) implies (i).\par
+    By the previous result, for any measurable $E$, there exists some closed set
+    $F\subset E$ such that $\bar{F}$, which is open, contains $bar{E}$ and $m^*(
+    \bar{F}\setminus \bar{E})<\vep$. Hence, $m^*(E\setminus F)<\vep$. We can 
+    proceed in a similar manner as we did in the last paragraph to prove that
+    (iii) $\Rightarrow$ (v) $\Rightarrow$ (i), leading to the final conclusion.
+  \end{proof}
+
+% end
+
+\setcounter{subsection}{4}
+\subsection{Measurable Functions}
+  \paragraph{19.}
+  \begin{proof}
+    For every $\beta\in\mathbb{R}$, since $D$ is measurable, there exists a 
+    sequence of $\alpha_n\in D\cap(\beta-1/n,\beta)$. As
+    \[
+      \{x:\, f(x)>r\} \quad\Leftrightarrow\quad
+      \bigcup_{n=1}^\infty \{x:\, f(x)>r-1/n\} \quad\Leftrightarrow\quad
+      \bigcup_{n=1}^\infty \{x:\, f(x)>\alpha_n\}
+    \]
+    and $\{x:\, f(x)>\alpha_n\}$ are measurable, so is $\{x:\, f(x)>r\}$. Hence,
+    $f$ is measurable.
+  \end{proof}
+
+  \paragraph{21.}
+  \begin{proof}
+    $\,$\par
+    (a) It follows immediately from $\{x:\, f(x)>\alpha\} = \{x\in D:\, f(x)>
+    \alpha\}\cup \{x\in E:\, f(x)>\alpha\}$.\par
+    (b) For $\alpha\ge 0$, the sets $\{x:\, f(x)>\alpha\}$ and $\{x:\, g(x)>
+    \alpha\}$ are the same. And for $\alpha < 0$, 
+    \[
+      \{x:\, f(x)>\alpha\} = \{x:\, g(x)>\alpha\} \setminus \bar{D}
+      \quad\text{and}\quad
+      \{x:\, g(x)>\alpha\} = \{x:\, f(x)>\alpha\} \cup \bar{D}.
+    \]
+    Hence, $f$ is measurable iff $g$ is measurable.
+  \end{proof}
+
+  \paragraph{22.(d)}
+  \begin{proof}
+    Since $f$ and $g$ are finite almost everywhere, the set $A$ consisting of 
+    points where $f+g$ is of the form $\infty - \infty$ or $-\infty + \infty$ is
+    of measure zero (and hence measurable). Therefore no matter how it is 
+    defined, $\{x\in A:\,f+g>\alpha\}$ is measurable for every $\alpha$. Namely,
+    the restriction of $f+g$ to $A$ is measurable. Meanwhile, clear that the 
+    restriction to $D\setminus A$ is measurable where $D$ is the domain of $f$.
+    Hence, by Exercise 21, $f$ is measurable.
+  \end{proof}
+
+  \paragraph{23.}
+  \begin{proof}
+    $\,$\par
+    (a) Let $A_n=\{x:\,|f(x)|>n\}$, a sequence of measurable sets. As $A_{n+1}
+    \subset A_n$, $mA_{n+1}\le mA_n$. Since $A=\bigcap A_n = \{x:\,|f(x)|=\infty
+    \}$, $mA_1\le m[a,b]$ is finite and $mA=0$, by Proposition 14, there exists
+    some $N$ such that for all $n\ge N$, $mA_n<\vep/3$. Set $M=N$ to complete 
+    the proof.\par
+    (b) We consider the restriction of $f$ on to the set $E=[a,b]\setminus\{x:\,
+    |f(x)|\ge M\}$, which is also a measurable real-valued function. To keep our 
+    notation simple, we denote the restriction by $f$ still. For every $\vep>0$,
+    there exists some integer $N$ with $0<2M/N<\vep$. Let $E_n=\{x:\,x\in
+    [-M+(n-1)\vep, -M+n\vep]\}$ ($n=1,2,\dots,N$) and define 
+    \[
+      \varphi(x) = \sum_{i=1}^N f(x_i)\chi_{E_i},
+    \]
+    where $x_n\in E_n$ is arbitrary. Clear that $\varphi$ is a simple function 
+    and satisfy all the requirements.\par
+    (c) Suppose that $\varphi(x)=\sum_{i=1}^n \alpha_i\chi_{E_i}$. For each $i
+    =1,\dots,N$, $E_i$ is measurable and therefore by Proposition 15, there 
+    exists a finite union $U_i$ of open intervals such that $m(U_i\bigtriangleup
+    E_i)<\vep$. Let 
+    \[
+      g(x) = \sum_{i=1}^N \alpha_i\chi_{U_i}.
+    \]
+    Clear that $g$ and $\varphi$ only may differ on a set with measure $N\vep$.
+    (d) Suppose that $g(x)=\sum_{i=1}^N\alpha_i\chi_{U_i}$ is a step function. 
+    We may assume without loss of generality that $U_i$ are disjoint and 
+    $\bigcup U_i = [a,b]$. And suppose that $\{x_0=a < x_1 < \dots < x_N=b\}$ 
+    are the endpoints of the intervals. For each $i=1,\dots,N-1$, define
+    \[
+      f(x) = (x-x_i+\vep)g(x_i-\vep) + (x_i+\vep - x)g(x_i+\vep),\quad
+      x\in (x_i-\vep, x_i+\vep),
+    \]
+    and $f(x)=g(x)$ for the other points. (We assume that $\vep$ is small enough
+    so that $f$ is well-defined.) Clear that $f$ is continuous and equals $g$
+    except on a set of measure less then $2N\vep$.
+  \end{proof}
+
+  \paragraph{24.}
+  \begin{proof}
+    For measurable $f$, we show that $\mathcal{A}=\{E:\, f\inv[E]\text{ is 
+    measurable}\}$ is a $\sigma$-algebra first. As the domain, denoted by $D$, 
+    of a measurable function is measurable, $\mathbb{R}\in\mathcal{A}$. If
+    $E\in\mathcal{A}$, then since $f\inv[\bar{E}]= D\cap \overline{f\inv[E]}$,
+    $f\inv[\bar{E}]$ is also measurable and therefore $\bar{E}\in\mathcal{A}$.
+    Suppose that $<E_n>$ is a sequence of sets of $\mathcal{A}$. Then, as
+    \[
+      f\inv\left[\bigcup_{n=1}^\infty E_n\right] = 
+      \bigcup_{n=1}^\infty f\inv[E_n],
+    \]
+    $\bigcup E_n\in\mathcal{A}$. Hence, $\mathcal{A}$ is a $\sigma$-algebra.\par
+    By the definition of a measurable function, every open interval belongs to 
+    $\mathcal{A}$. Since the collection of all Borel sets $\mathcal{B}$ is the
+    $\sigma$-algebra generated by all open intervals, $\mathcal{B}\subset
+    \mathcal{A}$. Namely, $f\inv[B]$ is measurable as long as $B\in\mathcal{B}$.
+  \end{proof}
+
+
+% end
+
+\subsection{Littlewood's Three Principles}
+  \paragraph{30.}
+  \begin{proof}
+    Let $\vep_n=1/n$ and $\delta_n =\eta/2^n$ ($n=0,1,\dots$). By Proposition
+    24, for each $n$, there exists some $A_n$ with measure less than $\delta_n$
+    such that for all $x\in E_n\setminus A_n$, $|f_m(x) - f(x)|<\vep_n$ for $m$
+    large enough. Let $A=\bigcup_{n=1}^\infty A_n$, the measure of which is less
+    than $\sum \eta/2^n=\delta$. Meanwhile, for any $\vep>0$, by construction, 
+    for all $x\in E\setminus A$, $|f_m(x)-f(x)|<\vep$ for $m$ large enough. 
+    Namely, $f_n$ converges to $f$ uniformly on $E\setminus A$.
+  \end{proof}
+    
+  \paragraph{31.}
+  \begin{proof}
+    Let $\vep_n=\delta/2^n$ ($n\ge 0$), then by Proposition 22, there exists 
+    continuous $g_n$ such that $E_n=\{x:\,|f(x)-g_n(x)|\ge\vep_n\}$ is of 
+    measure less than $\vep_n$. Let $E=\bigcup E_n$, the measure of which is 
+    less than $\delta$ and $g_n$ converges to $f$ on $[a,b]\setminus E$.\par
+    By Egoroff's Theorem, there exists some $A\subset [a,b]\setminus E$ with $m
+    A<\delta$ such that $g_n$ converges to $f$ uniformly on $[a,b]\setminus(E
+    \cup A)]$. Since $E\cup A$ is measurable, by Proposition 15, there exists 
+    some open set $O\supset E\cup A$ such that $m(O\setminus(E\cup A))<\delta$.
+    Let $F=[a,b]\setminus O$. We know that 
+    \begin{enumerate}
+      \item $F$ is a closed set.
+      \item $mF < 3\delta$.
+      \item $g_n$ converges to $f$ uniformly on $F$.
+    \end{enumerate}
+    Hence, $f$ is continuous on $F$ And by Problem 2.40, there exists some 
+    continuous function on $\mathbb{R}$ such that $\varphi(x) = f(x)$ for $x\in
+    F$.\par
+    If $f$ is defined on $(-\infty,\infty)$, we can apply the previous result on
+    each $[n,n+1]$ and "stick" the functions together as we did in Problem 23(c)
+    to get the function required.
+  \end{proof}
+% end

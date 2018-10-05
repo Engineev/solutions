@@ -1,0 +1,75 @@
+\section{Operators on Complex Vector Spaces}
+\subsection{Generalized Eigenvectors and Nilpotent Operators}
+  \paragraph{3.}
+  \begin{proof}
+    Suppose $\dim V= N$. 
+    \begin{align*}
+      v\in G(T\inv, \lambda\inv) 
+      &\Leftrightarrow (T\inv v-\lambda\inv I)^nv = 0 \\
+      &\Leftrightarrow 
+        \left(\sum_{k=0}^n\binom{n}{k}T^{-k}(-\lambda\inv)^{n-k}\right)v=0 \\
+      &\Leftrightarrow
+        T^n(-\lambda)^n
+        \left(\sum_{k=0}^n\binom{n}{k}T^{-k}(-\lambda)^{k-n}\right)v=0 \\
+      &\Leftrightarrow
+        \left(\sum_{k=0}^n\binom{n}{k}T^{n-k}(-\lambda)^{k}\right)v=0 \\
+      &\Leftrightarrow (T-\lambda I)^nv = 0 \\
+      &\Leftrightarrow v\in G(T,\lambda).
+    \end{align*}
+  \end{proof}
+
+  \paragraph{5.}
+    Intuitively, $\nul T,\dots,\nul T^n$ is a sequence of subspaces where the 
+    preceding ones are contained by succeeding ones. And $T^{k}v$ lies in the 
+    additional part between two successive subspaces.
+  \begin{proof}
+    Note that $T^{m-1}v\ne 0$ but $T^mv=0$ implies for $k=1,\dots,m$
+    \[
+      T^{m-k}v\in\nul T^k,\quad T^{m-k}v\notin\nul T^{k-1}.
+    \]
+    Therefore, $T^{m-k}v\notin\spn(T^{m-1}v,\dots,T^{m-k+1}v)$; otherwise, 
+    $T^{m-k}v=x_1T^{m-1}v+\cdots+x_{m-k+1}T^{m-k+1}v$, implying that $T^{m-k}v
+    \in\nul T^{k-1}$. Hence, $v, \dots, T^{m-1}v$ are linearly independent.
+  \end{proof}
+
+  \paragraph{7.}
+  \begin{proof}
+    It follows immediately from 8.19.
+  \end{proof}
+
+  \paragraph{9.}
+  \begin{proof}
+    Suppose that $v$ is nonzero and $(TS-\lambda I)v=0$. Then 
+    \[
+      (STS-\lambda S)v=0 \quad\Rightarrow\quad
+      (ST-\lambda I)Sv=0.
+    \]
+    If $Sv=0$, then $0=(TS-\lambda I)v=T(Sv)-\lambda v$ implies $\lambda=0$. If
+    $Sv\ne 0$, then $\lambda$ is an eigenvalue of $ST$ and therefore equals $0$
+    by Exercise 7. Hence, in every case, $\lambda=0$. Thus, $TS$ is also 
+    nilpotent.
+  \end{proof}
+
+  \paragraph{13.}
+  \begin{proof}
+    We are going to show that $N^{k-1}=0$ if $N^k=0$ for $k>1$ to conclude that 
+    $N=0$. Suppose that $N^k=0$ and let $M=N^{k-1}$. Then for every $v\in V$,
+    \[
+      \|M^*Mv\|^2 = \langle M^*Mv, M^*Mv\rangle
+      = \langle M^*MM^*Mv,v\rangle = \langle M^*M^*MMv,v\rangle.
+    \]
+    Since $M^2=N^{2k-2}=0$, this implies $M^*M=0$. Hence, with the polar 
+    decomposition, $M=0$.
+  \end{proof}
+
+  \paragraph{15.}
+  \begin{proof}
+    Suppose $\dim V=n$. Since $\nul N^{n-1}\ne\nul N^n$,
+    \[
+      0<\dim N < \cdots < \dim N^n.
+    \]
+    Hence, $\dim\nul N^j=j$ for $0\le j\le n$. Since $\dim\nul N^n=n$, $\nul N^n
+    =V$ and therefore $N$ is nilpotent.
+  \end{proof}
+% end
+
