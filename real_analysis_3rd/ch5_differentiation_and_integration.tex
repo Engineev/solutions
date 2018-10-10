@@ -1,0 +1,48 @@
+\section{Differentiation and Integration}
+\subsection{Differentiation of Monotone Functions}
+  \paragraph{3.}
+    "maximum" needs to be changed to "minimum" in both (a) and (b).
+  \begin{proof}
+    $\,$\par
+    (a) We may assume without loss of generality that $c=0$. Since $f$ attains a
+    local minimum at $x=0$, $f(h)\ge f(0)$ for every $h$ sufficiently small.
+    Hence, for every small $h>0$, $(f(c+h)-f(c))/h>0$ and therefore $D_+f(c)\ge
+    0$. Meanwhile, by Problem 2.b, 
+    \[
+      -D_{-}f(0) = D^+f(0) \ge 0 \quad\Rightarrow\quad 
+      D_{-}f(0) \le 0.
+    \]
+    The other two inequalities follow immediately from the definitions of upper 
+    and lower limits.\par
+    (b) If $f$ has a local minimum at $a$ or $b$, then we only have the right or
+    left half of the inequalities.
+  \end{proof}
+
+  \paragraph{4.}
+  \begin{proof}
+    We first show this for $g$ with $D^+g\ge\vep>0$. For every $a\le x<y\le b$,
+    as $g$ is continuous on $[a,b]$, $g$ has a maximum in $[a,b]$ and by Problem
+    2 and 3, $g$ can not attain the maximum in $[a,b)$. Namely, the restrict of
+    $f$ to $[x,y]$ attains the maximum at $y$. Hence, $g(x)\le g(y)$.\par
+    For every $f$ with nonnegative $D^+$, let $g(x)=f(x)+\vep x$ where $\vep>0$.
+    Then $D^+g\ge\vep >0$. Hence $g$ is nondecreasing. Therefore, for every $a
+    \le x<y\le b$, 
+    \[
+      g(x)\le g(y) \quad\Rightarrow\quad f(x)+\vep x \le f(y)+\vep y.
+    \]
+    Since the choice of $\vep$ is arbitrary, this implies $f(x)\le f(y)$.
+  \end{proof}
+
+  \paragraph{5.a}
+  \begin{proof}
+    \begin{align*}
+       \sup_{t\in(0,h)}\frac{(f+g)(x+t)-(f+g)(x)}{t} 
+      =&\sup_{t\in(0,h)}\left(\frac{f(x+t)-f(x)}{t}+
+        \frac{g(x+t)-g(x)}{t}\right) \\
+      \le&\sup_{t\in(0,h)}\frac{f(x+t)-f(x)}{t}+
+          \sup_{t\in(0,h)}\frac{g(x+t)-g(x)}{t}.
+    \end{align*}
+    Letting $h\to 0$ yields $D^+(f+g)\le D^+f+D^+g$.
+  \end{proof}
+% end
+
