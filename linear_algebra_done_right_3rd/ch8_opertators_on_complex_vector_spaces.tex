@@ -73,3 +73,24 @@
   \end{proof}
 % end
 
+\subsection{Decomposition of an Operator}
+  \paragraph{10.}
+  \begin{proof}
+    By 8.29, there exists a basis of $V$ with respect to which $\mathcal{M}(T)$
+    has the form described in 8.29. Suppose $\mathcal{M}(D)$ be the diagonal
+    matrix whose diagonal entries are the ones of $\mathcal{M}(T)$ and 
+    $\mathcal{M}(N)=\mathcal{M}(T)-\mathcal{M}(D)$. Clear that $N$ is nilpotent
+    and 
+    \[
+      \mathcal{M}(N) = 
+      \begin{bmatrix}
+        A_1-\lambda_1 I_1 &        & 0 \\
+                          & \ddots &   \\
+        0                 &        & A_m-\lambda_m I_m
+      \end{bmatrix}
+    \]
+    where each $I_k$ is the identity matrix with corresponding size. Note that
+    $\lambda_k I_k$ and $A_k-\lambda_k I_k$ are commuting. Hence, by Problem 9,
+    $\mathcal{M}(N)$ and $\mathcal{M}(D)$ are commuting and so do $D$ and $N$.
+  \end{proof}
+% end

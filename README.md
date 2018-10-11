@@ -17,7 +17,8 @@ My personal solutions to some textbook problems
   * 7.C Positive Operators and Isometries (Even - {10, 12})
   * 7.D Polar Decomposition and Singular Value Decomposition (ongoing)
 * Chapter 8. Operators on Complex Vector Spaces
-  * 8.A Generalized Eigenvectors and Nilpotent Operators ({3, 5, 7, 9, 13, 15})
+  * 8.A Generalized Eigenvectors and Nilpotent Operators (3, 5, 7, 9, 13, 15)
+  * 8.B Decomposition of an Operator (10)
 
 
 ## Roger A. Horn, Charles R. Johnson, *Matrix Analysis*, 2nd ed
