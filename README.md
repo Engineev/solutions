@@ -46,6 +46,7 @@ My personal solutions to some textbook problems
   * 3.4 The General Lebesgue Integral (12, 13, 15.a, 16, 18)
 * Chapter 5. Differentiation and Integration
   * 3.1 Differentiation of Monotone Functions (3, 4, 5.a)
+  * 3.2 Functions of Bounded Variation (7, 8, 9, 10.a, 11)
 
 ## Stephen Boyd, Lieven Vandenberghe, *Convex Optimization*
 * Chapter 2. Convex Sets (1, 2, 8, 9(a, b), 16)

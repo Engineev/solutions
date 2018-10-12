@@ -46,3 +46,105 @@
   \end{proof}
 % end
 
+\subsection{Functions of Bounded Variation}
+  \paragraph{7.}
+  \begin{proof}
+    $\,$\par
+    (a) It suffices to show this for monotone functions as each function of 
+    bounded variation is the difference of two monotone functions. Suppose that
+    $f$ is nondecreasing. Then the set $E=\{f(x):x>c\}$ is bounded below and 
+    hence $A=\inf E$ is finite. For every $\vep>0$, there exists some $y>c$ such 
+    that $A\le f(c) <A+\vep$. Hence, as $f$ is nondecreasing, for every $x\in(c,
+    y)$, $|f(x)-A|<\vep$. Namely, $\lim_{x\to c+}f(x)=A$. Similarly, $\lim_{x\to
+    c-}f(x)$ exists.\par
+    Let $D_n=\{x:\, |f(x+)-f(x-)|>1/n\}$. Since $f$ is nondecreasing, $|f(x)-
+    f(y)|\le f(b)-f(a)<\infty$ for every $x,y\in[a,b]$. Hence, $D_n$ is finite,
+    otherwise we can choose a sequence $x_1<\dots<x_N$ with $N>(f(b)-f(a))/n$
+    such that $f(X_N)-f(x_1)> f(b)-f(a)$. Therefore, $\bigcup_{n=1}^\infty E_n$,
+    the set of discontinuities, is countable.\par
+    (b) Suppose $\{x_1,\dots,x_n,\dots\}=\mathbb{Q}\cap[0,1]$ and define $f(x)=
+    \sum_{x_n<x}2^{-n}$. Clear that $f$ is monotone and continuous at every 
+    irrational point. For each rational $x=x_k$, $f(x+)-f(x-)=2^{-n}$. Hence,
+    $f$ is discontinuous at each rational point.
+  \end{proof}
+
+  \paragraph{8.}
+  \begin{proof}
+    $\,$\par
+    (a) For every $\vep>0$, there exists some subdivision $a=x_0<\cdots<x_p=c$ 
+    and $c=x_p<\cdots<x_q=b$ of $[a,c]$ and $[c,b]$ such that $T_a^c<t_a^c+\vep$
+    and $T_c^b<t_c^b+\vep$. Hence, $T_a^c+T_c^b-2\vep < t_a^c+t_c^b$. Meanwhile,
+    as $a=x_0<\cdots<x_q=b$ forms a subdivision of $[a,b]$, $T_a^b\ge t_a^b =
+    t_a^c+t_c^b$. Therefore, $T_a^c+T_c^b-2\vep < T_a^b$. Since the choice of
+    $\vep$ is arbitrary, $T_a^b+T_c^b\le T_a^b$.\par
+    To show that $T_a^b+T_c^b\ge T_a^b$, let $a=x_0<\cdots<x_q=b$ be 
+    any subdivision of $[a,b]$ and by adding $c$ into it, we get subdivisions of
+    $[a,c]$ and $[c,b]$. Suppose that $c\in(x_k, x_{k+1}]$, then
+    \[
+      |f(x_k)-f(c)|+|f(c)-f(x_{k+1})|+t_a^b = t_a^c+t_c^b+|f(x_k)-f(x_{k+1})|,
+    \]
+    which implies $t_a^b\le t_a^c+t_c^b$. Hence, 
+    \[
+      T_a^b = \sup t_a^b \le \sup(t_a^c+t_c^b) \le T_a^c + T_c^b.
+    \]\par
+    Thus, $T_a^b=T_a^c+T_c^b$ and therefore $T_a^c\le T_a^b$.\par
+    (b) 
+    \begin{align*}
+      T_a^b(f+g) 
+      &=   \sup\sum_{i=1}^k|f(x_i)+g(x_i)-f(x_{i-1})-g(x_{i-1})| \\
+      &\le \sup\sum_{i=1}^k|f(x_i)-f(x_{i-1})| + 
+           \sup\sum_{i=1}^k|g(x_i)-g(x_{i-1})| \\
+      &\le T_a^b(f) + T_a^b(g).
+    \end{align*}
+    \begin{align*}
+      T_a^b(cf) 
+      = \sup\sum_{i=1}^k|cf(x_i-cf(x_{i-1})| 
+      = |c|\sup\sum_{i=1}^k|f(x_i-f(x_{i-1})| 
+      = |c|T_a^b(f).
+    \end{align*}
+  \end{proof}
+
+  \paragraph{9.}
+  \begin{proof}
+    For every $\vep>0$, there exists a subdivision $a=x_0<\cdots<x_k=b$ such
+    that $t_a^b(f)\ge T_a^b(f)-\vep$. Meanwhile, as $f_n$ converges to $f$
+    pointwisely
+    \begin{align*}
+      t_a^b(f) &= t_a^b(\lim f_n) \\
+      &= \sum_{i=1}^k|(\lim f_n)(x_i) - (\lim f_n)(x_{i-1})| \\
+      &= \lim \sum_{i=1}^k|f_n(x_i)-f_n(x_{i-1})| \\
+      &\le \lowlim\sup\sum_{i=1}^k|f_n(x_i)-f_n(x_{i-1})| 
+      = \lowlim T_a^b(f_n).
+    \end{align*}
+    Hence, $T_a^b(f)-\vep \le \lowlim T_a^b(f_n)$. Since the choice of $\vep$ is
+    arbitrary, $T_a^b(f)\le\lowlim T_a^b(f_n)$.
+  \end{proof}
+
+  \paragraph{10.a}
+  \begin{solution}
+    No. Let $x_k = (k\pi+\pi/2)^{-1/2}$, $k=0,1,\dots$ and consider the 
+    subdivision $-1<0<x_n<\cdots<x_0<1$. Then
+    \[
+      t_n \ge \sum_{k=1}^n|f(x_k)-f(x_{k-1})|
+      \ge\sum_{k=1}^n\frac{2}{(k+1/2)\pi}.
+    \]
+    $t_n\to\infty$ as $n\to\infty$ and therefore $f$ is not of bounded 
+    variation on $[-1,1]$.
+  \end{solution}
+
+  \paragraph{11.}
+  \begin{proof}
+    By Lemma 4, $f(x)=f(a)+P_a^x-N_a^x$. Since $P_a^x$ and $N_a^x$ are monotone,
+    by Theorem 3, they are differentiable almost everywhere as $f$, a function 
+    of bounded variation, does. Hence, for almost every $x\in[a,b]$,
+    \[
+      \frac{\rd}{\rd x}f(x) = \frac{\rd}{\rd x}P_a^x - \frac{\rd}{\rd x}N_a^x
+      \quad\Rightarrow\quad
+      |f\hp(x)| \le \frac{\rd}{\rd x}P_a^x+\frac{\rd}{\rd x}N_a^x = 
+      \frac{\rd}{\rd x}T_a^x.
+    \]
+    Integrating on the both sides yields $\int_a^b|f\hp|\le T_a^b(f)$.
+  \end{proof}
+
+% end
+
