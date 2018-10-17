@@ -27,7 +27,7 @@ My personal solutions to some textbook problems
   * 1.0 Introduction (Completed)
   * 1.1 The eigenvalue-eigenvector equation (Odd)
   * 1.2 The characteristic polynomial and algebraic multiplicity (Even - {12})
-  * 1.3 Similarity (Odd - {21, 35, 37, 39, 41})
+  * 1.3 Similarity ([1, 15], 17, 19, 20.(b, g, h, i), 23, [28, 31], 33)
   * 1.4 Left and right eigenvectors and geometric multiplicity (Even - {8, 16})
 * Chapter 2. Unitary Similarity and Unitary Equivalence
   * 2.1 Unitary matrices and the QR factorization (8, 10, 11, 12, 23)
