@@ -294,11 +294,42 @@
     \]
   \end{proof}
 
+  \paragraph{2.}
+  \begin{proof}
+    Suppose that $p(z)=\sum_{i=0}^n a_iz^i$ and $q(z)=\sum_{j=0}^m b_jz^j$, then
+    \begin{align*}
+      p(A)q(B) 
+      = \left(\sum_{i=0}^n a_iA^i\right)\left(\sum_{j=0}^n b_jB^j\right)
+      = \sum_{i,j}a_ib_jA^iB^j
+      = \sum_{i,j}a_ib_jB^jA^j
+      = q(B)p(A).
+    \end{align*}
+      
+  \end{proof}
+
   \paragraph{3.}
   \begin{proof}
     \[
       \sum_{k=0}^n a_k A^k = \sum){k=0}^n S\inv (a_k\Lambda^k)S
       = S\inv p(\Lambda)S.
+    \]
+  \end{proof}
+
+  \paragraph{4.}
+  \begin{proof}
+    First we assume that $A=\diag(\alpha_1,\dots,\alpha_n)$. Since $AB=BA$, by
+    (0.7.7), $B$ is also diagonal matrix. Suppose that $B=\diag(\beta_1,\dots,
+    \beta_n)$ where $b_i$ may coincide. Then $p(A)=B$ is equivalent to 
+    $p(\alpha_i)=\beta_i$ for $i=1,\dots,n$. Since $\alpha_i$ are distinct, we 
+    can construct such a polynomial by interpolation.\par
+    For the general case, note that in the proof of Theorem 1.3.12, $n_i=1$ as
+    long as $\alpha_i$ are distinct. Hence, $A$ and $B$ are simultaneously 
+    diagonalizable. Suppose that $A=S\diag(\alpha_1,\dots,\alpha_n)S\inv$ and
+    $B=S\diag(\beta_1,\dots,\beta_n)S\inv$. Let $p$ be the same polynomial as in
+    the last paragraph. Then by P3,
+    \[
+      p(A)=Sp(\diag(\alpha_1,\dots,\alpha_n))S\inv = 
+      S\diag(\beta_1,\dots,\beta_n)S\inv = B.
     \]
   \end{proof}
 
@@ -308,6 +339,19 @@
     Clear that $A$ and $B$ commute but are not simultaneously diagonalizable 
     since $A$ can not be diagonalized. This does not violate 1.3.12 because
     in 1.3.12, $A$ and $B$ are required to be diagonalizable.
+  \end{proof}
+
+  \paragraph{6.}
+  \begin{proof}
+    (a) It follows immediately from the fact that the multiplication of block
+    diagonal matrices are block-wise.\\
+    (b) Suppose that $A=S\Lambda S\inv$, then
+    \[
+      p_A(t)=\det(tI-A)=\det(tSS\inv - S\Lambda S\inv) = \det(tI-\Lambda)=
+      p_\Lambda(t).
+    \]
+    By P3, $p_\Lambda(A)=Sp_\Lambda(\Lambda)S\inv$. Therefore, $p_A(A)=p_\Lambda
+    (A)=Sp_\Lambda(\Lambda)S\inv=0$.
   \end{proof}
 
   \paragraph{7.}
@@ -330,10 +374,31 @@
     Contradiction.
   \end{proof}
 
+  \paragraph{8.}
+  \begin{proof}
+    If $A$ and $B$ are simultaneously diagonalizable, then clear that $A$ and 
+    $B$ commute. Now we suppose that $A$ and $B$ commute and $\lambda_1,\dots,
+    \lambda_n$ are the distinct eigenvalues of $A$. Since for each $i$, the 
+    eigenspace $E(A,\lambda_i)$ is an one-dimensional invariant subspace of $B$,
+    then every vector in $E(A,\lambda_i)$ is also an eigenvector of $B$. Hence, 
+    there exists a basis of $\mathbb{C}^n$ consisting of the common eigenvectors
+    of $A$ and $B$, implying that they are simultaneously diagonalizable.
+  \end{proof}
+
   \paragraph{9.}
   \begin{proof}
     By Theorem 1.3.22, $AB$ and $BA$ have the same eigenvalues. And as similar
     matrices are of the same rank, $AB$ and $BA$ are not similar.
+  \end{proof}
+
+  \paragraph{10.}
+  \begin{proof}
+    We argue by contradiction. Assume that there exists some vector in the list
+    which belongs to the span of the previous vectors and suppose $x^{(p)}_q$ is
+    the first such vector. Then it equals to some linear combination of the 
+    previous vectors. Compute $Ax^{(p)}_q$ using the linearity first and then 
+    using the fact that $x^{(p)}_q$ is an eigenvalues. Compare the two formula
+    and we will obtain a contradiction.
   \end{proof}
 
   \paragraph{11.}
@@ -377,6 +442,18 @@
     \mathcal{F}$.
   \end{proof}
 
+  \paragraph{12.}
+  \begin{proof}
+    Suppose that $A$ is nonsingular. Then $BA=A\inv(AB)A$, i.e., $BA\sim AB$.
+    Therefore $BA$ is diagonalizable as long as $AB$ is. We can produce the same
+    result with a similar argument if $B$ is nonsingular.\par
+    Suppose $A=\begin{bsmallmatrix}0 & 1 \\ 0 & 0\end{bsmallmatrix}$ and $B=
+    \begin{bsmallmatrix} 1 & 1 \\ 0 & 0\end{bsmallmatrix}$. Then $AB=0$, which 
+    is a diagonal matrix and $BA=\begin{bsmallmatrix} 0 & 1 \\ 0 & 0
+    \end{bsmallmatrix}$, which is not diagonalizable since all eigenvectors of 
+    $BA$ are of form $[k, 0]^T$.
+  \end{proof}
+
   \paragraph{13.}
   \begin{proof}
     Since similar diagonalizable matrices have the same eigenvalues and 
@@ -386,6 +463,26 @@
     diagonalizable. For example, $\begin{bsmallmatrix} 0 & 1 \\ 0 & 0 
     \end{bsmallmatrix}$ and $0_{2\times 2}$ have the same characteristic 
     polynomial but they are not similar.
+  \end{proof}
+
+  \paragraph{14.}
+    This exercise provides several ways to prove a matrix to be not 
+    diagonalizable.
+  \begin{proof}
+    (a) It follows immediately form the fact that the rank of a matrix is 
+    similarity invariance. \\
+    (b) It holds for diagonal matrices. And since rank is invariant under 
+    similarity, it holds for all diagonalizable matrices.\\
+    (c) A matrix is nilpotent iff it is similar to a matrix whose nonzero 
+    entries are all above the main diagonal. Hence a diagonalizable matrix is
+    nilpotent iff it is similar to $0$ iff it equals to $0$.\\
+    (d) $\tr A=0$ implies the nonzero eigenvalues of $A$ comes in $\pm$ paris.
+    Hence, $\rank A$ is even.\\
+    (e) $\rank B=1$ but it has no nonzero eigenvalue. Hence, it is not 
+    diagonalizable by (a). Since $\rank B^2=0\ne \rank B$, $B$ is not 
+    diagonalizable by (b). $B$ is a nonzero nilpotent matrix and therefore is 
+    not diagonalizable by (c). $\tr B=0$ but $\rank B=1$. Hence $B$ is not 
+    diagonalizable by (d).
   \end{proof}
 
   \paragraph{15.}
@@ -452,6 +549,20 @@
     $\pm$ pairs.
   \end{proof}
 
+  \paragraph{20.}
+  \begin{proof}
+    (b) As $A$ is nonsingular, $A\inv A=I_n$ and therefore $R_1(A\inv)R_1(A)=
+    R_1(A\inv A)=I_{2n}$ by (a). Hence, $R_1(A)$ is nonsingular and $R_1(A)\inv=
+    R_1(A\inv)$, which also implies that $R_1(A)\inv$ has the same block 
+    structure as $R_1(A)$. \\
+    (g) By (f), $R_1(A)$ is similar to $A\oplus\bar{A}$. Therefore, $\sigma(R_1(
+    A))=\{\lambda_1,\dots,\lambda_n,\bar{\lambda}_1,\dots,\bar{\lambda}_n\}$.\\
+    (h) By (f), $\det R_1(A)=\det(A\oplus\bar{A})=|\det A|^2\ge 0$. Since $\rank
+    (A\oplus\bar{A})=2\rank A$ and rank is invariant under similarity, $\rank 
+    R_1(A)=2\rank A$.\\
+    (i) It follows immediately from (h).
+  \end{proof}
+
   \paragraph{23.}
   \begin{proof}
     Suppose that there exists some $X\in M_{n,m}$ such that $C=BX$ and let 
@@ -467,9 +578,21 @@
     have the same rank, $\rank[B\,C] = \rank B$.    
   \end{proof}
 
-  \paragraph{25.}
+  \paragraph{28.}
   \begin{proof}
-    TODO
+    \begin{align*}
+      \det(I_m+AB) 
+      &= \det\begin{bmatrix}
+        I_m+AB & A \\ 0 & I_n
+      \end{bmatrix} \\
+      &= \det\begin{bmatrix}
+        I_m+AB & A \\ B+BAB & I_n + BA 
+      \end{bmatrix} \\
+      &= \det\begin{bmatrix}
+        I_m & A \\ 0 & I_n+BA
+      \end{bmatrix} \\
+      &= \det (I_n+BA).
+    \end{align*}
   \end{proof}
 
   \paragraph{29.}
@@ -491,6 +614,17 @@
     I)$. Induction on $n$ yields that it is opposite to the parity of $n$. Thus,
     if $n$ is even, then $\det A$ is odd and therefore nonzero, implying $A$ is 
     nonsingular.
+  \end{proof}
+
+  \paragraph{30.}
+  \begin{proof}
+    By Theorem 1.3.27, there exists some nonsingular $R=\diag(r_1,\dots,r_n)$
+    such that $T=SR$, Hence,
+    \[
+      Tf(\Lambda)T\inv = SRf(\Lambda)R\inv S\inv = Sf(\Lambda)S\inv
+    \]
+    as $f(\Lambda)$, a diagonal matrix, commute with every matrix. Therefore,
+    $\cos^2A+\sin^2A=I$ as $\cos^2x+\sin^2x=1$ for every $x\in\mathbb{R}$.
   \end{proof}
 
   \paragraph{31.}
