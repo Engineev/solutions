@@ -41,12 +41,13 @@ My personal solutions to some textbook problems
   * 3.5 Measurable Functions (19, 21, 22.d, 23, 24)
   * 3.6 Littlewood's Three Principles (30, 31)
 * Chapter 4. The Lebesgue Integral
-  * 3.2 The Lebesgue Integral of a Bounded Function (2)
-  * 3.3 The Integral of a Nonnegative Function (3, 5, 6, 7, 8, 9)
-  * 3.4 The General Lebesgue Integral (12, 13, 15.a, 16, 18)
+  * 4.2 The Lebesgue Integral of a Bounded Function (2)
+  * 4.3 The Integral of a Nonnegative Function (3, 5, 6, 7, 8, 9)
+  * 4.4 The General Lebesgue Integral (12, 13, 15.a, 16, 18)
 * Chapter 5. Differentiation and Integration
-  * 3.1 Differentiation of Monotone Functions (3, 4, 5.a)
-  * 3.2 Functions of Bounded Variation (7, 8, 9, 10.a, 11)
+  * 5.1 Differentiation of Monotone Functions (3, 4, 5.a)
+  * 5.2 Functions of Bounded Variation (7, 8, 9, 10.a, 11)
+  * 5.4 Absolute Continuity (12, 13, 14, 17(a), 18, 20, 21)
 
 ## Stephen Boyd, Lieven Vandenberghe, *Convex Optimization*
 * Chapter 2. Convex Sets (1, 2, 8, 9(a, b), 16)
