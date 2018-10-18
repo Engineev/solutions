@@ -148,3 +148,202 @@
 
 % end
 
+\setcounter{subsection}{3}
+\subsection{Absolute Continuity}
+  \paragraph{12.}
+  \begin{solution}
+    The continuous extension of $x^2\sin(1/x^2)$ to $[0,1]$ is absolutely 
+    continuous for all $[\vep, 1]$ but is not of bounded variation on $[0,1]$
+    and therefore is not absolutely continuous on $[0,1]$.\par
+    Suppose that $f$ is also of bounded variation on $[0,1]$. Then $f$ is 
+    differentiable almost everywhere. Hence $g(x)=\int_0^xf\hp(t)\rd t+f(a)$ is
+    well-defined. For every $\vep>0$, we have
+    \[
+      g(x) = \int_0^\vep f\hp(t)\rd t+\int_\vep^x f\hp(t)\rd t + f(0)
+      = \int_0^\vep f\hp(t)\rd t + f(x) - f(\vep) + f(0),
+    \]
+    where the second equality comes from the absolute continuity on $[\vep,1]$.
+    By the continuity of $f$ at $x=0$, $f(\vep)\to f(0)$. Hence, letting $\vep
+    \to 0$ yields $g(x)=f(x)$. Namely, $f$ is an indefinite integral. Thus, by
+    Theorem 14, it is absolutely continuous.
+  \end{solution}
+
+  \paragraph{13.}
+  \begin{proof}
+    Since absolute continuity implies bounded variation, $\int_a^b|f\hp|\le 
+    T_a^b(f)$ by Problem 11. By the definiton of $T$, for every $\vep>0$, there
+    exists some subdivision $a=x_0<\cdots<x_n=b$ such that $t_a^b(f)>T_a^b(f)-
+    \vep$. Meanwhile, for every $i=1,\dots,n$,
+    \[
+      \int_{x_{i-1}}^{x_i}|f\hp| \ge 
+      \left|\int_{x_{i-1}}^{x_i}f\hp \right| =
+      |f(x_i) - f(x_{i-1})|,
+    \]
+    where the second equality is guaranteed by the absolute continuity. Hence,
+    $\int_a^b|f\hp|>T_a^b(f)-\vep$ for every $\vep>0$. Thus, $T_a^b(f)=
+    \int_a^b|f\hp|$.\par
+    By Lemma 4, $2P_a^b(f) = T_a^b(f) + f(b)-f(a)$. Hence,
+    \[
+      P_a^b(f) = \frac{1}{2}\left(\int_a^b|f\hp| + f(b)-f(a)\right)
+      =\frac{1}{2}\int_a^b (|f\hp|+f\hp) = \int_a^b[f\hp]^+.
+    \]
+  \end{proof}
+
+  \paragraph{14.}
+  \begin{proof}
+    $\,$\par
+    (a) Suppose that $f$ and $g$ are absolutely continuous. Then for every 
+    $\vep>0$, there exists some $\delta>0$ such that for all finite 
+    nonoverlapping $\langle(x_n,y_n)\rangle$ with $|x_n-y_n|<\vep$, 
+    \[
+      \sum |f(x_n)+g(x_n)-f(y_n)-g(y_n)| \le
+      \sum |f(x_n)-f(y_n)|+|g(x_n)-g(y_n)| \le 2\vep.
+    \]
+    Hence, $f+g$ is also absolutely continuous. Since $-g$ is absolutely 
+    continuous as long as $g$ is, so is $f-g$. \par
+    (b) Suppose that $f$ and $g$ are absolutely continuous. Then they are 
+    bounded, by $M$ for example. Hence for every $\vep>0$, there exists some
+    $\delta>0$ such that for all finite nonoverlapping $\langle(x_n,y_n)\rangle$
+    with $|x_n-y_n|<\vep$, 
+    \begin{align*}
+      &\sum |f(x_n)g(x_n)-f(y_n)g(y_n)| \\
+      =&\sum |f(x_n)g(x_n)-f(x_n)g(y_n) + f(x_n)g(y_n)-f(y_n)g(y_n)| \\ 
+      \le&\sum \{|f(x_n)||g(x_n)-g(y_n)| + |f(x_n)-f(y_n)||g(y_n)|\} \\
+      \le& M\vep.
+    \end{align*}
+    Thus, $fg$ is also absolutely continuous.\par
+    (c) Since $f$ is continuous on $[a,b]$, $f$ can achieve its minimum in $[a,
+    b]$. Hence, $|f(x)|\ge m>0$ as $f$ is never zero. Therefore for every $\vep>
+    0$, there exists some $\delta>0$ such that for all finite nonoverlapping
+    $\langle(x_n,y_n)\rangle$ with $|x_n-y_n|<\vep$,
+    \begin{align*}
+        \sum\left|\frac{1}{f(x_n)}-\frac{1}{f(y_n)}\right|
+      = \sum\left|\frac{f(x_n)-f(y_n)}{f(x_n)f(y_n)}\right|
+      \le \frac{1}{m^2}\sum|f(x_n)-f(y_n)|\le \frac{\vep}{m^2}.
+    \end{align*}
+  \end{proof}
+
+  \paragraph{17.}
+    Part (a) is wrong. It can be fixed if we further require $g$ to be monotone
+    increasing.
+  \begin{proof}
+    $\,$\par
+    (a) For every $\vep>0$, let $\delta_1$ be the number in the definition of 
+    $F$ corresponding to $\vep$ and $\delta_2$ the number in the definition of
+    $g$ corresponding to $\delta_1$. Then for every finite nonoverlapping
+    $\langle (x_n, y_n)\rangle$ with $|x_n-y_n|<\delta_2$, $\sum |g(x_n)-g(y_n)|
+    < \delta_1$. Since $g$ is monotone increasing, $(g(x_n), g(y_n))$ are 
+    nonoverlapping. Therefore, $\sum|F(g(x_n))-F(g(y_n))|<\vep$. Hence, $F\circ
+    g$ is absolutely continuous.
+  \end{proof}
+
+  \paragraph{18.}
+  \begin{proof}
+    Without loss of generality, we assume that $g$ is nondecreasing.
+    Since $mE=0$, for every $\vep>0$, by Proposition 3.15, there exists an open
+    set $O\supset E$ with $mO<\vep$. Meanwhile, there exists a sequence of 
+    disjoint open intervals $\langle I_n=(a_n,b_n)\rangle$ such that 
+    $\bigcup_{n=1}^\infty I_n=O$ and $l(I_n)<\delta$ where $\delta$ is the 
+    number in the definition of absolute continuity. Then $g[E]\subset
+    \bigcup_{n=1}^\infty g[I_n\cap[0,1]]$. Since $g$ is continuous, the image of
+    an interval is still an interval and since $g$ is also nondecreasing, $g[I_n
+    \cap[0,1]]=(g(a_n\hp), g(b_n\hp))$, where $a_n\hp=\max\{a_n,0\}$ and $b_n\hp
+    =\min\{b_n,1\}$. Finally,
+    \[
+     m(g[E]) \le \sum_{n=1}^\infty m(g[I_n]) = \sum_{n=1}^\infty|g(b_n\hp)-
+     g(a_n\hp)| \le \vep,
+    \]
+    where the last inequality comes from the absolute continuity of $g$. Since
+    the choice of $\vep$ is arbitrary, $m(g[E])=0$.
+  \end{proof}
+
+  \paragraph{20.}
+  \begin{proof}
+    $\,$\par
+    (a) For every $\vep>0$, let $\delta=\vep/M$. Then for every $\langle x_n
+    \rangle_{i=1}^n$ and $\langle y_n\rangle_{i=1}^n$ with $|x_n-y_n|\le\delta$,
+    \[
+      \sum_{i=1}^n|f(x_n)-f(y_n)|\le M\sum_{i=1}^n|x_n-y_n| \le \vep,
+    \]
+    as $f$ satisfies the Lipschitz condition.\par
+    (b) Suppose that $f$ is absolute continuous and $|f\hp|$ is bounded by $M$.
+    Then for every $x$ and $y$ in the interval,
+    \[
+      |f(x)-f(y)|=\left|\int_x^y f\hp(t)\rd t\right| \le M|x-y|.
+    \]
+    Hence, $f$ satisfies the Lipschitz condition. The converse part has been 
+    proved in (a).\par
+    (c) It is wrong. A counterexample is $f(x)=\chi_{[0,1]}$, $x\in(-1,1)$
+  \end{proof}
+
+  \paragraph{21.}
+  \begin{proof}
+    $\,$\par
+    (a) Suppose that $O=\bigcup_{n=1}^\infty(c_n,d_n)$ where $(c_n,d_n)$ are 
+    disjoint. Since $g$ is continuous and increasing, $g\inv(c_n,d_n)$ is still
+    an open interval, denoting it by $(a_n,b_n)$, and $(a_n,b_n)$ are also 
+    disjoint. Meanwhile, $d_n-c_n=f(a_n)-f(b_n)=\int_{a_n}^{b_n}g\hp $. Hence,
+    \[
+      mO = m\left(\bigcup_{n=1}^\infty(c_n,d_n)\right) = 
+      \sum_{n=1}^\infty(d_n-c_n) = 
+      \sum_{n=1}^\infty \int_{a_n}^{b_n}g\hp = 
+      \int_{g\inv[O]}g\hp.
+    \]\par
+    (b) Without loss of generality, we assume that $d\notin E$. For every $\vep
+    >0$, there exists an open set $O\supset E$ with $mO<\vep$. By Part (a),
+    \[
+      \int_{g\inv[O]\cap H}g\hp = \int_{g\inv[O]}g\hp = mO < \vep.
+    \]
+    Since the choice of $\vep$ is arbitrary, $\int_{g\inv[O]\cap H}g\hp = 0$.
+    Since $g\hp > 0$ on $H$, $g\inv[O]\cap H$ has measure zero.\par
+    (c) Since $E$ is measurable, so is $g\inv[E]$. Meanwhile, by Theorem 3, 
+    $g\hp$ is measurable, hence $H$ is also measurable. Therefore, $F$ is
+    measurable.\par
+    We may assume without loss of generality that $c,d\notin E$. By Proposition
+    3.15, there exists some $G\in G_\delta$ such that $E\subset G\subset(c,d)$
+    and $m(G\setminus E)=0$. Since $g$ is increasing, $g\inv[G]\cap H = F\cup
+    (g\inv[G\setminus E]\cap H)$ and by (b), $g[G\setminus E]\cap H$ is of
+    measure zero. Therefore, $\int_F g\hp=\int_{g\inv[G]\cap H}g\hp$. Namely, it 
+    suffices to show the result for $G\in G_\delta$. \par
+    Suppose that $G=\bigcap_{n=1}^\infty O_n$ where each $O_n\subset(c,d)$ is 
+    open and $mO_1<\infty$. Without loss of generality, we may assume that 
+    $\langle O_n\rangle$ is decreasing. Then $mG=\lim_{n\to\infty}mO_n$. By (a),
+    \[
+      mO_n = \int_{g\inv[O_n]}g\hp = \int_a^b\chi_{O_n}(g(x))g\hp(x)\rd x.
+    \]
+    As $\chi_{O_n}(g(x))g\hp(x)$ is bounded by $|g\hp|$, 
+    \[
+      \lim_{n\to\infty}\int_a^b\chi_{O_n}(g(x))g\hp(x)\rd x =
+      \int_a^b\chi_G(g(x))g\hp(x)\rd x.
+    \]
+    Hence, $mG=\int_{g\inv[G]\cap H}g\hp$, completing the proof.\par
+    (d) By Problem 3.25, $f\circ g$ is measurable. And since $g\hp$ is 
+    measurable by Theorem 3, $(f\circ g)g\hp$ is also measurable. \par
+    Let $\langle\varphi_n\rangle$ be an increasing sequence of nonnegative
+    simple functions which converges to $f$, the existence of which is 
+    guaranteed by Problem 4.4. By the monotone convergence theorem, $\int_c^d f
+    =\lim\int_c^d\varphi_n$.\par
+    For each $n$, suppose that $\varphi_n(y)=\sum_{k=1}^ma_k^{(n)}(y)
+    \chi_{E_k^{(n)}}(y)$. Then
+    \[
+      \int_c^d\varphi_n = \sum_{k=1}^ma_k^{(n)}mE_{k}^{(n)}=
+      \sum_{k=1}^ma_k^{(n)}\int_a^b\chi_{E_k^{(n)}}(g(x))g\hp(x)\rd x=
+      \int_a^b\varphi_n(g(x))g\hp(x)\rd x,
+    \]
+    where the second equality comes from (c). Since $g$ is increasing, 
+    $\langle\varphi_n(g(x))g\hp(x)\rangle$ is an increasing sequence. Hence,
+    \[
+      \int_a^b f(g(x))g\hp(x)\rd x =
+      \lim_{n\to\infty}\int_a^b\varphi_n(g(x))g\hp(x)\rd x.
+    \]
+    Thus,
+    \[
+      \int_c^d f(y)\rd y = 
+      \lim_{n\to\infty}\int_c^d\varphi_n(y)\rd y =
+      \lim_{n\to\infty}\int_a^b\varphi_n(g(x))g\hp(x)\rd x =
+      \int_a^b f(g(x))g\hp(x)\rd x.
+    \]
+  \end{proof}
+
+% end
+
