@@ -347,3 +347,70 @@
 
 % end
 
+\subsection{Convex Functions}
+  \paragraph{23.}
+  \begin{proof}
+    $\,$\par
+    (a) Suppose that $x_0\in(a,b)$ and $y(x)=m(x-x_0)+\varphi(x_0)$ is a 
+    supporting line. As $[a,b)$ is finite, $\varphi\ge\min\{\varphi(a),y(a), 
+    y(b)\}$. \par
+    (b) If $\varphi$ is monotone, then the limits exists. If $\varphi$ is not
+    monotone, then since $D^+\varphi$ is nondecreasing, there exists some $[c,d]
+    \subset(a,b)$ such that $D^+\varphi\le 0$ on $(a,c)$ and $D^+\varphi\ge 0$
+    on $(d,b)$. Namely, $\varphi$ is monotone on the $(a,c)$ and $(d,b)$.
+    Therefore, the limits also exist.\par
+    Consider a finite interval near the finite endpoint. By (a), the limit can
+    not be $-\infty$ as $\varphi$ is bounded from below.\par
+    (c) If $x$ and $y$ are in the interior of $I$, the inequality holds by 
+    definition. By the continuity of $\varphi$, the statement holds for all $x,y
+    \in I$.
+  \end{proof}
+
+  \paragraph{24.}
+  \begin{proof}
+    Note that the existence of $\varphi^{\prime\prime}$ implies $\varphi$ is 
+    continuously differentiable. Suppose that $\varphi$ is convex on $(a,b)$.
+    Then $D^+\varphi$ is nondecreasing by Proposition 17, hence $\varphi^{\prime
+    \prime}(x)\ge 0$ for each $x\in(a,b)$. And the converse of the statement
+    follows from Proposition 18 immediately. 
+  \end{proof}
+
+  \paragraph{25.}
+  \begin{proof}
+    $\,$\par
+    (a) $\varphi^{\prime\prime}(t)=b^2p(p-1)(a+bt)^{p-2}$ which $\ge 0$ on 
+    $[0,\infty)$ if $p\ge 1$ and $\le 0$ if $0<p\le 1$.
+  \end{proof}
+
+  \paragraph{26.} TODO
+
+  \paragraph{27.}
+  \begin{proof}
+    Note that $\log x$ is concave. Denote $A_N=\sum_{n=1}^N\alpha_n$ and $R_N=
+    1-A_N$. The situition where $\langle\alpha_n\rangle$ is finite is simple. 
+    Hence we assume that $R_N\ge 0$ for all $N$. Then for every $N$,
+    \begin{align*}
+      \log\left(\sum_{n=1}^\infty\alpha_n\xi_n\right)
+      &= \log\left(A_N\sum_{n=1}^N\frac{\alpha_n}{A_N}\xi_n + 
+         R_N\sum_{n=N+1}^\infty\frac{\alpha_n}{R_N}\xi_n\right) \\
+      &\ge A_N\log\left(\sum_{n=1}^N\frac{\alpha_n}{A_N}\xi_n\right) +
+           R_N\log\left(\sum_{n=N+1}^\infty\frac{\alpha_n}{R_N}\xi_n\right)\\
+      &\ge A_N\log\left(\sum_{n=1}^N\frac{\alpha_n}{A_N}\xi_n\right) \\
+      &\ge A_N\log\left(\prod_{n=1}^N\xi_n^{\alpha_n/A_N}\right)
+    \end{align*}
+    Taking $\exp$ on the both sides yields
+    \[
+      \sum_{n=1}^\infty\alpha_n\xi_n \ge 
+      \left(\prod_{n=1}^N\xi_n^{\alpha_n/A_N}\right)^{A_N} = 
+      \prod_{n=1}^N\xi_n^{\alpha_n} \to 
+      \prod_{n=1}^\infty\xi_n^{\alpha_n}.
+    \]
+  \end{proof}
+
+  \paragraph{28.}
+  \begin{proof}
+    It follows immediately from the Jensen inequality and the fact that $\log$
+    is concave.
+  \end{proof}
+% end
+

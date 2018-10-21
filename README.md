@@ -48,6 +48,7 @@ My personal solutions to some textbook problems
   * 5.1 Differentiation of Monotone Functions (3, 4, 5.a)
   * 5.2 Functions of Bounded Variation (7, 8, 9, 10.a, 11)
   * 5.4 Absolute Continuity (12, 13, 14, 17(a), 18, 20, 21)
+  * 5.5 Convex Functions (23, 24, 25.a, 27, 28)
 
 ## Stephen Boyd, Lieven Vandenberghe, *Convex Optimization*
 * Chapter 2. Convex Sets (1, 2, 8, 9(a, b), 16)
