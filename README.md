@@ -30,6 +30,7 @@ My personal solutions to some textbook problems
   * 1.4 Left and right eigenvectors and geometric multiplicity (Even - {8, 16})
 * Chapter 2. Unitary Similarity and Unitary Equivalence
   * 2.1 Unitary matrices and the QR factorization (8, 10, 11, 12, 23)
+  * 2.3 Unitary and real orthogonal triangularizations (9)
 
 ## H.L. Royden, *Real Analysis*, 3rd ed
 

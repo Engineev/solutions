@@ -71,3 +71,34 @@
     diagonal, which implies $A=QR$ has orthogonal columns. 
   \end{proof}
 % end
+
+\setcounter{subsection}{2}
+\subsection{Unitary and real orthogonal triangularizations}
+  \paragraph{9.}
+  \begin{proof}
+    Let $U=[x\,U_1]$ be a unitary matrix whose first column is $x/\|x\|_2$. One
+    can construct such a matrix explicitly via 2.3.P1. Note that $U^*x=\|x\|_2
+    e^{(n)}_1$, the first vector in the standard base of $\mathbb{C}^n$ and 
+    $U^*AU=\begin{bsmallmatrix}\lambda & \bigstar \\ 0 & U_1^*AU_1
+    \end{bsmallmatrix}$. And the eigenvalues of $U_1^*AU_1$ are $\lambda_2,
+    \dots,\lambda_n$.\par
+    Let $V=[1]\oplus U$. Then
+    \[
+      V^*\mathcal{A}V = 
+      \begin{bmatrix}
+        \alpha    & y^*U \\
+        \|x\|_2e^{(n)}_1 & U^*AU 
+      \end{bmatrix} =
+      \begin{bmatrix}
+        B & \bigstar \\ 
+        0 & U_1^*AU_1
+      \end{bmatrix}.
+    \]
+    Let $D=\diag(1,\|x\|_2\inv)$, then $DBD\inv=\begin{bsmallmatrix}
+    \alpha & y^*x \\ 1 & \lambda\end{bsmallmatrix}=E$. Hence, they have the same
+    eigenvalues. Therefore, the eigenvalues of $\mathcal{A}$ are the eigenvalues
+    of $E$ together with $\lambda_2,\dots,\lambda_n$. If $y\perp x$, then $y^*x=
+    0$ and therefore the eigenvalues of $E$ are just $\alpha$ and $\lambda$.
+  \end{proof}
+
+% end
