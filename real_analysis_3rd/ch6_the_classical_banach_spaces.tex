@@ -1,0 +1,46 @@
+\section{The Classical Banach Spaces}
+\subsection{The $L^p$ Spaces}
+  \paragraph{1.}
+  \begin{proof}
+    Put $S=\|f\|_\infty$ and $T=\|g\|_\infty$. Then $|f(t)|\le S$ and $|g(t)|\le
+    T$ a.e.. Hence, $S+T\ge |f(t)|+|g(t)| \ge |f(t)+g(t)|$ a.e.. Namely, $m\{t:
+    \,|f(t)+g(t)|>S+T\}=0$. Thus, $S+T\ge \|f+g\|_\infty$ by the definition of 
+    $\esssup$.
+  \end{proof}
+
+  \paragraph{2.}
+  \begin{proof}
+    Put $S=\|f\|_\infty$. Since $S\ge |f|$ a.e., 
+    \[
+      \|f\|_p=
+      \left\{\int_0^1|f|^p\right\}^{1/p} \le 
+      \left\{\int_0^1S^p\right\}^{1/p} = S.
+    \]
+    Therefore, $\uplim_{p\to\infty}\|f\|_p \le S$. For the converse part, let 
+    $\vep$ be any positive number. Then the measure $\delta$ of $E=\{t:\,|f(t)|>
+    S-\vep\}$ is positive. Hence,
+    \[
+      \left\{\int_0^1|f|^p\right\}^{1/p} \ge
+      \left\{\int_E|f|^p\right\}^{1/p} \ge 
+      \delta^{1/p}(S-\vep) \to 
+      S-\vep\quad\text{as $p\to\infty$.}
+    \]
+    Hence, $\lowlim_{p\to\infty}\ge S$, completing the proof.
+  \end{proof}
+
+  \paragraph{3.}
+  \begin{proof}
+    \[
+      \|f+g\|_1 = \int|f+g| \le \int|f|+\int|g| = \|f\|_1+\|g\|_1.
+    \]
+  \end{proof}
+
+  \paragraph{4.}
+  \begin{proof}
+    For every $M>\|g\|_\infty$, $|g|\le M$ a.e.. Hence,
+    \[
+      \int|fg|\le M\int|f| = \|f\|_1 M.
+    \]
+    Since the choice of $M$ is arbitrary, $\int|fg|\le \|f\|_1\|g\|_\infty$.
+  \end{proof}
+% end
