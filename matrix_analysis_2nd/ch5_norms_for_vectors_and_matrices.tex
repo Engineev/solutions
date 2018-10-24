@@ -1,0 +1,132 @@
+\section{Norms for Vectors and Matrices}
+\subsection{Definitions of norms and inner products}
+  \paragraph{1.}
+  \begin{proof}
+    By the homogeneity and the triangular inequality of seminorm,
+    \[
+      \|x\|=\left\|\sum_{i=1}^n x_ie_i\right\|
+      \le |x_i|\|e_i\|.
+    \]
+  \end{proof}
+
+  \paragraph{2.}
+  \begin{proof}
+    $\,$\par
+    (a) Since $V_0$ and $S$ are subspaces of $V$, 5.5.1.(1, 2, 3) holds. We only
+    need to show the positivity. Clear that $\|0\|=0$. Let $x\in S$ be any
+    vector with norm zero. Then $x\in V_0$. Since $V_0\cap S=\{0\}$, $x=0$.
+    Thus, $\|\cdot\|$ is a norm on $S$. \par
+    (b) Clear that $x\sim x$ and $x\sim y$ iff $y\sim x$. For the transitivity,
+    suppose $\|x-y\|=\|y-z\|=0$. Then by the triangular inequality
+    \[
+      0 \le \|x-z\| \le \|x-y\| + \|y-z\| = 0.
+    \]
+    Hence, $\sim$ is an equivalence relation.\par
+    Let $\hat{x}$ be the equivalence class containing $x$. For every $x,y\in
+    \hat{x}$, since $\|x-y\|=0$, $x-y\in V_0$.\par
+    Let $\hat{V}$ be the set consisting of all equivalence classes. Let $c
+    \in\mathbb{F}$ and $\hat{x},\hat{y}\in\hat{V}$. Define $c\hat{x}=
+    \widehat{cx}$ and $\hat{x}+\hat{y}=\widehat{x+y}$. Now we shows that it is
+    well-defined and therefore $\hat{V}$ is a vector space. Suppose $x_1,x_2\in
+    \hat{x}$. Since $c(x_1-x_2)\in V_0$, $\widehat{cx_1}=\widehat{cx_2}$. Hence,
+    the scalar multiplication is well-defined. Further suppose $y_1,y_2\in
+    \hat{y}$. Then $x_1+y_1-x_2-y_2 = (x_1-y_1)+(x_2-y_2)\in V_0$. Hence,
+    $\widehat{x_1+y_1}=\widehat{x_2+y_2}$. Namely, the addition is well-defined.
+    \par
+    Clear that $\|\hat{x}\|$ is well-defined. By Lemma 5.1.2, $\|\hat{x}\|$ is 
+    actually a single value set so we may think it as a real-valued function.
+    Meanwhile, it is a seminorm as $\|x\|$ is. And the argument in (a), \textit{
+    mutatis, mutandis}, gives the positivity. Hence, it is a norm on $\hat{V}$.
+    \par
+    (c) For every vector seminorm, the norm described in (b) is a natural norm 
+    associated with it.\par
+    (d) Yes.\par
+    (e) Clear that it is a seminorm. And for every vector $x$ orthogonal to $z$,
+    not necessarily zero, $\|x\|=0$. Hence, it is not a norm. The equivalence
+    classes of hyperplanes orthogonal to $z$.
+  \end{proof}
+
+  \paragraph{4.}
+  \begin{proof}
+    $\,$\par
+    (a) Some computation yields the identity. Consider $x$ and $y$ as two 
+    adjacent edges of a parallelogram. Then $x-y$ and $x+y$ are the two 
+    diagonals of the parallelogram. This gives a geometric explanation of the 
+    identity.
+  \end{proof}
+
+  \paragraph{6.}
+  \begin{proof}
+    \[
+      \frac{1}{4}(\|x+y\|^2-\|x-y\|^2) = 
+      \frac{1}{2}(\langle x,y\rangle+\overline{\langle y,x\rangle})
+      =\Re\langle x,y\rangle.
+    \]
+    By P4, $\|x-y\|^2 = 2\|x\|^2+2\|y\|^2-\|x+y\|^2$ and therefore
+    \[
+      \Re\langle x,y\rangle=
+      \frac{1}{4}(\|x+y\|^2-2\|x\|^2-2\|y\|^2+\|x+y\|^2)=
+      \frac{1}{2}(\|x+y\|^2-\|x\|^2-\|y\|^2).
+    \]
+  \end{proof}
+
+  \paragraph{10.}
+  \begin{proof}
+    The homogeneity implies $\|0\|=0$. For every $x$,
+    \[
+      0=\|x-x\| \le \|x\|+\|-x\| = 2\|x\|,
+    \]
+    where the inequality comes from the triangular inequality.
+  \end{proof}
+
+  \paragraph{12.}
+  \begin{proof}
+    $\,$\par
+    (a) Some computation gives $\langle x,x\rangle=\|x\|^2$ and the 
+    nonnegativity and positivity follows. Since $\langle x,y\rangle\in
+    \mathbb{R}$, $\overline{\langle y,x\rangle}=\langle y,x\rangle$. And clear
+    that it is symmetric. Thus, it satisfies axioms (1), (1a) and (4).\par
+    (b) It comes from some straightforward computation.\par
+    (c) For every nonnegative integer $n$ and $m$, by the additivity,
+    \[
+      \langle nx,y\rangle =\left\langle \sum_{i=1}^n x,y\right\rangle
+      =n\langle x,y\rangle.
+    \]
+    As $x=mx/m$, $m\langle m\inv nx,y\rangle = n\langle x,y\rangle$ and hence
+    \[
+      \left\langle\frac{n}{m}x,y \right\rangle =
+      \frac{n}{m}\langle x,y\rangle.
+    \]
+    Meanwhile,
+    \begin{align*}
+      \langle -x,y\rangle
+      &=\frac{1}{2}(\|x-y\|^2-\|x\|^2-\|y\|^2)\\
+      &=\frac{1}{2}(2\|x\|^2+2\|y\|^2-\|x+y\|^2-\|x\|^2-\|y\|^2) \\
+      &= -\langle x,y\rangle.
+    \end{align*}
+    Hence, $\langle ax,y\rangle = a\langle x,y\rangle$ for every $a\in
+    \mathbb{Q}$.\par
+    (d) For fixed $x$ and $y$, let $p(t)=t^2\|x\|^2+2t\langle x,y\rangle+
+    \|y\|^2$, a polynomial in $t$. For rational $t$, by (c), $p(t)=\|tx+y\|^2\ge
+    0$. By the continuity of $p$, $p(t)\ge 0$ for all $t\in\mathbb{R}$. Hence,
+    the discriminant of $p$ is non-positive. Namely, $|\langle x,y\rangle|^2 \le
+    \|x\|^2\|y\|^2$.\par
+    (e) Clear that the inequality holds for any $a\in\mathbb{R}$ and $b\in
+    \mathbb{Q}$. Hence $|a-b|$ can be arbitrarily small, giving the homogeneity.
+    Together with the previous parts, $\langle\cdot,\cdot\rangle$ is an inner 
+    product on $V$.\par
+    (f) We have show that $\Re\langle x,y\rangle$ is an inner product when the
+    vector space is over $\mathbb{R}$. The nonnegativity and positivity comes 
+    from some computation and the additivity from the previous discussion. 
+    Finally,
+    \begin{align*}
+      \langle y,x\rangle 
+      &= \Re\langle x,y\rangle + \frac{i}{2}(\|ix+y\|^2-\|ix\|^2-\|y\|^2)\\
+      &= \Re\langle x,y\rangle + \frac{i}{2}(\|x-y\|^2-\|x\|^2-\|y\|^2)\\
+      &= \Re\langle x,y\rangle - \frac{i}{2}(\|x+iy\|^2-\|x\|^2-\|y\|^2)\\
+      &= \overline{\langle x,y\rangle},
+    \end{align*}
+    where the last equality comes from (5.1.9). Hence, $\langle\cdot,\cdot
+    \rangle$ is an inner product on $V$.
+  \end{proof}
+% end

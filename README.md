@@ -31,6 +31,8 @@ My personal solutions to some textbook problems
 * Chapter 2. Unitary Similarity and Unitary Equivalence
   * 2.1 Unitary matrices and the QR factorization (8, 10, 11, 12, 23)
   * 2.3 Unitary and real orthogonal triangularizations (9)
+* Chapter 5. Norms for Vectors and Matrices
+  * 5.1 Definitions of norms and inner products (1, 2, 4.a, 6, 10, 12)
 
 ## H.L. Royden, *Real Analysis*, 3rd ed
 
