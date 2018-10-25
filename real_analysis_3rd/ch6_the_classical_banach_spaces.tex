@@ -44,3 +44,44 @@
     Since the choice of $M$ is arbitrary, $\int|fg|\le \|f\|_1\|g\|_\infty$.
   \end{proof}
 % end
+
+\subsection{The Minkowski and Hölder Inequalities}
+  \paragraph{8}
+  \begin{proof}
+    $\,$\par
+    (a) The logarithm function is concave, so 
+    \[
+      \log(a^p/p+b^q/q) \ge \frac{1}{p}\log a^p + \frac{1}{q}\log b^q = \log ab.
+    \]
+    Taking $\exp$ on the both sides yields the inequality. The equality holds 
+    iff $a^p=b^q$. \par
+    (b) The case where $p=\infty$ has been proved in Problem 4 and the case 
+    where $\|f\|_p=0$ or $\|g\|=0$ is straightforward. Hence, we assume that 
+    $1<p,q<\infty$ and $\|f\|_p\|g\|_q\ne 0$. \par
+    Suppose $\alpha=\|f\|_p$ and $\beta=\|g\|_q$. By Young's inequality, 
+    \[
+      \left|\frac{fg}{\alpha\beta}\right| \le 
+      \frac{1}{p}\left(\frac{|f|}{\alpha}\right)^p + 
+      \frac{1}{q}\left(\frac{|g|}{\beta}\right)^q
+    \]
+    for every $x$. Therefore,
+    \begin{equation}
+      \label{eq:6.2.8.1}
+      \int|fg| = \alpha\beta\int\left|\frac{fg}{\alpha\beta}\right|
+      \le \alpha\beta\int\left\{\frac{1}{p}\left(\frac{|f|}{\alpha}\right)^p + 
+      \frac{1}{q}\left(\frac{|g|}{\beta}\right)^q\right\}
+      = \alpha\beta.
+    \end{equation}
+    The equality holds iff the equality in Young's inequality holds a.e. iff 
+    $\beta|f|^p = \alpha|g|^q$ a.e..\par
+    (c) Let $p\hp=1/p$ and $q\hp=1-p\hp=-q/p$. Then for any nonnegative $c$ and
+    $d$, by Young's inequality,
+    \[
+      cd \le \frac{c^{p\hp}}{p\hp}+\frac{d^{q\hp}}{q\hp}=
+      pc^{1/p} - \frac{p}{q}d^{-q/p} \quad\Rightarrow\quad
+      c^{1/p} \ge \frac{cd}{p} + \frac{d^{-q/p}}{q}.
+    \]
+    Putting $c=(ab)^p$ and $d=b^{-p}$ yields the desired inequality.\par
+    (d) Just reverse the inequality in \eqref{eq:6.2.8.1}.
+  \end{proof}
+% end

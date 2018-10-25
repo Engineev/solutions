@@ -50,10 +50,11 @@ My personal solutions to some textbook problems
 * Chapter 5. Differentiation and Integration
   * 5.1 Differentiation of Monotone Functions (3, 4, 5.a)
   * 5.2 Functions of Bounded Variation (7, 8, 9, 10.a, 11)
-  * 5.4 Absolute Continuity (12, 13, 14, 17(a), 18, 20, 21)
+  * 5.4 Absolute Continuity (12, 13, 14, 17.a, 18, 20, 21)
   * 5.5 Convex Functions (23, 24, 25.a, 27, 28)
 * Chapter 6. The Classical Banach Spaces
-  * 5.1 The L^p Spaces (1, 2, 3, 4)
+  * 6.1 The L^p Spaces (1, 2, 3, 4)
+  * 6.2 The Minkowski and Hölder Inequalities (8)
 
 ## Stephen Boyd, Lieven Vandenberghe, *Convex Optimization*
 * Chapter 2. Convex Sets (1, 2, 8, 9(a, b), 16)
