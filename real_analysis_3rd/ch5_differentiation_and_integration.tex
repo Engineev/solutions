@@ -1,0 +1,416 @@
+\section{Differentiation and Integration}
+\subsection{Differentiation of Monotone Functions}
+  \paragraph{3.}
+    "maximum" needs to be changed to "minimum" in both (a) and (b).
+  \begin{proof}
+    $\,$\par
+    (a) We may assume without loss of generality that $c=0$. Since $f$ attains a
+    local minimum at $x=0$, $f(h)\ge f(0)$ for every $h$ sufficiently small.
+    Hence, for every small $h>0$, $(f(c+h)-f(c))/h>0$ and therefore $D_+f(c)\ge
+    0$. Meanwhile, by Problem 2.b, 
+    \[
+      -D_{-}f(0) = D^+f(0) \ge 0 \quad\Rightarrow\quad 
+      D_{-}f(0) \le 0.
+    \]
+    The other two inequalities follow immediately from the definitions of upper 
+    and lower limits.\par
+    (b) If $f$ has a local minimum at $a$ or $b$, then we only have the right or
+    left half of the inequalities.
+  \end{proof}
+
+  \paragraph{4.}
+  \begin{proof}
+    We first show this for $g$ with $D^+g\ge\vep>0$. For every $a\le x<y\le b$,
+    as $g$ is continuous on $[a,b]$, $g$ has a maximum in $[a,b]$ and by Problem
+    2 and 3, $g$ can not attain the maximum in $[a,b)$. Namely, the restrict of
+    $f$ to $[x,y]$ attains the maximum at $y$. Hence, $g(x)\le g(y)$.\par
+    For every $f$ with nonnegative $D^+$, let $g(x)=f(x)+\vep x$ where $\vep>0$.
+    Then $D^+g\ge\vep >0$. Hence $g$ is nondecreasing. Therefore, for every $a
+    \le x<y\le b$, 
+    \[
+      g(x)\le g(y) \quad\Rightarrow\quad f(x)+\vep x \le f(y)+\vep y.
+    \]
+    Since the choice of $\vep$ is arbitrary, this implies $f(x)\le f(y)$.
+  \end{proof}
+
+  \paragraph{5.a}
+  \begin{proof}
+    \begin{align*}
+       \sup_{t\in(0,h)}\frac{(f+g)(x+t)-(f+g)(x)}{t} 
+      =&\sup_{t\in(0,h)}\left(\frac{f(x+t)-f(x)}{t}+
+        \frac{g(x+t)-g(x)}{t}\right) \\
+      \le&\sup_{t\in(0,h)}\frac{f(x+t)-f(x)}{t}+
+          \sup_{t\in(0,h)}\frac{g(x+t)-g(x)}{t}.
+    \end{align*}
+    Letting $h\to 0$ yields $D^+(f+g)\le D^+f+D^+g$.
+  \end{proof}
+% end
+
+\subsection{Functions of Bounded Variation}
+  \paragraph{7.}
+  \begin{proof}
+    $\,$\par
+    (a) It suffices to show this for monotone functions as each function of 
+    bounded variation is the difference of two monotone functions. Suppose that
+    $f$ is nondecreasing. Then the set $E=\{f(x):x>c\}$ is bounded below and 
+    hence $A=\inf E$ is finite. For every $\vep>0$, there exists some $y>c$ such 
+    that $A\le f(c) <A+\vep$. Hence, as $f$ is nondecreasing, for every $x\in(c,
+    y)$, $|f(x)-A|<\vep$. Namely, $\lim_{x\to c+}f(x)=A$. Similarly, $\lim_{x\to
+    c-}f(x)$ exists.\par
+    Let $D_n=\{x:\, |f(x+)-f(x-)|>1/n\}$. Since $f$ is nondecreasing, $|f(x)-
+    f(y)|\le f(b)-f(a)<\infty$ for every $x,y\in[a,b]$. Hence, $D_n$ is finite,
+    otherwise we can choose a sequence $x_1<\dots<x_N$ with $N>(f(b)-f(a))/n$
+    such that $f(X_N)-f(x_1)> f(b)-f(a)$. Therefore, $\bigcup_{n=1}^\infty E_n$,
+    the set of discontinuities, is countable.\par
+    (b) Suppose $\{x_1,\dots,x_n,\dots\}=\mathbb{Q}\cap[0,1]$ and define $f(x)=
+    \sum_{x_n<x}2^{-n}$. Clear that $f$ is monotone and continuous at every 
+    irrational point. For each rational $x=x_k$, $f(x+)-f(x-)=2^{-n}$. Hence,
+    $f$ is discontinuous at each rational point.
+  \end{proof}
+
+  \paragraph{8.}
+  \begin{proof}
+    $\,$\par
+    (a) For every $\vep>0$, there exists some subdivision $a=x_0<\cdots<x_p=c$ 
+    and $c=x_p<\cdots<x_q=b$ of $[a,c]$ and $[c,b]$ such that $T_a^c<t_a^c+\vep$
+    and $T_c^b<t_c^b+\vep$. Hence, $T_a^c+T_c^b-2\vep < t_a^c+t_c^b$. Meanwhile,
+    as $a=x_0<\cdots<x_q=b$ forms a subdivision of $[a,b]$, $T_a^b\ge t_a^b =
+    t_a^c+t_c^b$. Therefore, $T_a^c+T_c^b-2\vep < T_a^b$. Since the choice of
+    $\vep$ is arbitrary, $T_a^b+T_c^b\le T_a^b$.\par
+    To show that $T_a^b+T_c^b\ge T_a^b$, let $a=x_0<\cdots<x_q=b$ be 
+    any subdivision of $[a,b]$ and by adding $c$ into it, we get subdivisions of
+    $[a,c]$ and $[c,b]$. Suppose that $c\in(x_k, x_{k+1}]$, then
+    \[
+      |f(x_k)-f(c)|+|f(c)-f(x_{k+1})|+t_a^b = t_a^c+t_c^b+|f(x_k)-f(x_{k+1})|,
+    \]
+    which implies $t_a^b\le t_a^c+t_c^b$. Hence, 
+    \[
+      T_a^b = \sup t_a^b \le \sup(t_a^c+t_c^b) \le T_a^c + T_c^b.
+    \]\par
+    Thus, $T_a^b=T_a^c+T_c^b$ and therefore $T_a^c\le T_a^b$.\par
+    (b) 
+    \begin{align*}
+      T_a^b(f+g) 
+      &=   \sup\sum_{i=1}^k|f(x_i)+g(x_i)-f(x_{i-1})-g(x_{i-1})| \\
+      &\le \sup\sum_{i=1}^k|f(x_i)-f(x_{i-1})| + 
+           \sup\sum_{i=1}^k|g(x_i)-g(x_{i-1})| \\
+      &\le T_a^b(f) + T_a^b(g).
+    \end{align*}
+    \begin{align*}
+      T_a^b(cf) 
+      = \sup\sum_{i=1}^k|cf(x_i-cf(x_{i-1})| 
+      = |c|\sup\sum_{i=1}^k|f(x_i-f(x_{i-1})| 
+      = |c|T_a^b(f).
+    \end{align*}
+  \end{proof}
+
+  \paragraph{9.}
+  \begin{proof}
+    For every $\vep>0$, there exists a subdivision $a=x_0<\cdots<x_k=b$ such
+    that $t_a^b(f)\ge T_a^b(f)-\vep$. Meanwhile, as $f_n$ converges to $f$
+    pointwisely
+    \begin{align*}
+      t_a^b(f) &= t_a^b(\lim f_n) \\
+      &= \sum_{i=1}^k|(\lim f_n)(x_i) - (\lim f_n)(x_{i-1})| \\
+      &= \lim \sum_{i=1}^k|f_n(x_i)-f_n(x_{i-1})| \\
+      &\le \lowlim\sup\sum_{i=1}^k|f_n(x_i)-f_n(x_{i-1})| 
+      = \lowlim T_a^b(f_n).
+    \end{align*}
+    Hence, $T_a^b(f)-\vep \le \lowlim T_a^b(f_n)$. Since the choice of $\vep$ is
+    arbitrary, $T_a^b(f)\le\lowlim T_a^b(f_n)$.
+  \end{proof}
+
+  \paragraph{10.a}
+  \begin{solution}
+    No. Let $x_k = (k\pi+\pi/2)^{-1/2}$, $k=0,1,\dots$ and consider the 
+    subdivision $-1<0<x_n<\cdots<x_0<1$. Then
+    \[
+      t_n \ge \sum_{k=1}^n|f(x_k)-f(x_{k-1})|
+      \ge\sum_{k=1}^n\frac{2}{(k+1/2)\pi}.
+    \]
+    $t_n\to\infty$ as $n\to\infty$ and therefore $f$ is not of bounded 
+    variation on $[-1,1]$.
+  \end{solution}
+
+  \paragraph{11.}
+  \begin{proof}
+    By Lemma 4, $f(x)=f(a)+P_a^x-N_a^x$. Since $P_a^x$ and $N_a^x$ are monotone,
+    by Theorem 3, they are differentiable almost everywhere as $f$, a function 
+    of bounded variation, does. Hence, for almost every $x\in[a,b]$,
+    \[
+      \frac{\rd}{\rd x}f(x) = \frac{\rd}{\rd x}P_a^x - \frac{\rd}{\rd x}N_a^x
+      \quad\Rightarrow\quad
+      |f\hp(x)| \le \frac{\rd}{\rd x}P_a^x+\frac{\rd}{\rd x}N_a^x = 
+      \frac{\rd}{\rd x}T_a^x.
+    \]
+    Integrating on the both sides yields $\int_a^b|f\hp|\le T_a^b(f)$.
+  \end{proof}
+
+% end
+
+\setcounter{subsection}{3}
+\subsection{Absolute Continuity}
+  \paragraph{12.}
+  \begin{solution}
+    The continuous extension of $x^2\sin(1/x^2)$ to $[0,1]$ is absolutely 
+    continuous for all $[\vep, 1]$ but is not of bounded variation on $[0,1]$
+    and therefore is not absolutely continuous on $[0,1]$.\par
+    Suppose that $f$ is also of bounded variation on $[0,1]$. Then $f$ is 
+    differentiable almost everywhere. Hence $g(x)=\int_0^xf\hp(t)\rd t+f(a)$ is
+    well-defined. For every $\vep>0$, we have
+    \[
+      g(x) = \int_0^\vep f\hp(t)\rd t+\int_\vep^x f\hp(t)\rd t + f(0)
+      = \int_0^\vep f\hp(t)\rd t + f(x) - f(\vep) + f(0),
+    \]
+    where the second equality comes from the absolute continuity on $[\vep,1]$.
+    By the continuity of $f$ at $x=0$, $f(\vep)\to f(0)$. Hence, letting $\vep
+    \to 0$ yields $g(x)=f(x)$. Namely, $f$ is an indefinite integral. Thus, by
+    Theorem 14, it is absolutely continuous.
+  \end{solution}
+
+  \paragraph{13.}
+  \begin{proof}
+    Since absolute continuity implies bounded variation, $\int_a^b|f\hp|\le 
+    T_a^b(f)$ by Problem 11. By the definiton of $T$, for every $\vep>0$, there
+    exists some subdivision $a=x_0<\cdots<x_n=b$ such that $t_a^b(f)>T_a^b(f)-
+    \vep$. Meanwhile, for every $i=1,\dots,n$,
+    \[
+      \int_{x_{i-1}}^{x_i}|f\hp| \ge 
+      \left|\int_{x_{i-1}}^{x_i}f\hp \right| =
+      |f(x_i) - f(x_{i-1})|,
+    \]
+    where the second equality is guaranteed by the absolute continuity. Hence,
+    $\int_a^b|f\hp|>T_a^b(f)-\vep$ for every $\vep>0$. Thus, $T_a^b(f)=
+    \int_a^b|f\hp|$.\par
+    By Lemma 4, $2P_a^b(f) = T_a^b(f) + f(b)-f(a)$. Hence,
+    \[
+      P_a^b(f) = \frac{1}{2}\left(\int_a^b|f\hp| + f(b)-f(a)\right)
+      =\frac{1}{2}\int_a^b (|f\hp|+f\hp) = \int_a^b[f\hp]^+.
+    \]
+  \end{proof}
+
+  \paragraph{14.}
+  \begin{proof}
+    $\,$\par
+    (a) Suppose that $f$ and $g$ are absolutely continuous. Then for every 
+    $\vep>0$, there exists some $\delta>0$ such that for all finite 
+    nonoverlapping $\langle(x_n,y_n)\rangle$ with $|x_n-y_n|<\vep$, 
+    \[
+      \sum |f(x_n)+g(x_n)-f(y_n)-g(y_n)| \le
+      \sum |f(x_n)-f(y_n)|+|g(x_n)-g(y_n)| \le 2\vep.
+    \]
+    Hence, $f+g$ is also absolutely continuous. Since $-g$ is absolutely 
+    continuous as long as $g$ is, so is $f-g$. \par
+    (b) Suppose that $f$ and $g$ are absolutely continuous. Then they are 
+    bounded, by $M$ for example. Hence for every $\vep>0$, there exists some
+    $\delta>0$ such that for all finite nonoverlapping $\langle(x_n,y_n)\rangle$
+    with $|x_n-y_n|<\vep$, 
+    \begin{align*}
+      &\sum |f(x_n)g(x_n)-f(y_n)g(y_n)| \\
+      =&\sum |f(x_n)g(x_n)-f(x_n)g(y_n) + f(x_n)g(y_n)-f(y_n)g(y_n)| \\ 
+      \le&\sum \{|f(x_n)||g(x_n)-g(y_n)| + |f(x_n)-f(y_n)||g(y_n)|\} \\
+      \le& M\vep.
+    \end{align*}
+    Thus, $fg$ is also absolutely continuous.\par
+    (c) Since $f$ is continuous on $[a,b]$, $f$ can achieve its minimum in $[a,
+    b]$. Hence, $|f(x)|\ge m>0$ as $f$ is never zero. Therefore for every $\vep>
+    0$, there exists some $\delta>0$ such that for all finite nonoverlapping
+    $\langle(x_n,y_n)\rangle$ with $|x_n-y_n|<\vep$,
+    \begin{align*}
+        \sum\left|\frac{1}{f(x_n)}-\frac{1}{f(y_n)}\right|
+      = \sum\left|\frac{f(x_n)-f(y_n)}{f(x_n)f(y_n)}\right|
+      \le \frac{1}{m^2}\sum|f(x_n)-f(y_n)|\le \frac{\vep}{m^2}.
+    \end{align*}
+  \end{proof}
+
+  \paragraph{17.}
+    Part (a) is wrong. It can be fixed if we further require $g$ to be monotone
+    increasing.
+  \begin{proof}
+    $\,$\par
+    (a) For every $\vep>0$, let $\delta_1$ be the number in the definition of 
+    $F$ corresponding to $\vep$ and $\delta_2$ the number in the definition of
+    $g$ corresponding to $\delta_1$. Then for every finite nonoverlapping
+    $\langle (x_n, y_n)\rangle$ with $|x_n-y_n|<\delta_2$, $\sum |g(x_n)-g(y_n)|
+    < \delta_1$. Since $g$ is monotone increasing, $(g(x_n), g(y_n))$ are 
+    nonoverlapping. Therefore, $\sum|F(g(x_n))-F(g(y_n))|<\vep$. Hence, $F\circ
+    g$ is absolutely continuous.
+  \end{proof}
+
+  \paragraph{18.}
+  \begin{proof}
+    Without loss of generality, we assume that $g$ is nondecreasing.
+    Since $mE=0$, for every $\vep>0$, by Proposition 3.15, there exists an open
+    set $O\supset E$ with $mO<\vep$. Meanwhile, there exists a sequence of 
+    disjoint open intervals $\langle I_n=(a_n,b_n)\rangle$ such that 
+    $\bigcup_{n=1}^\infty I_n=O$ and $l(I_n)<\delta$ where $\delta$ is the 
+    number in the definition of absolute continuity. Then $g[E]\subset
+    \bigcup_{n=1}^\infty g[I_n\cap[0,1]]$. Since $g$ is continuous, the image of
+    an interval is still an interval and since $g$ is also nondecreasing, $g[I_n
+    \cap[0,1]]=(g(a_n\hp), g(b_n\hp))$, where $a_n\hp=\max\{a_n,0\}$ and $b_n\hp
+    =\min\{b_n,1\}$. Finally,
+    \[
+     m(g[E]) \le \sum_{n=1}^\infty m(g[I_n]) = \sum_{n=1}^\infty|g(b_n\hp)-
+     g(a_n\hp)| \le \vep,
+    \]
+    where the last inequality comes from the absolute continuity of $g$. Since
+    the choice of $\vep$ is arbitrary, $m(g[E])=0$.
+  \end{proof}
+
+  \paragraph{20.}
+  \begin{proof}
+    $\,$\par
+    (a) For every $\vep>0$, let $\delta=\vep/M$. Then for every $\langle x_n
+    \rangle_{i=1}^n$ and $\langle y_n\rangle_{i=1}^n$ with $|x_n-y_n|\le\delta$,
+    \[
+      \sum_{i=1}^n|f(x_n)-f(y_n)|\le M\sum_{i=1}^n|x_n-y_n| \le \vep,
+    \]
+    as $f$ satisfies the Lipschitz condition.\par
+    (b) Suppose that $f$ is absolute continuous and $|f\hp|$ is bounded by $M$.
+    Then for every $x$ and $y$ in the interval,
+    \[
+      |f(x)-f(y)|=\left|\int_x^y f\hp(t)\rd t\right| \le M|x-y|.
+    \]
+    Hence, $f$ satisfies the Lipschitz condition. The converse part has been 
+    proved in (a).\par
+    (c) It is wrong. A counterexample is $f(x)=\chi_{[0,1]}$, $x\in(-1,1)$
+  \end{proof}
+
+  \paragraph{21.}
+  \begin{proof}
+    $\,$\par
+    (a) Suppose that $O=\bigcup_{n=1}^\infty(c_n,d_n)$ where $(c_n,d_n)$ are 
+    disjoint. Since $g$ is continuous and increasing, $g\inv(c_n,d_n)$ is still
+    an open interval, denoting it by $(a_n,b_n)$, and $(a_n,b_n)$ are also 
+    disjoint. Meanwhile, $d_n-c_n=f(a_n)-f(b_n)=\int_{a_n}^{b_n}g\hp $. Hence,
+    \[
+      mO = m\left(\bigcup_{n=1}^\infty(c_n,d_n)\right) = 
+      \sum_{n=1}^\infty(d_n-c_n) = 
+      \sum_{n=1}^\infty \int_{a_n}^{b_n}g\hp = 
+      \int_{g\inv[O]}g\hp.
+    \]\par
+    (b) Without loss of generality, we assume that $d\notin E$. For every $\vep
+    >0$, there exists an open set $O\supset E$ with $mO<\vep$. By Part (a),
+    \[
+      \int_{g\inv[O]\cap H}g\hp = \int_{g\inv[O]}g\hp = mO < \vep.
+    \]
+    Since the choice of $\vep$ is arbitrary, $\int_{g\inv[O]\cap H}g\hp = 0$.
+    Since $g\hp > 0$ on $H$, $g\inv[O]\cap H$ has measure zero.\par
+    (c) Since $E$ is measurable, so is $g\inv[E]$. Meanwhile, by Theorem 3, 
+    $g\hp$ is measurable, hence $H$ is also measurable. Therefore, $F$ is
+    measurable.\par
+    We may assume without loss of generality that $c,d\notin E$. By Proposition
+    3.15, there exists some $G\in G_\delta$ such that $E\subset G\subset(c,d)$
+    and $m(G\setminus E)=0$. Since $g$ is increasing, $g\inv[G]\cap H = F\cup
+    (g\inv[G\setminus E]\cap H)$ and by (b), $g[G\setminus E]\cap H$ is of
+    measure zero. Therefore, $\int_F g\hp=\int_{g\inv[G]\cap H}g\hp$. Namely, it 
+    suffices to show the result for $G\in G_\delta$. \par
+    Suppose that $G=\bigcap_{n=1}^\infty O_n$ where each $O_n\subset(c,d)$ is 
+    open and $mO_1<\infty$. Without loss of generality, we may assume that 
+    $\langle O_n\rangle$ is decreasing. Then $mG=\lim_{n\to\infty}mO_n$. By (a),
+    \[
+      mO_n = \int_{g\inv[O_n]}g\hp = \int_a^b\chi_{O_n}(g(x))g\hp(x)\rd x.
+    \]
+    As $\chi_{O_n}(g(x))g\hp(x)$ is bounded by $|g\hp|$, 
+    \[
+      \lim_{n\to\infty}\int_a^b\chi_{O_n}(g(x))g\hp(x)\rd x =
+      \int_a^b\chi_G(g(x))g\hp(x)\rd x.
+    \]
+    Hence, $mG=\int_{g\inv[G]\cap H}g\hp$, completing the proof.\par
+    (d) By Problem 3.25, $f\circ g$ is measurable. And since $g\hp$ is 
+    measurable by Theorem 3, $(f\circ g)g\hp$ is also measurable. \par
+    Let $\langle\varphi_n\rangle$ be an increasing sequence of nonnegative
+    simple functions which converges to $f$, the existence of which is 
+    guaranteed by Problem 4.4. By the monotone convergence theorem, $\int_c^d f
+    =\lim\int_c^d\varphi_n$.\par
+    For each $n$, suppose that $\varphi_n(y)=\sum_{k=1}^ma_k^{(n)}(y)
+    \chi_{E_k^{(n)}}(y)$. Then
+    \[
+      \int_c^d\varphi_n = \sum_{k=1}^ma_k^{(n)}mE_{k}^{(n)}=
+      \sum_{k=1}^ma_k^{(n)}\int_a^b\chi_{E_k^{(n)}}(g(x))g\hp(x)\rd x=
+      \int_a^b\varphi_n(g(x))g\hp(x)\rd x,
+    \]
+    where the second equality comes from (c). Since $g$ is increasing, 
+    $\langle\varphi_n(g(x))g\hp(x)\rangle$ is an increasing sequence. Hence,
+    \[
+      \int_a^b f(g(x))g\hp(x)\rd x =
+      \lim_{n\to\infty}\int_a^b\varphi_n(g(x))g\hp(x)\rd x.
+    \]
+    Thus,
+    \[
+      \int_c^d f(y)\rd y = 
+      \lim_{n\to\infty}\int_c^d\varphi_n(y)\rd y =
+      \lim_{n\to\infty}\int_a^b\varphi_n(g(x))g\hp(x)\rd x =
+      \int_a^b f(g(x))g\hp(x)\rd x.
+    \]
+  \end{proof}
+
+% end
+
+\subsection{Convex Functions}
+  \paragraph{23.}
+  \begin{proof}
+    $\,$\par
+    (a) Suppose that $x_0\in(a,b)$ and $y(x)=m(x-x_0)+\varphi(x_0)$ is a 
+    supporting line. As $[a,b)$ is finite, $\varphi\ge\min\{\varphi(a),y(a), 
+    y(b)\}$. \par
+    (b) If $\varphi$ is monotone, then the limits exists. If $\varphi$ is not
+    monotone, then since $D^+\varphi$ is nondecreasing, there exists some $[c,d]
+    \subset(a,b)$ such that $D^+\varphi\le 0$ on $(a,c)$ and $D^+\varphi\ge 0$
+    on $(d,b)$. Namely, $\varphi$ is monotone on the $(a,c)$ and $(d,b)$.
+    Therefore, the limits also exist.\par
+    Consider a finite interval near the finite endpoint. By (a), the limit can
+    not be $-\infty$ as $\varphi$ is bounded from below.\par
+    (c) If $x$ and $y$ are in the interior of $I$, the inequality holds by 
+    definition. By the continuity of $\varphi$, the statement holds for all $x,y
+    \in I$.
+  \end{proof}
+
+  \paragraph{24.}
+  \begin{proof}
+    Note that the existence of $\varphi^{\prime\prime}$ implies $\varphi$ is 
+    continuously differentiable. Suppose that $\varphi$ is convex on $(a,b)$.
+    Then $D^+\varphi$ is nondecreasing by Proposition 17, hence $\varphi^{\prime
+    \prime}(x)\ge 0$ for each $x\in(a,b)$. And the converse of the statement
+    follows from Proposition 18 immediately. 
+  \end{proof}
+
+  \paragraph{25.}
+  \begin{proof}
+    $\,$\par
+    (a) $\varphi^{\prime\prime}(t)=b^2p(p-1)(a+bt)^{p-2}$ which $\ge 0$ on 
+    $[0,\infty)$ if $p\ge 1$ and $\le 0$ if $0<p\le 1$.
+  \end{proof}
+
+  \paragraph{26.} TODO
+
+  \paragraph{27.}
+  \begin{proof}
+    Note that $\log x$ is concave. Denote $A_N=\sum_{n=1}^N\alpha_n$ and $R_N=
+    1-A_N$. The situition where $\langle\alpha_n\rangle$ is finite is simple. 
+    Hence we assume that $R_N\ge 0$ for all $N$. Then for every $N$,
+    \begin{align*}
+      \log\left(\sum_{n=1}^\infty\alpha_n\xi_n\right)
+      &= \log\left(A_N\sum_{n=1}^N\frac{\alpha_n}{A_N}\xi_n + 
+         R_N\sum_{n=N+1}^\infty\frac{\alpha_n}{R_N}\xi_n\right) \\
+      &\ge A_N\log\left(\sum_{n=1}^N\frac{\alpha_n}{A_N}\xi_n\right) +
+           R_N\log\left(\sum_{n=N+1}^\infty\frac{\alpha_n}{R_N}\xi_n\right)\\
+      &\ge A_N\log\left(\sum_{n=1}^N\frac{\alpha_n}{A_N}\xi_n\right) \\
+      &\ge A_N\log\left(\prod_{n=1}^N\xi_n^{\alpha_n/A_N}\right)
+    \end{align*}
+    Taking $\exp$ on the both sides yields
+    \[
+      \sum_{n=1}^\infty\alpha_n\xi_n \ge 
+      \left(\prod_{n=1}^N\xi_n^{\alpha_n/A_N}\right)^{A_N} = 
+      \prod_{n=1}^N\xi_n^{\alpha_n} \to 
+      \prod_{n=1}^\infty\xi_n^{\alpha_n}.
+    \]
+  \end{proof}
+
+  \paragraph{28.}
+  \begin{proof}
+    It follows immediately from the Jensen inequality and the fact that $\log$
+    is concave.
+  \end{proof}
+% end
+

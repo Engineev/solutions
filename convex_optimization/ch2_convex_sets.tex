@@ -64,8 +64,8 @@
       b_1^T \\ \vdots \\ b_{n-2}^T 
     \end{bmatrix}x = Bx = 0.
   \]
-  For $y=(y_1,y_2)^T\in S_0$, $y_1\le 1$ iff $a_1^Ty \le 1$ as $(a_1,a_2)$ is an
-  orthonormal basis of $S_0$. Hence, 
+  For $y=y_1a_1+y_2a_2\in S_0$, $y_1\le 1$ iff $a_1^Ty \le 1$ as $(a_1,a_2)$ is
+  an orthonormal basis of $S_0$. Hence, 
   \[
     -1\le y_1,y_2\le 1 \quad\Leftrightarrow\quad
     \begin{bmatrix}
@@ -75,13 +75,13 @@
   Thus, for orthonormal $a_1$ and $a_2$, $S=\{x:\, Bx=0,\, Ax\preceq\mathbf{1}\}
   $, a polyhedron.\par
   Now we only assume the liner independence of $a_1$ and $a_2$. We know that
-  there exists some invertible $n$ by $n$ matrix\footnote{We can use $QR$ 
+  there exists some invertible $n$-by-$n$ matrix\footnote{We can use $QR$ 
   factorization to construct the matrix explicitly} $R$ such that $[\tilde{a}_1,
   \tilde{a_2}]=R[a_1,a_2]$ and $\tilde{a}_1$ and $\tilde{a}_2$ are orthonormal. 
   Denoting the set described in the problem with respect to $u_1$ and $u_2$ by
   $S(u_1,u_2)$, $x\in S(a_1,a_2)$ iff $Rx\in S(\tilde{a}_1,\tilde{a_2})$ iff
   $Rx \in \{x:\,\tilde{B}x=0,\, \tilde{A}x\preceq 1\}$ where the meaning of 
-  $\tilde{A}$ and $\tilde{B}$ are described in the previous passage. Namely, 
+  $\tilde{A}$ and $\tilde{B}$ are described in the previous passage. Hence, 
   \[
     S(a_1,a_2) = \{x:\, \tilde{B}Rx=0,\, \tilde{A}Rx\preceq 1\}.
   \]

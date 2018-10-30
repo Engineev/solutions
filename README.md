@@ -17,7 +17,8 @@ My personal solutions to some textbook problems
   * 7.C Positive Operators and Isometries (Even - {10, 12})
   * 7.D Polar Decomposition and Singular Value Decomposition (ongoing)
 * Chapter 8. Operators on Complex Vector Spaces
-  * 8.A Generalized Eigenvectors and Nilpotent Operators ({3, 5, 7, 9, 13, 15})
+  * 8.A Generalized Eigenvectors and Nilpotent Operators (3, 5, 7, 9, 13, 15)
+  * 8.B Decomposition of an Operator (10)
 
 
 ## Roger A. Horn, Charles R. Johnson, *Matrix Analysis*, 2nd ed
@@ -26,8 +27,13 @@ My personal solutions to some textbook problems
   * 1.0 Introduction (Completed)
   * 1.1 The eigenvalue-eigenvector equation (Odd)
   * 1.2 The characteristic polynomial and algebraic multiplicity (Even - {12})
-  * 1.3 Similarity (Odd - {21, 35, 37, 39, 41})
+  * 1.3 Similarity ([1, 15], 17, 19, 20.(b, g, h, i), 23, [28, 31], 33)
   * 1.4 Left and right eigenvectors and geometric multiplicity (Even - {8, 16})
+* Chapter 2. Unitary Similarity and Unitary Equivalence
+  * 2.1 Unitary matrices and the QR factorization (8, 10, 11, 12, 23)
+  * 2.3 Unitary and real orthogonal triangularizations (9)
+* Chapter 5. Norms for Vectors and Matrices
+  * 5.1 Definitions of norms and inner products (1, 2, 4.a, 6, 10, 12)
 
 ## H.L. Royden, *Real Analysis*, 3rd ed
 
@@ -35,17 +41,23 @@ My personal solutions to some textbook problems
   * 3.1 Introduction (1, 2, 3)
   * 3.2 Outer Measure (5, 6, 7, 8)
   * 3.3 Measurable Sets and Lebesgue Measure (10, 11, 12, 13)
-  * 3.5 Measurable Functions (19, 21, 22.(d), 23, 24)
+  * 3.5 Measurable Functions (19, 21, 22.d, 23, 24)
   * 3.6 Littlewood's Three Principles (30, 31)
 * Chapter 4. The Lebesgue Integral
-  * 3.2 The Lebesgue Integral of a Bounded Function (2)
-  * 3.3 The Integral of a Nonnegative Function (3, 5, 6, 7, 8, 9)
-  * 3.4 The General Lebesgue Integral (12, 13, 15.a, 16, 18)
+  * 4.2 The Lebesgue Integral of a Bounded Function (2)
+  * 4.3 The Integral of a Nonnegative Function (3, 5, 6, 7, 8, 9)
+  * 4.4 The General Lebesgue Integral (12, 13, 15.a, 16, 18)
+* Chapter 5. Differentiation and Integration
+  * 5.1 Differentiation of Monotone Functions (3, 4, 5.a)
+  * 5.2 Functions of Bounded Variation (7, 8, 9, 10.a, 11)
+  * 5.4 Absolute Continuity (12, 13, 14, 17.a, 18, 20, 21)
+  * 5.5 Convex Functions (23, 24, 25.a, 27, 28)
+* Chapter 6. The Classical Banach Spaces
+  * 6.1 The L^p Spaces (1, 2, 3, 4)
+  * 6.2 The Minkowski and Hölder Inequalities (8)
+  * 6.3 Convergence and Completeness (9, 10, 11, 13, 16, 17, 18)
 
 ## Stephen Boyd, Lieven Vandenberghe, *Convex Optimization*
 * Chapter 2. Convex Sets
   * 2.1 Definition of convexity (1, 2, 3, 4)
 
-## Morris W. Hirsch, Stephen Smale, Robert L. Devaney, *Differential Equations, Dynamical Systems, and an Introduction to Chaos*, 2nd ed
-
-* Chapter 2. Planar Liner Systems (2.b, 5, 7)
