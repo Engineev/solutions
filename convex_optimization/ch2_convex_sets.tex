@@ -1,30 +1,55 @@
 \section{Convex Sets}
 
-\paragraph{2.1}
-\begin{proof}
-  For $k=2$, $\theta_1x_1+\theta_2x_2\in C$ holds by by definition. We argue by
-  induction on $k$ and assume that the inclusion holds for $k<m$. When $k=m$,
-  denoting $\sum_{i=1}^{m-1}\theta_i$ by $s$,
-  \[
-    \sum_{i=1}^m \theta_ix_i = 
-    s\sum_{i=1}^{m-1}\frac{\theta_ix_i}{s} + \theta_mx_m.
-  \]
-  Since $\sum_{i=1}^{m-1}\theta_i/s=1$, by the induction hypothesis,
-  $\sum_{i=1}^{m-1}\theta_ix_i/s\in C$ . Meanwhile, as $s+\theta_m=1$, 
-  $\sum_{i=1}^m\theta_ix_i\in C$, completing the proof.
-\end{proof}
+\subsection{Definition of convexity}
+  \paragraph{1.}
+  \begin{proof}
+    For $k=2$, $\theta_1x_1+\theta_2x_2\in C$ holds by by definition. We argue by
+    induction on $k$ and assume that the inclusion holds for $k<m$. When $k=m$,
+    denoting $\sum_{i=1}^{m-1}\theta_i$ by $s$,
+    \[
+      \sum_{i=1}^m \theta_ix_i = 
+      s\sum_{i=1}^{m-1}\frac{\theta_ix_i}{s} + \theta_mx_m.
+    \]
+    Since $\sum_{i=1}^{m-1}\theta_i/s=1$, by the induction hypothesis,
+    $\sum_{i=1}^{m-1}\theta_ix_i/s\in C$ . Meanwhile, as $s+\theta_m=1$, 
+    $\sum_{i=1}^m\theta_ix_i\in C$, completing the proof.
+  \end{proof}
 
-\paragraph{2.2}
-\begin{proof}
-  Clear that the intersection of two convex sets is still convex. Hence, the 
-  intersection of $C\subset\mathbb{R}^n$ and any line is convex as long as $C$
-  is convex.\par
-  Now we suppose that the intersection of $C$ and any line is convex. For any 
-  $x_1,x_2\in C$, $C_l=C\cap\{\theta x_1+(1-\theta)x_2:\,\theta\in\mathbb{R}\}$
-  is convex and therefore $\theta x_1+(1-\theta)x_2\in C_l\subset C$ for every 
-  $0\le\theta\le 1$. Thus, $C$ is convex.
-\end{proof}
+  \paragraph{2.}
+  \begin{proof}
+    Clear that the intersection of two convex sets is still convex. Hence, the 
+    intersection of $C\subset\mathbb{R}^n$ and any line is convex as long as $C$
+    is convex.\par
+    Now we suppose that the intersection of $C$ and any line is convex. For any 
+    $x_1,x_2\in C$, $C_l=C\cap\{\theta x_1+(1-\theta)x_2:\,\theta\in\mathbb{R}\}$
+    is convex and therefore $\theta x_1+(1-\theta)x_2\in C_l\subset C$ for every 
+    $0\le\theta\le 1$. Thus, $C$ is convex.\par
+    The above argument, \textit{mutatis mutandis}, gives the second result.
+  \end{proof}
 
+  \paragraph{3.}
+  \begin{proof}
+    For every $\theta\in[0,1]$, the process of bisecting the interval implies 
+    there exists a series $\langle\delta_n\rangle$ whose sum is $\theta$. Hence,
+    for every $a,b\in C$, $x_n = a+(b-a)\sum_{n=1}^\infty\delta_n$ converges to
+    $a+\theta(b-a)$. Meanwhile, the midpoint convexity implies $x_n\in C$ for 
+    every $n$. And since $C$ is closed, $a+\theta(b-a)\in C$. Thus, $C$ is 
+    convex.
+  \end{proof}
+
+  \paragraph{4.}
+  \begin{proof}
+    Let $D$ be the intersection of all convex sets containing $C$. If $x\in C$,
+    then its is a convex combination of some points in $C$. Hence, for every 
+    convex set containing $C$, it contains $x$. Therefore, $\conv C\subset D$.
+    For the converse, since $\conv C$ itself is a convex set containing $C$, $D
+    \subset\conv C$. Thus, $\conv C=D$.
+  \end{proof}
+
+% end
+
+
+\iffalse
 \paragraph{2.8}
 \begin{proof}
   $\,$\par
@@ -141,5 +166,7 @@
   \]
   Hence, $S$ is convex.
 \end{proof}
+
+\fi
 
 % end
