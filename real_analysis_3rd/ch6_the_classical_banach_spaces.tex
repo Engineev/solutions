@@ -3,7 +3,7 @@
   \paragraph{1.}
   \begin{proof}
     Put $S=\|f\|_\infty$ and $T=\|g\|_\infty$. Then $|f(t)|\le S$ and $|g(t)|\le
-    T$ a.e.. Hence, $S+T\ge |f(t)|+|g(t)| \ge |f(t)+g(t)|$ a.e.. Namely, $m\{t:
+    T$ a.e. Hence, $S+T\ge |f(t)|+|g(t)| \ge |f(t)+g(t)|$ a.e. Namely, $m\{t:
     \,|f(t)+g(t)|>S+T\}=0$. Thus, $S+T\ge \|f+g\|_\infty$ by the definition of 
     $\esssup$.
   \end{proof}
@@ -37,7 +37,7 @@
 
   \paragraph{4.}
   \begin{proof}
-    For every $M>\|g\|_\infty$, $|g|\le M$ a.e.. Hence,
+    For every $M>\|g\|_\infty$, $|g|\le M$ a.e. Hence,
     \[
       \int|fg|\le M\int|f| = \|f\|_1 M.
     \]
@@ -73,7 +73,7 @@
       = \alpha\beta.
     \end{equation}
     The equality holds iff the equality in Young's inequality holds a.e. iff 
-    $\beta|f|^p = \alpha|g|^q$ a.e..\par
+    $\beta|f|^p = \alpha|g|^q$ a.e.\par
     (c) Let $p\hp=1/p$ and $q\hp=1-p\hp=-q/p$. Then for any nonnegative $c$ and
     $d$, by Young's inequality,
     \[
@@ -83,5 +83,127 @@
     \]
     Putting $c=(ab)^p$ and $d=b^{-p}$ yields the desired inequality.\par
     (d) Just reverse the inequality in \eqref{eq:6.2.8.1}.
+  \end{proof}
+% end
+
+\subsection{Convergence and Completeness}
+  \paragraph{9.}
+  \begin{proof}
+    Suppose $\langle f_n\rangle\subset X$ converges to $f\in X$. Namely, for
+    every $\vep>0$, there exists some $N$ such that for all $n>N$, $\|f_n-f\|<
+    \vep$. Hence, for every $n,m>N$, by Minkowski inequality,
+    \[
+      \|f_n-f_m\| \le \|f_n-f\|+\|f-f_m\| < 2\vep.
+    \]
+    Hence, $\langle f_n\rangle$ is a Cauchy sequence.
+  \end{proof}
+
+  \paragraph{10.}
+  \begin{proof}
+    Suppose $f_n\to f$. Then $M_n=\|f_n-f\|_\infty=\esssup|f_n-f|\to 0$. Let
+    $E_n=\{x:\,|f_n(x)-f(x)|>M_m\}$, each of which is with measure zero. And
+    therefore $E=\bigcup_{n=1}^\infty E_n$ is with measure zero. Note that 
+    $\tilde{E}=\{x:\,|f_n(x)-f(x)|<M_n,\forall\,n\}$, which implies the uniform
+    convergence of $f_n$ since $M_n\to 0$.\par
+    For the converse part, the uniform convergence on $\tilde{E}$ implies that
+    for every $\vep>0$, there exists some $N$ such that for every $n>N$ and $x
+    \in\tilde{E}$, $|f_n(x)-f(x)|<\vep$. Since $mE=0$, this implies $\|f_n-f
+    \|_\infty=\esssup|f_n(x)-f(x)|<\vep$. Hence, $f_n\to f$ in $L^\infty$.
+  \end{proof}
+
+  \paragraph{11.}
+  \begin{proof}
+    Let $\langle f_n\rangle\subset L^\infty$ be absolutely summable. Put $M_n=
+    \|f_n\|_\infty$ and $A_n=\{t:\,|f_n(t)|>M_n\}$. By the definition of $\|
+    \cdot\|_\infty$, $mA_n=0$. Hence, $A=\bigcup_{n=1}^\infty A_n$ is of measure
+    zero. \par
+    Note that $|f_n(x)|\le M_n$ for every $n$ and $x\in E\setminus A$. Thus, by
+    the Weierstrass M-test, $\sum_{n=1}^\infty f_n$ converges uniformly. Hence,
+    on $E\setminus A$, $\sup|\sum_{n=1}^\infty f_n - \sum_{n=1}^N f_n|\to 0$ as
+    $N\to\infty$. Since $mA=0$, this implies the summability of $\langle f_n
+    \rangle$.
+  \end{proof}
+
+  \paragraph{13.}
+  \begin{proof}
+    Suppose $\langle f_n\rangle\subset C$ be absolutely summable. Since for
+    every $x$, $0\le|f_n(x)|\le\|f_n\|$, $\langle f_n\rangle$ is uniformly
+    convergent on $[0,1]$. Put $s=\sum_{n=1}^\infty f_n$. Since each $f_n$ is 
+    continuous, so is $s$. Therefore, $s\in C$. \par
+    For every $\vep>0$, there exists some $N$ such that for every $n>N$ and $x
+    \in[0,1]$, $\left|s(x)-\sum_{k=1}^nf_k(x)\right|<\vep$. Hence, $\|s-
+    \sum_{k=1}^nf_k\|<\vep$. Thus, $\langle f_n\rangle$ is summable and
+    therefore $C$ is a Banach space.
+  \end{proof}
+
+  \paragraph{16.}
+  \begin{proof}
+    Since $\|f_n-f\| \ge |\|f_n\|-\|f\||$, $f_n\to f$ in $L^p$ implies $\|f_n\|
+    \to \|f\|$. For the converse part, note that $2^p(|f_n|^p+|f|^p)-|f_n-f|^p
+    \ge 0$ and for almost every $x$,
+    \[
+      2^p(|f_n|^p+|f|^p)-|f_n-f|^p \to 2^{p+1}|f|^p.
+    \]
+    By Fatou's Lemma,
+    \begin{align*}
+      2^{p+1}\|f\|^p = 2^{p+1}\int|f|^p 
+      &\le \lowlim\int\{2^p(|f_n|^p+|f|^p)-|f_n-f|^p\} \\
+      &= 2^{p+1}\|f\|^p - \uplim\|f_n-f\|^p.
+    \end{align*}
+    Hence, $\uplim\|f_n-f\|^p \le 0$. Since clear that $\lowlim\|f_n-f\|^p\ge0$,
+    $\lim\|f_n-f\|=0$, i.e., $f_n \to f$ in $L^p$.
+  \end{proof}
+
+  \paragraph{17.}
+    I assume that $1/p+1/q=1$.
+  \begin{proof}
+    Since $g\in L^p$, $|g|^q$ is integrable on $E=[0,1]$ and therefore for every
+    $\vep>0$, there exists some $\delta$ such that for every $A\subset E$ with
+    $mA<\delta$, $\int_A|g|^q<\vep$. Meanwhile, since $f_n(x)\to f(x)$ for 
+    almost every $x$, by Egoroff's Theorem, there exists some $A\subset E$ with
+    $mA<\delta$ such that $f_ng$ converges to $fg$ uniformly on $E\setminus A$.
+    \par
+    From the uniform convergence we conclude
+    \begin{equation}
+      \label{eq:6.17.1}
+      \int_{E\setminus A} fg = \lim_{n\to\infty}\int_{E\setminus A}f_ng.
+    \end{equation}
+    Meanwhile, by Hölder inequality,
+    \begin{align*}
+      \left|\int_A (f-f_n)g\right| \le \int_A|(f-f_n)g|
+      &\le\left\{\int_A|f_n-f|^p\right\}^{1/p}\left\{\int_A|g|^q\right\}^{1/q}
+      \le M\vep^{1/q}.
+    \end{align*}
+    Hence, \eqref{eq:6.17.1} can be extended to $E$.\par
+    For $p=1$, this is not true. $f_n=n\chi_{[0,1/n]}$ and $g=\chi_{[0,1]}$ 
+    gives a counterexample.
+  \end{proof}
+
+  \paragraph{18.}
+  \begin{proof}
+    By Minkowski inequality, 
+    \[
+      \|g_nf_n-gf\| = \|g_n(f_n-f)+(g_n-g)f\| \le \|g_n(f_n-f)\|+\|(g_n-g)f\|.
+    \]
+    Fix $\vep>0$. Since $f,g_n,g\in L^p$, $|g_n-g|^p|f|^p$ is integrable and 
+    therefore there exists some $\delta>0$ such that for all subsets with 
+    measure $<\delta$, the integral of over it $<\vep$. Meanwhile, since $g_n\to
+    g$ a.e., by Egoroff's Theorem, there exists some $A\subset E=[0,1]$ with $mA
+    <\delta$ such that $g_n\to g$ uniformly on $E\setminus A$ and therefore 
+    there exists some $N_1>0$ such that for all $n>N_1$, $|g_n(x)-g(x)|^p<\vep$
+    for $x\in E\setminus A$. Thus, for every $n>N_1$,
+    \begin{align*}
+      \|(g_n-g)f\|
+      &=\left\{\int_{E\setminus A}|g_n-g|^p|f|^p\right\}^{1/p} + 
+        \left\{\int_A|g_n-g|^p|f|^p\right\}^{1/p} \\
+      & \le \sqrt[p]{\vep}\|f\| + \sqrt[p]{\vep} \le (\|f\|+1)\vep.
+    \end{align*}
+    Since $|g_n|\le M$, $\|g_n(f_n-f)\|\le M\|f_n-f\|$. And since $f_n\to f$ in 
+    $L^p$, there exists some $N_2>0$ such that for all $n>N_2$, $\|f_n-f\|<
+    \vep$. Put $N=\max(N_1,N_2)$, then for every $n>N$,
+    \[
+      \|g_nf_n-gf\| \le (\|f\|+1+M)\vep.
+    \]
+    Hence, $g_nf_n\to gf$ in $L^p$.
   \end{proof}
 % end

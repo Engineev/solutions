@@ -55,6 +55,7 @@ My personal solutions to some textbook problems
 * Chapter 6. The Classical Banach Spaces
   * 6.1 The L^p Spaces (1, 2, 3, 4)
   * 6.2 The Minkowski and Hölder Inequalities (8)
+  * 6.3 Convergence and Completeness (9, 10, 11, 13, 16, 17, 18)
 
 ## Stephen Boyd, Lieven Vandenberghe, *Convex Optimization*
 * Chapter 2. Convex Sets (1, 2, 8, 9(a, b), 16)
