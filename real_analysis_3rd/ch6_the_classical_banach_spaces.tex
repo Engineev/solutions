@@ -207,3 +207,22 @@
     Hence, $g_nf_n\to gf$ in $L^p$.
   \end{proof}
 % end
+
+\subsection{Approximation in $L^p$}
+  \paragraph{19.}
+  \begin{proof}
+    Since $\|T_\Delta f\|\le \|T_\Delta|f|\|$ and $\|f\|=\||f|\|$, we may assume
+    without loss of generality that $f\ge 0$. For $p>1$, by Jensen's inequality,
+    \begin{align*}
+      \|T_\Delta f\|_p^p 
+      &= \sum_{k=1}^m\int_{\xi_{k-1}}^{\xi_k}
+      \left(\frac{1}{\xi_k-\xi_{k-1}}\int_{\xi_{k=1}}^{\xi_k}f\right)^p \\
+      &\le \sum_{k=1}^m\int_{\xi_{k-1}}^{\xi_k}
+      \frac{1}{\xi_k-\xi_{k-1}}\int_{\xi_{k-1}}^{\xi_k}f^p \\
+      &= \sum_{k=1}^m\int_{\xi_{k-1}}^{\xi_k}f^p \\
+      &= \int_0^1f^p = \|f\|_p^p.
+    \end{align*}
+  \end{proof}
+
+  \paragraph{20.} TODO
+% end
