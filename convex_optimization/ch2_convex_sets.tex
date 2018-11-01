@@ -194,31 +194,28 @@
   \end{proof}
 % end
 
+\subsection{Operations that preserve convexity}
+  \paragraph{2.16}
+  \begin{proof}
+    For every $(a,b_1+b_2),(c,d_1+d_2)\in S$ and $0\le\theta\le 1$, let 
+    \[
+      z_\theta = \theta(a,b_1+b_2)+(1-\theta)(c,d_1+d_2) = (x,y_1+y_2)
+    \]
+    where
+    \begin{align*}
+      x = \theta a+(1-\theta) c,\quad
+      y_i = \theta b_i+(1-\theta)d_i\quad\text{for $i=1,2$}.
+    \end{align*}
+    Since $S_i$ is convex and $(a,b_i),(c,d_i)\in S_i$,
+    \[
+      (x,y_i)=\theta(a,b_i) + (1-\theta)(c,d_i)\in S_i.
+    \]
+    Hence, $S$ is convex.
+  \end{proof}
 
-\iffalse
-
-
-
-
-
-\paragraph{2.16}
-\begin{proof}
-  For every $(a,b_1+b_2),(c,d_1+d_2)\in S$ and $0\le\theta\le 1$, let 
-  \[
-    z_\theta = \theta(a,b_1+b_2)+(1-\theta)(c,d_1+d_2) = (x,y_1+y_2)
-  \]
-  where
-  \begin{align*}
-    x = \theta a+(1-\theta) c,\quad
-    y_i = \theta b_i+(1-\theta)d_i\quad\text{for $i=1,2$}.
-  \end{align*}
-  Since $S_i$ is convex and $(a,b_i),(c,d_i)\in S_i$,
-  \[
-    (x,y_i)=\theta(a,b_i) + (1-\theta)(c,d_i)\in S_i.
-  \]
-  Hence, $S$ is convex.
-\end{proof}
-
-\fi
+  \paragraph{18.}
+  \begin{proof}
+    By Remark 2.2, $f\inv = \mathcal{P}\inv\circ Q\inv\circ\mathcal{P}$.
+  \end{proof}
 
 % end
