@@ -1,0 +1,103 @@
+\section{Normed Spaces. Banach Spaces}
+\setcounter{subsection}{2}
+\subsection{Further Properties of Normed Spaces}
+  \paragraph{4.}
+    cf. Prob. 13, Sec 1.2
+  \begin{proof}
+    The continuity of addition and multiplication follows respectively from the
+    inequalities
+    \[
+      \|(x_1+y_1)-(x_2+y_2)\| \le \|x_1-x_2\|+\|y_1-y_2\|
+    \]
+    and 
+    \[
+      \|\alpha_1x_1-\alpha_2x_2\| = 
+      \|\alpha_1x_1-\alpha_1x_2+\alpha_1x_2-\alpha_2x_2\|
+      \le |\alpha_1|\|x_1-x_2\| + |\alpha_1-\alpha_2|\|x_2\|.
+    \]
+  \end{proof}
+
+  \paragraph{7.}
+  \begin{proof}
+    Let $Y$ and $y_n$ be defined as in the hint. Then $\|y_n\|=1/n^2$, 
+    constituting a convergent number series. However, 
+    \[
+      \sum_{n=1}^N y_n = (1,1/4, \dots, 1/N^2, 0,\dots),
+    \]
+    which is divergent as $N\to\infty$.
+  \end{proof}
+
+  \paragraph{8.}
+  \begin{proof}
+    Let $(x_n)$ be a Cauchy sequence in $X$. Hence, for every $n>0$, there 
+    exists some $K_n>0$ such that for all $p,q>K_n$, $\|x_p-x_q\|<1/n^2$. 
+    Without loss of generality, we may assume that $(K_n)$ is increasing. Since
+    the series $\|x_{K_{n+1}}-x_{K_n}\|$ is bounded by $1/n^2$, it converges. 
+    By the hypothesis, the series $(x_{K_{n+1}}-x_{K_n})$ also converges. Hence, 
+    \[
+      x_{K_n} = x_{K_1} + \sum_{i=1}^{n-1}(x_{K_{i+1}}-x_{K_i}) \to x
+      \quad\text{as } n\to\infty.
+    \]\par
+    Now we show that $(x_n)$ converges to $x$. For every $\vep>0$, since $(x_n)$
+    is a Cauchy sequence, there exists some $N_1$ such that for all $p,q>N_1$,
+    $\|x_p-x_q\|<\vep$. Meanwhile, since $x_{K_n}\to x$, once $K_n$ is large
+    enough, $\|x-x_{K_n}\|<\vep$. Let $K_n>N_1$. Then for every $n>K_n$
+    \[
+      \|x_n-x\| \le \|x_n-x_{K_n}\| + \|x_{K_n}-x\| \le 2\vep.
+    \]
+    Thus, $X$ is complete.
+  \end{proof}
+
+  \paragraph{9.}
+  \begin{proof}
+    Let $(x_n)$ be an absolutely convergent series in Banach space $X$. Let 
+    $s_n=\sum_{i=1}^n x_n$. Now we show that $s_n$ is a Cauchy sequence and 
+    therefore convergent. Since $\sum_{i=1}^\infty\|x_i\|<\infty$, for every 
+    $\vep>0$, there exists some $N>0$ such that for all $n>N$, $\sum_{i=n}
+    ^\infty\|x_i\|<\vep$. Hence, for every $N<p\le q$,
+    \[
+      \|s_q-s_p\| = \left\|\sum_{i=p+1}^q x_i\right\|
+      \le \sum_{i=p+1}^q\|x_i\| < \vep,
+    \]
+    completing the proof.
+  \end{proof}
+
+  \paragraph{10.}
+  \begin{proof}
+    Let $(e_n)$ be Schauder basis of $X$. Denote the underlying field of $X$ by
+    $\mathbb{K}$ and let $\mathbb{W}=\mathbb{Q}$ if $\mathbb{K}=\mathbb{R}$ and
+    $\mathbb{W}=\{p+iq:\, p,q\in\mathbb{Q}\}$ if $\mathbb{K}=\mathbb{C}$. Now we
+    show that
+    \[
+      S = \left\{\sum_{i=1}^n\alpha_ie_i:\, 
+      \alpha_i\in\mathbb{W}, n=1,2,\dots\right\},
+    \]
+    a countable subset of $X$, is dense in $X$ to derive the separability. \par
+    For every $x\in X$ and $\vep>0$, by the definition of Schauder basis, there 
+    exists $\beta_1,\dots,\beta_n\in\mathbb{K}$ such that $\|x-(\beta_1e_1+
+    \cdots+\beta_ne_n)\|<\vep$. Let $M=\max_{i}\|e_i\|$. If $M=0$, then there is
+    nothing to prove. Otherwise, since $\mathbb{W}$ is dense in $\mathbb{K}$,
+    for $i=1,\dots,n$, there exists $\alpha_i\in\mathbb{W}$ with $|\alpha_i-
+    \beta_i|<\vep/2^iM$. Hence,
+    \begin{align*}
+      \left\|x-\sum_{i=1}^n\alpha_ie_i\right\|
+      \le& \left\|x-\sum_{i=1}^n\beta_ie_i\right\| +
+           \left\|\sum_{i=1}^n(\beta_i-\alpha_i)e_i\right\| \\
+      \le& \vep + \sum_{i=1}^n|\alpha_i-\beta_i|\|e_i\|  \\
+      \le& 2\vep.
+    \end{align*}
+    Thus, $S$ is dense in $X$ and therefore $X$ is separable.
+  \end{proof}
+
+  \paragraph{14.}
+  \begin{proof}
+    Clear that $\|\cdot\|_0$ is nonnegative. And $\|\alpha\hat{x}\|_0= \inf_{x
+    \in\hat{x}}\|\alpha x\| = |\alpha|\|\hat{x}\|_0$. Meanwhile, $\|\hat{x}+
+    \hat{y}\|_0=\inf_{z\in\hat{x}+\hat{y}}\|z\|\le\inf_{z\in\hat{x}}\|z\|+
+    \inf_{z\in\hat{y}}\|z\|=\|\hat{x}\|_0+\|\hat{y}\|_0$. Finally, we show that
+    $\|\hat{x}\|_0=0$ implies $\hat{x}=Y$ and invoke Prob. 4, Sec 2.2 to 
+    complete the proof. Since $\|\hat{x}\|_0=0$, there exists $(x_n)\subset
+    \hat{x}$ which converges to $0$. Since $Y$ is closed, $Y$ is complete and so
+    is its cosets. Therefore, $0\in\hat{x}$, enforcing $\hat{x}$ to be $Y$. 
+  \end{proof}
+% end

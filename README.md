@@ -1,6 +1,16 @@
 # solutions
 My personal solutions to some textbook problems
 
+## Erwin Kreyszig, *Introductory Functional Analysis with Applications*
+* Chapter 2. Normed Spaces. Banach Spaces
+  * 2.3 Further Properties of Normed Spaces (4, 7, 8, 9, 10, 14)
+
+## Stephen Boyd, Lieven Vandenberghe, *Convex Optimization*
+* Chapter 2. Convex Sets
+  * 2.1 Definition of convexity (1, 2, 3, 4)
+  * 2.2 Examples (5, 7, 8, 9.(a, b), 10)
+  * 2.3 Operations that preserve convexity (16, 18)
+
 ## Sheldon Axler, *Linear Algebra Done Right*, 3rd ed
 
 * Chapter 3. Linear Maps
@@ -57,10 +67,4 @@ My personal solutions to some textbook problems
   * 6.2 The Minkowski and Hölder Inequalities (8)
   * 6.3 Convergence and Completeness (9, 10, 11, 13, 16, 17, 18)
   * 6.4 Approximation in L^p (19)
-
-## Stephen Boyd, Lieven Vandenberghe, *Convex Optimization*
-* Chapter 2. Convex Sets
-  * 2.1 Definition of convexity (1, 2, 3, 4)
-  * 2.2 Examples (5, 7, 8, 9.(a, b), 10)
-  * 2.3 Operations that preserve convexity (16, 18)
 
