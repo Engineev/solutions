@@ -101,3 +101,38 @@
     is its cosets. Therefore, $0\in\hat{x}$, enforcing $\hat{x}$ to be $Y$. 
   \end{proof}
 % end
+
+\subsection{Finite Dimensional Normed Spaces}
+  \paragraph{3.}
+  \begin{proof}
+    The reflexive property clearly holds. If there are positive $a$ and $b$ such 
+    that $a\|x\|_0\le\|x\|_1\le b\|x\|_0$ for all $x\in X$, then $\|x\|_1/b\le
+    \|x\|_0\le\|x\|/a$. Hence the relation is symmetric. Next we further suppose
+    there exists positive $c$ and $d$ such that that $c\|x\|_1\le\|x\|_2\le
+    d\|x\|_1$. Then $ac\|x\|_0\le \|x\|_2\le bd\|x\|_0$, giving the transitive
+    property. Thus, the axioms of an equivalence relation hold.
+  \end{proof}
+
+  \paragraph{4.}
+  \begin{proof}
+    Suppose the norms $\|\cdot\|$ and $\|\cdot\|_0$ are equivalent. Let $E
+    \subset X$ be any open set with respect to $\|\cdot\|$, i.e., for every $x_0
+    \in E$, there exists some $\delta>0$ such that $A=\{x\in X:\, \|x-x_0\|<
+    \delta\}\subset E$. Since $\|\cdot\|\sim\|\cdot\|_0$, there exists some 
+    positive $c$ such that $\|x-x_0\|\le c\|x-x_0\|_0$. Hence, $B=\{x\in X:\,
+    \|x-x_0\|<\delta/c \}\subset A\subset E$. Namely, $E$ is also open with 
+    respect to $\|\cdot\|_0$. Interchanging the roles of $\|\cdot\|$ and 
+    $\|\cdot\|_0$ completes the proof.
+  \end{proof}
+  
+  \paragraph{5.}
+  \begin{proof}
+    Suppose the norms $\|\cdot\|$ and $\|\cdot\|_0$ are equivalent. Then for 
+    every $x\in X$, there exists some $c>0$ such that $\|x\|_0\le c\|x\|$. Let
+    $(x_n)$ be a Cauchy sequence with respect to $\|\cdot\|$, i.e., for every 
+    $\vep>0$, there exists some $N>0$ such that for all $n,m>N$, $\|x_n-x_m\|<
+    \vep/c$. Hence, $\|x_n-x_m\|_0<c\|x_n-x_m\|\le \vep$. Thus, $(x_n)$ is also
+    a Cauchy with respect to $\|\cdot\|_0$. Interchanging the roles of 
+    $\|\cdot\|$ and $\|\cdot\|_0$ completes the proof.
+  \end{proof}
+% end
