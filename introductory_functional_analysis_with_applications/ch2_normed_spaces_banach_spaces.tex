@@ -136,3 +136,65 @@
     $\|\cdot\|$ and $\|\cdot\|_0$ completes the proof.
   \end{proof}
 % end
+
+\subsection{Compactness and Finite Dimension}
+  \paragraph{5.}
+  \begin{proof}
+    Clear that every point in $\mathbb{R}^n$ or $\mathbb{C}^n$ has a closed 
+    bounded, and therefore compact, neighborhood. Hence, $\mathbb{R}^n$ and 
+    $\mathbb{C}^n$ are locally compact.
+  \end{proof}
+
+  \paragraph{6.}
+  \begin{proof}
+    Let $X$ be a compact metric space and $x$ any point in $X$. Let $E$ be a 
+    closed neighborhood of $x$. By Prob 10, $E$ is compact. Thus, $X$ is locally
+    compact.
+  \end{proof}
+
+  \paragraph{7.}
+  \begin{proof}
+    It suffices to show that $a=\inf_{y\in Y}\|v-y\|$ can actually be obtained.
+    Let $\{b_1,\dots,b_n\}$ be a basis of $Y$ and $y_k=y_{k,1}b_1+\cdots+y_{k,n}
+    b_n$ a sequence in $Y$ with $\|v-y_k\|\to a$. We may assume without loss of
+    generality that $\|v-y_k\|$ is bounded. \par
+    Since $Y$ is a proper subset of $Z$, $v,b_1,\dots,b_n$ are linearly
+    independent. Therefore, by Lemma 2.4-1, there exists a scalar $c>0$ such
+    that for every $k$,
+    \[
+      \|v-y_{k,1}b_1-\cdots-y_{k,n}b_n\| \ge c(1+|y_{k,1}|+\cdots+|y_{k,_n}|).
+    \]
+    Hence, the sequence $(y_{k,1},\dots,y_{k,n})$ of $n$-tuples is bounded and 
+    therefore has a convergent subsequence. Consequently, $(y_k)$ also has a 
+    convergent subsequence. Suppose that it converges to $z\in Z$. Note that
+    $\|v-z\|=a$ and as $Y$ is closed, $z\in Y$. Thus, $a$ can be attained in 
+    $Y$.
+  \end{proof}
+
+  \paragraph{8.}
+  \begin{proof}
+    Since the unit ball $B$ with respect to $\|\cdot\|_2$ in $\mathbb{R}^n$ and
+    $\mathbb{C}^n$ is compact and $\|\cdot\|$ is continuous, by 2.5-7, $x\mapsto
+    \|x\|$ can attains its minimum, denoted by $a$, on $B$. Due to the positive 
+    definite property of a norm, $a$ is positive. Hence, $0<a\le \|x/\|x\|_2\|$.
+    Namely, $a\|x\|_2\le\|x\|$.
+  \end{proof}
+
+  \paragraph{9.}
+  \begin{proof}
+    For every $(x_n)\subset M\subset X$, since $X$ is compact, there exists a 
+    subsequence $(x_{n_k})$ of $(x_n)$ which converges to some $y\in X$. Since 
+    $M$ is closed, $y\in M$. Hence, $M$ is compact.
+  \end{proof}
+
+  \paragraph{10.}
+  \begin{proof}
+    From 1.3-4 and the definition of closed sets, we conclude that a mapping is
+    continuous iff the preimage of a closed set under it is also a closed set.
+    Hence, to show that the inverse of $T$ is also continuous, it suffices to
+    show that the image of a closed set $A\subset X$ under $T$ is again a closed
+    set. Since $X$ is compact and $A$ is closed, $A$ is compact. Since $T$ is 
+    continuous, by 2.5-6, $T(A)$ is compact and therefore closed. Hence, $T$ is
+    a homeomorphism.
+  \end{proof}
+% end

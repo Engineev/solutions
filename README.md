@@ -5,6 +5,7 @@ My personal solutions to some textbook problems
 * Chapter 2. Normed Spaces. Banach Spaces
   * 2.3 Further Properties of Normed Spaces (4, 7, 8, 9, 10, 14)
   * 2.4 Finite Dimensional Normed Spaces (3, 4, 5)
+  * 2.5 Compactness and Finite Dimension (5, 6, 7, 8, 9, 10)
 
 ## Stephen Boyd, Lieven Vandenberghe, *Convex Optimization*
 * Chapter 2. Convex Sets
