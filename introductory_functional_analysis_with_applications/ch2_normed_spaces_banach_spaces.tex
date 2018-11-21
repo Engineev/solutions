@@ -198,3 +198,73 @@
     a homeomorphism.
   \end{proof}
 % end
+
+\subsection{Bounded and Continuous Linear Operators}
+  \paragraph{2.}
+  \begin{proof}
+    First suppose $T$ to be bounded and let $A$ be any bounded set in $X$. Then
+    there exists $K<\infty$ such that for all $x\in A$, $\|x\|<K$. Due to the
+    boundedness of $T$, $\|Tx\|\le \|T\|\|x\|<K\|T\|$. Namely, $T(A)$ is also
+    bounded.\par
+    Now suppose that $T$ maps bounded sets in $X$ into bounded sets in $Y$. 
+    Clear that the unit ball $B$ of $X$ is bounded and therefore so is $T(B)$.
+    Namely, $\|Tx/\|x\|\|$ is bounded for $x\ne 0$.\footnote{Note that the two
+    $\|\cdot\|$ here are different norms.} Hence, $T$ is bounded.
+  \end{proof}
+
+  \paragraph{3.}
+  \begin{proof}
+    For every $x$ with $\|x\|<1$, $\|Tx\|\le \|T\|\|x\|<\|T\|$.
+  \end{proof}
+
+  \paragraph{4.}
+  \begin{proof}
+    Suppose that the linear operator $T$ is continuous at $x_0\in
+    \mathscr{D}(T)$. For every $(x_n)\subset\mathscr{D}(T)$ with $\|x_n-x\|\to
+    0$, by the continuity of $T$ at $x_0$
+    \[
+      \|Tx_n-Tx\|=\|T(x_n-x+x_0)-Tx_0\| \to 0.
+    \]
+    Hence, $T$ is continuous.
+  \end{proof}
+
+  \paragraph{7.}
+  \begin{proof}
+    The inequality implies $\mathscr{N}(T)=0$. Hence, by Theorem 2.6-10, $T\inv$
+    exists. For every $y\in Y$, suppose that $y=Tx$. Then
+    \[
+      \|T\inv y\| = \|x\| \le \frac{1}{b}\|Tx\| = \frac{1}{b}\|y\|.
+    \]
+    Thus, $T\inv$ is bounded.
+  \end{proof}
+
+  \paragraph{12.}
+  \begin{proof}
+    The compatibility follows immediately from the definition of the supremum.
+    Suppose $\|x\|_1=\max_j|\xi_j|$ and $\|y\|_2=\max_j\|\eta_j\|$, then
+    \[
+      Ax = 
+      \begin{bmatrix}
+        x_1\alpha_{11} + \cdots + x_n\alpha_{1n} \\
+        \vdots \\
+        x_1\alpha_{r1} + \cdots + x_n\alpha_{rn}.
+      \end{bmatrix}
+    \]
+    Since for all $j$, $x_j\le \|x_j\|_1$,
+    \[
+      \frac{\max_j|x_1\alpha_{j1}+\cdots+x_n\alpha_{jn}|}{\|x\|_1}
+      =\max_j\left|\frac{x_1}{\|x\|_1}\alpha_{j1}+\cdots
+      +\frac{x_n}{\|x\|_1}\alpha_{jn}\right|
+      \le \max_{j}\sum_{k=1}^n|\alpha_{jk}|.
+    \]
+    Hence, 
+    \begin{equation}
+      \label{eq:2.8.12}
+      \|A\|\ge \frac{\|Ax\|_2}{\|x\|_1} \quad\text{for all $x$}.
+    \end{equation}
+    Suppose that maximum of $\sum_{k=1}^n|\alpha_{jk}|$ is obtained at $j=p$.
+    Then choosing $x_k$ to be $\sgn \alpha_{pk}$ shows that the equality in 
+    \eqref{eq:2.8.12} can actually be attained. Hence, $\|A\|=\max_{j}
+    \sum_{k=1}^n|\alpha_{jk}|$.
+  \end{proof}
+% end
