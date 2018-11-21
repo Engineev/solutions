@@ -6,7 +6,8 @@ My personal solutions to some textbook problems
   * 2.3 Further Properties of Normed Spaces (4, 7, 8, 9, 10, 14)
   * 2.4 Finite Dimensional Normed Spaces (3, 4, 5)
   * 2.5 Compactness and Finite Dimension (5, 6, 7, 8, 9, 10)
-  * 2.6 Bounded and Continuous Linear Operators (2, 3, 4, 7, 12)
+  * 2.7 Bounded and Continuous Linear Operators (2, 3, 4, 7, 12)
+  * 2.8 Linear Functionals (8, 9, 10, 11, 12, 13, 14, 15)
 
 ## Stephen Boyd, Lieven Vandenberghe, *Convex Optimization*
 * Chapter 2. Convex Sets

@@ -199,6 +199,7 @@
   \end{proof}
 % end
 
+\setcounter{subsection}{6}
 \subsection{Bounded and Continuous Linear Operators}
   \paragraph{2.}
   \begin{proof}
@@ -220,7 +221,7 @@
   \paragraph{4.}
   \begin{proof}
     Suppose that the linear operator $T$ is continuous at $x_0\in
-    \mathscr{D}(T)$. For every $(x_n)\subset\mathscr{D}(T)$ with $\|x_n-x\|\to
+    \mathcal{D}(T)$. For every $(x_n)\subset\mathcal{D}(T)$ with $\|x_n-x\|\to
     0$, by the continuity of $T$ at $x_0$
     \[
       \|Tx_n-Tx\|=\|T(x_n-x+x_0)-Tx_0\| \to 0.
@@ -230,7 +231,7 @@
 
   \paragraph{7.}
   \begin{proof}
-    The inequality implies $\mathscr{N}(T)=0$. Hence, by Theorem 2.6-10, $T\inv$
+    The inequality implies $\mathcal{N}(T)=0$. Hence, by Theorem 2.6-10, $T\inv$
     exists. For every $y\in Y$, suppose that $y=Tx$. Then
     \[
       \|T\inv y\| = \|x\| \le \frac{1}{b}\|Tx\| = \frac{1}{b}\|y\|.
@@ -266,5 +267,108 @@
     Then choosing $x_k$ to be $\sgn \alpha_{pk}$ shows that the equality in 
     \eqref{eq:2.8.12} can actually be attained. Hence, $\|A\|=\max_{j}
     \sum_{k=1}^n|\alpha_{jk}|$.
+  \end{proof}
+% end
+
+\subsection{Linear Functionals}
+  \paragraph{8.}
+  \begin{proof}
+    For every $x_1,x_2\in N(M^*)$, $a,b\in\mathbb{K}$ and $f\in M^*$,
+    \[
+      f(ax_1+bx_2) = af(x_1)+bf(x_2) = 0.
+    \]
+    Hence, $ax_1+bx_2\in N(M^*)$. Namely, $N(M^*)$ is a vector space.
+  \end{proof}
+
+  \paragraph{9.}
+  \begin{proof}
+    First we show the uniqueness. Suppose that $x=\alpha_1x_0+y_1=\alpha_2x_0+
+    y_2$. Then $0 = (\alpha_1-\alpha_2)x_0 + (y_1-y_2)$. Hence,
+    \[
+      0 = f((\alpha_1-\alpha_2)x_0 + (y_1-y_2)) = 
+      (\alpha_1-\alpha_2)f(x_0) + f(y_1)-f(y_2).
+    \]
+    Since $y_1,y_2\in\mathcal{N}(f)$, $f(y_1)-f(y_2)=0$ while $f(x_0)\ne 0$ as
+    $x_0\notin\mathcal{N}(f)$. Hence, $\alpha_1=\alpha_2$, which forces $y_1$ 
+    and $y_2$ to coincide.\par
+    For the existence, it suffices to show that for any fixed $x$, the function
+    $g(\alpha)=f(x-\alpha x_0)$ has a zero. It is easy to verify that $\alpha=
+    f(x)/f(x_0)$ is a zero of $g$. Note that $x_0\notin\mathcal{N}(f)$ and 
+    therefore $f(x_0)\ne 0$.
+  \end{proof}
+
+  \paragraph{10.}
+  \begin{proof}
+    First we suppose that $x_1,x_2\in x_0+\mathcal{N}(f)\in X/\mathcal{f}$. Then
+    together with Prob. 9, $x_i=x_0+y_i$ where $y_i\in\mathcal{N}(f)$. Hence, 
+    for $i=1,2$, $f(x_i)=f(x_0)+f(y_i)=f(x_0)$.\par
+    For the converse, note that $f(x_1)=f(x_2)$ implies $f(x_1-x_2)=0$. Namely,
+    $x_1-x_2\in\mathcal{N}(f)$. Hence, $x_1,x_2$ belongs to the same element in
+    $X/\mathcal{N}(f)$.\par
+    To show $\codim\mathcal{N}(f)=1$, we show that $X/\mathcal{N}(f)$ and 
+    $\mathbb{K}$ are isomorphic. For every $\hat{x}\in X/\mathcal{N}(f)$, define
+    $I(\hat{x})=f(x)$. By the previous discussion, this definition is 
+    well-defined. Clear that $I$ is linear and therefore is injective. And by 
+    the linearity of $f$, $I$ is surjective. Thus, $I$ is an isomorphism between
+    $X/\mathcal{N}(f)$ and $\mathbb{K}$. Hence, $\codim\mathcal{N}(f)=1$.
+  \end{proof}
+
+  \paragraph{11.}
+  \begin{proof}
+    Put $N=\mathcal{N}(f_1)=\mathcal{N}(f_2)$ and choose $x_0\in X\setminus N$.
+    By Prob. 9, for every $x\notin N$, $x=\alpha x_0+y$ where $y\in N$ and 
+    $\alpha\ne 0$. Hence, 
+    \[
+      \frac{f_1(x)}{f_2(x)} = 
+      \frac{\alpha f_1(x_0)+f_1(y)}{\alpha f_2(x_0)+f_2(y)} =
+      \frac{f_1(x_0)}{f_2(x_0)}.
+    \]
+  \end{proof}
+
+  \paragraph{12.}
+  \begin{proof}
+    Prob. 10, justifies the discussion on hyperplanes parallel to the 
+    $\mathcal{N}(f)$. It suffices to show that $H_1=b+\mathcal{N}(f)$ for some 
+    $b\in X$. Choose $x_1\in H_1$. Then
+    \[
+      x\in \mathcal{N}(f) \:\Leftrightarrow\:
+      x+x_1\in x_1+\mathcal{N}(f) \:\Leftrightarrow\:
+      f(x+x_1) = f(x)+f(x_1) = 1 \:\Leftrightarrow\:
+      x+x_1\in H_1.
+    \]
+    Hence, $H_1=x_1+\mathcal{N}(f)$. Namely, $H_1$ is a hyperplane parallel to
+    $\mathcal{N}(f)$.
+  \end{proof}
+
+  \paragraph{13.}
+  \begin{proof}
+    We argue by contradiction. Assume that there exists a $y_1\in Y$ such that 
+    $f(y_1)\ne c\ne 0$. Then for every $d\in\mathbb{K}$, by the linearity of 
+    $f$, $f(dy_1/c) = d$. Contradiction. Hence, $f=0$ on $Y$.
+  \end{proof}
+
+  \paragraph{14.}
+  \begin{proof}
+    For every $\vep>0$, there exists $x_1\in X$ with $f(x_1)=1$ such that 
+    $\tilde{d}+\vep\ge\|x_1\|$. Hence, 
+    \[
+      \|f\|(\tilde{d}+\vep)\ge\|f\|\|x_1\| \ge |f(x_1)| = 1.
+    \]
+    Since the choice of $\vep>0$ is arbitrary, $\|f\|\tilde{d}\ge 1$. Meanwhile,
+    there exists $x_2\in X$ with $\|x_2\|=1$ such that $|f(x_2)|\ge \|f\|-\vep$.
+    Put $x_3 = x_2/f(x_2)$. Then $f(x_3)=1$. Hence,
+    \[
+      (\|f\|-\vep)\tilde{d} \le |f(x_2)|\|x_3\| = \|x_2\| = 1,
+    \]
+    which implies $\|f\|\tilde{d}\le 1$. Thus, $\|f\|\tilde{d}=1$.
+  \end{proof}
+
+  \paragraph{15.}
+  \begin{proof}
+    For every $x$ with $\|x\|\le 1$, $f(x)\le \|f\|\|x\|\le c$. Hence, $x\in 
+    X_{c_1}$. Meanwhile, for every $\vep>0$, by the definition of the supremum,
+    there exists a $x$ with $\|x\|=1$ such that $|f(x)|>\|f\|-\vep$. By the 
+    linearity of $f$, we may remove the $|\cdot|$ on the right side. Hence, 
+    $f(x)\notin X_{c_1}$ where $c=\|f\|-\vep$.
   \end{proof}
 % end
