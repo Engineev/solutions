@@ -9,6 +9,7 @@ My personal solutions to some textbook problems
   * 2.7 Bounded and Continuous Linear Operators (2, 3, 4, 7, 12)
   * 2.8 Linear Functionals (8, 9, 10, 11, 12, 13, 14, 15)
   * 2.9 Operators on Finite Dimensional Spaces (8, 12, 13)
+  * 2.10 Normed Spaces of Operators. Dual Space (8, 9, 10, 11, 13, 14)
 
 ## Stephen Boyd, Lieven Vandenberghe, *Convex Optimization*
 * Chapter 2. Convex Sets

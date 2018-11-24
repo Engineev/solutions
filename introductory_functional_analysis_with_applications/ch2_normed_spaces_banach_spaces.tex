@@ -397,3 +397,85 @@
     and $0$ on $b_{m+1},\dots,b_n$. Clear that $\tilde{f}|_Z=f$.
   \end{proof}
 % end
+
+\subsection{Normed Spaces of Operators. Dual Space}
+  \paragraph{8.}
+  \begin{proof}
+    First we construct a linear bijection $T$ between $c_0\hp$ and $l^1$. A 
+    Schauder basis for $c_0$ is $(e_k)$, where $e_k=(\delta_{kj})$. Then for 
+    every $f\in c_0\hp$, define $Tf=(\gamma_k)=(f(e_k))$. Clear that $T$ is 
+    linear. Now we show that $Tf=(\gamma_k)\in l^1$, that is, $\sum_{k=1}^n|
+    \gamma_k|$ is bounded and therefore convergent. Define $x_n=(\xi_k^{(n)})$
+    with
+    \[
+      \xi_k^{(n)}=\begin{cases}
+        \sgn\gamma_k, & k\le n, \\
+        0,            & k>n.
+      \end{cases}
+    \]
+    Clear that $x_n\in c_0$. By the linearity and boundedness of $f$, 
+    \begin{equation}
+      \label{eq:2.10.8}
+      f(x_n)=\sum_{k=1}^\infty \xi_k^{(n)}\gamma_k = \sum_{k=1}^n|\gamma_k|.
+    \end{equation}
+    Since $f$ is bounded, $|f(x_n)| \le \|f\|\|x_n\| \le \|f\|$. Hence, $\sum\|
+    \gamma_k\|$ is bounded. Thus, $Tf\in l^1$.\par
+    Meanwhile, for every $y=(\beta_k)\in l^1$, define $Sy=g$ to be the
+    functional $g(x)=\sum_{k=1}^\infty\xi_k\beta_k$ for $x=(\xi_k)$. On $c_0$,
+    the summation does converge and clear that $g$ is linear and bounded. Hence,
+    $g\in c_0\hp$. It can be verify that $ST=TS=I$ and $T$ is linear. Thus, $c_0
+    \hp$ and $l^1$ is isomorphic.\par
+    Now we show that $T$ constructed preserve the norm to complete the proof.
+    For $x\in c_0$ with $\|x\|=1$,
+    \[
+      |f(x)| = \left|\sum_{k=1}^\infty \xi_k\gamma_k\right|\le 
+      \sum_{k=1}^\infty |\gamma_k| = \|Tf\|.
+    \]
+    Hence, $\|f\|\le\|Tf\|$. And \eqref{eq:2.10.8} implies $\sum_{k=1}^n||\gamma
+    |\le \|f\|$. Letting $n\to\infty$ yields $\|Tf\|\le \|f\|$. Thus, $\|Tf\|=
+    \|f\|$. 
+  \end{proof}
+
+  \paragraph{9.}
+  \begin{proof}
+    Let $(b_k)$ be a Hamel basis of $X$ and suppose that $f,g\in X^*$ coincide
+    on every $b_k$. Then for every $x=\sum_{k=1}^\infty\xi_k b_k\in X$, 
+    \[
+      f(x)-g(x) = \sum_{k=1}^n\xi_k(f(b_k)-g(b_k)) = 0.
+    \]
+    Thus, $f=g$. Namely, $f$ is uniquely determined.
+  \end{proof}
+
+  \paragraph{10.}
+  \begin{proof}
+    Let $(b_k)$ be a Hamel basis of $X$ and without loss of generality we may
+    assume $\|b_k\|=1$. Justified by Prob. 9, we can define $T\in X^*$ with 
+    $Tb_k=k$, which is clearly unbounded.
+  \end{proof}
+
+  \paragraph{11.}
+  \begin{proof}
+    It follows immediately from Prob. 10.
+  \end{proof}
+
+  \paragraph{13.}
+  \begin{proof}
+    For any $f,g\in M^a$ and scalar $a,b$, $(af+bg)(x)=af(x)+bg(x)=0$ for every
+    $x\in M$. Hence, $M^a$ is a vector space. For $(f_n)\subset M^a\subset 
+    X\hp$, suppose that $f_n\to f\in M^*$. Since $M\hp$ is complete, it is
+    closed and therefore $f\in M\hp$. For every $0\ne x\in M$, since $f_n\to f$,
+    \[
+      \frac{|f_n(x)-f(x)|}{\|x\|} \to 0,\,\text{as $n\to\infty$}. 
+    \]
+    Hence, $f(x)=0$. Thus, $M^a$ is closed.\par
+    $X^a = \{0\}$ and $\{0\}^a = X\hp$.
+  \end{proof}
+
+  \paragraph{14.}
+  \begin{proof}
+    Let $\{b_1,\dots,b_m\}$ be a basis of $M$ and $\{b_1,\dots,b_n\}$ a basis of
+    $X$. And let $\{\beta_1,\dots,\beta_n\}$ be the dual basis. Clear that $b_1,
+    \dots,b_m\notin M^a$ whereas $b_{m+1},\dots,b_n$ does. Together with Prob.
+    13, this implies $M^a=\spn(b_{m+1},\dots,b_n)$. Thus, $\dim M^a = n-m$.
+  \end{proof}
+% end
