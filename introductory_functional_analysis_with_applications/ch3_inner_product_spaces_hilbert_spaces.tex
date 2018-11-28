@@ -1,0 +1,117 @@
+%---------%---------%---------%---------%---------%---------%---------%---------
+\section{Inner Product Spaces. Hilbert Spaces}
+\subsection{Inner Product Spaces. Hilbert Spaces}
+  \paragraph{2.}
+  \begin{proof}
+    \[
+      \|x+y\|^2 = \langle x+y, x+y\rangle = \|x\|^2+\|y\|^2+2\langle x, y\rangle
+      =\|x\|^2+\|y\|^2,
+    \]
+    where the last equality comes from the hypothesis of orthogonality. Now we
+    show that for mutually orthogonal $x_1,\dots,x_m$ 
+    \[
+      \left\|\sum_{i=1}^m x_i\right\|^2 = \sum_{i=1}^m\|x_i\|^2,
+    \]
+    by induction on $m$. The case where $m=2$ has already been showed and we
+    assume that the equation holds for $m-1$. Since $x_m$ is orthogonal with
+    each $i=1,\dots,m-1$, $x_m$ is orthogonal to $x_1+\cdots+x_{m-1}$. Hence,
+    \[
+      \left\|\sum_{i=1}^m x_i\right\|^2 = 
+      \left\|\sum_{i=1}^{m-1}x_i\right\|^2 + \|x_m\|^2 = 
+      \sum_{i=1}^m\|x_i\|^2,
+    \]
+    completing the proof.
+  \end{proof}
+  
+  \paragraph{3.}
+  \begin{proof}
+    The equation implies $\langle x, y\rangle+\langle y, x\rangle=0$. The
+    symmetric property of real inner products implies $\langle x, y\rangle=0$.
+    Let $X=\mathbb{C}$ and $x=1, y=i$. It is easy to verify that $\|x+y\|^2=
+    \|x\|^2+\|y\|^2=2$ but $x$ and $y$ are not orthogonal.
+  \end{proof}
+  
+  \paragraph{7.}
+  \begin{proof}
+    It suffices to show that the zero vector is the only vector orthogonal to
+    all vectors. Suppose that $\langle x_0, x\rangle=0$ for all $x\in X$, then
+    $\|x_0\|^2=\langle x_0, x_0\rangle=0$. By the definiteness of the inner
+    product, $x_0=0$.
+  \end{proof}
+  
+  \paragraph{8.}
+    We show that any norm satisfying the parallelogram equality can be derived
+    form an inner product.
+  \begin{proof}
+    The proof of (IP3) is trivial and (IP4) follows immediately from the
+    positive-definiteness of the norm. Hence we only show the linearity in the
+    first factor here. For every $u, v, y\in X$, from the parallelogram equality
+    we can derive, after some computation, that
+    \begin{align*}
+      4\langle u+v, y\rangle &= \|u+v+y\|^2-\|u+v-y\|^2  \\
+      &= \|u+y\|^2-\|u-y\|^2+\|v+y\|^2-\|v-y\|^2 \\
+      &= 4\langle u, y\rangle + 4\langle v, y\rangle.
+    \end{align*}
+    Namely, (IP1) holds. By induction we can show that $\langle nu, y\rangle=
+    n\langle u, y\rangle$ for $n=1,2,\dots$. And since $\langle -u, y\rangle =
+    \langle 0-u, y\rangle = \langle 0, y\rangle - \langle u, y\rangle = \langle
+    u, y\rangle$, 
+    \[
+      \langle nu, y\rangle = n\langle u, y\rangle,
+      \quad\text{for $n\in\mathbb{Z}$}.
+    \]
+    Furthermore, for any positive integer $m$,
+    \[
+      m\left\langle\frac{n}{m}u, y\right\rangle = 
+      mn\left\langle\frac{1}{m}u, y\right\rangle =
+      n\langle u, y\rangle.
+    \]
+    Dividing the both sides by $m$ yields
+    \[
+      \langle qu, y\rangle = q\langle u, y\rangle,
+      \quad\text{for $q\in\mathbb{Q}$}.
+    \]
+    For every $\alpha\in\mathbb{R}$, let $(q_n)\subset\mathbb{Q}$ converges to
+    $\alpha$. Now we show that $f(t)=\langle tu, y\rangle$ is continuous at $t=
+    0$ and by the additivity we may conclude that $f$ is continuous on
+    $\mathbb{R}$. Since
+    \begin{align*}
+      4|f(t)| 
+      &= |\|tu+y\|^2 - \|tu-y\|^2| \\
+      &= (\|tu+y\|+\|tu-y\|)|\|tu+y\|-\|tu-y\|| \\
+      &\le 4t\|u\|(t\|u\|+\|y\|) \to 0
+    \end{align*}
+    as $t\to 0$, $f(t)$ is continuous. For every $\alpha\in\mathbb{R}$, let 
+    $(q_n)\subset\mathbb{Q}$ be a convergent sequence with limit $\alpha$. Then
+    \[
+      \langle\alpha u, y\rangle=
+      \lim\langle q_nu, y\rangle=
+      \lim q_n\langle u, y\rangle=
+      \alpha\langle u, y\rangle.
+    \]
+    Hence, $\langle\cdot,\cdot\rangle$ is linear in the first factor. Thus, it
+    is an inner product. Meanwhile, it is easy to verify that the norm it 
+    introduces is exactly the original norm. 
+  \end{proof}
+
+% end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

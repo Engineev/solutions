@@ -10,6 +10,8 @@ My personal solutions to some textbook problems
   * 2.8 Linear Functionals (8, 9, 10, 11, 12, 13, 14, 15)
   * 2.9 Operators on Finite Dimensional Spaces (8, 12, 13)
   * 2.10 Normed Spaces of Operators. Dual Space (8, 9, 10, 11, 13, 14)
+* Chapter 3. Inner Product Spaces. Hilbert Spaces
+  * 3.1 Inner Product Spaces. Hilbert Spaces (2, 3, 7, 8)
 
 ## Stephen Boyd, Lieven Vandenberghe, *Convex Optimization*
 * Chapter 2. Convex Sets
