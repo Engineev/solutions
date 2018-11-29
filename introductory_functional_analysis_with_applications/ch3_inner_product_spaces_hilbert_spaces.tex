@@ -93,9 +93,64 @@
     is an inner product. Meanwhile, it is easy to verify that the norm it 
     introduces is exactly the original norm. 
   \end{proof}
-
 % end
 
+\subsection{Further Properties of Inner Product Spaces}
+  \paragraph{7.}
+  \begin{proof}
+    First we note that
+    \[
+      f(\alpha)=\|x+\alpha y\|^2-\|x-\alpha y\|^2 
+      = 2\bar{\alpha}\langle x,y\rangle + 2\alpha\langle y,x\rangle.
+    \]
+    Clear that $x\perp y$ implies $f(\alpha)=0$ for all scalar $\alpha$. For the
+    converse, we suppose $f(\alpha)=0$ and put $\alpha=\langle x, y\rangle$. 
+    Then $0=f(\alpha)=2|\langle x, y\rangle|$. Thus, $x\perp y$.
+  \end{proof}
+  
+  \paragraph{8.}
+  \begin{proof}
+    Clear that $x\perp y$ implies $\|x+\alpha y\|\ge \|x\|$. Therefore we only
+    show the converse here. Without loss of generality, we assume $\|y\|=1$. 
+    Then $\|x+\alpha y\|\ge \|x\|$ for all scalar $\alpha$ implies
+    \[
+      |\alpha|^2 + 
+      \bar{\alpha}\langle x, y\rangle + \alpha\overline{\langle x, y\rangle}
+      \ge 0.
+    \]
+    Put $\alpha=-\langle x, y\rangle$ and we get
+    \[
+      0 \le |\langle x, y\rangle|^2 - 2|\langle x, y\rangle|^2
+      =-|\langle x, y\rangle|^2,
+    \]
+    which implies $\langle x, y\rangle=0$. Namely, $x\perp y$.
+  \end{proof}
+  
+  \paragraph{9.}
+  \begin{proof}
+    For every $\vep>0$, put $\delta=\vep/\sqrt{b-a}$. Then for every $x_1,x_2\in
+    V$ with $\|x_1-x_2\|_\infty<\delta$,
+    \[
+      \|x_1-x_2\|_2^2 = \int_a^b|x_1(t)-x_2(t)|^2\rd t
+      \le (b-a)\delta^2 = \vep^2.
+    \]
+    Hence, $x\mapsto x$ is continuous.
+  \end{proof}
+  
+  \paragraph{10.}
+  \begin{proof}
+    For every $u, w\in X$,
+    \begin{align*}
+      \langle Tu, w\rangle = 
+      & \frac{1}{4}(\langle T(u+w), u+w \rangle - \langle T(u-w), u-w \rangle)\\
+      &+ \frac{i}{4}
+        (\langle T(u+iw), u+iw\rangle - \langle T(u-iw), u-iw\rangle).\\
+    \end{align*}
+    Note that each component of the right hand side is of form $\langle Tx, x
+    \rangle$ and hence equals to $0$. Putting $w=Tu$ yields $\|Tu\|^2=0$ for all
+    $u\in X$. Thus, $T=0$.
+  \end{proof}
+% end
 
 
 

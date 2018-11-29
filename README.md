@@ -12,6 +12,7 @@ My personal solutions to some textbook problems
   * 2.10 Normed Spaces of Operators. Dual Space (8, 9, 10, 11, 13, 14)
 * Chapter 3. Inner Product Spaces. Hilbert Spaces
   * 3.1 Inner Product Spaces. Hilbert Spaces (2, 3, 7, 8)
+  * 3.2 Further Properties of Inner Product Spaces (7, 8, 9, 10)
 
 ## Stephen Boyd, Lieven Vandenberghe, *Convex Optimization*
 * Chapter 2. Convex Sets
