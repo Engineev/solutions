@@ -186,6 +186,40 @@
   \paragraph{10.} TODO
 % end
 
+\subsection{Orthonormal Sets and Sequences}
+  \paragraph{3.}
+  \begin{proof}
+    The situation where $x$ and $y$ are linearly dependent is obvious and hence
+    we assume they are linearly independent here. By the homogeneity of the
+    Schwarz inequality, we may assume without loss of generality that $\|x\|=
+    \|y\|=1$. Put $z=(y-x\langle y,x\rangle)/\|y-x\langle y,x\rangle\|$. Then
+    $\{x,z\}$ is orthonormal and therefore by (12*)
+    \[
+      |\langle y,x\rangle|^2+|\langle y,z\rangle|^2 \le \|y\|^2 = 1.
+    \]
+    Since $|\langle y,z\rangle|^2$ is nonnegative, this implies $|\langle x,y
+    \rangle|^2\le 1$, the Schwarz inequality.
+  \end{proof}
+  
+  \paragraph{7.}
+  \begin{proof}
+    For each positive integer $n$, by the Schwarz inequality and (12*),
+    \[
+      \sum_{k=1}^n|\langle x,e_k\rangle\langle y,e_k\rangle|\le
+      \sqrt{\sum_{i=1}^n|\langle x,e_k\rangle|^2}
+      \sqrt{\sum_{i=1}^n|\langle y,e_k\rangle|^2} \le
+      \|x\|\|y\|.
+    \]
+    Since all terms in the summation is nonnegative, this implies $\sum_{k=1}
+    ^\infty|\langle x,e_k\rangle\langle y,e_k\rangle|\le\|x\|\|y\|$.
+  \end{proof}
+  
+  \paragraph{8.}
+  \begin{proof}
+    It follows immediately from Bessel inequality.
+  \end{proof}
+% end
+
 
 
 
