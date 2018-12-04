@@ -220,6 +220,91 @@
   \end{proof}
 % end
 
+\subsection{Series Related to Orthonormal Sequences}
+  \paragraph{1.}
+  \begin{proof}
+    By Theorem 3.5-2, $\alpha_k=\langle x,e_k\rangle$. Meanwhile by the 
+    definition of the norm,
+    \[
+      \|x\|^2 = 
+      \left\langle \sum_{k=1}^\infty\langle x,e_k\rangle e_k, x\right\rangle =
+      \sum_{k=1}^\infty \langle x,e_k\rangle\langle e_k, x\rangle =
+      \sum_{k=1}^\infty|\alpha_k|^2,
+    \]
+    where the second equality follows from the continuity of the inner product.
+  \end{proof}
+  
+  \paragraph{3.}
+  \begin{solution}
+    Put $x\equiv 1$ on $[-\pi,\pi]$ and $e_k=\sin kt$. Since $x$ is even but 
+    $e_k$ is odd for every $k$, the series does not converges to $x$.
+  \end{solution}
+  
+  \paragraph{4.}
+  \begin{proof}
+    By the triangle inequality, $\|x_m+\cdots+x_n\| \le \|x_m\|+\cdots+\|x_n\|$
+    for every $n\ge m>0$. Hence the convergence of $\sum \|x_k\|$ implies that
+    $s_n$ is a Cauchy sequence.
+  \end{proof}
+  
+  \paragraph{5.}
+  \begin{proof}
+    By Prob. 4, $\sum_{k=1}^n x_k$ is a Cauchy sequence. And since $H$ is 
+    complete, $\sum_{k=1}^\infty x_k$ converges.
+  \end{proof}
+  
+  \paragraph{7.}
+  \begin{proof}
+    The existence of $y$ follows from Theorem 3.5-2(c). And for each $k$,
+    \[
+      \langle x-y,e_k\rangle =
+      \langle x,e_k\rangle - 
+      \sum_{j=1}^\infty\langle x,e_j\rangle\langle e_k,e_j\rangle =
+      \langle x,e_k\rangle - \langle x,e_k\rangle = 0,
+    \]
+    where the second equality comes from the fact that $(e_k)$ is orthonormal.
+  \end{proof}
+  
+  \paragraph{8.}
+    TODO: Show the validation of the change of the order of summation. Or maybe
+    we can show the equality directly.
+  \begin{proof}
+    We suppose that $x\in\bar{M}$ here since the proof of the other direction is
+    obvious. Then there exists $(p_n)\subset M$ such that $x=\sum_{n=1}^\infty
+    p_n$. For each $n$, suppose $p_n=\sum_{k=1}^\infty \langle p_n,e_k\rangle 
+    e_k$. This is valid because $p_n\in M$ and therefore is a finite linear 
+    combination of $(e_k)$. In fact, there are only finitely many nonzero term
+    in the summation. Then
+    \[
+      x=\sum_{n=1}^\infty p_n = 
+      \sum_{n=1}^\infty\sum_{k=1}^\infty\langle p_n,e_k\rangle e_k=
+      \sum_{k=1}^\infty\left(\sum_{n=1}^\infty\langle p_n,e_k\rangle\right)e_k.
+    \]
+  \end{proof}
+  
+  \paragraph{9.}
+  \begin{proof}
+    First we suppose $\bar{M}_1=\bar{M}_2$. Then by Prob. 8, each $e_n$ and
+    $\tilde{e}_n$ can be represented by (a) and (b) respectively.\par
+    For the converse, (a) implies, again by Prob. 8, $e_n\in\bar{M}_2$ and
+    therefore $M_1\subset\bar{M}_2$. Since $\bar{M}_2$ is closed, $\bar{M}_1
+    \subset\bar{M}_2$. \textit{Mutatis mutandis}, this also shows $\bar{M}_2
+    \subset\bar{M}_1$. Thus, $\bar{M}_1=\bar{M}_2$.
+  \end{proof}
+  
+  \paragraph{10.}
+  \begin{proof}
+    Note that for every $m>0$, there are only finite $e_\kappa$ such that $
+    \langle x,e_\kappa\rangle\ge 1/m$. Otherwise we may choose a countable
+    subset of them, which will violate the result in Prob. 8, Sec 3.4. Hence,
+    the collection of all nonzero Fourier coefficient
+    \[
+      \bigcup_{m=1}^\infty\{ e_\kappa:\, \langle x,e_\kappa\rangle\ge 1/m \}
+    \]
+    is at most countable.
+  \end{proof}
+  
+% end
 
 
 

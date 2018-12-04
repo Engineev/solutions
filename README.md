@@ -15,6 +15,7 @@ My personal solutions to some textbook problems
   * 3.2 Further Properties of Inner Product Spaces (7, 8, 9, 10)
   * 3.3 Orthogonal Complements and Direct Sums (7, 8, 9)
   * 3.4 Orthonormal Sets and Sequences (3, 7, 8)
+  * 3.5 Series Related to Orthonormal Sequences (1, 3, 4, 5, 7, 8, 9, 10)
 
 ## Stephen Boyd, Lieven Vandenberghe, *Convex Optimization*
 * Chapter 2. Convex Sets
