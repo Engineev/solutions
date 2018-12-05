@@ -18,6 +18,7 @@ My personal solutions to some textbook problems
   * 3.3 Orthogonal Complements and Direct Sums (7, 8, 9)
   * 3.4 Orthonormal Sets and Sequences (3, 7, 8)
   * 3.5 Series Related to Orthonormal Sequences (1, 3, 4, 5, 7, 8, 9, 10)
+  * 3.6 Total Orthonormal Sets and Sequences (4, 6, 7, 9, 10)
 
 ## Stephen Boyd, Lieven Vandenberghe, *Convex Optimization*
 

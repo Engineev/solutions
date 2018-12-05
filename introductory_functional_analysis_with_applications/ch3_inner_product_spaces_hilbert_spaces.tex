@@ -303,7 +303,60 @@
     \]
     is at most countable.
   \end{proof}
+% end
+
+\subsection{Total Orthonormal Sets and Sequences}
+  \paragraph{4.}
+  \begin{proof}
+    Suppose that $x$ and $y$ satisfy (3). We only show the relation for real 
+    cases here. The complex cases can be proved in a similar way. Using (9),
+    Sec 3.1 and (3),
+    \[
+      \langle x,y\rangle = \frac{1}{4}(\|x+y\|^2-\|x-y\|^2) =
+      \frac{1}{4}\sum_k
+      \left(|\langle x+y,e_k\rangle|^2-|\langle x-y,e_k\rangle|^2 \right).
+    \]
+    Meanwhile,
+    \[
+      |\langle x\pm y,e_k\rangle|^2=
+      \langle x\pm y,e_k\rangle\overline{\langle x\pm y,e_k\rangle}=
+      |\langle x,e_k\rangle|^2+|\langle y,e_k\rangle|^2\pm
+      2\langle x,e_k\rangle\overline{\langle y,e_k\rangle}.
+    \]
+    Hence, $\langle x,y\rangle=\sum_k\langle x,e_k\rangle\overline{\langle
+    y,e_k\rangle}$.
+  \end{proof}
   
+  \paragraph{6.}
+  \begin{proof}
+    Suppose $M=(e_k)$. We collect the $e_k$ which does not belong to $\spn(e_1,
+    \dots,e_{k=1})$ and denote the new sequence by $(\tilde{e}_k)$. Clear that
+    $\spn(e_k)=\spn(\tilde{e}_k)$ and $(\tilde{e}_k)$ is linearly independent.
+    Let $(f_k)$ be the sequence generated from $(\tilde{e}_k)$ by the
+    Gram-Schmidt process. Then clear that $(f_k)$ is orthonormal. And since for
+    every $n$, $\spn(\tilde{e}_1,\dots,\tilde{e}_n)=\spn(f_1,\dots,f_n)$,
+    $M\subset\spn(\tilde{e}_k)=\spn(f_k)$. Finally, since $M$ is dense in $H$,
+    $\overline{\spn(f_k)}=H$. Thus, $(f_k)$ is a total orthonormal sequence of
+    $H$.
+  \end{proof}
+  
+  \paragraph{7.}
+  \begin{proof}
+    It follows from the definition of the separable Hilbert space and Prob. 6
+    immediately.
+  \end{proof}
+  
+  \paragraph{9.}
+  \begin{proof}
+    $\langle v,x\rangle=\langle w,x\rangle$ implies $\langle v-w,x\rangle=0$ for
+    all $x\in M$, that is, $x\perp M$. Since $M$ is total, by Theorem 3.6-2, $v
+    -w=0$.
+  \end{proof}
+  
+  \paragraph{10.}
+  \begin{proof}
+    It follows immediately from Theorem 3.6-2(b).
+  \end{proof}
 % end
 
 
