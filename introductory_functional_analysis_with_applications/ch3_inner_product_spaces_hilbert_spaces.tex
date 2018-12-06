@@ -359,6 +359,70 @@
   \end{proof}
 % end
 
+\setcounter{subsection}{7}
+\subsection{Functionals on Hilbert Spaces}
+  \paragraph{3.}
+  \begin{proof}
+    The linearity follows from the sesquilinearity of the inner product and the
+    boundedness from the Schwarz inequality. Furthermore, the Schwarz inequality
+    also implies $\|f\|\le\|z\|$. Meanwhile, $\|f\|\ge\|f(z/\|z\|)\|=\|z\|$. 
+    Thus, $\|f\|=\|z\|$.
+  \end{proof}
+  
+  \paragraph{4.}
+  \begin{proof}
+    Clear that the mapping $z\mapsto f$ is an isomorphism since it is
+    surjective. And by Theorem 2.10-4, $X\hp$ is a Hilbert space. Hence, $X$ is
+    also a Hilbert space.
+  \end{proof}
+  
+  \paragraph{5.}
+  \begin{proof}
+    Since $l^2$ is complete. By Theorem 3.8-1, we may define $I:(l^2)\hp\to l^2$
+    to be $f\mapsto z$. Clear that $I$ is linear and injective. Meanwhile, it 
+    preserves the norm. Furthermore, by Prob. 3, it is surjective. Hence, $I$
+    is an isomorphism. Thus, $l^2$ is isomorphic to its dual.
+  \end{proof}
+  
+  \paragraph{12.}
+  \begin{proof}
+    For every $x\in X$ and $y\in Y$,
+    \begin{align*}
+      |h(x+\Delta x, y+\Delta y)-h(x, y)|
+      &=|h(\Delta x, y)+h(x, \Delta y)+h(\Delta x, \Delta y)| \\
+      &\le|h(\Delta x, y)|+|h(x, \Delta y)|+|h(\Delta x, \Delta y)|.
+    \end{align*}
+    Since $h$ is bounded, 
+    \[
+      |h(x+\Delta x, y+\Delta y)-h(x, y)|\le
+      \|h\|(\|\Delta x|\|\|y\|+\|\Delta y|\|\|x\|+\|\Delta x|\|\|\Delta y\|).
+    \]
+    Thus, $h$ is continuous.
+  \end{proof}
+  
+  \paragraph{14.}
+  \begin{proof}
+    If $h(x,x)=0$, then for any $t\in \mathbb{R}$,
+    \[
+      0\le h(th(y,x)x+y,th(y,x)x+y)=2t|h(x,y)|^2+h(y,y).
+    \]
+    Hence, $h(x,y)=0$, otherwise we may choose some $t<0$ such that is right
+    hand side is negative. Thus, the inequality holds if $h(x,x)=0$.\par
+    Now suppose $h(x,x)\ne 0$. Put 
+    \begin{equation}
+      \label{eq:3.8.14}
+      z=y-x\frac{h(y, x)}{h(x, x)}
+    \end{equation}
+    It is easy to verify that $h(z,x)=0$. Multiplying $z$ on the both sides of 
+    \eqref{eq:3.8.14} yields
+    \[
+      0\le h(z,z)=h\left(z,y-x\frac{h(y, x)}{h(x, x)}\right)=h(z,y)=
+      h(y,y)-\frac{h(x,y)h(y,x)}{h(x,x)}.
+    \]
+    Thus, $|h(x,y)|^2\le h(x,x)h(y,y)$.
+  \end{proof}
+
+% end
 
 
 
