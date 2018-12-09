@@ -522,6 +522,67 @@
   \end{proof}
 % end
 
+\paragraph{Self-Adjoint, Unitary and Normal Operators}
+  \paragraph{4.}
+    We only show the uniqueness here.
+  \begin{proof}
+    $T_1+iT_2=S_1+iS_2$ implies $T_1-iT_2=S_1-iS_2$. Sum these two equations and
+    we get $T_1=S_1$. Meanwhile, it also implies $i(T_1+iT_2)=i(S_1+iS_2)$. 
+    Summing these two gives $T_2=S_2$.
+  \end{proof}
+  
+  \paragraph{6.}
+  \begin{proof}
+    $\,$\par
+    (a) We argue by contradiction. Let $k$ be the smallest positive integer such
+    that $T^{2k}=0$. Then for every $x\in H$
+    \[
+      0=\langle T^{2k}x,x\rangle = \langle T^kx,(T^k)^*x\rangle=
+      \langle T^kx,T^kx\rangle=\|T^kx\|^2.
+    \]
+    Hence $T^k=0$, which contradicts with the smallest assumption of $k$. Hence,
+    $T^n\ne 0$ for all even positive integer $n$.\par
+    (b) If $T^n=0$ for some positive, not necessarily even, integer $n$, then so
+    is $T^{2n}=0$. Hence, by (a), $T^n\ne 0$ for all $n\in\mathbb{N}$.
+  \end{proof}
+  
+  \paragraph{9.}
+  \begin{proof}
+    Since $T$ is isometric, it preserves the topology. Hence $T(H)$ is closed
+    as $H$ is closed.
+  \end{proof}
+  
+  \paragraph{10.}
+  \begin{proof}
+    It suffices to show that $T$ is surjective. Let $\{e_1,\dots,e_n\}$ be an
+    orthonormal basis of $X$. Then $\{Te_1,\dots,Te_n\}$ is also an orthonormal
+    basis since $T$ is isometric. Hence, $T$ is surjective and therefore is
+    unitary.
+  \end{proof}
+  
+  \paragraph{13.}
+  \begin{proof}
+    It can be verified that $T_n^*T_n\to T^*T$ and $T_nT_n^*\to TT^*$. Since
+    $T_n$ are normal, $T_n^*T_n=T_nT_n^*$. Hence, 
+    \[
+      \|T^*T-TT^*\|\le \|T^*T-T_n^*T_n\|+\|T_nT_n^*-TT^*\|\to 0
+    \]
+    as $n\to\infty$. Thus, $T$ is normal.
+  \end{proof}
+  
+  \paragraph{15.}
+  \begin{proof}
+    If $T$ is normal, clear that $\|T^*x\|=\|Tx\|$. Now we suppose $\|Tx\|=\|T^*
+    x\|$ for all $x\in H$. Then $\langle TT^*x,x\rangle=\langle T^*Tx,x\rangle$.
+    Since $X$ is complex, by Lemma 3.9-3, $TT^*=T^*T$. Namely, $T$ is normal.
+    \par
+    By (a), for every $x\in H$, $\|T^2x\|=\|T^*Tx\|$. Hence,
+    \[
+      \|T^2\|=\sup_{\|x\|=1}\|T^2x\|=\sup_{\|x\|=1}\|T^*Tx\|=\|T^*T\|=\|T\|^2,
+    \]
+    where the last equality comes from Theorem 3.9-4(e).
+  \end{proof}
+% end
 
 
 

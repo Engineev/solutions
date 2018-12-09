@@ -21,6 +21,7 @@ My personal solutions to some textbook problems
   * 3.6 Total Orthonormal Sets and Sequences (4, 6, 7, 9, 10)
   * 3.8 Functionals on Hilbert Spaces (3, 4, 5, 12, 14)
   * 3.9 Hilbert-Adjoint Operator (1, 2, 3, 4, 5, 6, 7, 8, 9)
+  * 3.10 Self-Adjoint, Unitary and Normal Operators (4, 6, 9, 10, 13, 15)
 
 ## Stephen Boyd, Lieven Vandenberghe, *Convex Optimization*
 
