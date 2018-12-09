@@ -421,7 +421,105 @@
     \]
     Thus, $|h(x,y)|^2\le h(x,x)h(y,y)$.
   \end{proof}
+% end
 
+\subsection{Hilbert-Adjoint Operator}
+  \paragraph{1.}
+  \begin{proof}
+    By Theorem 3.9-4, $0^*=(0+0)^*=0^*+0^*$. Hence, $0^*=0$. For every $x,y\in
+    X$,
+    \[
+      \langle(I^*-I)x, y\rangle = \langle I^*x, y\rangle-\langle Ix, y\rangle=
+      \langle x, Iy\rangle-\langle Ix, y\rangle=0.
+    \]
+    Hence, by Lemma 3.9-3, $I=I^*$.
+  \end{proof}
+  
+  \paragraph{2.}
+  \begin{proof}
+    By Theorem 3.9-4, $T^*(T\inv)^*=(T\inv T)^*=I^*=I$. Hence, $(T^*)\inv=
+    (T\inv)^*$.
+  \end{proof}
+  
+  \paragraph{3.}
+  \begin{proof}
+    Since $\|T_n^*-T^*\|=\|(T_n-T)^*\|=\|T_n-T\|$, $T_n^*\to T^*$ as long as
+    $T_n\to T$.
+  \end{proof}
+  
+  \paragraph{4.}
+  \begin{proof}
+    It suffices to show that for all $x_2\in T^*(M_2^\perp)$ and $x_1\in M_1$,
+    $\langle x_1,x_2\rangle=0$. $x_2\in T^*(M_2^\perp)$ implies the existence
+    of some $y_2\in M_2^\perp$ with $T^*y_2=x_2$. Then
+    \[
+      \langle x_1,x_2\rangle = \langle x_1,T^*y_2\rangle=
+      \langle Tx_1,y_2\rangle = 0,
+    \]
+    where the last equality comes from the fact that $T(M_1)\subset M_2$ and
+    $y_2\in M_2^\perp$. Thus, $M_1^\perp\supset T^*(M_2^\perp)$.
+  \end{proof}
+  
+  \paragraph{5.}
+  \begin{proof}
+    By Prob. 4, $T^*(M_2^\perp)\subset M_1^\perp$ implies $M_2^{\perp\perp}
+    \supset T(M_1^{\perp\perp})$. Since $M_1$ and $M_2$ are closed, by Prob. 9,
+    Sec 3.3, $M_i^{\perp\perp}=M_i$ for $i=1,2$. Thus, $T(M_1)\subset M_2$.
+    The converse part has already been proved in Prob. 4.
+  \end{proof}
+  
+  \paragraph{6.}
+  \begin{proof}
+    $\,$\par
+    (a) Since $T(M_1)=\{0\}\subset H_2$, by Prob. 4, $T^*(H_2)\subset 
+    M_1^\perp$.\par
+    (b) For every $y\in[T(H_1)]^\perp$, $\langle y,Tx\rangle=0$ for all $x\in
+    H_1$. Hence, $\langle T^*y, x\rangle=0$. By Lemma 3.8-2, $T^*y=0$ and 
+    therefore $y\in\mathcal{N}(T^*)$. Thus, $[T(H_1)]^\perp\subset\mathcal{N}
+    (T^*)$.\par
+    (c) Since $T^{**}=T$, it follows from (b) that $[T^*(H_2)]^\perp\subset 
+    M_1$. And since $M_1$ is closed, $M_1^{\perp\perp}=M_1$. Therefore, (a) 
+    implies $[T^*(H_2)]^\perp\supset M_1$. Thus, $M_1=[T^*(H_2)]^\perp$.
+  \end{proof}
+  
+  \paragraph{7.}
+  \begin{proof}
+    It follows immediately from Lemma 3.9-3. 
+  \end{proof}
+  
+  \paragraph{8.}
+  \begin{proof}
+    For every $x\in H$ with $\|x\|=1$,
+    \begin{align*}
+      \|(I+T^*T)x\|
+      &=\|x+T^*Tx\|=\langle x+T^*Tx,x+T^*Tx\rangle\\
+      &=\|x\|^2+\|T^*Tx\|^2+\langle x,T^*Tx\rangle+\langle T^*Tx,x\rangle\\
+      &=\|x\|^2+\|T^*Tx\|^2+\|Tx\|^2 \\
+      &\ge 1.
+    \end{align*}
+    Then, by Prob 7, Sec 2.7, $I+T^*T$ is invertible.
+  \end{proof}
+  
+  \paragraph{9.}
+  \begin{proof}
+    If $T$ can be represent by that form, then $\mathcal{R}(T)$ can be spanned
+    by $w_1,\dots,w_n$. Hence, it is finite dimensional.\par
+    Now we suppose that $T$ has a finite dimensional range. Let $\{w_1,\dots,
+    w_n\}$ be a orthonormal basis of $\mathcal{R}(T)$. Then for every $x\in H$,
+    \[
+      Tx=\sum_{j=1}^n\varphi_j(x)w_j.
+    \]
+    Now we show that for each $j$, $\varphi_j$ is a bounded linear functional
+    and invoke Riesz's Theorem to complete the proof. It is easy to verify the
+    linearity of $\varphi_j$. For every $x$ with norm $1$, since $T$ is bounded
+    and $(w_j)$ is orthonormal,
+    \[
+      \|T\|\ge\left\|\sum_{j=1}^n\varphi_j(x)w_j\right\|\ge |\varphi_j(x)|
+    \]
+    for each $j=1,\dots,n$. Hence, every $\varphi_j$ is a bounded linear 
+    functional and therefore can be represented by $\varphi_j(x)=\langle x,v_j
+    \rangle$.
+  \end{proof}
 % end
 
 
