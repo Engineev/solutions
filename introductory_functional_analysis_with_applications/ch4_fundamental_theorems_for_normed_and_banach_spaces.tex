@@ -1,0 +1,83 @@
+%---------%---------%---------%---------%---------%---------%---------%---------
+\section{Fundamental Theorems for Normed and Banach Spaces}
+\setcounter{subsection}{1}
+\subsection{Hahn-Banach Theorem}
+  \paragraph{4.}
+  \begin{proof}
+    By the positive homogeneity, $p(2\times 0)=2p(0)$. Hence, $p(0)=0$. 
+    Consequently, $0=p(x+(-x))\le p(x)+p(-x)$. Thus, $-p(x)\le p(-x)$.
+  \end{proof}
+  
+  \paragraph{5.}
+  \begin{proof}
+    For every $x,y\in M$ and $\lambda\in[0,1]$,
+    \[
+      p(\lambda x+(1-\lambda)y)\le \lambda p(x)+(1-\lambda)p(y)
+      \le \lambda\gamma+(1-\lambda)\gamma=\gamma.
+    \]
+    Hence, $\lambda x+(1-\lambda)y\in M$. Thus, $M$ is convex.
+  \end{proof}
+  
+  \paragraph{6.}
+  \begin{proof}
+    For every $x,t\in X$,
+    \[
+      p(x-t)\le p(x)+p(-t) \quad\Rightarrow\quad
+      p(x-t)-p(x)\le p(-t),
+    \]
+    and
+    \[
+      p(x)=p(x-t+t)\le p(x-t)+p(t) \quad\Rightarrow\quad
+      -p(t)\le p(x-t)-p(x).
+    \]
+    Since $p(0)=0$ and $p$ is continuous at $0$, $p(t)\to 0$ and $p(-t)\to 0$ as
+    $t\to 0$. Hence, $p(x-t)-p(x)\to 0$ as $t\to 0$, that is, $p$ is continuous
+    on $X$.
+  \end{proof}
+  
+  \paragraph{8.}
+  \begin{proof}
+    First, $p(0)\ge p(0+0)-p(0)=0$. For nonzero $x$, we argue by contradiction.
+    Assume that there exists some $x$ with $0<\|x\|\le r$ such that $p(x)<0$.
+    Then $np(x)<0$ for $n=1,2,\dots$. For $n$ sufficiently large, $n\|x\|>r$ and 
+    therefore $p(nx)\ge 0$. However, by the subadditivity, $p(nx)\le np(x)<0$.
+    Contradiction. Thus, $p(x)\ge 0$ on $X$.
+  \end{proof}
+  
+  \paragraph{9.}
+  \begin{proof}
+    For all $x_1=\alpha_1x_0, x_2=\alpha_2x_0\in Z$ and scalars $a_1$ and $a_2$,
+    \begin{align*}
+      f(a_1x_1+a_2x_2)&=f((a_1\alpha_1+a_2\alpha_2)x_0)=
+      (a_1\alpha_1+a_2\alpha_2)p(x_0) \\
+      &=a_1\alpha_1p(x_0)+a_2\alpha_2p(x_0)=a_1f(x_1)+a_2f(x_2).
+    \end{align*}
+    Thus, $f$ is linear. Now we show that for $\alpha\in\mathbb{R}$, $\alpha p
+    (x_0)\le p(\alpha x_0)$ to complete the proof. If $\alpha\ge 0$, then it
+    follows from the positive homogeneity. For negative $\alpha$, $\alpha p
+    (x_0)=-p(-\alpha x_0)$ and by Prob. 4, $-p(-\alpha x_0)\le p(\alpha x_0)$.
+    Thus, $f(x)\le p(x)$ for all $x\in Z$.
+  \end{proof}
+  
+  \paragraph{10.}
+  \begin{proof}
+    Let $Z$ and $f$ have the same meaning as in Prob. 9. By Hahn-Banach theorem,
+    there exists a linear extension $\tilde{f}$ of $f$ to $X$ with $\tilde{f}(x)
+    \le p(x)$ for all $x\in X$. Replacing $x$ with $-x$ gives $\tilde{f}(-x)\le
+    p(x)$. Finally, the linearity of $\tilde{f}$ yields $-p(-x)\le\tilde{f}(x)$.
+  \end{proof}
+% end
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -22,6 +22,8 @@ My personal solutions to some textbook problems
   * 3.8 Functionals on Hilbert Spaces (3, 4, 5, 12, 14)
   * 3.9 Hilbert-Adjoint Operator (1, 2, 3, 4, 5, 6, 7, 8, 9)
   * 3.10 Self-Adjoint, Unitary and Normal Operators (4, 6, 9, 10, 13, 15)
+* Chapter 4. Fundamental Theorems for Normed and Banach Spaces
+  * 4.2 Hahn-Banach Theorem (4, 5, 6, 8, 9, 10)
 
 ## Stephen Boyd, Lieven Vandenberghe, *Convex Optimization*
 
