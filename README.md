@@ -25,6 +25,7 @@ My personal solutions to some textbook problems
 * Chapter 4. Fundamental Theorems for Normed and Banach Spaces
   * 4.2 Hahn-Banach Theorem (4, 5, 6, 8, 9, 10)
   * 4.3 Hahn-Banach Theorem for Complex Vector Spaces and Normed Spaces (1, 2, 7, 8, 13, 14, 15)
+  * 4.5 Adjoint Operator (9, 10)
 
 ## Stephen Boyd, Lieven Vandenberghe, *Convex Optimization*
 
