@@ -68,6 +68,57 @@
   \end{proof}
 % end
 
+\subsection{Hahn-Banach Theorem for Normed Spaces}
+  \paragraph{1.}
+  \begin{proof}
+    By (2), $p(2\times 0)=2p(0)$. Hence, $p(0)=0$. And for every $x\in X$, by 
+    (1),
+    \[
+      0=p(0)\le p(x)+p(-x)=2p(x),
+    \]
+    that is, $p(x)\ge 0$.
+  \end{proof}
+  
+  \paragraph{2.}
+  \begin{proof}
+    By (1), $p(x)=p(x-y+y)\le p(x-y)+p(y)$. Therefore, $p(x)-p(y)\le p(x-y)$.
+    Interchange the roles of $x$ and $y$ and we obtain $p(y)-p(x)\le p(y-x)=
+    p(x-y)$, where the equality comes from (2). Thus, $|p(x)-p(y)|\le p(x-y)$.
+  \end{proof}
+  
+  \paragraph{7.}
+  \begin{proof}
+    Define $\tilde{f}$ to be $x\mapsto\langle x, x_0/\|x_0\|\rangle$. Clear that
+    it is a bounded linear functional on $X$ and $\tilde{f}(x_0)=\|x_0\|$. And
+    by Riesz's Theorem, $\|\tilde{f}\|=\|x_0/\|x_0\|\|=1$.
+  \end{proof}
+  
+  \paragraph{8.}
+  \begin{proof}
+    It follows immediately from Theorem 4.3-3.
+  \end{proof}
+  
+  \paragraph{13.}
+  \begin{proof}
+    Just put $\hat{f}=\tilde{f}/\|x_0\|$.
+  \end{proof}
+  
+  \paragraph{14.}
+  \begin{proof}
+    By Prob 13, there exists a $\hat{f}\in X\hp$ such that $\|\hat{f}\|=1/r$ and
+    $\hat{f}(x_0)=1$. Let hyperplane $H_0=\{x\in X:\, \hat{f}(x)=1\}$ and half
+    space $S_0=\{x\in X:\, \hat{f}(x)\le 1\}$. Then clear that $x_0\in H_0$ and
+    for all $x\in S(0;r)$, $f(x) \le \|f\|\|x\| = r/r =1$. Hence, $x\in S_0$.
+  \end{proof}
+  
+  \paragraph{15.}
+  \begin{proof}
+    If $\|x\|=c+2\vep>c$, then by Corollary 4.3-4, there exists some $0\ne f\in
+    X\hp$ such that $|f(x)|/\|f\|\ge c+\vep$. Consequently, the functional $g=f/
+    \|f\|$, which is of norm $1$, is such that $|g(x_0)|>c$. Contradiction.
+  \end{proof}
+% end
+
 
 
 
