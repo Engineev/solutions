@@ -1,0 +1,67 @@
+%---------%---------%---------%---------%---------%---------%---------%---------
+\section{Linear Algebra}
+\setcounter{subsection}{2}
+\subsection{Linear Transformation}
+  \paragraph{9.}
+  \begin{proof}
+    First we suppose $T^2=0$. Let $N=\ker T$ and $M$ the complement of $N$. Then 
+    (a), (b) and (c) hold automatically. Since $T^2=0$, $T(M)\subset\ker T$.
+    \par
+    Now we suppose the existence of such $M$ and $N$. By (c), $N\subset\ker T$.
+    For every $x\in V$, if $Tx\ne 0$, then $x\notin N$. Therefore by (a) and
+    (b), $x$ can be uniquely represented by $x=m+n$ where $m\in M$, $n\in N$. 
+    Hence,
+    \[
+      T^2x = T(Tm) + T(Tn) = 0
+    \]
+    since $n\in N\subset\ker T$ and $Tm\in T(M)\subset N\subset\ker T$. Thus, 
+    $T^2=0$.
+  \end{proof}
+  
+  \paragraph{10.}
+  \begin{proof}
+    First we suppose $T^2=I$. Let $M=\{x\in V:\, Tx=x\}$ and $N=\{x\in V:\, Tx=
+    -x\}$. Then (b)-(d) hold automatically. For every $x\in V$, $x=(x+Tx)/2+(x-
+    Tx)/2$. Note that $T(x+Tx)=Tx+x$ and $T(x-Tx)=Tx-x$, that is, $x+Tx\in M$ 
+    and $x-Tx\in N$. Hence, $V=M+N$.\par
+    Now we suppose the existence of such $M$ and $N$. Then for every $x\in V$,
+    $x=m+n$ where $m\in M$ and $n\in N$. Hence, $T^2x= T(Tm)+T(Tn) = Tm-Tn=m+n
+    =x$. Thus, $T^2=I$.
+  \end{proof}
+% end
+\subsection{Products and Direct Sums}
+  \paragraph{2.}
+  \begin{proof}
+    Note that for $\oplus_{i\in\Delta}V_i$, the summation $\sum_{i\in\Delta}T_i
+    \pi_i$ is well-defined since for each $x$, the summation only has finitely
+    many nonzero terms. Hence, we have an analogy of Theorem 4.7 and, 
+    consequently, an analogy of Corollary 4.8 for $V=\oplus_{i\in\Delta}V_i$.
+  \end{proof}
+  
+  \paragraph{3.}
+  \begin{proof}
+    Define $T:W\to V$ by $\alpha\mapsto (T_i(\alpha))_{i\in\Delta}$. We show that
+    $T$ is linear first. For every $x,y\in W$ and scalars $a$ and $b$,
+    \begin{align*}
+      T(ax+by)&=(T_i(ax+by))_{i\in\Delta}=(aT_i(x)+bT_i(y))_{i\in\Delta}\\
+      &=a(T_i(x))_{i\in\Delta}+b(T_i(y))_{i\in\Delta}=aT(x)+bT(y).
+    \end{align*}
+    Thus, $T\in\Hom(W,V)$. For the uniqueness, suppose $T\hp$ is such a linear
+    transformation. Suppose $T\hp(x)=(T\hp_i(x))_{i\in\Delta}$. Since the diagram
+    is commutative, for each $p\in\Delta$ and every $x\in W$,
+    \[
+      T\hp_p(x)=\pi_pT\hp(x)=T_p(x).
+    \]
+    Hence, $T=T\hp$. Thus, $V$ together with $\{\pi_p:\,p\in\Delta\}$ satisfies
+    the universal mapping property.
+  \end{proof}
+  
+  \paragraph{4.}
+  \begin{proof}
+    Clear that $T_i\in\mathscr{E}(V)$ for all $i=1,\dots,n$. And $T_i^2=\theta_i
+    \pi_i\theta_i\pi_i=\theta_i\pi_i=T_i$ as $\pi_i\theta_i=I_{V_i}$ by Theorem 
+    4.3(a). Similarly, for $i\ne j$, $T_iT_j=0$ by Theorem 4.3(b). 
+  \end{proof}
+% end
+
+

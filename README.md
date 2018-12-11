@@ -3,7 +3,7 @@ My personal solutions to some textbook problems
 
 ## Erwin Kreyszig, *Introductory Functional Analysis with Applications*
 
-<span style="color:yellow"> **Ongoing** </span>
+**Ongoing**
 * Chapter 2. Normed Spaces. Banach Spaces
   * 2.3 Further Properties of Normed Spaces (4, 7, 8, 9, 10, 14)
   * 2.4 Finite Dimensional Normed Spaces (3, 4, 5)
@@ -19,9 +19,16 @@ My personal solutions to some textbook problems
   * 3.4 Orthonormal Sets and Sequences (3, 7, 8)
   * 3.5 Series Related to Orthonormal Sequences (1, 3, 4, 5, 7, 8, 9, 10)
 
+## William C. Brown, *A Second Course in Linear Algebra*
+
+**ongoing**
+* Chapter 1. Linear Algebra
+  * 1.3 Linear Transformation (9, 10)
+  * 1.4 Products and Direct Sums (2, 3, 4)
+
 ## Stephen Boyd, Lieven Vandenberghe, *Convex Optimization*
 
-<span style="color:red"> **Suspended** </span>
+**Suspended**
 * Chapter 2. Convex Sets
   * 2.1 Definition of convexity (1, 2, 3, 4)
   * 2.2 Examples (5, 7, 8, 9.(a, b), 10)
@@ -29,7 +36,7 @@ My personal solutions to some textbook problems
 
 ## Sheldon Axler, *Linear Algebra Done Right*, 3rd ed
 
-<span style="color:green"> **Archived** </span>
+**Archived**
 * Chapter 3. Linear Maps
   * 3.A The Vector Space of Linear Maps (Odd)
   * 3.B Null Spaces and Ranges (Even - {28, 30})
@@ -50,7 +57,7 @@ My personal solutions to some textbook problems
 
 ## Roger A. Horn, Charles R. Johnson, *Matrix Analysis*, 2nd ed
 
-<span style="color:red"> **Suspended** </span>
+**Suspended**
 * Chapter 1. Eigenvalues, Eigenvectors and Similarity
   * 1.0 Introduction (Completed)
   * 1.1 The eigenvalue-eigenvector equation (Odd)
@@ -65,7 +72,7 @@ My personal solutions to some textbook problems
 
 ## H.L. Royden, *Real Analysis*, 3rd ed
 
-<span style="color:green"> **Archived** </span>
+**Archived**
 * Chapter 3. Lebesgue Measure
   * 3.1 Introduction (1, 2, 3)
   * 3.2 Outer Measure (5, 6, 7, 8)
