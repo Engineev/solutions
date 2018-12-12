@@ -134,6 +134,99 @@
     \mathcal{N}(T^\times)$. Hence, $y\in ^a\mathcal{N}(T^\times)$.
   \end{proof}
 % end
+\subsection{Reflexive Spaces}
+  \paragraph{2.}
+  \begin{proof}
+    Since $Y$ is a closed subspace of a Hilbert space, it is complete. By Lemma
+    3.3-2, there is some $y\in Y$ such that $\|x_0-y\|=\delta$ and $z=x_0-y$ is
+    orthogonal to $Y$. Define $\tilde{f}$ by $x\mapsto\langle x,z\rangle/
+    \delta$. Then clear that $\tilde{f}\in X\hp$ and $\tilde{f}(y)=0$ for all $y
+    \in Y$. Meanwhile, by Riesz's Theorem, $\|\tilde{f}\|=\|z\|/\delta=1$. 
+    Finally,
+    \[
+      \tilde{f}(x_0)=\frac{\langle x_0,x_0-y\rangle}{\delta}=
+      \frac{\langle x_0-y+y,x_0-y\rangle}{\delta}=\delta.
+    \]
+    The proof is then completed.
+  \end{proof}
+  
+  \paragraph{3.}
+  \begin{proof}
+    We denote the canonical mapping from $X$ to $X^{\prime\prime}$ by $C$ and 
+    the one from $X\hp$ to $X^{\prime\prime\prime}$ by $D$. Our goal is to find
+    a $f\in X\hp$ for every given $h\in X^{\prime\prime\prime}$ such that $D(f)=
+    h$, that is, for every $g\in X^{\prime\prime}$, $D(f)(g)=h(g)$. Since $X$ is
+    reflexive, there is some $x\in X$ such that $g=Cx$. Put $f=hC$, which is 
+    clearly an element of $X\hp$. Since
+    \[
+      h(g) = h(Cx)=(hC)(x)=f(x)\quad\text{and}\quad
+      D(f)(g)=g(f)=(Cx)(f)=f(x),
+    \]
+    $h=D(hC)$. Thus, $X\hp$ is reflexive.
+  \end{proof}
+  
+  \paragraph{4.}
+  \begin{proof}
+    By Prob. 3, the reflexivity of $X$ implies the reflexivity of $X\hp$. Now we 
+    suppose $X\hp$ is reflexive. Hence, again by Prob. 3, $X^{\prime\prime}$ is
+    reflexive and therefore, by Theorem 4.6-4, is complete. Since $X$ is 
+    isomorphic to $\mathcal{R}(C)\subset X^{\prime\prime}$ and $\mathcal{R}(C)$,
+    a closed subspace of a reflexive Banach space, is reflexive, so is $X$. 
+    Thus, a Banach space $X$ is reflexive iff $X\hp$ is reflexive.
+  \end{proof}
+  
+  \paragraph{5.}
+  \begin{proof}
+    It suffices to show that $\delta>0$ and then putting $h=\tilde{f}/\delta$
+    will complete the proof. If $\delta=0$, then by the definition of the 
+    infimum, there exists $(y_n)\subset Y$ which converges to $x_0$. Then $x_0
+    \in Y$ since $Y$ is closed, which contradicts our choice of $x_0$. Thus,
+    $\delta>0$. 
+  \end{proof}
+  
+  \paragraph{6.}
+  \begin{proof}
+    We may assume without loss of generality that $Y_2\setminus Y_1$ is 
+    nonempty. Choose arbitrary $x_0\in Y_2\setminus Y_1\subset X\setminus Y_1$.
+    By Prob. 6, there exists some $h\in X\hp$ such that $h(x_0)=1$ and $h\in
+    Y^a$. Thus, the annihilators of $Y_1$ and $Y_2$ are different.
+  \end{proof}
+  
+  \paragraph{7.}
+  \begin{proof}
+    If $Y$ is proper, then by Prob. 7, the annihilators of $Y$ and $X$ do not
+    coincide, which contradicts our hypothesis. Hence, $X=Y$.
+  \end{proof}
+  
+  \paragraph{8.}
+  \begin{proof}
+    If $x\in A$, then for every $f\in X\hp$ whose restriction to $M$ is $0$, 
+    $f(x_0)=0$ since $f$, being bounded, is continuous. For the converse, note
+    that $f|_M=0$ implies $f|_A=0$. If $x_0\notin A$, then Prob. 5 guarantees
+    the existence of some $f\in X\hp$ which vanishes on $A$ and is nonzero at
+    $x_0$. Contradiction. Thus, $x_0\in A$.
+  \end{proof}
+  
+  \paragraph{9.}
+  \begin{proof}
+    If $M$ is total, then clear that every $f\in X\hp$ vanishing on $M$ is zero
+    everywhere on $X$. And the converse part follows immediately from Prob. 8.
+  \end{proof}
+  
+  \paragraph{10.}
+  \begin{proof}
+    Let $\{b_1,\dots,b_n\}$ be a linearly independent subset of $X$ and define
+    \[
+      \beta_i:\spn\{b_1,\dots,b_n\}\to\mathbb{F} 
+      \quad\text{by}\quad
+      b_j\mapsto\delta_{ij}
+    \]
+    for $i=1,\dots,n$. By Hahn-Banach Theorem, we can extend them to linear 
+    functionls $\tilde{\beta}_i$ on $X$. Suppose that $f=x_1\tilde{\beta}_1+
+    \cdots+x_n\tilde{\beta}_n=0$. Then $0=f(b_i)=x_i$ for all $i$. Thus, $\{
+    \tilde{\beta}_1,\dots,\tilde{\beta}_n\}$ is linearly independent.
+  \end{proof}
+% end
 
 
 
