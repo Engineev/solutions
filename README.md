@@ -27,6 +27,7 @@ My personal solutions to some textbook problems
   * 4.3 Hahn-Banach Theorem for Complex Vector Spaces and Normed Spaces (1, 2, 7, 8, 13, 14, 15)
   * 4.5 Adjoint Operator (9, 10)
   * 4.6 Reflexive Spaces (2, 3, 4, 5, 6, 7, 8, 9, 10)
+  * 4.7 Uniform Boundedness Theorem (1, 5, 6, 7, 10, 11, 13, 14)
 
 ## William C. Brown, *A Second Course in Linear Algebra*
 

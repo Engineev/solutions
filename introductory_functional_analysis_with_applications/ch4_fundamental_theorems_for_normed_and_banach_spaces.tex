@@ -227,6 +227,102 @@
     \tilde{\beta}_1,\dots,\tilde{\beta}_n\}$ is linearly independent.
   \end{proof}
 % end
+\subsection{Uniform Boundedness Theorem}
+  \paragraph{1.}
+  \begin{solution}
+    Meager, since $\mathbb{Q}$ is the union of all singleton of rational 
+    numbers.
+  \end{solution}
+  
+  \paragraph{5.}
+  \begin{proof}
+    First we suppose $M$ is rare and argue by contradiction. If $(\bar{M})^c$ is
+    not dense in $X$, i.e., there exists some $x\in X$ and $r>0$ such that $B(x;
+    r)\cap(\bar{M})^c=\varnothing$. Hence, $B(x;r)\subset\bar{M}$, which 
+    contradicts the definition of rare subsets. Thus, $(\bar{M})^c$ is dense in
+    $X$.\par
+    Now we suppose $(\bar{M})^c$ is dense in $X$. Then for all $x\in\bar{M}$ and
+    $r>0$, there exists some $y_r\notin\bar{M}$ but $y_r\in B(x;r)$. Hence, $x$
+    is not an interior point. Thus, $M$ is rare.
+  \end{proof}
+  
+  \paragraph{6.}
+  \begin{proof}
+    If both $M$ and $M^c$ are meager, then so is their union $X$, but Baire's
+    theorem says that a complete metric space is nonmeager in itself. Hence, 
+    $M^c$ is nonmeager if $M$ is.
+  \end{proof}
+  
+  \paragraph{7.}
+  \begin{proof}
+    We argue by contradiction. Assume that for all $x\in X$, $\sup_n\|T_nx\|<
+    \infty$. Then by the uniform boundedness theorem, there exists some $c$
+    such that $\|T_n\|\le c$ for all $n$. Hence, $\sup_n\|T_n\|\le c$. 
+    Contradiction.
+  \end{proof}
+  
+  \paragraph{10.}
+  \begin{proof}
+    We may assume without loss of generality that $\eta_1\ne 0$. Define $T_n:
+    c_0\to\mathbb{C}$ by $(\xi_j)\mapsto \sum_{j=1}^n\xi_j\eta_j$. Clear that
+    $T_n$ are linear functionals. And since
+    \begin{equation}
+      \label{eq:4.7.10}
+      |T_nx|=\left|\sum_{j=1}^n\eta_j\xi_j\right|\le
+      \max_{j=1,\dots,n}|\xi_j|\sum_{j=1}^n|\eta_j|\le
+      \|x\|\sum_{j=1}^n|\eta_j|,
+    \end{equation}
+    $T_n$ are bounded and $\|T_n\|\le\sum_{j=1}^n|\eta_j|$. Meanwhile, define
+    $y=(\gamma_j)$ by
+    \[
+      \gamma_j=\begin{cases}
+        \sgn\eta_j, & j\le n, \\
+        0         , & j>n.
+      \end{cases}
+    \]
+    Clear that $y\in c_0$ and $\|y\|=1$. Since $|T_ny|=\sum_{j=1}^n|\eta_j|$,
+    together with \eqref{eq:4.7.10}, we conclude $\|T_n\|=\sum_{j=1}^n|\eta_j|$.
+    \par
+    By Prob. 2, Sec 2.3, $c_0$ is a Banach space. And for each $x=(\xi_j)\in 
+    c_0$, since $\sum\xi_j\eta_j$ converges, $\|T_nx\|$ is bounded for $n$ large 
+    enough and therefore bounded for all $n$. Hence, by the uniform boundedness
+    theorem, $\sum_{j=1}^n|\eta_j|=\|T_n\|\le c$ for some fixed $c$. Thus, $\sum
+    |\eta_j|<\infty$.
+  \end{proof}
+  
+  \paragraph{11.}
+  \begin{proof}
+    By Prob. 4, Sec 1.4, the Cauchy sequence $(T_nx)$ is bounded. Thus, by the
+    uniform boundedness theorem, $(\|T_n\|)$ is bounded.
+  \end{proof}
+  
+  \paragraph{13.}
+  \begin{proof}
+    Let $C:X\to X^{\prime\prime}$ be the canonical embedding and $(\varphi_n)=
+    (Cx_n)$. By Lemma 4.6-1, $\|x_n\|=\|\varphi_n\|$. Note that $X^{\prime
+    \prime}$, the dual space of $X\hp$, is complete and $f(x_n)=\varphi_n(f)$.
+    Thus, by the uniform boundedness theorem, $(\|x_n\|)=(\|\varphi_n\|)$ is
+    bounded.
+  \end{proof}
+  
+  \paragraph{14.}
+  \begin{proof}
+    $\,$\par
+    (a)$\Rightarrow$(c): It follows immediately from $|g(T_nx)|\le\|g\|\|x\|
+    \|T_n\|$.\par
+    (c)$\Rightarrow$(b): For fixed $x\in X$, let $\varphi_n=C(T_nx)$, where $C:
+    Y\to Y^{\prime\prime}$ is the canonical embedding. For every $g\in Y\hp$, by
+    (c), $|\varphi_n(g)|=|g(T_nx)|\le c_g$. Since $Y\hp$ is complete, by the
+    uniform boundedness theorem, $(\|\varphi_n\|)=(\|T_nx\|)$ is bounded.\par
+    (b)$\Rightarrow$(a): It is just what the uniform boundedness theorem states.
+  \end{proof}
+% end
+
+
+
+
+
+
 
 
 
