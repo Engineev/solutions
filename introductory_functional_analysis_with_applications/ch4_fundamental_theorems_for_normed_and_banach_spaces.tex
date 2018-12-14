@@ -317,6 +317,85 @@
     (b)$\Rightarrow$(a): It is just what the uniform boundedness theorem states.
   \end{proof}
 % end
+\subsection{Strong and Weak Convergence}
+  \paragraph{1.}
+  \begin{proof}
+    The mapping $\varphi_t:C[a,b]\to\mathbb{F}$, $x\mapsto x(t)$ is a bounded
+    linear functional on $C[a,b]$. Hence, by the definition of weak convergence,
+    $x_n(t)\to x(t)$.
+  \end{proof}
+  
+  \paragraph{2.}
+  \begin{proof}
+    For every $f\in Y\hp$, $fT\in X\hp$. Since $x_n\wto x_0$, $(fT)(x_n)\to (fT)
+    (x_0)$, that is, $Tx_n\wto Tx_0$.
+  \end{proof}
+  
+  \paragraph{4.}
+  \begin{proof}
+    If $x_0=0$, then it is trivial. Otherwise, by Theorem 4.3-3, there exists 
+    some $f\in X\hp$ such that $f(x_0)=\|x_0\|$ and $\|f\|=1$. Since $x_n\wto
+    x$, $|f(x_n)|\to |f(x_0)|=\|x_0\|$. Meanwhile, $|f(x_n)|\le \|f\|\|x_n\|=\|
+    x_n\|$. Thus, $\lowlim\|x_n\|\ge \|x_0\|$.
+  \end{proof}
+  
+  \paragraph{5.}
+  \begin{proof}
+    If $\bar{Y}=X$, then there is nothing to be proved. Otherwise we argue by 
+    contradiction. Assume that $x_0\in X\setminus\bar{Y}\ne\varnothing$. Then by
+    Lemma 4.6-7, there exists some $f\in X\hp$ such that $f(Y)=\{0\}$ and $f
+    (x_0)=\delta>0$. However, since $x_n\in Y$ and $x_n\wto x_0$, $f(x_0)$ must
+    be $0$. Contradiction. Thus, $x_0\in\bar{Y}$.
+  \end{proof}
+  
+  \paragraph{6.}
+  \begin{proof}
+    It follows immediately from Prob. 5.
+  \end{proof}
+  
+  \paragraph{7.}
+  \begin{proof}
+    It follows immediately from Prob. 5.
+  \end{proof}
+  
+  \paragraph{8.}
+  \begin{proof}
+    For every $f\in X\hp$, by the definition, $|f(x_n)|<c_f$ for some constant
+    $c_f$ which does not depend on $n$. Let $g_n=Cx_n$, where $C:X\to X^{\prime
+    \prime}$ is the canonical embedding. Then for all $n$, $|g_n(f)|=|f(x_n)|\le
+    c_f$. Since $X\hp$ is complete, by the uniform boundedness theorem, $(g_n)$
+    is bounded and therefore so is $(x_n)$.
+  \end{proof}
+  
+  \paragraph{9.}
+    Note that we do not regard a sequence with only repeated elements when $n$
+    is large as a sequence here.
+  \begin{proof}
+    We argue by contradiction. Assume that $A$ is unbounded, that is, there 
+    exists a $(a_n)\subset A$ with $\|a_n\|\ge n$. Clear that every sequence in
+     $(a_n)$ is unbounded and therefore, by Prob. 8, is not a weak Cauchy 
+     sequence, contradicting our hypothesis. Thus, $A$ is bounded.
+  \end{proof}
+  
+  \paragraph{10.}
+  \begin{proof}
+    Let $(x_n)$ be a weak Cauchy sequence in $X$ Let $\varphi_n=Cx_n$, where $C:
+    X\to X^{\prime\prime}$ is the canonical embedding. For every $f\in X\hp$,
+    since $(x_n)$ is a weak Cauchy sequence, $(\varphi_n(f))=(f(x_n))$ is a 
+    Cauchy sequence in $\mathbb{F}$ and therefore $\lim\varphi_n(f)$ exists. Let
+    $\varphi:X\hp\to\mathbb{F}$ be defined by $f\mapsto \lim\varphi_n(f)$. Clear
+    that it is linear. Meanwhile, since $(x_n)$, a weak Cauchy sequence, is
+    bounded by Prob. 8, $(\varphi_n)$ is bounded by, say, $c$. Therefore, 
+    $\varphi$ is bounded since $|\varphi_n(f)|\le c\|f\|$ for all $n$. Thus, 
+    $\varphi\in X^{\prime\prime}$. \par
+    Since $X$ is reflexive, there exists some $x_0\in X$ such that $\varphi=
+    Cx_0$. For all $f\in X\hp$,
+    \[
+      f(x_n)=\varphi_n(f) \to \varphi(f) = f(x_0)\quad\text{as $n\to\infty$}.
+    \]
+    Thus, $x_n\wto x_0$. Thus, $X$ is weakly complete.
+  \end{proof}
+% end
 
 
 
