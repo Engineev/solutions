@@ -60,7 +60,13 @@ My personal solutions to some textbook problems
 
 ## Stephen Boyd, Lieven Vandenberghe, *Convex Optimization*
 * Chapter 2. Convex Sets
-  * 2.1 Definition of convexity (1, 2, 3, 4)
-  * 2.2 Examples (5, 7, 8, 9.(a, b), 10)
-  * 2.3 Operations that preserve convexity (16, 18)
+  * Definition of convexity (1, 2, 3, 4)
+  * Examples (5, 7, 8, 9.(a, b), 10)
+  * Operations that preserve convexity (16, 18)
+  * TODO
+* Chapter 3. Convex Functions
+  * Definition of convexity (1)
+  * Examples (16)
+* Chapter 4. Convex Optimization Problems
+  * Basic terminology and optimality conditions (1)
 

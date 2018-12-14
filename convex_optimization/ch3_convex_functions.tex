@@ -1,0 +1,135 @@
+%---------%---------%---------%---------%---------%---------%---------%---------
+\section{Convex Functions}
+\subsection{Definition of convexity}
+  \paragraph{1.}
+  \begin{proof}
+    $\,$\par
+    (a) Clear that $\frac{b-x}{b-a},\frac{x-a}{b-a}\ge 0$ and the sum of them 
+    is $1$ for all $x\in[a,b]$. Hence, by the definition of convexity,
+    \[
+      f(x) = f\left(\frac{b-x}{b-a}a + \frac{x-a}{b-a}b\right) 
+      \le \frac{b-x}{b-a}f(a) + \frac{x-a}{b-a}f(b).
+    \]\par
+    (b) By (a),
+    \[
+      \frac{f(x)-f(a)}{x-a} \le 
+      \frac{\dfrac{b-x}{b-a}f(a)+\dfrac{x-a}{b-a}f(b)-f(a)}{x-a} = 
+      \frac{f(b)-f(a)}{b-a}.
+    \]
+    And a similar argument gives the second inequality.\par
+    (c) Just let $x$ approach $a$ and $b$ respectively and we get these two 
+    inequalities.\par
+    (d) By (c), for every $a<b\in\dom f$,
+    \begin{equation*}
+      f\hp(b)-f\hp(a) \ge \frac{f(b)-f(a)}{b-a}-f\hp(a) \ge 0.
+    \end{equation*}
+    Let $a\to b-$ and we get $f^{\prime\prime}(b-)\ge 0$. Since $f$ is twice
+    differentiable, this implies $f^{\prime\prime}(b)\ge 0$. This argument,
+    \textit{mutatis mutandis}, yields $f^{\prime\prime}(a)\ge 0$.
+  \end{proof}
+
+  \paragraph{3.}
+    There is another proof which shows the concavity by showing the convexity of
+    $\hypo g$. But I think there exists some faults related to the domain of $f$
+    in that proof.
+  \begin{proof}
+    We show that $g$ is concave. For every $y_1,y_2\in (f(a), f(b))$, suppose
+    $y_1=f(x_1)$ and $y_2=f(x_2)$. Since $f$ is convex, 
+    \[
+      \frac{y_1+y_2}{2} = \frac{f(x_1)+f(x_2)}{2} \ge 
+      f\left(\frac{x_1+x_2}{2}\right).
+    \]
+    Since $f$ is increasing, so is $g$. Hence,
+    \[
+      g\left(\frac{y_1+y_2}{2}\right)\ge 
+      g\left(f\left(\frac{x_1+x_2}{2}\right)\right) =
+      \frac{x_1+x_2}{2} = 
+      \frac{1}{2}g(y_1)+\frac{1}{2}g(y_2).
+    \]
+    Thus, $g$ is concave.
+  \end{proof}
+  
+  \paragraph{5. Running average of a convex function}
+  \begin{proof}
+    Put $t=sx$, then
+    \[
+      F(x)=\frac{1}{x}\int_0^1f(sx)\rd(sx)=\int_0^1f(sx)\rd s.
+    \]
+    It can be verified that for fixed $s$, $f(sx)$ is convex in $x$. Hence, for
+    every $\lambda\in(0,1)$, $a,b\in\dom F$,
+    \[
+      F(\lambda a+(1-\lambda)b)\le
+      \int_0^1\left\{\lambda f(sa)+(1-\lambda)f(sb) \right\}=
+      \lambda F(a)+(1-\lambda)F(b).
+    \]
+    Thus, $F$ is convex.
+  \end{proof}
+  
+  \paragraph{8. Second-order conditions for convexity}
+  \begin{proof}
+    First we suppose the convexity of $f$. Then by definition, $\dom f$ is 
+    convex.
+  \end{proof}
+
+  \paragraph{13.}
+  \begin{proof}
+    Define $f(x)=\sum_{i=1}^n x_i\log x_i$. Some computation yields $D_{kl}(u,v)
+    =f(u)-f(v)-\nabla f(v)^T(u-v)$. The inequality and the equality condition
+    follows immediately from the fact that $f$ is strictly convex.
+  \end{proof}
+% end
+
+\subsection{Examples}
+  \paragraph{16.}
+  \begin{solution}
+    $\,$\par
+    (a) Convex. For every $x\in\mathbb{R}$, $f^{\prime\prime}(x)=e^x>0$.\par
+    (b) Quasiconcave. For every $(x_1,x_2)^T\in\mathbb{R}_{++}^2$, $\nabla^2f=
+    \begin{bsmallmatrix} 0 & 1 \\ 1 & 0\end{bsmallmatrix}$, which is neither
+    positive semidefinite nor negative semidefinite. Hence, $f$ is not convex or
+    concave. Its superlevel sets $S_\alpha$, however, are convex as
+    \[
+      \frac{(x_1+x_2)(y_1+y_2)}{4} \ge \sqrt{x_1x_2y_1y_2} \ge \alpha
+    \]
+    as long as $(x_1,x_2),(y_1,y_2)\in S_\alpha$.\par
+    (c) Convex. For every $(x_1,x_2)\in \mathbb{R}_{++}^2$, 
+    \[
+      \nabla^2f(x_1,x_2) = \frac{1}{x_1x_2}
+      \begin{bmatrix}
+        \dfrac{2}{x_1^2} & \dfrac{1}{x_1x_2} \\
+        \dfrac{1}{x_1x_2} & \dfrac{2}{x_2^2}
+      \end{bmatrix}.
+    \]
+    Since both $2/x_1^3x_2$ and $\det(\nabla^2 f)$ are positive, $\nabla^2 f$ is
+    positive definite. Thus, $f$ is convex.\par
+    (d) Quasilinear. For every $(x_1, x_2)\in\mathbb{R}_{++}^2$,
+    \[
+      \nabla^2f(x_1,x_2) = \begin{bmatrix}
+        0 & -1/x_2^2 \\ -1/x_2^2 & 2x_1/x_2^3
+      \end{bmatrix},
+    \]
+    which is neither positive nor negative semidefinite since $(x\pm\sqrt{x_1^2+
+    x_2^2})/x_2^3$, the eigenvalues of $\nabla^2f$, always have different signs.
+    However, since it sublevel sets $S_\alpha=\{(x_1,x_2)\in\mathbb{R}_{++}^2:\,
+    x_1/x_2\le\alpha\}=\{(x_1,x_2)\in\mathbb{R}_{++}^2:\,[1,-\alpha][x_1,x_2]^T
+    \le 0\}$, which is convex, $f$ is quasiconvex. Similarly, $f$ is 
+    quasiconcave. Thus, $f$ is quasilinear.\par
+    (e) Convex. For every $(x_1,x_2)\in\mathbb{R}\times\mathbb{R}_{++}$,
+    \[
+      \nabla^2f(x_1,x_2) = \begin{bmatrix}
+        1/x_2 & -2x_1/x_2^2 \\ -2x_1/x_2^2 & 2x_1^2/x_2^3
+      \end{bmatrix},
+    \]
+    which is positive semidefinite since both $1/x_2$ and $\det(\nabla^2 f)$ are
+    nonnegative. \par
+    (f) Concave. For every $(x_1,x_2)\in\mathbb{R}_{++}^2$,
+    \[
+      \nabla^2f(x_1,x_2) = \alpha(\alpha-1)x_1^\alpha x_2^{1-\alpha}
+      \begin{bmatrix}
+        x_1^{-2} & -(x_1x_2)\inv \\ -(x_1x_2)\inv & x_2^{-2}
+      \end{bmatrix},
+    \]
+    which is negative definite since both $\alpha(\alpha-1)x_1^\alpha
+    x_2^{1-\alpha}x_1^{-2}$ and $\det(\nabla^2 f)$ are negative.
+  \end{solution}
+% end
