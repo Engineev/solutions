@@ -1,0 +1,418 @@
+%---------%---------%---------%---------%---------%---------%---------%---------
+\section{Fundamental Theorems for Normed and Banach Spaces}
+\setcounter{subsection}{1}
+\subsection{Hahn-Banach Theorem}
+  \paragraph{4.}
+  \begin{proof}
+    By the positive homogeneity, $p(2\times 0)=2p(0)$. Hence, $p(0)=0$. 
+    Consequently, $0=p(x+(-x))\le p(x)+p(-x)$. Thus, $-p(x)\le p(-x)$.
+  \end{proof}
+  
+  \paragraph{5.}
+  \begin{proof}
+    For every $x,y\in M$ and $\lambda\in[0,1]$,
+    \[
+      p(\lambda x+(1-\lambda)y)\le \lambda p(x)+(1-\lambda)p(y)
+      \le \lambda\gamma+(1-\lambda)\gamma=\gamma.
+    \]
+    Hence, $\lambda x+(1-\lambda)y\in M$. Thus, $M$ is convex.
+  \end{proof}
+  
+  \paragraph{6.}
+  \begin{proof}
+    For every $x,t\in X$,
+    \[
+      p(x-t)\le p(x)+p(-t) \quad\Rightarrow\quad
+      p(x-t)-p(x)\le p(-t),
+    \]
+    and
+    \[
+      p(x)=p(x-t+t)\le p(x-t)+p(t) \quad\Rightarrow\quad
+      -p(t)\le p(x-t)-p(x).
+    \]
+    Since $p(0)=0$ and $p$ is continuous at $0$, $p(t)\to 0$ and $p(-t)\to 0$ as
+    $t\to 0$. Hence, $p(x-t)-p(x)\to 0$ as $t\to 0$, that is, $p$ is continuous
+    on $X$.
+  \end{proof}
+  
+  \paragraph{8.}
+  \begin{proof}
+    First, $p(0)\ge p(0+0)-p(0)=0$. For nonzero $x$, we argue by contradiction.
+    Assume that there exists some $x$ with $0<\|x\|\le r$ such that $p(x)<0$.
+    Then $np(x)<0$ for $n=1,2,\dots$. For $n$ sufficiently large, $n\|x\|>r$ and 
+    therefore $p(nx)\ge 0$. However, by the subadditivity, $p(nx)\le np(x)<0$.
+    Contradiction. Thus, $p(x)\ge 0$ on $X$.
+  \end{proof}
+  
+  \paragraph{9.}
+  \begin{proof}
+    For all $x_1=\alpha_1x_0, x_2=\alpha_2x_0\in Z$ and scalars $a_1$ and $a_2$,
+    \begin{align*}
+      f(a_1x_1+a_2x_2)&=f((a_1\alpha_1+a_2\alpha_2)x_0)=
+      (a_1\alpha_1+a_2\alpha_2)p(x_0) \\
+      &=a_1\alpha_1p(x_0)+a_2\alpha_2p(x_0)=a_1f(x_1)+a_2f(x_2).
+    \end{align*}
+    Thus, $f$ is linear. Now we show that for $\alpha\in\mathbb{R}$, $\alpha p
+    (x_0)\le p(\alpha x_0)$ to complete the proof. If $\alpha\ge 0$, then it
+    follows from the positive homogeneity. For negative $\alpha$, $\alpha p
+    (x_0)=-p(-\alpha x_0)$ and by Prob. 4, $-p(-\alpha x_0)\le p(\alpha x_0)$.
+    Thus, $f(x)\le p(x)$ for all $x\in Z$.
+  \end{proof}
+  
+  \paragraph{10.}
+  \begin{proof}
+    Let $Z$ and $f$ have the same meaning as in Prob. 9. By Hahn-Banach theorem,
+    there exists a linear extension $\tilde{f}$ of $f$ to $X$ with $\tilde{f}(x)
+    \le p(x)$ for all $x\in X$. Replacing $x$ with $-x$ gives $\tilde{f}(-x)\le
+    p(x)$. Finally, the linearity of $\tilde{f}$ yields $-p(-x)\le\tilde{f}(x)$.
+  \end{proof}
+% end
+
+\subsection{Hahn-Banach Theorem for Normed Spaces}
+  \paragraph{1.}
+  \begin{proof}
+    By (2), $p(2\times 0)=2p(0)$. Hence, $p(0)=0$. And for every $x\in X$, by 
+    (1),
+    \[
+      0=p(0)\le p(x)+p(-x)=2p(x),
+    \]
+    that is, $p(x)\ge 0$.
+  \end{proof}
+  
+  \paragraph{2.}
+  \begin{proof}
+    By (1), $p(x)=p(x-y+y)\le p(x-y)+p(y)$. Therefore, $p(x)-p(y)\le p(x-y)$.
+    Interchange the roles of $x$ and $y$ and we obtain $p(y)-p(x)\le p(y-x)=
+    p(x-y)$, where the equality comes from (2). Thus, $|p(x)-p(y)|\le p(x-y)$.
+  \end{proof}
+  
+  \paragraph{7.}
+  \begin{proof}
+    Define $\tilde{f}$ to be $x\mapsto\langle x, x_0/\|x_0\|\rangle$. Clear that
+    it is a bounded linear functional on $X$ and $\tilde{f}(x_0)=\|x_0\|$. And
+    by Riesz's Theorem, $\|\tilde{f}\|=\|x_0/\|x_0\|\|=1$.
+  \end{proof}
+  
+  \paragraph{8.}
+  \begin{proof}
+    It follows immediately from Theorem 4.3-3.
+  \end{proof}
+  
+  \paragraph{13.}
+  \begin{proof}
+    Just put $\hat{f}=\tilde{f}/\|x_0\|$.
+  \end{proof}
+  
+  \paragraph{14.}
+  \begin{proof}
+    By Prob 13, there exists a $\hat{f}\in X\hp$ such that $\|\hat{f}\|=1/r$ and
+    $\hat{f}(x_0)=1$. Let hyperplane $H_0=\{x\in X:\, \hat{f}(x)=1\}$ and half
+    space $S_0=\{x\in X:\, \hat{f}(x)\le 1\}$. Then clear that $x_0\in H_0$ and
+    for all $x\in S(0;r)$, $f(x) \le \|f\|\|x\| = r/r =1$. Hence, $x\in S_0$.
+  \end{proof}
+  
+  \paragraph{15.}
+  \begin{proof}
+    If $\|x\|=c+2\vep>c$, then by Corollary 4.3-4, there exists some $0\ne f\in
+    X\hp$ such that $|f(x)|/\|f\|\ge c+\vep$. Consequently, the functional $g=f/
+    \|f\|$, which is of norm $1$, is such that $|g(x_0)|>c$. Contradiction.
+  \end{proof}
+% end
+\setcounter{subsection}{4}
+\subsection{Adjoint Operator}
+  \paragraph{9.}
+  \begin{proof}
+    Note that every bounded linear functional is continuous by Theorem 2.7-9. 
+    Hence, $M^a=(\mathcal{R}(T))^a$. Thus, $g\in M^a$ iff $g\in(\mathcal{R}
+    (T))^a$ iff $g(Tx)=(T^\times g)(x)=0$ for all $x\in X$ iff $T^\times g=0$
+    iff $g\in\mathcal{N}(T^\times)$. Namely, $M^a=\mathcal{N}(T^\times)$.
+  \end{proof}
+  
+  \paragraph{10.}
+  \begin{proof}
+    For every $y=Tx\in\mathcal{R}(T)$, $g(Tx)=(T^\times g)(x)=0$ for all $g\in
+    \mathcal{N}(T^\times)$. Hence, $y\in ^a\mathcal{N}(T^\times)$.
+  \end{proof}
+% end
+\subsection{Reflexive Spaces}
+  \paragraph{2.}
+  \begin{proof}
+    Since $Y$ is a closed subspace of a Hilbert space, it is complete. By Lemma
+    3.3-2, there is some $y\in Y$ such that $\|x_0-y\|=\delta$ and $z=x_0-y$ is
+    orthogonal to $Y$. Define $\tilde{f}$ by $x\mapsto\langle x,z\rangle/
+    \delta$. Then clear that $\tilde{f}\in X\hp$ and $\tilde{f}(y)=0$ for all $y
+    \in Y$. Meanwhile, by Riesz's Theorem, $\|\tilde{f}\|=\|z\|/\delta=1$. 
+    Finally,
+    \[
+      \tilde{f}(x_0)=\frac{\langle x_0,x_0-y\rangle}{\delta}=
+      \frac{\langle x_0-y+y,x_0-y\rangle}{\delta}=\delta.
+    \]
+    The proof is then completed.
+  \end{proof}
+  
+  \paragraph{3.}
+  \begin{proof}
+    We denote the canonical mapping from $X$ to $X^{\prime\prime}$ by $C$ and 
+    the one from $X\hp$ to $X^{\prime\prime\prime}$ by $D$. Our goal is to find
+    a $f\in X\hp$ for every given $h\in X^{\prime\prime\prime}$ such that $D(f)=
+    h$, that is, for every $g\in X^{\prime\prime}$, $D(f)(g)=h(g)$. Since $X$ is
+    reflexive, there is some $x\in X$ such that $g=Cx$. Put $f=hC$, which is 
+    clearly an element of $X\hp$. Since
+    \[
+      h(g) = h(Cx)=(hC)(x)=f(x)\quad\text{and}\quad
+      D(f)(g)=g(f)=(Cx)(f)=f(x),
+    \]
+    $h=D(hC)$. Thus, $X\hp$ is reflexive.
+  \end{proof}
+  
+  \paragraph{4.}
+  \begin{proof}
+    By Prob. 3, the reflexivity of $X$ implies the reflexivity of $X\hp$. Now we 
+    suppose $X\hp$ is reflexive. Hence, again by Prob. 3, $X^{\prime\prime}$ is
+    reflexive and therefore, by Theorem 4.6-4, is complete. Since $X$ is 
+    isomorphic to $\mathcal{R}(C)\subset X^{\prime\prime}$ and $\mathcal{R}(C)$,
+    a closed subspace of a reflexive Banach space, is reflexive, so is $X$. 
+    Thus, a Banach space $X$ is reflexive iff $X\hp$ is reflexive.
+  \end{proof}
+  
+  \paragraph{5.}
+  \begin{proof}
+    It suffices to show that $\delta>0$ and then putting $h=\tilde{f}/\delta$
+    will complete the proof. If $\delta=0$, then by the definition of the 
+    infimum, there exists $(y_n)\subset Y$ which converges to $x_0$. Then $x_0
+    \in Y$ since $Y$ is closed, which contradicts our choice of $x_0$. Thus,
+    $\delta>0$. 
+  \end{proof}
+  
+  \paragraph{6.}
+  \begin{proof}
+    We may assume without loss of generality that $Y_2\setminus Y_1$ is 
+    nonempty. Choose arbitrary $x_0\in Y_2\setminus Y_1\subset X\setminus Y_1$.
+    By Prob. 6, there exists some $h\in X\hp$ such that $h(x_0)=1$ and $h\in
+    Y^a$. Thus, the annihilators of $Y_1$ and $Y_2$ are different.
+  \end{proof}
+  
+  \paragraph{7.}
+  \begin{proof}
+    If $Y$ is proper, then by Prob. 7, the annihilators of $Y$ and $X$ do not
+    coincide, which contradicts our hypothesis. Hence, $X=Y$.
+  \end{proof}
+  
+  \paragraph{8.}
+  \begin{proof}
+    If $x\in A$, then for every $f\in X\hp$ whose restriction to $M$ is $0$, 
+    $f(x_0)=0$ since $f$, being bounded, is continuous. For the converse, note
+    that $f|_M=0$ implies $f|_A=0$. If $x_0\notin A$, then Prob. 5 guarantees
+    the existence of some $f\in X\hp$ which vanishes on $A$ and is nonzero at
+    $x_0$. Contradiction. Thus, $x_0\in A$.
+  \end{proof}
+  
+  \paragraph{9.}
+  \begin{proof}
+    If $M$ is total, then clear that every $f\in X\hp$ vanishing on $M$ is zero
+    everywhere on $X$. And the converse part follows immediately from Prob. 8.
+  \end{proof}
+  
+  \paragraph{10.}
+  \begin{proof}
+    Let $\{b_1,\dots,b_n\}$ be a linearly independent subset of $X$ and define
+    \[
+      \beta_i:\spn\{b_1,\dots,b_n\}\to\mathbb{F} 
+      \quad\text{by}\quad
+      b_j\mapsto\delta_{ij}
+    \]
+    for $i=1,\dots,n$. By Hahn-Banach Theorem, we can extend them to linear 
+    functionls $\tilde{\beta}_i$ on $X$. Suppose that $f=x_1\tilde{\beta}_1+
+    \cdots+x_n\tilde{\beta}_n=0$. Then $0=f(b_i)=x_i$ for all $i$. Thus, $\{
+    \tilde{\beta}_1,\dots,\tilde{\beta}_n\}$ is linearly independent.
+  \end{proof}
+% end
+\subsection{Uniform Boundedness Theorem}
+  \paragraph{1.}
+  \begin{solution}
+    Meager, since $\mathbb{Q}$ is the union of all singleton of rational 
+    numbers.
+  \end{solution}
+  
+  \paragraph{5.}
+  \begin{proof}
+    First we suppose $M$ is rare and argue by contradiction. If $(\bar{M})^c$ is
+    not dense in $X$, i.e., there exists some $x\in X$ and $r>0$ such that $B(x;
+    r)\cap(\bar{M})^c=\varnothing$. Hence, $B(x;r)\subset\bar{M}$, which 
+    contradicts the definition of rare subsets. Thus, $(\bar{M})^c$ is dense in
+    $X$.\par
+    Now we suppose $(\bar{M})^c$ is dense in $X$. Then for all $x\in\bar{M}$ and
+    $r>0$, there exists some $y_r\notin\bar{M}$ but $y_r\in B(x;r)$. Hence, $x$
+    is not an interior point. Thus, $M$ is rare.
+  \end{proof}
+  
+  \paragraph{6.}
+  \begin{proof}
+    If both $M$ and $M^c$ are meager, then so is their union $X$, but Baire's
+    theorem says that a complete metric space is nonmeager in itself. Hence, 
+    $M^c$ is nonmeager if $M$ is.
+  \end{proof}
+  
+  \paragraph{7.}
+  \begin{proof}
+    We argue by contradiction. Assume that for all $x\in X$, $\sup_n\|T_nx\|<
+    \infty$. Then by the uniform boundedness theorem, there exists some $c$
+    such that $\|T_n\|\le c$ for all $n$. Hence, $\sup_n\|T_n\|\le c$. 
+    Contradiction.
+  \end{proof}
+  
+  \paragraph{10.}
+  \begin{proof}
+    We may assume without loss of generality that $\eta_1\ne 0$. Define $T_n:
+    c_0\to\mathbb{C}$ by $(\xi_j)\mapsto \sum_{j=1}^n\xi_j\eta_j$. Clear that
+    $T_n$ are linear functionals. And since
+    \begin{equation}
+      \label{eq:4.7.10}
+      |T_nx|=\left|\sum_{j=1}^n\eta_j\xi_j\right|\le
+      \max_{j=1,\dots,n}|\xi_j|\sum_{j=1}^n|\eta_j|\le
+      \|x\|\sum_{j=1}^n|\eta_j|,
+    \end{equation}
+    $T_n$ are bounded and $\|T_n\|\le\sum_{j=1}^n|\eta_j|$. Meanwhile, define
+    $y=(\gamma_j)$ by
+    \[
+      \gamma_j=\begin{cases}
+        \sgn\eta_j, & j\le n, \\
+        0         , & j>n.
+      \end{cases}
+    \]
+    Clear that $y\in c_0$ and $\|y\|=1$. Since $|T_ny|=\sum_{j=1}^n|\eta_j|$,
+    together with \eqref{eq:4.7.10}, we conclude $\|T_n\|=\sum_{j=1}^n|\eta_j|$.
+    \par
+    By Prob. 2, Sec 2.3, $c_0$ is a Banach space. And for each $x=(\xi_j)\in 
+    c_0$, since $\sum\xi_j\eta_j$ converges, $\|T_nx\|$ is bounded for $n$ large 
+    enough and therefore bounded for all $n$. Hence, by the uniform boundedness
+    theorem, $\sum_{j=1}^n|\eta_j|=\|T_n\|\le c$ for some fixed $c$. Thus, $\sum
+    |\eta_j|<\infty$.
+  \end{proof}
+  
+  \paragraph{11.}
+  \begin{proof}
+    By Prob. 4, Sec 1.4, the Cauchy sequence $(T_nx)$ is bounded. Thus, by the
+    uniform boundedness theorem, $(\|T_n\|)$ is bounded.
+  \end{proof}
+  
+  \paragraph{13.}
+  \begin{proof}
+    Let $C:X\to X^{\prime\prime}$ be the canonical embedding and $(\varphi_n)=
+    (Cx_n)$. By Lemma 4.6-1, $\|x_n\|=\|\varphi_n\|$. Note that $X^{\prime
+    \prime}$, the dual space of $X\hp$, is complete and $f(x_n)=\varphi_n(f)$.
+    Thus, by the uniform boundedness theorem, $(\|x_n\|)=(\|\varphi_n\|)$ is
+    bounded.
+  \end{proof}
+  
+  \paragraph{14.}
+  \begin{proof}
+    $\,$\par
+    (a)$\Rightarrow$(c): It follows immediately from $|g(T_nx)|\le\|g\|\|x\|
+    \|T_n\|$.\par
+    (c)$\Rightarrow$(b): For fixed $x\in X$, let $\varphi_n=C(T_nx)$, where $C:
+    Y\to Y^{\prime\prime}$ is the canonical embedding. For every $g\in Y\hp$, by
+    (c), $|\varphi_n(g)|=|g(T_nx)|\le c_g$. Since $Y\hp$ is complete, by the
+    uniform boundedness theorem, $(\|\varphi_n\|)=(\|T_nx\|)$ is bounded.\par
+    (b)$\Rightarrow$(a): It is just what the uniform boundedness theorem states.
+  \end{proof}
+% end
+\subsection{Strong and Weak Convergence}
+  \paragraph{1.}
+  \begin{proof}
+    The mapping $\varphi_t:C[a,b]\to\mathbb{F}$, $x\mapsto x(t)$ is a bounded
+    linear functional on $C[a,b]$. Hence, by the definition of weak convergence,
+    $x_n(t)\to x(t)$.
+  \end{proof}
+  
+  \paragraph{2.}
+  \begin{proof}
+    For every $f\in Y\hp$, $fT\in X\hp$. Since $x_n\wto x_0$, $(fT)(x_n)\to (fT)
+    (x_0)$, that is, $Tx_n\wto Tx_0$.
+  \end{proof}
+  
+  \paragraph{4.}
+  \begin{proof}
+    If $x_0=0$, then it is trivial. Otherwise, by Theorem 4.3-3, there exists 
+    some $f\in X\hp$ such that $f(x_0)=\|x_0\|$ and $\|f\|=1$. Since $x_n\wto
+    x$, $|f(x_n)|\to |f(x_0)|=\|x_0\|$. Meanwhile, $|f(x_n)|\le \|f\|\|x_n\|=\|
+    x_n\|$. Thus, $\lowlim\|x_n\|\ge \|x_0\|$.
+  \end{proof}
+  
+  \paragraph{5.}
+  \begin{proof}
+    If $\bar{Y}=X$, then there is nothing to be proved. Otherwise we argue by 
+    contradiction. Assume that $x_0\in X\setminus\bar{Y}\ne\varnothing$. Then by
+    Lemma 4.6-7, there exists some $f\in X\hp$ such that $f(Y)=\{0\}$ and $f
+    (x_0)=\delta>0$. However, since $x_n\in Y$ and $x_n\wto x_0$, $f(x_0)$ must
+    be $0$. Contradiction. Thus, $x_0\in\bar{Y}$.
+  \end{proof}
+  
+  \paragraph{6.}
+  \begin{proof}
+    It follows immediately from Prob. 5.
+  \end{proof}
+  
+  \paragraph{7.}
+  \begin{proof}
+    It follows immediately from Prob. 5.
+  \end{proof}
+  
+  \paragraph{8.}
+  \begin{proof}
+    For every $f\in X\hp$, by the definition, $|f(x_n)|<c_f$ for some constant
+    $c_f$ which does not depend on $n$. Let $g_n=Cx_n$, where $C:X\to X^{\prime
+    \prime}$ is the canonical embedding. Then for all $n$, $|g_n(f)|=|f(x_n)|\le
+    c_f$. Since $X\hp$ is complete, by the uniform boundedness theorem, $(g_n)$
+    is bounded and therefore so is $(x_n)$.
+  \end{proof}
+  
+  \paragraph{9.}
+    Note that we do not regard a sequence with only repeated elements when $n$
+    is large as a sequence here.
+  \begin{proof}
+    We argue by contradiction. Assume that $A$ is unbounded, that is, there 
+    exists a $(a_n)\subset A$ with $\|a_n\|\ge n$. Clear that every sequence in
+     $(a_n)$ is unbounded and therefore, by Prob. 8, is not a weak Cauchy 
+     sequence, contradicting our hypothesis. Thus, $A$ is bounded.
+  \end{proof}
+  
+  \paragraph{10.}
+  \begin{proof}
+    Let $(x_n)$ be a weak Cauchy sequence in $X$ Let $\varphi_n=Cx_n$, where $C:
+    X\to X^{\prime\prime}$ is the canonical embedding. For every $f\in X\hp$,
+    since $(x_n)$ is a weak Cauchy sequence, $(\varphi_n(f))=(f(x_n))$ is a 
+    Cauchy sequence in $\mathbb{F}$ and therefore $\lim\varphi_n(f)$ exists. Let
+    $\varphi:X\hp\to\mathbb{F}$ be defined by $f\mapsto \lim\varphi_n(f)$. Clear
+    that it is linear. Meanwhile, since $(x_n)$, a weak Cauchy sequence, is
+    bounded by Prob. 8, $(\varphi_n)$ is bounded by, say, $c$. Therefore, 
+    $\varphi$ is bounded since $|\varphi_n(f)|\le c\|f\|$ for all $n$. Thus, 
+    $\varphi\in X^{\prime\prime}$. \par
+    Since $X$ is reflexive, there exists some $x_0\in X$ such that $\varphi=
+    Cx_0$. For all $f\in X\hp$,
+    \[
+      f(x_n)=\varphi_n(f) \to \varphi(f) = f(x_0)\quad\text{as $n\to\infty$}.
+    \]
+    Thus, $x_n\wto x_0$. Thus, $X$ is weakly complete.
+  \end{proof}
+% end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,8 +1,53 @@
 # solutions
 My personal solutions to some textbook problems
 
+## Erwin Kreyszig, *Introductory Functional Analysis with Applications*
+
+**Ongoing**
+* Chapter 2. Normed Spaces. Banach Spaces
+  * 2.3 Further Properties of Normed Spaces (4, 7, 8, 9, 10, 14)
+  * 2.4 Finite Dimensional Normed Spaces (3, 4, 5)
+  * 2.5 Compactness and Finite Dimension (5, 6, 7, 8, 9, 10)
+  * 2.7 Bounded and Continuous Linear Operators (2, 3, 4, 7, 12)
+  * 2.8 Linear Functionals (8, 9, 10, 11, 12, 13, 14, 15)
+  * 2.9 Operators on Finite Dimensional Spaces (8, 12, 13)
+  * 2.10 Normed Spaces of Operators. Dual Space (8, 9, 10, 11, 13, 14)
+* Chapter 3. Inner Product Spaces. Hilbert Spaces
+  * 3.1 Inner Product Spaces. Hilbert Spaces (2, 3, 7, 8)
+  * 3.2 Further Properties of Inner Product Spaces (7, 8, 9, 10)
+  * 3.3 Orthogonal Complements and Direct Sums (7, 8, 9)
+  * 3.4 Orthonormal Sets and Sequences (3, 7, 8)
+  * 3.5 Series Related to Orthonormal Sequences (1, 3, 4, 5, 7, 8, 9, 10)
+  * 3.6 Total Orthonormal Sets and Sequences (4, 6, 7, 9, 10)
+  * 3.8 Functionals on Hilbert Spaces (3, 4, 5, 12, 14)
+  * 3.9 Hilbert-Adjoint Operator (1, 2, 3, 4, 5, 6, 7, 8, 9)
+  * 3.10 Self-Adjoint, Unitary and Normal Operators (4, 6, 9, 10, 13, 15)
+* Chapter 4. Fundamental Theorems for Normed and Banach Spaces
+  * 4.2 Hahn-Banach Theorem (4, 5, 6, 8, 9, 10)
+  * 4.3 Hahn-Banach Theorem for Complex Vector Spaces and Normed Spaces (1, 2, 7, 8, 13, 14, 15)
+  * 4.5 Adjoint Operator (9, 10)
+  * 4.6 Reflexive Spaces (2, 3, 4, 5, 6, 7, 8, 9, 10)
+  * 4.7 Uniform Boundedness Theorem (1, 5, 6, 7, 10, 11, 13, 14)
+  * 4.8 Strong and Weak Convergence (1, 2, 4, 5, 6, 7, 8, 9, 10)
+
+## William C. Brown, *A Second Course in Linear Algebra*
+
+**ongoing**
+* Chapter 1. Linear Algebra
+  * 1.3 Linear Transformation (9, 10)
+  * 1.4 Products and Direct Sums (2, 3, 4)
+
+## Stephen Boyd, Lieven Vandenberghe, *Convex Optimization*
+
+**Suspended**
+* Chapter 2. Convex Sets
+  * 2.1 Definition of convexity (1, 2, 3, 4)
+  * 2.2 Examples (5, 7, 8, 9.(a, b), 10)
+  * 2.3 Operations that preserve convexity (16, 18)
+
 ## Sheldon Axler, *Linear Algebra Done Right*, 3rd ed
 
+**Archived**
 * Chapter 3. Linear Maps
   * 3.A The Vector Space of Linear Maps (Odd)
   * 3.B Null Spaces and Ranges (Even - {28, 30})
@@ -23,6 +68,7 @@ My personal solutions to some textbook problems
 
 ## Roger A. Horn, Charles R. Johnson, *Matrix Analysis*, 2nd ed
 
+**Suspended**
 * Chapter 1. Eigenvalues, Eigenvectors and Similarity
   * 1.0 Introduction (Completed)
   * 1.1 The eigenvalue-eigenvector equation (Odd)
@@ -37,6 +83,7 @@ My personal solutions to some textbook problems
 
 ## H.L. Royden, *Real Analysis*, 3rd ed
 
+**Archived**
 * Chapter 3. Lebesgue Measure
   * 3.1 Introduction (1, 2, 3)
   * 3.2 Outer Measure (5, 6, 7, 8)
@@ -63,7 +110,6 @@ My personal solutions to some textbook problems
   * Definition of convexity (1, 2, 3, 4)
   * Examples (5, 7, 8, 9.(a, b), 10)
   * Operations that preserve convexity (16, 18)
-  * TODO
 * Chapter 3. Convex Functions
   * Definition of convexity (1)
   * Examples (16)

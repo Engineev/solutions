@@ -1,0 +1,600 @@
+%---------%---------%---------%---------%---------%---------%---------%---------
+\section{Inner Product Spaces. Hilbert Spaces}
+\subsection{Inner Product Spaces. Hilbert Spaces}
+  \paragraph{2.}
+  \begin{proof}
+    \[
+      \|x+y\|^2 = \langle x+y, x+y\rangle = \|x\|^2+\|y\|^2+2\langle x, y\rangle
+      =\|x\|^2+\|y\|^2,
+    \]
+    where the last equality comes from the hypothesis of orthogonality. Now we
+    show that for mutually orthogonal $x_1,\dots,x_m$ 
+    \[
+      \left\|\sum_{i=1}^m x_i\right\|^2 = \sum_{i=1}^m\|x_i\|^2,
+    \]
+    by induction on $m$. The case where $m=2$ has already been showed and we
+    assume that the equation holds for $m-1$. Since $x_m$ is orthogonal with
+    each $i=1,\dots,m-1$, $x_m$ is orthogonal to $x_1+\cdots+x_{m-1}$. Hence,
+    \[
+      \left\|\sum_{i=1}^m x_i\right\|^2 = 
+      \left\|\sum_{i=1}^{m-1}x_i\right\|^2 + \|x_m\|^2 = 
+      \sum_{i=1}^m\|x_i\|^2,
+    \]
+    completing the proof.
+  \end{proof}
+  
+  \paragraph{3.}
+  \begin{proof}
+    The equation implies $\langle x, y\rangle+\langle y, x\rangle=0$. The
+    symmetric property of real inner products implies $\langle x, y\rangle=0$.
+    Let $X=\mathbb{C}$ and $x=1, y=i$. It is easy to verify that $\|x+y\|^2=
+    \|x\|^2+\|y\|^2=2$ but $x$ and $y$ are not orthogonal.
+  \end{proof}
+  
+  \paragraph{7.}
+  \begin{proof}
+    It suffices to show that the zero vector is the only vector orthogonal to
+    all vectors. Suppose that $\langle x_0, x\rangle=0$ for all $x\in X$, then
+    $\|x_0\|^2=\langle x_0, x_0\rangle=0$. By the definiteness of the inner
+    product, $x_0=0$.
+  \end{proof}
+  
+  \paragraph{8.}
+    We show that any norm satisfying the parallelogram equality can be derived
+    form an inner product.
+  \begin{proof}
+    The proof of (IP3) is trivial and (IP4) follows immediately from the
+    positive-definiteness of the norm. Hence we only show the linearity in the
+    first factor here. For every $u, v, y\in X$, from the parallelogram equality
+    we can derive, after some computation, that
+    \begin{align*}
+      4\langle u+v, y\rangle &= \|u+v+y\|^2-\|u+v-y\|^2  \\
+      &= \|u+y\|^2-\|u-y\|^2+\|v+y\|^2-\|v-y\|^2 \\
+      &= 4\langle u, y\rangle + 4\langle v, y\rangle.
+    \end{align*}
+    Namely, (IP1) holds. By induction we can show that $\langle nu, y\rangle=
+    n\langle u, y\rangle$ for $n=1,2,\dots$. And since $\langle -u, y\rangle =
+    \langle 0-u, y\rangle = \langle 0, y\rangle - \langle u, y\rangle = \langle
+    u, y\rangle$, 
+    \[
+      \langle nu, y\rangle = n\langle u, y\rangle,
+      \quad\text{for $n\in\mathbb{Z}$}.
+    \]
+    Furthermore, for any positive integer $m$,
+    \[
+      m\left\langle\frac{n}{m}u, y\right\rangle = 
+      mn\left\langle\frac{1}{m}u, y\right\rangle =
+      n\langle u, y\rangle.
+    \]
+    Dividing the both sides by $m$ yields
+    \[
+      \langle qu, y\rangle = q\langle u, y\rangle,
+      \quad\text{for $q\in\mathbb{Q}$}.
+    \]
+    For every $\alpha\in\mathbb{R}$, let $(q_n)\subset\mathbb{Q}$ converges to
+    $\alpha$. Now we show that $f(t)=\langle tu, y\rangle$ is continuous at $t=
+    0$ and by the additivity we may conclude that $f$ is continuous on
+    $\mathbb{R}$. Since
+    \begin{align*}
+      4|f(t)| 
+      &= |\|tu+y\|^2 - \|tu-y\|^2| \\
+      &= (\|tu+y\|+\|tu-y\|)|\|tu+y\|-\|tu-y\|| \\
+      &\le 4t\|u\|(t\|u\|+\|y\|) \to 0
+    \end{align*}
+    as $t\to 0$, $f(t)$ is continuous. For every $\alpha\in\mathbb{R}$, let 
+    $(q_n)\subset\mathbb{Q}$ be a convergent sequence with limit $\alpha$. Then
+    \[
+      \langle\alpha u, y\rangle=
+      \lim\langle q_nu, y\rangle=
+      \lim q_n\langle u, y\rangle=
+      \alpha\langle u, y\rangle.
+    \]
+    Hence, $\langle\cdot,\cdot\rangle$ is linear in the first factor. Thus, it
+    is an inner product. Meanwhile, it is easy to verify that the norm it 
+    introduces is exactly the original norm. 
+  \end{proof}
+% end
+
+\subsection{Further Properties of Inner Product Spaces}
+  \paragraph{7.}
+  \begin{proof}
+    First we note that
+    \[
+      f(\alpha)=\|x+\alpha y\|^2-\|x-\alpha y\|^2 
+      = 2\bar{\alpha}\langle x,y\rangle + 2\alpha\langle y,x\rangle.
+    \]
+    Clear that $x\perp y$ implies $f(\alpha)=0$ for all scalar $\alpha$. For the
+    converse, we suppose $f(\alpha)=0$ and put $\alpha=\langle x, y\rangle$. 
+    Then $0=f(\alpha)=2|\langle x, y\rangle|$. Thus, $x\perp y$.
+  \end{proof}
+  
+  \paragraph{8.}
+  \begin{proof}
+    Clear that $x\perp y$ implies $\|x+\alpha y\|\ge \|x\|$. Therefore we only
+    show the converse here. Without loss of generality, we assume $\|y\|=1$. 
+    Then $\|x+\alpha y\|\ge \|x\|$ for all scalar $\alpha$ implies
+    \[
+      |\alpha|^2 + 
+      \bar{\alpha}\langle x, y\rangle + \alpha\overline{\langle x, y\rangle}
+      \ge 0.
+    \]
+    Put $\alpha=-\langle x, y\rangle$ and we get
+    \[
+      0 \le |\langle x, y\rangle|^2 - 2|\langle x, y\rangle|^2
+      =-|\langle x, y\rangle|^2,
+    \]
+    which implies $\langle x, y\rangle=0$. Namely, $x\perp y$.
+  \end{proof}
+  
+  \paragraph{9.}
+  \begin{proof}
+    For every $\vep>0$, put $\delta=\vep/\sqrt{b-a}$. Then for every $x_1,x_2\in
+    V$ with $\|x_1-x_2\|_\infty<\delta$,
+    \[
+      \|x_1-x_2\|_2^2 = \int_a^b|x_1(t)-x_2(t)|^2\rd t
+      \le (b-a)\delta^2 = \vep^2.
+    \]
+    Hence, $x\mapsto x$ is continuous.
+  \end{proof}
+  
+  \paragraph{10.}
+  \begin{proof}
+    For every $u, w\in X$,
+    \begin{align*}
+      \langle Tu, w\rangle = 
+      & \frac{1}{4}(\langle T(u+w), u+w \rangle - \langle T(u-w), u-w \rangle)\\
+      &+ \frac{i}{4}
+        (\langle T(u+iw), u+iw\rangle - \langle T(u-iw), u-iw\rangle).\\
+    \end{align*}
+    Note that each component of the right hand side is of form $\langle Tx, x
+    \rangle$ and hence equals to $0$. Putting $w=Tu$ yields $\|Tu\|^2=0$ for all
+    $u\in X$. Thus, $T=0$.
+  \end{proof}
+% end
+
+\subsection{Orthogonal Complements and Direct Sums}
+  \paragraph{7.}
+  \begin{proof}
+    $\,$\par
+    (a) $x\in A^{\perp\perp}$ iff for all $y\in A^\perp$, $\langle x, y\rangle=
+    0$. By the definition of $A^\perp$, the identity holds if $x\in A$. Hence,
+    $A\subset A^{\perp\perp}$.\par
+    (b) For all $x\in B^\perp$ and $y\in A\subset B$, $\langle x, y\rangle=0$ by
+    definition. Hence, $x\in A^\perp$. Namely, $B^\perp\subset A^\perp$.\par
+    (c) We show that $A^\perp$ is closed (no matter whether $A$ is or not) and
+    invoke Lemma 3.3-6 to complete the proof. Suppose that $(x_n)\subset 
+    A^\perp$ converges to $x$. For all $y\in A$, $\langle x_n, y\rangle=0$. By
+    the continuity of the inner product, $\langle x, y\rangle=0$ and therefore
+    $x\in A^\perp$. Hence, $A^\perp$ is closed. Thus, $A^\perp=A^{\perp\perp
+    \perp}$.
+  \end{proof}
+  
+  \paragraph{8.}
+  \begin{proof}
+    We have show this in Prob. 7.
+  \end{proof}
+  
+  \paragraph{9.}
+  \begin{proof}
+    It has been shown in Lemma 3.3-6 that the closedness of $Y$ implies $Y=Y^{
+    \perp\perp}$. Hence we only show the converse here. For every convergent 
+    $(x_n)\subset Y$, $(x_n)\subset Y^{\perp\perp}$. Since $Y^{\perp\perp}$ is
+    closed by Prob. 8, the limit $x$ of $(x_n)$ belongs to $Y^{\perp\perp}$ and
+    hence belongs to $Y$. Thus, $Y$ is closed.
+  \end{proof}
+  
+  \paragraph{10.} TODO
+% end
+
+\subsection{Orthonormal Sets and Sequences}
+  \paragraph{3.}
+  \begin{proof}
+    The situation where $x$ and $y$ are linearly dependent is obvious and hence
+    we assume they are linearly independent here. By the homogeneity of the
+    Schwarz inequality, we may assume without loss of generality that $\|x\|=
+    \|y\|=1$. Put $z=(y-x\langle y,x\rangle)/\|y-x\langle y,x\rangle\|$. Then
+    $\{x,z\}$ is orthonormal and therefore by (12*)
+    \[
+      |\langle y,x\rangle|^2+|\langle y,z\rangle|^2 \le \|y\|^2 = 1.
+    \]
+    Since $|\langle y,z\rangle|^2$ is nonnegative, this implies $|\langle x,y
+    \rangle|^2\le 1$, the Schwarz inequality.
+  \end{proof}
+  
+  \paragraph{7.}
+  \begin{proof}
+    For each positive integer $n$, by the Schwarz inequality and (12*),
+    \[
+      \sum_{k=1}^n|\langle x,e_k\rangle\langle y,e_k\rangle|\le
+      \sqrt{\sum_{i=1}^n|\langle x,e_k\rangle|^2}
+      \sqrt{\sum_{i=1}^n|\langle y,e_k\rangle|^2} \le
+      \|x\|\|y\|.
+    \]
+    Since all terms in the summation is nonnegative, this implies $\sum_{k=1}
+    ^\infty|\langle x,e_k\rangle\langle y,e_k\rangle|\le\|x\|\|y\|$.
+  \end{proof}
+  
+  \paragraph{8.}
+  \begin{proof}
+    It follows immediately from Bessel inequality.
+  \end{proof}
+% end
+
+\subsection{Series Related to Orthonormal Sequences}
+  \paragraph{1.}
+  \begin{proof}
+    By Theorem 3.5-2, $\alpha_k=\langle x,e_k\rangle$. Meanwhile by the 
+    definition of the norm,
+    \[
+      \|x\|^2 = 
+      \left\langle \sum_{k=1}^\infty\langle x,e_k\rangle e_k, x\right\rangle =
+      \sum_{k=1}^\infty \langle x,e_k\rangle\langle e_k, x\rangle =
+      \sum_{k=1}^\infty|\alpha_k|^2,
+    \]
+    where the second equality follows from the continuity of the inner product.
+  \end{proof}
+  
+  \paragraph{3.}
+  \begin{solution}
+    Put $x\equiv 1$ on $[-\pi,\pi]$ and $e_k=\sin kt$. Since $x$ is even but 
+    $e_k$ is odd for every $k$, the series does not converges to $x$.
+  \end{solution}
+  
+  \paragraph{4.}
+  \begin{proof}
+    By the triangle inequality, $\|x_m+\cdots+x_n\| \le \|x_m\|+\cdots+\|x_n\|$
+    for every $n\ge m>0$. Hence the convergence of $\sum \|x_k\|$ implies that
+    $s_n$ is a Cauchy sequence.
+  \end{proof}
+  
+  \paragraph{5.}
+  \begin{proof}
+    By Prob. 4, $\sum_{k=1}^n x_k$ is a Cauchy sequence. And since $H$ is 
+    complete, $\sum_{k=1}^\infty x_k$ converges.
+  \end{proof}
+  
+  \paragraph{7.}
+  \begin{proof}
+    The existence of $y$ follows from Theorem 3.5-2(c). And for each $k$,
+    \[
+      \langle x-y,e_k\rangle =
+      \langle x,e_k\rangle - 
+      \sum_{j=1}^\infty\langle x,e_j\rangle\langle e_k,e_j\rangle =
+      \langle x,e_k\rangle - \langle x,e_k\rangle = 0,
+    \]
+    where the second equality comes from the fact that $(e_k)$ is orthonormal.
+  \end{proof}
+  
+  \paragraph{8.}
+    TODO: Show the validation of the change of the order of summation. Or maybe
+    we can show the equality directly.
+  \begin{proof}
+    We suppose that $x\in\bar{M}$ here since the proof of the other direction is
+    obvious. Then there exists $(p_n)\subset M$ such that $x=\sum_{n=1}^\infty
+    p_n$. For each $n$, suppose $p_n=\sum_{k=1}^\infty \langle p_n,e_k\rangle 
+    e_k$. This is valid because $p_n\in M$ and therefore is a finite linear 
+    combination of $(e_k)$. In fact, there are only finitely many nonzero term
+    in the summation. Then
+    \[
+      x=\sum_{n=1}^\infty p_n = 
+      \sum_{n=1}^\infty\sum_{k=1}^\infty\langle p_n,e_k\rangle e_k=
+      \sum_{k=1}^\infty\left(\sum_{n=1}^\infty\langle p_n,e_k\rangle\right)e_k.
+    \]
+  \end{proof}
+  
+  \paragraph{9.}
+  \begin{proof}
+    First we suppose $\bar{M}_1=\bar{M}_2$. Then by Prob. 8, each $e_n$ and
+    $\tilde{e}_n$ can be represented by (a) and (b) respectively.\par
+    For the converse, (a) implies, again by Prob. 8, $e_n\in\bar{M}_2$ and
+    therefore $M_1\subset\bar{M}_2$. Since $\bar{M}_2$ is closed, $\bar{M}_1
+    \subset\bar{M}_2$. \textit{Mutatis mutandis}, this also shows $\bar{M}_2
+    \subset\bar{M}_1$. Thus, $\bar{M}_1=\bar{M}_2$.
+  \end{proof}
+  
+  \paragraph{10.}
+  \begin{proof}
+    Note that for every $m>0$, there are only finite $e_\kappa$ such that $
+    \langle x,e_\kappa\rangle\ge 1/m$. Otherwise we may choose a countable
+    subset of them, which will violate the result in Prob. 8, Sec 3.4. Hence,
+    the collection of all nonzero Fourier coefficient
+    \[
+      \bigcup_{m=1}^\infty\{ e_\kappa:\, \langle x,e_\kappa\rangle\ge 1/m \}
+    \]
+    is at most countable.
+  \end{proof}
+% end
+
+\subsection{Total Orthonormal Sets and Sequences}
+  \paragraph{4.}
+  \begin{proof}
+    Suppose that $x$ and $y$ satisfy (3). We only show the relation for real 
+    cases here. The complex cases can be proved in a similar way. Using (9),
+    Sec 3.1 and (3),
+    \[
+      \langle x,y\rangle = \frac{1}{4}(\|x+y\|^2-\|x-y\|^2) =
+      \frac{1}{4}\sum_k
+      \left(|\langle x+y,e_k\rangle|^2-|\langle x-y,e_k\rangle|^2 \right).
+    \]
+    Meanwhile,
+    \[
+      |\langle x\pm y,e_k\rangle|^2=
+      \langle x\pm y,e_k\rangle\overline{\langle x\pm y,e_k\rangle}=
+      |\langle x,e_k\rangle|^2+|\langle y,e_k\rangle|^2\pm
+      2\langle x,e_k\rangle\overline{\langle y,e_k\rangle}.
+    \]
+    Hence, $\langle x,y\rangle=\sum_k\langle x,e_k\rangle\overline{\langle
+    y,e_k\rangle}$.
+  \end{proof}
+  
+  \paragraph{6.}
+  \begin{proof}
+    Suppose $M=(e_k)$. We collect the $e_k$ which does not belong to $\spn(e_1,
+    \dots,e_{k=1})$ and denote the new sequence by $(\tilde{e}_k)$. Clear that
+    $\spn(e_k)=\spn(\tilde{e}_k)$ and $(\tilde{e}_k)$ is linearly independent.
+    Let $(f_k)$ be the sequence generated from $(\tilde{e}_k)$ by the
+    Gram-Schmidt process. Then clear that $(f_k)$ is orthonormal. And since for
+    every $n$, $\spn(\tilde{e}_1,\dots,\tilde{e}_n)=\spn(f_1,\dots,f_n)$,
+    $M\subset\spn(\tilde{e}_k)=\spn(f_k)$. Finally, since $M$ is dense in $H$,
+    $\overline{\spn(f_k)}=H$. Thus, $(f_k)$ is a total orthonormal sequence of
+    $H$.
+  \end{proof}
+  
+  \paragraph{7.}
+  \begin{proof}
+    It follows from the definition of the separable Hilbert space and Prob. 6
+    immediately.
+  \end{proof}
+  
+  \paragraph{9.}
+  \begin{proof}
+    $\langle v,x\rangle=\langle w,x\rangle$ implies $\langle v-w,x\rangle=0$ for
+    all $x\in M$, that is, $x\perp M$. Since $M$ is total, by Theorem 3.6-2, $v
+    -w=0$.
+  \end{proof}
+  
+  \paragraph{10.}
+  \begin{proof}
+    It follows immediately from Theorem 3.6-2(b).
+  \end{proof}
+% end
+
+\setcounter{subsection}{7}
+\subsection{Functionals on Hilbert Spaces}
+  \paragraph{3.}
+  \begin{proof}
+    The linearity follows from the sesquilinearity of the inner product and the
+    boundedness from the Schwarz inequality. Furthermore, the Schwarz inequality
+    also implies $\|f\|\le\|z\|$. Meanwhile, $\|f\|\ge\|f(z/\|z\|)\|=\|z\|$. 
+    Thus, $\|f\|=\|z\|$.
+  \end{proof}
+  
+  \paragraph{4.}
+  \begin{proof}
+    Clear that the mapping $z\mapsto f$ is an isomorphism since it is
+    surjective. And by Theorem 2.10-4, $X\hp$ is a Hilbert space. Hence, $X$ is
+    also a Hilbert space.
+  \end{proof}
+  
+  \paragraph{5.}
+  \begin{proof}
+    Since $l^2$ is complete. By Theorem 3.8-1, we may define $I:(l^2)\hp\to l^2$
+    to be $f\mapsto z$. Clear that $I$ is linear and injective. Meanwhile, it 
+    preserves the norm. Furthermore, by Prob. 3, it is surjective. Hence, $I$
+    is an isomorphism. Thus, $l^2$ is isomorphic to its dual.
+  \end{proof}
+  
+  \paragraph{12.}
+  \begin{proof}
+    For every $x\in X$ and $y\in Y$,
+    \begin{align*}
+      |h(x+\Delta x, y+\Delta y)-h(x, y)|
+      &=|h(\Delta x, y)+h(x, \Delta y)+h(\Delta x, \Delta y)| \\
+      &\le|h(\Delta x, y)|+|h(x, \Delta y)|+|h(\Delta x, \Delta y)|.
+    \end{align*}
+    Since $h$ is bounded, 
+    \[
+      |h(x+\Delta x, y+\Delta y)-h(x, y)|\le
+      \|h\|(\|\Delta x|\|\|y\|+\|\Delta y|\|\|x\|+\|\Delta x|\|\|\Delta y\|).
+    \]
+    Thus, $h$ is continuous.
+  \end{proof}
+  
+  \paragraph{14.}
+  \begin{proof}
+    If $h(x,x)=0$, then for any $t\in \mathbb{R}$,
+    \[
+      0\le h(th(y,x)x+y,th(y,x)x+y)=2t|h(x,y)|^2+h(y,y).
+    \]
+    Hence, $h(x,y)=0$, otherwise we may choose some $t<0$ such that is right
+    hand side is negative. Thus, the inequality holds if $h(x,x)=0$.\par
+    Now suppose $h(x,x)\ne 0$. Put 
+    \begin{equation}
+      \label{eq:3.8.14}
+      z=y-x\frac{h(y, x)}{h(x, x)}
+    \end{equation}
+    It is easy to verify that $h(z,x)=0$. Multiplying $z$ on the both sides of 
+    \eqref{eq:3.8.14} yields
+    \[
+      0\le h(z,z)=h\left(z,y-x\frac{h(y, x)}{h(x, x)}\right)=h(z,y)=
+      h(y,y)-\frac{h(x,y)h(y,x)}{h(x,x)}.
+    \]
+    Thus, $|h(x,y)|^2\le h(x,x)h(y,y)$.
+  \end{proof}
+% end
+
+\subsection{Hilbert-Adjoint Operator}
+  \paragraph{1.}
+  \begin{proof}
+    By Theorem 3.9-4, $0^*=(0+0)^*=0^*+0^*$. Hence, $0^*=0$. For every $x,y\in
+    X$,
+    \[
+      \langle(I^*-I)x, y\rangle = \langle I^*x, y\rangle-\langle Ix, y\rangle=
+      \langle x, Iy\rangle-\langle Ix, y\rangle=0.
+    \]
+    Hence, by Lemma 3.9-3, $I=I^*$.
+  \end{proof}
+  
+  \paragraph{2.}
+  \begin{proof}
+    By Theorem 3.9-4, $T^*(T\inv)^*=(T\inv T)^*=I^*=I$. Hence, $(T^*)\inv=
+    (T\inv)^*$.
+  \end{proof}
+  
+  \paragraph{3.}
+  \begin{proof}
+    Since $\|T_n^*-T^*\|=\|(T_n-T)^*\|=\|T_n-T\|$, $T_n^*\to T^*$ as long as
+    $T_n\to T$.
+  \end{proof}
+  
+  \paragraph{4.}
+  \begin{proof}
+    It suffices to show that for all $x_2\in T^*(M_2^\perp)$ and $x_1\in M_1$,
+    $\langle x_1,x_2\rangle=0$. $x_2\in T^*(M_2^\perp)$ implies the existence
+    of some $y_2\in M_2^\perp$ with $T^*y_2=x_2$. Then
+    \[
+      \langle x_1,x_2\rangle = \langle x_1,T^*y_2\rangle=
+      \langle Tx_1,y_2\rangle = 0,
+    \]
+    where the last equality comes from the fact that $T(M_1)\subset M_2$ and
+    $y_2\in M_2^\perp$. Thus, $M_1^\perp\supset T^*(M_2^\perp)$.
+  \end{proof}
+  
+  \paragraph{5.}
+  \begin{proof}
+    By Prob. 4, $T^*(M_2^\perp)\subset M_1^\perp$ implies $M_2^{\perp\perp}
+    \supset T(M_1^{\perp\perp})$. Since $M_1$ and $M_2$ are closed, by Prob. 9,
+    Sec 3.3, $M_i^{\perp\perp}=M_i$ for $i=1,2$. Thus, $T(M_1)\subset M_2$.
+    The converse part has already been proved in Prob. 4.
+  \end{proof}
+  
+  \paragraph{6.}
+  \begin{proof}
+    $\,$\par
+    (a) Since $T(M_1)=\{0\}\subset H_2$, by Prob. 4, $T^*(H_2)\subset 
+    M_1^\perp$.\par
+    (b) For every $y\in[T(H_1)]^\perp$, $\langle y,Tx\rangle=0$ for all $x\in
+    H_1$. Hence, $\langle T^*y, x\rangle=0$. By Lemma 3.8-2, $T^*y=0$ and 
+    therefore $y\in\mathcal{N}(T^*)$. Thus, $[T(H_1)]^\perp\subset\mathcal{N}
+    (T^*)$.\par
+    (c) Since $T^{**}=T$, it follows from (b) that $[T^*(H_2)]^\perp\subset 
+    M_1$. And since $M_1$ is closed, $M_1^{\perp\perp}=M_1$. Therefore, (a) 
+    implies $[T^*(H_2)]^\perp\supset M_1$. Thus, $M_1=[T^*(H_2)]^\perp$.
+  \end{proof}
+  
+  \paragraph{7.}
+  \begin{proof}
+    It follows immediately from Lemma 3.9-3. 
+  \end{proof}
+  
+  \paragraph{8.}
+  \begin{proof}
+    For every $x\in H$ with $\|x\|=1$,
+    \begin{align*}
+      \|(I+T^*T)x\|
+      &=\|x+T^*Tx\|=\langle x+T^*Tx,x+T^*Tx\rangle\\
+      &=\|x\|^2+\|T^*Tx\|^2+\langle x,T^*Tx\rangle+\langle T^*Tx,x\rangle\\
+      &=\|x\|^2+\|T^*Tx\|^2+\|Tx\|^2 \\
+      &\ge 1.
+    \end{align*}
+    Then, by Prob 7, Sec 2.7, $I+T^*T$ is invertible.
+  \end{proof}
+  
+  \paragraph{9.}
+  \begin{proof}
+    If $T$ can be represent by that form, then $\mathcal{R}(T)$ can be spanned
+    by $w_1,\dots,w_n$. Hence, it is finite dimensional.\par
+    Now we suppose that $T$ has a finite dimensional range. Let $\{w_1,\dots,
+    w_n\}$ be a orthonormal basis of $\mathcal{R}(T)$. Then for every $x\in H$,
+    \[
+      Tx=\sum_{j=1}^n\varphi_j(x)w_j.
+    \]
+    Now we show that for each $j$, $\varphi_j$ is a bounded linear functional
+    and invoke Riesz's Theorem to complete the proof. It is easy to verify the
+    linearity of $\varphi_j$. For every $x$ with norm $1$, since $T$ is bounded
+    and $(w_j)$ is orthonormal,
+    \[
+      \|T\|\ge\left\|\sum_{j=1}^n\varphi_j(x)w_j\right\|\ge |\varphi_j(x)|
+    \]
+    for each $j=1,\dots,n$. Hence, every $\varphi_j$ is a bounded linear 
+    functional and therefore can be represented by $\varphi_j(x)=\langle x,v_j
+    \rangle$.
+  \end{proof}
+% end
+
+\paragraph{Self-Adjoint, Unitary and Normal Operators}
+  \paragraph{4.}
+    We only show the uniqueness here.
+  \begin{proof}
+    $T_1+iT_2=S_1+iS_2$ implies $T_1-iT_2=S_1-iS_2$. Sum these two equations and
+    we get $T_1=S_1$. Meanwhile, it also implies $i(T_1+iT_2)=i(S_1+iS_2)$. 
+    Summing these two gives $T_2=S_2$.
+  \end{proof}
+  
+  \paragraph{6.}
+  \begin{proof}
+    $\,$\par
+    (a) We argue by contradiction. Let $k$ be the smallest positive integer such
+    that $T^{2k}=0$. Then for every $x\in H$
+    \[
+      0=\langle T^{2k}x,x\rangle = \langle T^kx,(T^k)^*x\rangle=
+      \langle T^kx,T^kx\rangle=\|T^kx\|^2.
+    \]
+    Hence $T^k=0$, which contradicts with the smallest assumption of $k$. Hence,
+    $T^n\ne 0$ for all even positive integer $n$.\par
+    (b) If $T^n=0$ for some positive, not necessarily even, integer $n$, then so
+    is $T^{2n}=0$. Hence, by (a), $T^n\ne 0$ for all $n\in\mathbb{N}$.
+  \end{proof}
+  
+  \paragraph{9.}
+  \begin{proof}
+    Since $T$ is isometric, it preserves the topology. Hence $T(H)$ is closed
+    as $H$ is closed.
+  \end{proof}
+  
+  \paragraph{10.}
+  \begin{proof}
+    It suffices to show that $T$ is surjective. Let $\{e_1,\dots,e_n\}$ be an
+    orthonormal basis of $X$. Then $\{Te_1,\dots,Te_n\}$ is also an orthonormal
+    basis since $T$ is isometric. Hence, $T$ is surjective and therefore is
+    unitary.
+  \end{proof}
+  
+  \paragraph{13.}
+  \begin{proof}
+    It can be verified that $T_n^*T_n\to T^*T$ and $T_nT_n^*\to TT^*$. Since
+    $T_n$ are normal, $T_n^*T_n=T_nT_n^*$. Hence, 
+    \[
+      \|T^*T-TT^*\|\le \|T^*T-T_n^*T_n\|+\|T_nT_n^*-TT^*\|\to 0
+    \]
+    as $n\to\infty$. Thus, $T$ is normal.
+  \end{proof}
+  
+  \paragraph{15.}
+  \begin{proof}
+    If $T$ is normal, clear that $\|T^*x\|=\|Tx\|$. Now we suppose $\|Tx\|=\|T^*
+    x\|$ for all $x\in H$. Then $\langle TT^*x,x\rangle=\langle T^*Tx,x\rangle$.
+    Since $X$ is complex, by Lemma 3.9-3, $TT^*=T^*T$. Namely, $T$ is normal.
+    \par
+    By (a), for every $x\in H$, $\|T^2x\|=\|T^*Tx\|$. Hence,
+    \[
+      \|T^2\|=\sup_{\|x\|=1}\|T^2x\|=\sup_{\|x\|=1}\|T^*Tx\|=\|T^*T\|=\|T\|^2,
+    \]
+    where the last equality comes from Theorem 3.9-4(e).
+  \end{proof}
+% end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

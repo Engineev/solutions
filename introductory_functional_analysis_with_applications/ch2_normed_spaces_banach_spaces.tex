@@ -1,0 +1,481 @@
+\section{Normed Spaces. Banach Spaces}
+\setcounter{subsection}{2}
+\subsection{Further Properties of Normed Spaces}
+  \paragraph{4.}
+    cf. Prob. 13, Sec 1.2
+  \begin{proof}
+    The continuity of addition and multiplication follows respectively from the
+    inequalities
+    \[
+      \|(x_1+y_1)-(x_2+y_2)\| \le \|x_1-x_2\|+\|y_1-y_2\|
+    \]
+    and 
+    \[
+      \|\alpha_1x_1-\alpha_2x_2\| = 
+      \|\alpha_1x_1-\alpha_1x_2+\alpha_1x_2-\alpha_2x_2\|
+      \le |\alpha_1|\|x_1-x_2\| + |\alpha_1-\alpha_2|\|x_2\|.
+    \]
+  \end{proof}
+
+  \paragraph{7.}
+  \begin{proof}
+    Let $Y$ and $y_n$ be defined as in the hint. Then $\|y_n\|=1/n^2$, 
+    constituting a convergent number series. However, 
+    \[
+      \sum_{n=1}^N y_n = (1,1/4, \dots, 1/N^2, 0,\dots),
+    \]
+    which is divergent as $N\to\infty$.
+  \end{proof}
+
+  \paragraph{8.}
+  \begin{proof}
+    Let $(x_n)$ be a Cauchy sequence in $X$. Hence, for every $n>0$, there 
+    exists some $K_n>0$ such that for all $p,q>K_n$, $\|x_p-x_q\|<1/n^2$. 
+    Without loss of generality, we may assume that $(K_n)$ is increasing. Since
+    the series $\|x_{K_{n+1}}-x_{K_n}\|$ is bounded by $1/n^2$, it converges. 
+    By the hypothesis, the series $(x_{K_{n+1}}-x_{K_n})$ also converges. Hence, 
+    \[
+      x_{K_n} = x_{K_1} + \sum_{i=1}^{n-1}(x_{K_{i+1}}-x_{K_i}) \to x
+      \quad\text{as } n\to\infty.
+    \]\par
+    Now we show that $(x_n)$ converges to $x$. For every $\vep>0$, since $(x_n)$
+    is a Cauchy sequence, there exists some $N_1$ such that for all $p,q>N_1$,
+    $\|x_p-x_q\|<\vep$. Meanwhile, since $x_{K_n}\to x$, once $K_n$ is large
+    enough, $\|x-x_{K_n}\|<\vep$. Let $K_n>N_1$. Then for every $n>K_n$
+    \[
+      \|x_n-x\| \le \|x_n-x_{K_n}\| + \|x_{K_n}-x\| \le 2\vep.
+    \]
+    Thus, $X$ is complete.
+  \end{proof}
+
+  \paragraph{9.}
+  \begin{proof}
+    Let $(x_n)$ be an absolutely convergent series in Banach space $X$. Let 
+    $s_n=\sum_{i=1}^n x_n$. Now we show that $s_n$ is a Cauchy sequence and 
+    therefore convergent. Since $\sum_{i=1}^\infty\|x_i\|<\infty$, for every 
+    $\vep>0$, there exists some $N>0$ such that for all $n>N$, $\sum_{i=n}
+    ^\infty\|x_i\|<\vep$. Hence, for every $N<p\le q$,
+    \[
+      \|s_q-s_p\| = \left\|\sum_{i=p+1}^q x_i\right\|
+      \le \sum_{i=p+1}^q\|x_i\| < \vep,
+    \]
+    completing the proof.
+  \end{proof}
+
+  \paragraph{10.}
+  \begin{proof}
+    Let $(e_n)$ be Schauder basis of $X$. Denote the underlying field of $X$ by
+    $\mathbb{K}$ and let $\mathbb{W}=\mathbb{Q}$ if $\mathbb{K}=\mathbb{R}$ and
+    $\mathbb{W}=\{p+iq:\, p,q\in\mathbb{Q}\}$ if $\mathbb{K}=\mathbb{C}$. Now we
+    show that
+    \[
+      S = \left\{\sum_{i=1}^n\alpha_ie_i:\, 
+      \alpha_i\in\mathbb{W}, n=1,2,\dots\right\},
+    \]
+    a countable subset of $X$, is dense in $X$ to derive the separability. \par
+    For every $x\in X$ and $\vep>0$, by the definition of Schauder basis, there 
+    exists $\beta_1,\dots,\beta_n\in\mathbb{K}$ such that $\|x-(\beta_1e_1+
+    \cdots+\beta_ne_n)\|<\vep$. Let $M=\max_{i}\|e_i\|$. If $M=0$, then there is
+    nothing to prove. Otherwise, since $\mathbb{W}$ is dense in $\mathbb{K}$,
+    for $i=1,\dots,n$, there exists $\alpha_i\in\mathbb{W}$ with $|\alpha_i-
+    \beta_i|<\vep/2^iM$. Hence,
+    \begin{align*}
+      \left\|x-\sum_{i=1}^n\alpha_ie_i\right\|
+      \le& \left\|x-\sum_{i=1}^n\beta_ie_i\right\| +
+           \left\|\sum_{i=1}^n(\beta_i-\alpha_i)e_i\right\| \\
+      \le& \vep + \sum_{i=1}^n|\alpha_i-\beta_i|\|e_i\|  \\
+      \le& 2\vep.
+    \end{align*}
+    Thus, $S$ is dense in $X$ and therefore $X$ is separable.
+  \end{proof}
+
+  \paragraph{14.}
+  \begin{proof}
+    Clear that $\|\cdot\|_0$ is nonnegative. And $\|\alpha\hat{x}\|_0= \inf_{x
+    \in\hat{x}}\|\alpha x\| = |\alpha|\|\hat{x}\|_0$. Meanwhile, $\|\hat{x}+
+    \hat{y}\|_0=\inf_{z\in\hat{x}+\hat{y}}\|z\|\le\inf_{z\in\hat{x}}\|z\|+
+    \inf_{z\in\hat{y}}\|z\|=\|\hat{x}\|_0+\|\hat{y}\|_0$. Finally, we show that
+    $\|\hat{x}\|_0=0$ implies $\hat{x}=Y$ and invoke Prob. 4, Sec 2.2 to 
+    complete the proof. Since $\|\hat{x}\|_0=0$, there exists $(x_n)\subset
+    \hat{x}$ which converges to $0$. Since $Y$ is closed, $Y$ is complete and so
+    is its cosets. Therefore, $0\in\hat{x}$, enforcing $\hat{x}$ to be $Y$. 
+  \end{proof}
+% end
+
+\subsection{Finite Dimensional Normed Spaces}
+  \paragraph{3.}
+  \begin{proof}
+    The reflexive property clearly holds. If there are positive $a$ and $b$ such 
+    that $a\|x\|_0\le\|x\|_1\le b\|x\|_0$ for all $x\in X$, then $\|x\|_1/b\le
+    \|x\|_0\le\|x\|/a$. Hence the relation is symmetric. Next we further suppose
+    there exists positive $c$ and $d$ such that that $c\|x\|_1\le\|x\|_2\le
+    d\|x\|_1$. Then $ac\|x\|_0\le \|x\|_2\le bd\|x\|_0$, giving the transitive
+    property. Thus, the axioms of an equivalence relation hold.
+  \end{proof}
+
+  \paragraph{4.}
+  \begin{proof}
+    Suppose the norms $\|\cdot\|$ and $\|\cdot\|_0$ are equivalent. Let $E
+    \subset X$ be any open set with respect to $\|\cdot\|$, i.e., for every $x_0
+    \in E$, there exists some $\delta>0$ such that $A=\{x\in X:\, \|x-x_0\|<
+    \delta\}\subset E$. Since $\|\cdot\|\sim\|\cdot\|_0$, there exists some 
+    positive $c$ such that $\|x-x_0\|\le c\|x-x_0\|_0$. Hence, $B=\{x\in X:\,
+    \|x-x_0\|<\delta/c \}\subset A\subset E$. Namely, $E$ is also open with 
+    respect to $\|\cdot\|_0$. Interchanging the roles of $\|\cdot\|$ and 
+    $\|\cdot\|_0$ completes the proof.
+  \end{proof}
+  
+  \paragraph{5.}
+  \begin{proof}
+    Suppose the norms $\|\cdot\|$ and $\|\cdot\|_0$ are equivalent. Then for 
+    every $x\in X$, there exists some $c>0$ such that $\|x\|_0\le c\|x\|$. Let
+    $(x_n)$ be a Cauchy sequence with respect to $\|\cdot\|$, i.e., for every 
+    $\vep>0$, there exists some $N>0$ such that for all $n,m>N$, $\|x_n-x_m\|<
+    \vep/c$. Hence, $\|x_n-x_m\|_0<c\|x_n-x_m\|\le \vep$. Thus, $(x_n)$ is also
+    a Cauchy with respect to $\|\cdot\|_0$. Interchanging the roles of 
+    $\|\cdot\|$ and $\|\cdot\|_0$ completes the proof.
+  \end{proof}
+% end
+
+\subsection{Compactness and Finite Dimension}
+  \paragraph{5.}
+  \begin{proof}
+    Clear that every point in $\mathbb{R}^n$ or $\mathbb{C}^n$ has a closed 
+    bounded, and therefore compact, neighborhood. Hence, $\mathbb{R}^n$ and 
+    $\mathbb{C}^n$ are locally compact.
+  \end{proof}
+
+  \paragraph{6.}
+  \begin{proof}
+    Let $X$ be a compact metric space and $x$ any point in $X$. Let $E$ be a 
+    closed neighborhood of $x$. By Prob 10, $E$ is compact. Thus, $X$ is locally
+    compact.
+  \end{proof}
+
+  \paragraph{7.}
+  \begin{proof}
+    It suffices to show that $a=\inf_{y\in Y}\|v-y\|$ can actually be obtained.
+    Let $\{b_1,\dots,b_n\}$ be a basis of $Y$ and $y_k=y_{k,1}b_1+\cdots+y_{k,n}
+    b_n$ a sequence in $Y$ with $\|v-y_k\|\to a$. We may assume without loss of
+    generality that $\|v-y_k\|$ is bounded. \par
+    Since $Y$ is a proper subset of $Z$, $v,b_1,\dots,b_n$ are linearly
+    independent. Therefore, by Lemma 2.4-1, there exists a scalar $c>0$ such
+    that for every $k$,
+    \[
+      \|v-y_{k,1}b_1-\cdots-y_{k,n}b_n\| \ge c(1+|y_{k,1}|+\cdots+|y_{k,_n}|).
+    \]
+    Hence, the sequence $(y_{k,1},\dots,y_{k,n})$ of $n$-tuples is bounded and 
+    therefore has a convergent subsequence. Consequently, $(y_k)$ also has a 
+    convergent subsequence. Suppose that it converges to $z\in Z$. Note that
+    $\|v-z\|=a$ and as $Y$ is closed, $z\in Y$. Thus, $a$ can be attained in 
+    $Y$.
+  \end{proof}
+
+  \paragraph{8.}
+  \begin{proof}
+    Since the unit ball $B$ with respect to $\|\cdot\|_2$ in $\mathbb{R}^n$ and
+    $\mathbb{C}^n$ is compact and $\|\cdot\|$ is continuous, by 2.5-7, $x\mapsto
+    \|x\|$ can attains its minimum, denoted by $a$, on $B$. Due to the positive 
+    definite property of a norm, $a$ is positive. Hence, $0<a\le \|x/\|x\|_2\|$.
+    Namely, $a\|x\|_2\le\|x\|$.
+  \end{proof}
+
+  \paragraph{9.}
+  \begin{proof}
+    For every $(x_n)\subset M\subset X$, since $X$ is compact, there exists a 
+    subsequence $(x_{n_k})$ of $(x_n)$ which converges to some $y\in X$. Since 
+    $M$ is closed, $y\in M$. Hence, $M$ is compact.
+  \end{proof}
+
+  \paragraph{10.}
+  \begin{proof}
+    From 1.3-4 and the definition of closed sets, we conclude that a mapping is
+    continuous iff the preimage of a closed set under it is also a closed set.
+    Hence, to show that the inverse of $T$ is also continuous, it suffices to
+    show that the image of a closed set $A\subset X$ under $T$ is again a closed
+    set. Since $X$ is compact and $A$ is closed, $A$ is compact. Since $T$ is 
+    continuous, by 2.5-6, $T(A)$ is compact and therefore closed. Hence, $T$ is
+    a homeomorphism.
+  \end{proof}
+% end
+
+\setcounter{subsection}{6}
+\subsection{Bounded and Continuous Linear Operators}
+  \paragraph{2.}
+  \begin{proof}
+    First suppose $T$ to be bounded and let $A$ be any bounded set in $X$. Then
+    there exists $K<\infty$ such that for all $x\in A$, $\|x\|<K$. Due to the
+    boundedness of $T$, $\|Tx\|\le \|T\|\|x\|<K\|T\|$. Namely, $T(A)$ is also
+    bounded.\par
+    Now suppose that $T$ maps bounded sets in $X$ into bounded sets in $Y$. 
+    Clear that the unit ball $B$ of $X$ is bounded and therefore so is $T(B)$.
+    Namely, $\|Tx/\|x\|\|$ is bounded for $x\ne 0$.\footnote{Note that the two
+    $\|\cdot\|$ here are different norms.} Hence, $T$ is bounded.
+  \end{proof}
+
+  \paragraph{3.}
+  \begin{proof}
+    For every $x$ with $\|x\|<1$, $\|Tx\|\le \|T\|\|x\|<\|T\|$.
+  \end{proof}
+
+  \paragraph{4.}
+  \begin{proof}
+    Suppose that the linear operator $T$ is continuous at $x_0\in
+    \mathcal{D}(T)$. For every $(x_n)\subset\mathcal{D}(T)$ with $\|x_n-x\|\to
+    0$, by the continuity of $T$ at $x_0$
+    \[
+      \|Tx_n-Tx\|=\|T(x_n-x+x_0)-Tx_0\| \to 0.
+    \]
+    Hence, $T$ is continuous.
+  \end{proof}
+
+  \paragraph{7.}
+  \begin{proof}
+    The inequality implies $\mathcal{N}(T)=0$. Hence, by Theorem 2.6-10, $T\inv$
+    exists. For every $y\in Y$, suppose that $y=Tx$. Then
+    \[
+      \|T\inv y\| = \|x\| \le \frac{1}{b}\|Tx\| = \frac{1}{b}\|y\|.
+    \]
+    Thus, $T\inv$ is bounded.
+  \end{proof}
+
+  \paragraph{12.}
+  \begin{proof}
+    The compatibility follows immediately from the definition of the supremum.
+    Suppose $\|x\|_1=\max_j|\xi_j|$ and $\|y\|_2=\max_j\|\eta_j\|$, then
+    \[
+      Ax = 
+      \begin{bmatrix}
+        x_1\alpha_{11} + \cdots + x_n\alpha_{1n} \\
+        \vdots \\
+        x_1\alpha_{r1} + \cdots + x_n\alpha_{rn}.
+      \end{bmatrix}
+    \]
+    Since for all $j$, $x_j\le \|x_j\|_1$,
+    \[
+      \frac{\max_j|x_1\alpha_{j1}+\cdots+x_n\alpha_{jn}|}{\|x\|_1}
+      =\max_j\left|\frac{x_1}{\|x\|_1}\alpha_{j1}+\cdots
+      +\frac{x_n}{\|x\|_1}\alpha_{jn}\right|
+      \le \max_{j}\sum_{k=1}^n|\alpha_{jk}|.
+    \]
+    Hence, 
+    \begin{equation}
+      \label{eq:2.8.12}
+      \|A\|\ge \frac{\|Ax\|_2}{\|x\|_1} \quad\text{for all $x$}.
+    \end{equation}
+    Suppose that maximum of $\sum_{k=1}^n|\alpha_{jk}|$ is obtained at $j=p$.
+    Then choosing $x_k$ to be $\sgn \alpha_{pk}$ shows that the equality in 
+    \eqref{eq:2.8.12} can actually be attained. Hence, $\|A\|=\max_{j}
+    \sum_{k=1}^n|\alpha_{jk}|$.
+  \end{proof}
+% end
+
+\subsection{Linear Functionals}
+  \paragraph{8.}
+  \begin{proof}
+    For every $x_1,x_2\in N(M^*)$, $a,b\in\mathbb{K}$ and $f\in M^*$,
+    \[
+      f(ax_1+bx_2) = af(x_1)+bf(x_2) = 0.
+    \]
+    Hence, $ax_1+bx_2\in N(M^*)$. Namely, $N(M^*)$ is a vector space.
+  \end{proof}
+
+  \paragraph{9.}
+  \begin{proof}
+    First we show the uniqueness. Suppose that $x=\alpha_1x_0+y_1=\alpha_2x_0+
+    y_2$. Then $0 = (\alpha_1-\alpha_2)x_0 + (y_1-y_2)$. Hence,
+    \[
+      0 = f((\alpha_1-\alpha_2)x_0 + (y_1-y_2)) = 
+      (\alpha_1-\alpha_2)f(x_0) + f(y_1)-f(y_2).
+    \]
+    Since $y_1,y_2\in\mathcal{N}(f)$, $f(y_1)-f(y_2)=0$ while $f(x_0)\ne 0$ as
+    $x_0\notin\mathcal{N}(f)$. Hence, $\alpha_1=\alpha_2$, which forces $y_1$ 
+    and $y_2$ to coincide.\par
+    For the existence, it suffices to show that for any fixed $x$, the function
+    $g(\alpha)=f(x-\alpha x_0)$ has a zero. It is easy to verify that $\alpha=
+    f(x)/f(x_0)$ is a zero of $g$. Note that $x_0\notin\mathcal{N}(f)$ and 
+    therefore $f(x_0)\ne 0$.
+  \end{proof}
+
+  \paragraph{10.}
+  \begin{proof}
+    First we suppose that $x_1,x_2\in x_0+\mathcal{N}(f)\in X/\mathcal{f}$. Then
+    together with Prob. 9, $x_i=x_0+y_i$ where $y_i\in\mathcal{N}(f)$. Hence, 
+    for $i=1,2$, $f(x_i)=f(x_0)+f(y_i)=f(x_0)$.\par
+    For the converse, note that $f(x_1)=f(x_2)$ implies $f(x_1-x_2)=0$. Namely,
+    $x_1-x_2\in\mathcal{N}(f)$. Hence, $x_1,x_2$ belongs to the same element in
+    $X/\mathcal{N}(f)$.\par
+    To show $\codim\mathcal{N}(f)=1$, we show that $X/\mathcal{N}(f)$ and 
+    $\mathbb{K}$ are isomorphic. For every $\hat{x}\in X/\mathcal{N}(f)$, define
+    $I(\hat{x})=f(x)$. By the previous discussion, this definition is 
+    well-defined. Clear that $I$ is linear and therefore is injective. And by 
+    the linearity of $f$, $I$ is surjective. Thus, $I$ is an isomorphism between
+    $X/\mathcal{N}(f)$ and $\mathbb{K}$. Hence, $\codim\mathcal{N}(f)=1$.
+  \end{proof}
+
+  \paragraph{11.}
+  \begin{proof}
+    Put $N=\mathcal{N}(f_1)=\mathcal{N}(f_2)$ and choose $x_0\in X\setminus N$.
+    By Prob. 9, for every $x\notin N$, $x=\alpha x_0+y$ where $y\in N$ and 
+    $\alpha\ne 0$. Hence, 
+    \[
+      \frac{f_1(x)}{f_2(x)} = 
+      \frac{\alpha f_1(x_0)+f_1(y)}{\alpha f_2(x_0)+f_2(y)} =
+      \frac{f_1(x_0)}{f_2(x_0)}.
+    \]
+  \end{proof}
+
+  \paragraph{12.}
+  \begin{proof}
+    Prob. 10, justifies the discussion on hyperplanes parallel to the 
+    $\mathcal{N}(f)$. It suffices to show that $H_1=b+\mathcal{N}(f)$ for some 
+    $b\in X$. Choose $x_1\in H_1$. Then
+    \[
+      x\in \mathcal{N}(f) \:\Leftrightarrow\:
+      x+x_1\in x_1+\mathcal{N}(f) \:\Leftrightarrow\:
+      f(x+x_1) = f(x)+f(x_1) = 1 \:\Leftrightarrow\:
+      x+x_1\in H_1.
+    \]
+    Hence, $H_1=x_1+\mathcal{N}(f)$. Namely, $H_1$ is a hyperplane parallel to
+    $\mathcal{N}(f)$.
+  \end{proof}
+
+  \paragraph{13.}
+  \begin{proof}
+    We argue by contradiction. Assume that there exists a $y_1\in Y$ such that 
+    $f(y_1)\ne c\ne 0$. Then for every $d\in\mathbb{K}$, by the linearity of 
+    $f$, $f(dy_1/c) = d$. Contradiction. Hence, $f=0$ on $Y$.
+  \end{proof}
+
+  \paragraph{14.}
+  \begin{proof}
+    For every $\vep>0$, there exists $x_1\in X$ with $f(x_1)=1$ such that 
+    $\tilde{d}+\vep\ge\|x_1\|$. Hence, 
+    \[
+      \|f\|(\tilde{d}+\vep)\ge\|f\|\|x_1\| \ge |f(x_1)| = 1.
+    \]
+    Since the choice of $\vep>0$ is arbitrary, $\|f\|\tilde{d}\ge 1$. Meanwhile,
+    there exists $x_2\in X$ with $\|x_2\|=1$ such that $|f(x_2)|\ge \|f\|-\vep$.
+    Put $x_3 = x_2/f(x_2)$. Then $f(x_3)=1$. Hence,
+    \[
+      (\|f\|-\vep)\tilde{d} \le |f(x_2)|\|x_3\| = \|x_2\| = 1,
+    \]
+    which implies $\|f\|\tilde{d}\le 1$. Thus, $\|f\|\tilde{d}=1$.
+  \end{proof}
+
+  \paragraph{15.}
+  \begin{proof}
+    For every $x$ with $\|x\|\le 1$, $f(x)\le \|f\|\|x\|\le c$. Hence, $x\in 
+    X_{c_1}$. Meanwhile, for every $\vep>0$, by the definition of the supremum,
+    there exists a $x$ with $\|x\|=1$ such that $|f(x)|>\|f\|-\vep$. By the 
+    linearity of $f$, we may remove the $|\cdot|$ on the right side. Hence, 
+    $f(x)\notin X_{c_1}$ where $c=\|f\|-\vep$.
+  \end{proof}
+% end
+
+\subsection{Operators on Finite Dimensional Spaces}
+  \paragraph{8.}
+  \begin{proof}
+    Let $\{b_2,\dots,b_n\}$ be a basis of $Z$ and $\{b_1,\dots,b_n\}$ a basis of
+    $X$. Define $f\in X^*$ to be $f(b_i)=\delta_{1i}$. Clear that $\mathcal{N}
+    (f)=Z$. By Prob. 11, Sec 2.8, $f$ is uniquely determined up to a scalar 
+    multiple.
+  \end{proof}
+
+  \paragraph{12.}
+  \begin{proof}
+    Let $\varphi:X\to\mathbb{K}^p$ be defined by $x\mapsto [f_1(x),\dots,
+    f_p(x)]^T$. It can be verified that $\varphi$ is a linear operator. Since 
+    $\dim X=n>p$, $\varphi$ can not be injective. Hence, there exists $0\ne x\in
+    X$ such that $\varphi(x)=0$.
+  \end{proof}
+
+  \paragraph{13.}
+  \begin{proof}
+    Let $\{b_1,\dots,b_m\}$ be a basis of $Z$ and $\{b_1,\dots,b_n\}$ a basis of
+    $X$. Define $\tilde{f}\in X^*$ to be identical with $f$ on $b_1,\dots,b_m$
+    and $0$ on $b_{m+1},\dots,b_n$. Clear that $\tilde{f}|_Z=f$.
+  \end{proof}
+% end
+
+\subsection{Normed Spaces of Operators. Dual Space}
+  \paragraph{8.}
+  \begin{proof}
+    First we construct a linear bijection $T$ between $c_0\hp$ and $l^1$. A 
+    Schauder basis for $c_0$ is $(e_k)$, where $e_k=(\delta_{kj})$. Then for 
+    every $f\in c_0\hp$, define $Tf=(\gamma_k)=(f(e_k))$. Clear that $T$ is 
+    linear. Now we show that $Tf=(\gamma_k)\in l^1$, that is, $\sum_{k=1}^n|
+    \gamma_k|$ is bounded and therefore convergent. Define $x_n=(\xi_k^{(n)})$
+    with
+    \[
+      \xi_k^{(n)}=\begin{cases}
+        \sgn\gamma_k, & k\le n, \\
+        0,            & k>n.
+      \end{cases}
+    \]
+    Clear that $x_n\in c_0$. By the linearity and boundedness of $f$, 
+    \begin{equation}
+      \label{eq:2.10.8}
+      f(x_n)=\sum_{k=1}^\infty \xi_k^{(n)}\gamma_k = \sum_{k=1}^n|\gamma_k|.
+    \end{equation}
+    Since $f$ is bounded, $|f(x_n)| \le \|f\|\|x_n\| \le \|f\|$. Hence, $\sum\|
+    \gamma_k\|$ is bounded. Thus, $Tf\in l^1$.\par
+    Meanwhile, for every $y=(\beta_k)\in l^1$, define $Sy=g$ to be the
+    functional $g(x)=\sum_{k=1}^\infty\xi_k\beta_k$ for $x=(\xi_k)$. On $c_0$,
+    the summation does converge and clear that $g$ is linear and bounded. Hence,
+    $g\in c_0\hp$. It can be verify that $ST=TS=I$ and $T$ is linear. Thus, $c_0
+    \hp$ and $l^1$ is isomorphic.\par
+    Now we show that $T$ constructed preserve the norm to complete the proof.
+    For $x\in c_0$ with $\|x\|=1$,
+    \[
+      |f(x)| = \left|\sum_{k=1}^\infty \xi_k\gamma_k\right|\le 
+      \sum_{k=1}^\infty |\gamma_k| = \|Tf\|.
+    \]
+    Hence, $\|f\|\le\|Tf\|$. And \eqref{eq:2.10.8} implies $\sum_{k=1}^n||\gamma
+    |\le \|f\|$. Letting $n\to\infty$ yields $\|Tf\|\le \|f\|$. Thus, $\|Tf\|=
+    \|f\|$. 
+  \end{proof}
+
+  \paragraph{9.}
+  \begin{proof}
+    Let $(b_k)$ be a Hamel basis of $X$ and suppose that $f,g\in X^*$ coincide
+    on every $b_k$. Then for every $x=\sum_{k=1}^\infty\xi_k b_k\in X$, 
+    \[
+      f(x)-g(x) = \sum_{k=1}^n\xi_k(f(b_k)-g(b_k)) = 0.
+    \]
+    Thus, $f=g$. Namely, $f$ is uniquely determined.
+  \end{proof}
+
+  \paragraph{10.}
+  \begin{proof}
+    Let $(b_k)$ be a Hamel basis of $X$ and without loss of generality we may
+    assume $\|b_k\|=1$. Justified by Prob. 9, we can define $T\in X^*$ with 
+    $Tb_k=k$, which is clearly unbounded.
+  \end{proof}
+
+  \paragraph{11.}
+  \begin{proof}
+    It follows immediately from Prob. 10.
+  \end{proof}
+
+  \paragraph{13.}
+  \begin{proof}
+    For any $f,g\in M^a$ and scalar $a,b$, $(af+bg)(x)=af(x)+bg(x)=0$ for every
+    $x\in M$. Hence, $M^a$ is a vector space. For $(f_n)\subset M^a\subset 
+    X\hp$, suppose that $f_n\to f\in M^*$. Since $M\hp$ is complete, it is
+    closed and therefore $f\in M\hp$. For every $0\ne x\in M$, since $f_n\to f$,
+    \[
+      \frac{|f_n(x)-f(x)|}{\|x\|} \to 0,\,\text{as $n\to\infty$}. 
+    \]
+    Hence, $f(x)=0$. Thus, $M^a$ is closed.\par
+    $X^a = \{0\}$ and $\{0\}^a = X\hp$.
+  \end{proof}
+
+  \paragraph{14.}
+  \begin{proof}
+    Let $\{b_1,\dots,b_m\}$ be a basis of $M$ and $\{b_1,\dots,b_n\}$ a basis of
+    $X$. And let $\{\beta_1,\dots,\beta_n\}$ be the dual basis. Clear that $b_1,
+    \dots,b_m\notin M^a$ whereas $b_{m+1},\dots,b_n$ does. Together with Prob.
+    13, this implies $M^a=\spn(b_{m+1},\dots,b_n)$. Thus, $\dim M^a = n-m$.
+  \end{proof}
+% end
