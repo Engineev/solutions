@@ -396,7 +396,71 @@
     Thus, $x_n\wto x_0$. Thus, $X$ is weakly complete.
   \end{proof}
 % end
-
+\subsection{Convergence of Sequences of Operators}
+  \paragraph{4.}
+  \begin{proof}
+    First suppose that $f_n\wto f$, namely, $\varphi(f_n)\to\varphi(f)$ for all
+    $\varphi\in X^{\prime\prime}$. For every $x\in X$, denoting the canonical
+    embedding by $C$, 
+    \[
+      |f_n(x)-f(x)|=|(Cx)(f_n)-(Cx)(f)|\to 0,
+    \]
+    since $f_n\wto f$. Thus, $f_n\wsto f$.\par
+    Now we suppose $f_n\wsto f$ and $X$ is reflexive. Then for each $\varphi\in 
+    X^{\prime\prime}$, there is an $x\in X$ such that $\varphi=Cx$. Hence,
+    \[
+      |\varphi(f_n)-\varphi(f)|=|f_n(x)-f(x)|\to 0,
+    \]
+    since $f_n\wsto f$. Thus, $f_n\wto f$.
+  \end{proof}
+  
+  \paragraph{6.}
+  \begin{proof}
+    If $T_n\to T$, then for every $\vep>0$, there is an $N$ such that for all 
+    $n>N$, $\|T_n-T\|<\vep$. Hence, for all $x$ with $\|x\|=1$,
+    \[
+      \|T_nx-Tx\|\le \|T_n-T\|\|x\|<\vep.
+    \]\par
+    Now we suppose the converse. Since $\|T_n-T\|=\sup_{\|x\|=1}\|T_nx-Tx\|$, 
+    there is some $x$ of norm $1$ such that 
+    \[
+      \|T_n-T\|-\vep<\|T_nx-Tx\|<\vep.
+    \]
+    Thus, $\|T_n-T\|\le 2\vep$, which implies $T_n\to T$.
+  \end{proof}
+  
+  \paragraph{7.}
+  \begin{proof}
+    For every $x\in X$, since $T_nx$ converges, $(\|T_nx\|)$ is bounded. As $X$
+    is complete, this implies $(\|T_n\|)$ is bounded by the uniform boundedness
+    theorem.
+  \end{proof}
+  
+  \paragraph{9.}
+  \begin{proof}
+    For every $x\in X$ with $\|x\|=1$, 
+    \[
+      \|Tx\|=\lim_{n\to\infty}\|T_nx\|\le \lowlim_{n\to\infty}\|T_n\|
+    \]
+    where the first equality comes from the continuity of the norm. Thus, $\|T\|
+    \le \lowlim_{n\to\infty}\|T_n\|$.
+  \end{proof}
+  
+  \paragraph{10.}
+  \begin{proof}
+    Since $X$ is separable, we can find a total sequence $(b_n)$ of $X$. Now we
+    choose a subsequence of $(f_n)\subset X\hp$ as follows. First we choose a 
+    subsequence of $(f_k(x_n))$ for each fixed $n$ inductively. Since $M$ is
+    bounded, $(f_k(x_1))$ is a bounded sequence in $\mathbb{R}$ and therefore
+    has a convergent subsequence $f_{k_i}(x_1)$. For $x_2$ we choose the 
+    subsequence of $(f_{k_i}(x_2))$ which is convergent. We proceed in this way
+    and choose a sequence of $(f_k(x_n))$ for each $n$. Now, consider the
+    subsequence $(g_k)$ of $(f_n)$ whose $n$-th element is the $n$-th functional 
+    in the $n$-th choice. It can be verified that it is a subsequence. And by
+    our construction, $(f_k(x_n))$ converges for every $x_n$. Hence, by 
+    Corollary 4.9-7, it is weak$^*$ convergent.
+  \end{proof}
+% end
 
 
 

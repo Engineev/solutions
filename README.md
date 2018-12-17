@@ -29,6 +29,7 @@ My personal solutions to some textbook problems
   * 4.6 Reflexive Spaces (2, 3, 4, 5, 6, 7, 8, 9, 10)
   * 4.7 Uniform Boundedness Theorem (1, 5, 6, 7, 10, 11, 13, 14)
   * 4.8 Strong and Weak Convergence (1, 2, 4, 5, 6, 7, 8, 9, 10)
+  * 4.9 Convergence of Sequences of Operators (4, 6, 7, 9, 10)
 
 ## William C. Brown, *A Second Course in Linear Algebra*
 
