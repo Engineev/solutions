@@ -190,12 +190,11 @@
     \]
     By (a), $C_B$ is convex and so does $C_B\cap H$. Suppose $x\in H$, then 
     $x^TBx=x^TAx +\lambda h^2$. Therefore, $C_B\cap H=C$. Thus, $C$ is convex.
-    
   \end{proof}
 % end
 
 \subsection{Operations that preserve convexity}
-  \paragraph{2.16}
+  \paragraph{16.}
   \begin{proof}
     For every $(a,b_1+b_2),(c,d_1+d_2)\in S$ and $0\le\theta\le 1$, let 
     \[
@@ -215,8 +214,112 @@
 
   \paragraph{18.}
   \begin{proof}
-    By Remark 2.2, $f\inv = \mathcal{P}\inv\circ Q\inv\circ\mathcal{P}$.
+    Let $\theta:\mathbb{R}^n\to\mathbb{R}^{n+1}$ be defined by $x\mapsto (x,1)$
+    and $P:\mathbb{R}^{n+1}\to\mathbb{R}^n$ the perspective function. It can be
+    verified that $f=P\circ Q\circ\theta$. Now we show that $g=P\circ Q\inv
+    \circ\theta$ is the inverse of $f$. Clear that $P\circ\theta=I$, the 
+    identity map on $\mathbb{R}^n$. Hence,
+    \[
+      f\circ g=P\circ Q\circ\theta\circ P\circ Q\inv\circ\theta = I.
+    \]
+    Similarly, $g\circ f=I$. Thus, $f$ is invertible and $g=f\inv$.
   \end{proof}
-
 % end
+\subsection{Separation theorems and supporting hyperplanes}
+  \paragraph{20.}
+  \begin{proof}
+    Let $N=\null A$ and $x_0$ be such that $Ax_0=b$. We prove the hint first.
+    Suppose for all $x\in N$, $\langle x_0+x,c\rangle=d$. Hence, $\langle x_0,
+    c\rangle+\langle x,c\rangle=d$, which implies $\langle x,c\rangle=0$ and
+    \begin{equation}
+      \label{eq:1.20-1}
+      \langle x_0, c\rangle=d.
+    \end{equation}
+    Since $\langle x,c\rangle=0$ for all $x\in N$, $N=\nul A\subset\{c\}^\perp$
+    and therefore, $\range A^T\supset\{c\}$. Thus, there exists a $\lambda$ such
+    that $A^T\lambda=c$. Substituting this into \eqref{eq:1.20-1} yields
+    \[
+      d=\langle x_0,A^T\lambda\rangle=\langle Ax_0,\lambda\rangle=b^T\lambda.
+    \]
+    And the proof of the converse is straightforward.\par
+    Now we show the proposition. First we suppose such an $x$ does not exist.
+    Namely, $D=x_0+N$ and $\mathbb{R}^n_{++}$ are disjoint. Since $D$ is an 
+    affine set and $\mathbb{R}^n_{++}$ is convex and open, by the converse 
+    separating theorem, there exists some nonzero $c\in\mathbb{R}^n$ and scalar 
+    $d$ such that $c^Ty\le d$ for all $y\in D$ and $c^Ty\ge d$ for all $y\in C$. 
+    Since the image of an affine set under a linear mapping is still an affine 
+    set, $c^Ty\le d$ for all $y\in D$ implies $c^Ty=d$ for all $y\in D$. Then, 
+    by our previous result, there exists a $\lambda$ such that $c=A^T\lambda$ 
+    and $d=b^T\lambda$. Since $c\ne 0$, $A^T\lambda\ne 0$. Meanwhile, from $c^T
+    y\ge d$ for all $y\in C$ we conclude $y\succeq 0$, otherwise we may choose 
+    $y\in C$ which is a large positive number on the position where the
+    component of $y$ is negative and zero elsewhere to lead to a contradiction.
+    Thus, $A^T\lambda\succeq 0$. Finally, with the same approach, we conclude
+    that $d\le 0$ and therefore $b^T\lambda\le 0$.\par
+    For the converse, our discussion shows that the existence of such a 
+    $\lambda$ implies a separating hyperplane of $C$ and $D$. Since $C$ is open,
+    it does not intersect with the separating hyperplane. Hence, there is no $x$ 
+    satisfying $x\succ 0$ and $Ax=b$, completing the proof.
+  \end{proof}
+  
+  \paragraph{22.} TODO
+  
+  \paragraph{23.}
+  \begin{proof}
+    $A=\{(x,y)\in\mathbb{R}^2:\,y\le 0\}$ and $B=\{(x,y)\in\mathbb{R}^2:\,x>0,
+    y\ge 1/x\}$.
+  \end{proof}
+  
+  \paragraph{25.}
+  \begin{proof}
+    Since $P_{\text{inner}}=\conv\{x_1,\dots,x_K\}$ is the smallest convex set
+    that contains $\{x_1,\dots,x_K\}$, $\{x_1,\dots,x_k\}\subset C$ as $C$ is
+    closed and $C$ is convex, $P_{\text{inner}}\subset C$. Meanwhile, it follows
+    from the definition that $C\subset P_{\text{outer}}$.
+  \end{proof}
+  
+  \paragraph{26.}
+  \begin{proof}
+    If $C=D$, then clear that $S_C=S_D$. For the converse, we argue by 
+    contradiction. Assume the existence of some $x_0\in C$ such that $x_0\notin 
+    D$. Since $D$ is closed and convex, there exists a hyperplane strictly 
+    separate $x_0$ and $D$, that is, there exists some nonzero $a\in\mathbb{R}
+    ^n$ and $b\in\mathbb{R}$ such that $a^Tx<b$ for all $x\in D$ and $a^Tx_0>b$.
+    Then by the definition of the support function, 
+    \[
+      S_C(a)\ge a^Tx_0 > b > a^Tx,\quad\text{for all $x\in D.$}
+    \]
+    Hence, $S_C(a)>\sup_{x\in D}a^Tx=S_D(a)$. Contradiction. Thus, $C\subset D$.
+    Interchanging the roles of $C$ and $D$ yields $C\supset D$. Therefore, 
+    $C=D$.
+  \end{proof}
+  
+  \paragraph{27.} TODO
+% end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
