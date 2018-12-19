@@ -40,11 +40,12 @@ My personal solutions to some textbook problems
 
 ## Stephen Boyd, Lieven Vandenberghe, *Convex Optimization*
 
-**Suspended**
+**ongoing**
 * Chapter 2. Convex Sets
   * 2.1 Definition of convexity (1, 2, 3, 4)
   * 2.2 Examples (5, 7, 8, 9.(a, b), 10)
   * 2.3 Operations that preserve convexity (16, 18)
+  * 2.5 Separation theorems and supporting hyperplanes (20, 23, 25, 26)
 
 ## Sheldon Axler, *Linear Algebra Done Right*, 3rd ed
 
@@ -105,4 +106,15 @@ My personal solutions to some textbook problems
   * 6.2 The Minkowski and Hölder Inequalities (8)
   * 6.3 Convergence and Completeness (9, 10, 11, 13, 16, 17, 18)
   * 6.4 Approximation in L^p (19)
+
+## Stephen Boyd, Lieven Vandenberghe, *Convex Optimization*
+* Chapter 2. Convex Sets
+  * Definition of convexity (1, 2, 3, 4)
+  * Examples (5, 7, 8, 9.(a, b), 10)
+  * Operations that preserve convexity (16, 18)
+* Chapter 3. Convex Functions
+  * Definition of convexity (1)
+  * Examples (16)
+* Chapter 4. Convex Optimization Problems
+  * Basic terminology and optimality conditions (1)
 
