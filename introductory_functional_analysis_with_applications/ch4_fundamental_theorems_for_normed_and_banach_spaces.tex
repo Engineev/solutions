@@ -461,8 +461,73 @@
     Corollary 4.9-7, it is weak$^*$ convergent.
   \end{proof}
 % end
-
-
+\setcounter{subsection}{11}
+\subsection{Open Mapping Theorem}
+  \paragraph{2.}
+  \begin{solution}
+    Consider $f:\mathbb{R}\to\mathbb{R}$, $x\mapsto e^x$. Clear that $f$ is 
+    open. However, it maps $\mathbb{R}$, a closed set, onto $(0,\infty)$, an 
+    open set.
+  \end{solution}
+  
+  \paragraph{4.}
+  \begin{proof}
+    It follows from the fact that $\|x_k\|<1/2^k$.
+  \end{proof}
+  
+  \paragraph{5.}
+  \begin{proof}
+    The linearity and boundedness is clear. Meanwhile, it is easy to verify that
+    $T\inv((\xi_k))=(k\xi_k)$. Let $x_n=(\xi_k^{(n)})$ be defined by $\xi_k
+    ^{(n)}=\delta_{nk}$. Then $\|T\inv x_n\|=n$. Hence, $T\inv$ is unbounded.
+    \par 
+    This does not contradict with 4.12-2 since $X$ is not complete. For example,
+    The sequence $(x_n)\subset X$ where $x_n=(\xi_k^{(n)})$ is defined by
+    \[
+      \xi_k^{(n)}=\begin{cases}
+        1/k, & k<n, \\
+        0,   & k\ge n
+      \end{cases}
+    \]
+    is a Cauchy sequence which does not converge in $X$.
+  \end{proof}
+  
+  \paragraph{6.}
+  \begin{proof}
+    If $\mathcal{R}(T)$ is closed in $Y$, then it is complete and therefore $T$
+    is a bijective bounded linear operator from $X$ onto $\mathcal{R}(T)$. 
+    Hence, by the open mapping theorem, $T\inv$ is bounded.\par
+    If $T\inv$ is bounded, then it is continuous. Therefore, $\mathcal{R}(T)$, 
+    the preimage of the closed set $X$, is closed.
+  \end{proof}
+  
+  \paragraph{7.}
+  \begin{proof}
+    The existence of such a $b$ comes from the definition of boundedness. Since 
+    $T$ is bijective and both $X$ and $Y$ are complete, by the bounded inverse
+    theorem, $T\inv$ exists and is bounded. Hence, for all $y=Tx\in Y$, there is
+    a $c>0$ such that
+    \[
+      \|x\|=\|T\inv y\|\le c\|y\|=c\|Tx\|.
+    \]
+    Thus, putting $a=1/c>0$, we obtain $a\|x\|\le\|Tx\|$ for all $x\in X$.
+  \end{proof}
+  
+  \paragraph{9.}
+  \begin{proof}
+    Let $J:X_2\to X_1$ be the identity map. Clear that $J$ a bijective linear
+    operator. Then $\|x\|_1\le c\|x\|_2$ implies
+    \[
+      \frac{\|Jx\|_1}{\|x\|_2}\le c\quad\text{for all nonzero $x\in X_2$}.
+    \]
+    Namely, $J$ is bounded. Since $X_1$ and $X_2$ are complete, by the bounded
+    inverse theorem, the inverse $I$ of $J$ is also a bounded linear operator.
+    Thus, for all $x\in X_2$
+    \[
+      \|x\|_2=\|Ix\|_2\le \|I\|\|x\|_1.
+    \]
+  \end{proof}
+% end
 
 
 
