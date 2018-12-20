@@ -3,7 +3,7 @@ My personal solutions to some textbook problems
 
 ## Erwin Kreyszig, *Introductory Functional Analysis with Applications*
 
-**Ongoing**
+**Archived**
 * Chapter 2. Normed Spaces. Banach Spaces
   * 2.3 Further Properties of Normed Spaces (4, 7, 8, 9, 10, 14)
   * 2.4 Finite Dimensional Normed Spaces (3, 4, 5)
@@ -31,6 +31,7 @@ My personal solutions to some textbook problems
   * 4.8 Strong and Weak Convergence (1, 2, 4, 5, 6, 7, 8, 9, 10)
   * 4.9 Convergence of Sequences of Operators (4, 6, 7, 9, 10)
   * 4.12 Open Mapping Theorem (2, 4, 5, 6, 7, 9)
+  * 4.13 Closed Linear Operator. Closed Graph Theorem (5, 6, 7, 8)
 
 ## William C. Brown, *A Second Course in Linear Algebra*
 

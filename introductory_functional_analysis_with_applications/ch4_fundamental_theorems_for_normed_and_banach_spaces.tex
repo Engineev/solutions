@@ -528,7 +528,43 @@
     \]
   \end{proof}
 % end
-
+\subsection{Closed Linear Operators. Closed Graph Theorem}
+  \paragraph{5.}
+  \begin{proof}
+    The closedness of $T$ implies that $\mathcal{G}(T)=\{(x,Tx):\,x\in
+    \mathcal{D}(T)\}$ is closed in $X\times Y$. Then $\mathcal{G}(T\inv)=\{(Tx,
+    x):\,x\in\mathcal{D}(T)\}$ is closed in $Y\times X$. Thus, $T\inv$ is 
+    closed.
+  \end{proof}
+  
+  \paragraph{6.}
+  \begin{proof}
+    Suppose $Tx_n\to y$ and $T\tilde{x}_n\to\tilde{y}$. Since $x_n\to x\in
+    \mathcal{D}(T)$, by Theorem 4.13-3, $Tx=y$. Similarly, $Tx=\tilde{y}$. Thus,
+    $y=\tilde{y}$.
+  \end{proof}
+  
+  \paragraph{7.}
+  \begin{proof}
+    Since $X$ is a closed subset of itself, by Lemma 4.13-5, $T$ is closed and
+    therefore, by Prob. 5, so is $T\inv$. Since $Y=\mathcal{R}(T)$ is closed in
+    $Y$ itself, by the closed graph theorem, $T\inv$ is bounded and therefore 
+    continuous.
+  \end{proof}
+  
+  \paragraph{8.}
+  \begin{proof}
+    $\,$\par
+    (a) Let $(y_n)=(Tx_n)\subset A$ converge to $y\in Y$. Since $C$ is compact,
+    $(x_n)$ has a convergent sequence, say, $(x_{n_k})$. Suppose $x_{n_k}\to x
+    \in C$ as $k\to\infty$. By Theorem 4.13-3, $y=\lim Tx_{n_k}=Tx$. Therefore,
+    $y\in A$. Thus, $A$ is closed.\par
+    (b) Let $(x_n)\subset B$ converge to $x\in X$. Since $K$ is compact, the
+    sequence $(y_n)=(Tx_n)\subset K$ has a convergent sequence $(y_{n_k})$. 
+    Suppose $y_{n_k}\to y\in K$. Since $T$ is closed, $y=Tx$. Hence, $x\in B$.
+    Thus, $B$ is closed.
+  \end{proof}
+% end
 
 
 
