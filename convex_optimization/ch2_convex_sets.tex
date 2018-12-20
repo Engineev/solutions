@@ -296,7 +296,78 @@
   
   \paragraph{27.} TODO
 % end
-
+\subsection{Convex cones and generalized inequalities}
+  \paragraph{31.}
+  \begin{solution}
+    $\,$\par
+    (a) For $\lambda_1,\lambda_2\in K^*$ and $\theta_1,\theta_2>0$, since
+    \[
+      f=\langle\cdot,\theta_1\lambda_1+\theta_2\lambda_2\rangle=
+      \theta_1\langle\cdot,\lambda_1\rangle+
+      \theta_2\langle\cdot,\lambda_2\rangle,
+    \]
+    $f$ also maps $K$ into $\mathbb{R}_+$. Namely, $\theta_1\lambda_1+\theta_2
+    \lambda_2\in K^*$.\par
+    (b) If $f=\langle\cdot,\lambda\rangle$ maps $K_2$ into $\mathbb{R}_+$, then,
+    as $K_1\subset K_2$, it maps $K_1$ into $\mathbb{R}_+$. Thus, $K_2^*\subset
+    K_1^*$.\par
+    (c) Suppose $(\lambda_n)\subset K^*$ be a sequence converging to $\lambda\in
+    \mathbb{R}^n$. Then, by the continuity of the inner product, for every $x
+    \in K$, $\langle x,\lambda\rangle=\lim_{n\to\infty}\langle x,\lambda_n
+    \rangle\ge 0$. Hence, $\lambda\in K^*$. Namely, $K^*$ is closed.\par
+    (d) If $y\in\inte K^*$, then there exists some $\vep>0$ such that for all 
+    $\Delta y$ with $\|\Delta y\|<\vep$, $y+\Delta y\in K$, that is, $(y+\Delta
+    y)^Tx\ge 0$ for all $x\in\cl K$. For each $x$, put $\Delta y=-\vep x/
+    2\|x\|$ and then we obtain $y^Tx>0$.\par
+    For the converse, suppose that $y\notin\inte K^*$. Namely, for all $\vep>0$,
+    there exists some $\Delta y$ with $\|\Delta y\|<\vep$ such that $(y+\Delta
+    y)^Tx_0\le 0$ for some $x_0\in\cl K$. This time, put $\Delta y=\vep x_0/2
+    \|x_0\|$ and then we get $y^Tx_0\le 0$.\par
+    (e) We argue by contradiction. Assume that there exists some nonzero $y\in 
+    K^*$ such that $-y\in K^*$. Then for every $x\in K$, $\langle x,\pm y\rangle
+    \ge 0$, which yields $\langle x,y\rangle=0$, i.e., $K\subset\{y\}^T$. Since
+    $\dim\{y\}^T<n$, $K$ can not have nonempty interior. Contradiction. Thus, 
+    $K^*$ is pointed.\par
+    (f) For every $x\in\cl K$, $x^Ty\ge 0$ for all $y\in K^*$. Hence, $x\in K^{
+    **}$. Thus, $\cl K\subset K^{**}$. For the converse, note that $\cl K$, a 
+    closed convex cone, is fully determined by its supporting hyperplanes at the
+    origin. Namely, if $x$ satisfies $y^Tx\ge 0$ for all $y\in(\cl K)^*=K^*$, 
+    then $x\in\cl K$. From this we conclude $K^{**}\subset \cl K$. Thus, $K^{**}
+    =K$.\par
+    (g) We argue by contradiction. Assume that $\inte K^*$ is empty. Then, by 
+    (d), if $y\in K^*$, then $y^Tx=0$ for all $x\in\cl K$. Namely, $K^*\subset
+    (\cl K)^\perp$. Therefore, $(K^*)^\perp\supset\cl K=K^{**}$ where the 
+    equality comes from (f). Thus, for all $x\in K^**$, $-x^Ty=x^Ty=0$ for all 
+    $y\in K^*$, which contradict the assumption that $K$ is pointed. Thus, 
+    $\inte K^*\ne\varnothing$. (This proof should be reviewed.)
+  \end{solution}
+  
+  \paragraph{32.}
+  \begin{solution}
+    $\langle y,Ax\rangle\ge 0$ for all $x\succeq 0$ iff $\langle A^Ty,x\rangle
+    \ge 0$ for all $x\succeq 0$ iff $A^Ty\succeq 0$. Hence, $K^*=\{y:\, A^Ty
+    \succeq 0\}$.
+  \end{solution}
+  
+  \paragraph{35.}
+  \begin{proof}
+    Denote this set by $\mathcal{C}$. Note that $z^TXz=\tr(zz^TX)$. Hence, $X$
+    is copositive iff $\langle zz^T,X\rangle\ge 0$ for all $z\succeq 0$. Namely,
+    \begin{equation}
+      \label{eq:1.35}
+      \mathcal{C}=
+      \bigcap_{z\succeq 0}\{X\in\mathbf{S}^n:\, \langle zz^T,X\rangle\ge 0\},
+    \end{equation}
+    the intersection of some half spaces. Hence, $\mathcal{C}$ is a closed 
+    convex cone. Since $\mathcal{C}$ contains the set of all positive 
+    semidefinite matrices, it is solid. Meanwhile, if $\pm X\in\mathcal{C}$, 
+    then $z^TXz=0$ for all $z\succeq 0$. Hence, $X=0$. Thus, $\mathcal{C}$ is a
+    proper cone.\par
+    Note that $\mathcal{C}^*$ is just the collection of the inward normal 
+    vectors of supporting hyperplanes of $\mathcal{C}$ at the origin. By
+    \eqref{eq:1.35}, $\mathcal{C}^*=\{zz^T:\, z\succeq 0\}$.
+  \end{proof}
+% end
 
 
 

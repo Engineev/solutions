@@ -46,7 +46,8 @@ My personal solutions to some textbook problems
   * 2.1 Definition of convexity (1, 2, 3, 4)
   * 2.2 Examples (5, 7, 8, 9.(a, b), 10)
   * 2.3 Operations that preserve convexity (16, 18)
-  * 2.5 Separation theorems and supporting hyperplanes (20, 23, 25, 26)
+  * 2.4 Separation theorems and supporting hyperplanes (20, 23, 25, 26)
+  * 2.5 Convex cones and generalized inequalities (31, 32, 35)
 
 ## Sheldon Axler, *Linear Algebra Done Right*, 3rd ed
 
