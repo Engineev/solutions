@@ -1,0 +1,86 @@
+%---------%---------%---------%---------%---------%---------%---------%---------
+\section{Differentiation}
+\setcounter{subsection}{5}
+\subsection{Continuously Differentiable Functions}
+  \paragraph{3.}
+  \begin{proof}
+    Since we may choose $\vep$ sufficiently closed so that the cube $C$ is 
+    contained in a neighbourhood of $a$, we only need the existence of the 
+    partials near $a$. Furthermore, in the last equation at page 51, we only use
+    the continuity of the partials at $a$, so we may require only the continuity
+    at $a$.
+  \end{proof}
+  
+  \paragraph{4.}
+  \begin{proof}
+    Suppose that the partials are bounded by $M$ in the open of radius $r$ at 
+    $a$. For every $h\in\mathbb{R}^m$ with $0<|h|<\vep$, let $p_i$ ($i=0,\dots,
+    m$) have the same meaning as in the proof of Theorem 6.2. Then,
+    \begin{align*}
+      |f(a+h)-f(a)|
+      \le \sum_{j=1}^m|f(p_j)-f(p_{j-1})|\le\sum_{j=1}^m Mh_i\le mM\vep.
+    \end{align*}
+    Thus, $f$ is continuous at $a$.
+  \end{proof}
+  
+  \paragraph{5.(a)}
+  \begin{solution}
+    \[
+      Df=\begin{bmatrix}
+        \cos\theta & -r\sin\theta \\ \sin\theta & r\cos\theta
+      \end{bmatrix},\quad
+      \det Df =r.
+    \]
+  \end{solution}
+% end
+\subsection{The Chain Rule}
+  \paragraph{3.}
+  \begin{solution}
+    $\,$\par
+    (a) Define $h:\mathbb{R}^2\to\mathbb{R}^3$ by $(x,y)\mapsto(x,y,g(x,y))$. 
+    Then $F=f\circ h$. First we calculate $Dh$:
+    \[
+      Dh=\begin{bmatrix}
+        0 & 1 \\ 1 & 0 \\ D_1g & D_2g
+      \end{bmatrix}.
+    \]
+    Then, by the chain rule, 
+    \begin{equation}
+      \label{eq:2.2.3}
+      DF(x,y)
+      =Df(h(x,y))Dh(x,y)
+      =Df(x,y,g(x,y))\begin{bmatrix}
+        0 & 1 \\ 1 & 0 \\ D_1g & D_2g
+      \end{bmatrix}.
+    \end{equation}\par
+    (b) Since $F$ is a constant function, $DF(x,y)=0$ for all $x$ and $y$. 
+    Hence, from \eqref{eq:2.2.3} we conclude
+    \[
+      D_1g(x,y)=-\frac{y}{D_3f(g(x,y))},\quad
+      D_2g(x,y)=-\frac{x}{D_3f(g(x,y))}.
+    \]
+  \end{solution}
+% end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
