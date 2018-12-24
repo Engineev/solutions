@@ -18,6 +18,12 @@ My personal solutions to some textbook problems
   * 2.6 Continuously Differentiable Functions (3, 4, 5(a))
   * 2.7 The Chain Rule (3)
 
+## Christopher M. Bishop *Pattern Recognition and Machine Learning*
+
+**ongoing**
+* Chapter 1. Introduction
+  * 1.1 Example: Polynomial Curve Fitting (1, 2)
+
 ## William C. Brown, *A Second Course in Linear Algebra*
 
 **Suspended**

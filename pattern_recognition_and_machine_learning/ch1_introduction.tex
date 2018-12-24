@@ -1,0 +1,24 @@
+%---------%---------%---------%---------%---------%---------%---------%---------
+\section{Introduction}
+\subsection{Example: Polynomial Curve Fitting}
+  \paragraph{1.}
+  \begin{proof}
+    Suppose that $E(w)$ attains it minimum at $w=w^*$, then the partials of $E$ 
+    are $0$ at $w^*$. Hence, it is a necessary condition that $D_iE(w)=0$ for 
+    each $i=0,\dots,m$, namely,
+    \begin{align*}
+      0=D_iE(w)=\sum_{n=1}^N\left(\sum_{j=0}^Mw_jx_n^j-t_n\right)x_n^i
+      \quad\Leftrightarrow\quad
+      \sum_{j=0}^M\left(\sum_{n=1}^Nx_n^{i+j}\right)w_j=\sum_{n=1}^Nt_nx_n^i,
+    \end{align*}
+    which is just (1.122) and (1.123). Meanwhile, since $E$ is a quadratic 
+    function in $w$ and is bounded below, $E$ has a unique minimum. Hence, the
+    above condition is also sufficient.
+  \end{proof}
+
+  \paragraph{2.}
+  \begin{solution}
+    $(A-\lambda I_{m+1})w=T$, where $I_{m+1}$ is the identity matrix.
+  \end{solution}
+% end
+
