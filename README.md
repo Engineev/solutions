@@ -10,6 +10,8 @@ My personal solutions to some textbook problems
   * 2.3 Operations that preserve convexity (16, 18)
   * 2.4 Separation theorems and supporting hyperplanes (20, 23, 25, 26)
   * 2.5 Convex cones and generalized inequalities (31, 32, 35)
+* Chapter 3. Convex Functions
+  * 2.1 Definition of convexity (1, 3, 5, 8, 13)
 
 ## James R. Munkres, *Analysis on Manifolds*
 
