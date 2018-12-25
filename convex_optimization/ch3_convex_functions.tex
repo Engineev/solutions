@@ -65,11 +65,34 @@
     Thus, $F$ is convex.
   \end{proof}
   
-  \paragraph{8. Second-order conditions for convexity}
+  \paragraph{8. Second-order condition for convexity}
   \begin{proof}
-    First we suppose the convexity of $f$. Then by definition, $\dom f$ is 
-    convex.
+    First we prove the case $f:\mathbb{R}\to\mathbb{R}$. If $f$ is convex, then
+    $\dom f$ is convex by definition. Meanwhile, for every $x$ and $t$, by the 
+    first-order condition,
+    \[
+      \frac{f(x+t)-f(x)-f\hp(x)t}{t^2}\ge 0.
+    \]
+    Let $t\to 0$ and we obtain $f^{\prime\prime}(x)\ge 0$. For the converse, 
+    $f^{\prime\prime}(x)$ implies that $f\hp$ is monotonically increasing. Thus,
+    by the mean-value theorem, there exists some $c$ between $x$ and $y$ such 
+    that
+    \[
+      f(y)-f(x)=f\hp(c)(y-x) \ge f\hp(x)(y-x),
+    \]
+    Namely, $f$ is convex.\par
+    Now we prove the general case. Recall that $f$ is convex iff $f$ is convex
+    along all lines. For fixed $x,u\in\mathbb{R}^n$, define $g(t)=f(x+tu)$. By
+    our previous result, $g$ is convex iff 
+    \begin{align*}
+      0\le g^{\prime\prime}(t)=u^T\nabla^2f(x_0+tu)u\quad\text{for all $t$.}
+    \end{align*}
+    Namely, $\nabla^2f(x)\succeq 0$ for all $x\in\mathbb{R}^n$.
   \end{proof}
+  
+%  \paragraph{9. Second-order conditions for convexity on an affine set}
+%  \begin{proof}
+%  \end{proof}
 
   \paragraph{13.}
   \begin{proof}
