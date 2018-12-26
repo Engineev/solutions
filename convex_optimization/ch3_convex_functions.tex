@@ -155,4 +155,86 @@
     which is negative definite since both $\alpha(\alpha-1)x_1^\alpha
     x_2^{1-\alpha}x_1^{-2}$ and $\det(\nabla^2 f)$ are negative.
   \end{solution}
+  
+  \paragraph{17.}
+  \begin{proof}
+    Put $z_k=(x_1^k,\dots,x_n^k)$. Then the Hessian of $f$ is
+    \[
+      \nabla^2f(x)=
+      (1-p)(\mathbf{1}^Tz_p)^{1/p-2}
+      (z_{p-1}z_{p-1}^T-\mathbf{1}^Tz_p\diag(z_{p-2})).
+    \]
+    Put $K=(1-p)(\mathbf{1}^Tz_p)^{1/p-2}$, a nonnegative constant. For every 
+    $v\in\mathbb{R}^n$,
+    \begin{align*}
+      v^T\nabla^2f(x)v
+      &=Kv^T(z_{p-1}z_{p-1}^T-\mathbf{1}^Tz_p\diag(z_{p-2}))v \\
+      &=K\left\{\left(\sum_{i=1}^nv_ix_i^{p-1}\right)^2-
+      \left(\sum_{i=1}^nx_i^p\right)
+      \left(\sum_{i=1}^nx_i^{p-2}v_i^2\right)\right\}\\
+      &\le 0,
+    \end{align*}
+    where the inequality comes from the Cauchy-Schwarz inequality $(a^Tb)^2\le
+    (a^Ta)(b^Tb)$ with $a_i=x_i^{p/2}$ and $b_i=x_i^{p/2-1}v_i$. Thus, $f$ is 
+    concave.
+  \end{proof}
+  
+  \paragraph{19. Nonnegative weighted sums and integrals}
+  \begin{proof}
+    $\,$\par
+    (a) For each $k=1,\dots,r$, let $f_k(x)=\sum_{i=1}^k x_[i]$, which is
+    convex. Put
+    \[
+      \beta_1=\alpha_1-\alpha_2,\quad
+      \beta_2=\alpha_2-\alpha_3,\quad
+      \dots\quad
+      \beta_r=\alpha_r.
+    \]
+    Since $\alpha_1\ge\alpha_2\ge\cdots\ge\alpha_r$, $\beta_i\ge 0$ for $i=1,
+    \dots,r$. Hence, $f=\beta_1f_1+\cdots+\beta_rf_r$, being a nonnegative
+    weighted sum of convex functions, is convex.\par
+    (b) Note that $T(x,\omega)$ is linear in $x$ for fixed $\omega$. Hence, it 
+    can be verified via definition the convexity of $\dom f$ and $-\log T(x,
+    \omega)$ is also convex in $x$. Hence, $f(x)=\int_{0}^{2\pi}\{-\log T(x,
+    \omega)\}\rd\omega$ is convex.
+  \end{proof}
+  
+  \paragraph{21.}
+  \begin{proof}
+    $\,$\par
+    (a) By Prob.20(a), $\|A^{(i)}x-b^{(i)}\|$ is convex for each $i=1,\dots,k$
+    and consequently $f$, the pointwise maximum of them, is convex.\par
+    (b) Let $E\subset\mathbb{R}^n$ be the collection of all vectors whose 
+    entries are $\pm 1$ or $0$. Then for each $c\in E$, $x\mapsto c^Tx$ defines 
+    a convex function. Since $f(x) = \max_{c\in E}c^Tx$, it is also convex.
+  \end{proof}
+  
+  \paragraph{22.(a)}
+  \begin{proof}
+    Put $g(y)=\log(\sum_{i=1}^ne^{y_i})$ and $h(x)=Ax+b$ where $A=[a_1,\dots,
+    a_n]^T$ and $b=[b_1,\dots,b_n]^T$. Then $j=g\circ h$ is convex on 
+    $\mathbb{R}^n$. Hence, $\dom f=\{x:\, j(x)<1\}$ is convex. Meanwhile, $-j$
+    is concave, $-\log$ is convex and the extension of it to $\mathbb{R}$ is
+    non-increasing. Therefore, $f(x)=-\log(-j(x))$ is convex.
+  \end{proof}
 % end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
