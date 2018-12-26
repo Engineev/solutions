@@ -11,7 +11,8 @@ My personal solutions to some textbook problems
   * 2.4 Separation theorems and supporting hyperplanes (20, 23, 25, 26)
   * 2.5 Convex cones and generalized inequalities (31, 32, 35)
 * Chapter 3. Convex Functions
-  * 2.1 Definition of convexity (1, 3, 5, 8, 13)
+  * 3.1 Definition of convexity (1, 3, 5, 8, 13)
+  * 3.2 Examples (16, 17, 19, 21, 22(a))
 
 ## James R. Munkres, *Analysis on Manifolds*
 
