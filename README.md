@@ -25,6 +25,7 @@ My personal solutions to some textbook problems
 **ongoing**
 * Chapter 1. Introduction
   * 1.1 Example: Polynomial Curve Fitting (1, 2)
+  * 1.2 Probability Theory (7, 8)
 
 ## William C. Brown, *A Second Course in Linear Algebra*
 
