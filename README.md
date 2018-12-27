@@ -13,6 +13,7 @@ My personal solutions to some textbook problems
 * Chapter 3. Convex Functions
   * 3.1 Definition of convexity (1, 3, 5, 8, 13)
   * 3.2 Examples (16, 17, 19, 21, 22(a))
+  * 3.3 Operations that preserve convexity (30, 31)
 
 ## James R. Munkres, *Analysis on Manifolds*
 

@@ -218,6 +218,44 @@
     non-increasing. Therefore, $f(x)=-\log(-j(x))$ is convex.
   \end{proof}
 % end
+\subsection{Operations that preserve convexity}
+  \paragraph{30. Convex hull or envelope of a function}
+  \begin{proof}
+    Let $h$ be any convex function such that $h(x)\le f(x)$ for all $x$. Then
+    $\epi f\subset\epi h$. Since $\conv\epi f$ is the smallest convex set that
+    contains $\epi f$ and $\epi h$ is convex as $h$ is convex, $\conv\epi f\
+    \subset\epi h$. Namely, $(x,t)\in\conv\epi f$ implies $(x,t)\in\epi h$, that
+    is, $h(x)\le t$. Take infimum on the both sides and we get $h(x)\le g(x)$.
+  \end{proof}
+  
+  \paragraph{31.}
+  \begin{proof}
+    $\,$\par
+    (a) Note that $g(0)=0$. Hence, if $t=0$, $g(tx)=g(0)=0=tg(x)$. For $t>0$, 
+    putting $\beta=\alpha/t$, 
+    \[
+      g(tx)=\inf_{\beta>0}\frac{f(\beta tx)}{\beta}=
+      t\inf_{\alpha>0}\frac{f(\alpha x)}{\alpha}=tg(x).
+    \]\par
+    (b) Let $h$ be any homogenous underestimator of $f$. For every $\vep>0$, by
+    definition, there is some $\beta$ such that
+    \[
+      g(x)+\vep\ge\frac{f(\beta x)}{\beta}\ge \frac{h(\beta x)}{\beta}=h(x).
+    \]
+    Since the choice of $\vep$ is arbitrary, this implies $g(x)\ge h(x)$.\par
+    (c) Consider the function $p:\dom f\times\mathbb{R}_{++}$, $(x,\alpha)
+    \mapsto f(\alpha x)/\alpha$. Since $\mathbb{R}_{++}$ is convex and $g(x)=
+    \inf_{\alpha>0}p(x,\alpha)$, $g$ is convex as long as $p$ is. Now we show
+    the convexity of $p$. Note that
+    \begin{align*}
+      (x,\alpha,s)\in\epi p 
+      &\quad\Longleftrightarrow\quad f(\alpha x)/\alpha\le s \\
+      &\quad\Longleftrightarrow\quad f(\alpha x)\le \alpha s \\
+      &\quad\Longleftrightarrow\quad (\alpha x,\alpha s)\in\epi f.
+    \end{align*}
+    As a consequence, $p$ is convex as $f$ is.
+  \end{proof}
+% end
 
 
 
