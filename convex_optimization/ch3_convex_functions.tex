@@ -256,7 +256,82 @@
     As a consequence, $p$ is convex as $f$ is.
   \end{proof}
 % end
-
+\subsection{Conjugate functions}
+  \paragraph{37.}
+    I assume that the space containing $\dom f$ is $\mathbb{S}^n$ so that $\dom
+    f^*\subset\mathbb{S}^n$.
+  \begin{proof}
+    Define $g(X, Y)=\tr(YX)-f(X)$. First we show that for fixed $Y\notin-S^n_+$, 
+    $g$, as a function of $X$, is unbounded above. Since $Y\notin -S^n_+$, there
+    exists some $\lambda_1>0$ and $u$ with $\|u\|=1$ such that $Yu=\lambda u$.
+    Suppose $Y=S\inv\Lambda S$ where $\Lambda=\diag(\lambda_1,\dots,\lambda_n)$.
+    Put $X_k=\diag(k,1,\dots,1)$. Then
+    \[
+      g(X_k,Y)=\tr(\Lambda X_k)-\tr\diag(1/k,1,\dots,1)=
+      \lambda_1k+\sum_{i=2}^n\lambda_i-\frac{1}{k}-n+1\to\infty
+    \]
+    as $k\to\infty$. Hence, $\dom f^*\subset-\mathbb{S}^n_+$.\par
+    Then for $Y\in-\mathbb{S}^n_{++}$, $\nabla_X g(X,Y)=Y+X^{-2}$, which equals
+    $0$ at $X=(-Y)^{-1/2}$. Hence, $f^*(Y)=g((-Y)^{-1/2}, Y)=-2\tr(-Y)^{1/2}$.
+    For $Y\in-\mathbb{S}^n_+$, there exists a sequence $(\vep_k)\subset
+    \mathbb{R}$ converges to $0$ and $Y+\vep_kI\in-\mathbb{S}^n_{++}$ for all 
+    $k$. Since $g(X,Y+\vep_k I)$ is bounded above and $g(X,Y+\vep_k I)\to g(X,
+    Y)$ uniformly, $g(X,Y)$ is also bounded above. Hence, $\dom f^*=-\mathbb{S}
+    ^n_+$. Finally, by the continuity of $f^*$, which comes from the convexity,
+    we conclude that $f^*(Y)=-2\tr(-Y)^{1/2}$ for all $y\in-\mathbb{S}^n_+$.
+  \end{proof}
+  
+  \paragraph{38. Young's inequality}
+    I assume that $f$ is continuous.
+  \begin{proof}
+    Since $\dom F=\mathbb{R}$ is closed and $F$ is continuous, $F$ is closed.
+    Meanwhile, since $f$ is increasing and $f\ge 0$, $F$ is convex. Hence, $F=
+    F^{++}$. Thus, it suffices to show that $G=F^*$.\par
+    Since $f$ is continuous, $F$ is differentiable. Hence, 
+    
+    Put $H(x,y)=yx-F(x)$. For fixed $y$,
+    \[
+      H(x,y)=yx-\int_0^xf(a)\rd a=\int_0^x\{y-f(a)\}\rd a
+    \]
+    attains its maximum at $x=g(y)$. Hence,
+    \begin{align*}
+      F^*(y)=H(g(y), y)=yg(y)-\int_0^{g(y)}f(a)\rd a
+      =G(y).
+    \end{align*}
+    Thus, $F$ and $G$ are conjugates. Consequently, $xy\le F(x)+G(y)$.
+  \end{proof}
+  
+  \paragraph{40. Gradient and Hessian of conjugate function}
+  \begin{proof}
+    $\,$\par
+    (a) The Legendre transformation yields
+    \begin{equation}
+      \label{eq:3.40}
+      f^*(\bar{y})=\bar{x}^T\nabla f(\bar{x})-f(\bar{x}).
+    \end{equation}
+    Differentiate \eqref{eq:3.40} with respect to $\bar{x}$ yields
+    \[
+      D_{\bar{x}}f^*(\bar{y})=
+      Df(\bar{x})+\bar{x}^T\nabla^2f(\bar{x})-Df(\bar{x})=
+      \bar{x}^T\nabla^2f(\bar{x}).
+    \]
+    Meanwhile, the chain rule yields
+    \[
+      D_{\bar{x}}f^*(\bar{y})=
+      D(f^*\circ\nabla f)(\bar{x})=
+      Df^*(\bar{y})\nabla^2f(\bar{x}).
+    \]
+    These two equations gives
+    \[
+      Df^*(\bar{y})=\bar{x}^T\nabla^2f(\bar{x})(\nabla^2f(\bar{x}))\inv=
+      \bar{x}^T.
+    \]
+    Namely, $\nabla f^*(\bar{y})=\bar{x}$.\par
+    (b) Differentiate $\nabla f^*(\bar{y})=\bar{x}$ with respect to $\bar{x}$
+    and we get $\nabla^2f^*(\bar{y})\nabla^2f(\bar{x})=I$. Thus, $\nabla^2f^*
+    (\bar{y})=\nabla^2f(\bar{x})\inv$.
+  \end{proof}
+% end
 
 
 
