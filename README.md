@@ -24,6 +24,12 @@ My personal solutions to some textbook problems
   * 2.6 Continuously Differentiable Functions (3, 4, 5(a))
   * 2.7 The Chain Rule (3)
 
+## James R. Munkres, *Topology*, 2nd ed
+
+**ongoing**
+* Chapter 2. Topological Spaces and Continuous Functions
+  * 13 Basis for a Topology (1, 4, 5, 6, 8)
+
 ## Christopher M. Bishop *Pattern Recognition and Machine Learning*
 
 **ongoing**
