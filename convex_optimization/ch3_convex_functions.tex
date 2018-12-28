@@ -332,7 +332,32 @@
     (\bar{y})=\nabla^2f(\bar{x})\inv$.
   \end{proof}
 % end
-
+\subsection{Quasiconvex functions}
+  \paragraph{43.}
+  \begin{proof}
+    Since $f$ is quasiconvex iff its restriction to every line is, it suffices
+    to prove the result for functions on $\mathbb{R}$. If $f:\mathbb{R}\to
+    \mathbb{R}$ is quasiconvex, then, by definition, $\dom f$ is convex and
+    for every $x,y\in\dom f$ with $f(x)\ge f(y)$ and $\theta\in(0,1]$,
+    \[
+      f(x+\theta(y-x))\le \max\{f(x),f(y)\}=f(x).
+    \]
+    Thus,
+    \[
+      f\hp(x)(y-x)=\lim_{\theta\to0}\frac{f(x+\theta(y-x))-f(x)}{\theta}\ge 0.
+    \]
+    For the converse, we argue by contradiction. Assume that there exists some
+    $x<y\in\dom f$ and $c\in(x,y)$ such that $f(c)>\max\{f(x),f(y)\}$. Define 
+    $D=\{z\in[x,y]:f(z)=f(c)\}$. Since $D$ is bounded, $d=\inf D>-\infty$. By
+    the continuity of $f$, $f(d)=f(c)>f(x)$. Namely, $d$ is the leftmost point
+    in $[x,y]$ the function value at which is $f(c)$. Similarly, we may find
+    the rightmost point $z$ in $[x,d]$ the function value at which is $f(x)$.
+    Since $f(d)>f(z)$, there exists some $\xi\in(z,d)$ such that $f\hp(\xi)>0$.
+    Meanwhile, by our construction and the continuity of $f$, $f(\xi)\ge f(d)=
+    f(x)\ge f(y)$. However, $f\hp(\xi)(y-\xi)>0$. Contradiction. Thus, such a
+    $c$ does not exist and, consequently, $f$ is quasiconvex.
+  \end{proof}
+% end
 
 
 

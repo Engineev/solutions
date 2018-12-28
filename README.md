@@ -15,6 +15,7 @@ My personal solutions to some textbook problems
   * 3.2 Examples (16, 17, 19, 21, 22(a))
   * 3.3 Operations that preserve convexity (30, 31)
   * 3.4 Conjugate functions (37, 38, 40)
+  * 3.5 Quasiconvex functions (43)
 
 ## James R. Munkres, *Analysis on Manifolds*
 
