@@ -16,6 +16,7 @@ My personal solutions to some textbook problems
   * 3.3 Operations that preserve convexity (30, 31)
   * 3.4 Conjugate functions (37, 38, 40)
   * 3.5 Quasiconvex functions (43)
+  * 3.6 Log-concave and log-convex functions (47, 54)
 
 ## James R. Munkres, *Analysis on Manifolds*
 
