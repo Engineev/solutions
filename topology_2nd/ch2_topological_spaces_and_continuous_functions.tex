@@ -73,7 +73,81 @@
   \end{proof}
 % end
 
-
+\setcounter{subsection}{15}
+\subsection{The Subspace Topology}
+  \paragraph{1.}
+  \begin{proof}
+    Denote the topologies inherited from $X$ and $Y$ by $\mT$ and $\mT\hp$ 
+    respectively. For every $E=H\in\mT$, supposing that $E=H\cap A$ where $H$
+    is open in $X$, then, since $E \subset A\subset Y$, $E=(Y\cap H)\cap A$. 
+    Namely, $E\in\mT\hp$. For the converse, suppose that $F=K\cap A$ where $K$
+    is open in $Y$, then, for some $H$ open in $X$, $F=(H\cap Y)\cap A=H\cap 
+    A$. Namely, $F\in\mT$. Thus, $\mT=\mT\hp$.
+  \end{proof}
+  
+  \paragraph{2.}
+  \begin{proof}
+    Denote the corresponding subspace topologies by $\mathcal{S}$ and 
+    $\mathcal{S}\hp$ respectively. Clear that $\mathcal{S}\hp$ is finer than 
+    $\mathcal{S}$. The relation, however, may not be strict. As an example, put
+    $Y=\{y\}$. Then both $\mathcal{S}$ and $\mathcal{S}\hp$ are $\{\varnothing,
+    Y\}$.
+  \end{proof}
+  
+  \paragraph{4.}
+  \begin{proof}
+    By Lemma 13.1, $(U, V)$ is open in $X\times Y$ iff $U=\bigcup U_\alpha$ and 
+    $V=\bigcup V_\beta$ where all $U_\alpha$ and $V_\beta$ are open in $X$ and 
+    $Y$ respectively. Hence, $\pi_1(U,V)=\bigcup U_\alpha$ and $\pi_2(U,V)=
+    \bigcup V_\beta$ are also open. Thus, $\pi_1$ and $\pi_2$ are open maps.
+  \end{proof}
+  
+  \paragraph{6.}
+  \begin{proof}
+    By Prob. 8(a), Sec. 13, $\{(a,b):\,a<b,\,a,b\in\mathbb{Q}\}$ is a basis for
+    $\mathbb{R}$. The result then follows immediately from Theorem 15.1.
+  \end{proof}
+  
+  \paragraph{7.}
+  \begin{proof}
+    No. Let $X=\mathbb{Q}$ with the usual order and $Y=\{x:\, 0\le x^2\le 2\}$.
+    $Y$ is a proper subset of $X$ and is convex in $X$ but not an interval or a
+    ray.
+  \end{proof}
+  
+  \paragraph{9.}
+  \begin{proof}
+    $\mathcal{B}_d=\mathcal{P}(\mathbb{R})\times\{(b,d):\, b<d,\,b,d\in
+    \mathbb{R}\}$ is a basis for $\mathbb{R}_d\times\mathbb{R}$ and by Example
+    2, Sec. 14, $\mathcal{B}_o=\{\{a\}\times(b,d):\, a,b,d\in\mathbb{R},\,
+    b<d\}$ is a basis for the dictionary order topology on $\mathbb{R}\times
+    \mathbb{R}$. Clear that $\mathcal{B}_0\subset\mathcal{B}_d$. Meanwhile, for
+    every $E\in\mathcal{P}(\mathbb{R})$, $E=\bigcup_{x\in E}\{x\}$. Hence, 
+    $\mathcal{B}_d\subset\mathcal{B}_o$. Thus, these two topologies are the 
+    same.\par
+    The collection $\mathcal{B}$ of all products of open intervals is a basis
+    for the standard topology on $\mathbb{R}^2$. Clear that $\mathcal{B}\subset
+    \mathcal{B}_d$. Meanwhile, $\{0\}\times\mathbb{R}$ is open in $\mathbb{R}_d
+    \times\mathbb{R}$ but not in the standard topological space. Thus, the 
+    previous two topologies are strictly finer than the standard topology.
+  \end{proof}
+  
+  \paragraph{10.}
+  \begin{proof}
+    Denote these topologies by $\mT_i$, $i=1,2,3$, respectively. $[0,1]\times
+    (1/2,1]\in\mT_1\setminus\mT_2$. Hence, $\mT_2$ is no finer than $\mT_1$. 
+    Meanwhile, since $\{1/2\}\times(1/2,1)\in\mT_2\setminus\mT_1$, $\mT_1$ is 
+    no finer than $\mT_2$. Thus, $\mT_1$ and $\mT_2$ are not comparable.\par
+    Now we show that $\mT_3$ is finer than both $\mT_1$ and $\mT_2$ and since
+    $\mT_1$ and $\mT_2$ are not comparable, this relation is strict. Let 
+    $\mathcal{B}_1$ be the collection of all products of open intervals in 
+    $I$ and $\mathcal{B}_3$ the collection of all sets of form $\{a\}\times
+    ((b,d)\cap[0,1])$ where $a\in[0,1]$. They are bases of $\mT_1$ and $\mT_3$.
+    respectively. Since every element in $\mathcal{B}_1$ can be represented by
+    an arbitrary union of elements in $\mathcal{B}_3$, $\mT_3$ is finer than
+    $\mT_1$. Similarly, we assert that $\mT_3$ is also finer than $\mT_2$.
+  \end{proof}
+% end
 
 
 

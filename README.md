@@ -29,6 +29,7 @@ My personal solutions to some textbook problems
 **ongoing**
 * Chapter 2. Topological Spaces and Continuous Functions
   * 13 Basis for a Topology (1, 4, 5, 6, 8)
+  * 16 The Subspace Topology (1, 2, 4, 6, 7, 9, 10)
 
 ## Christopher M. Bishop *Pattern Recognition and Machine Learning*
 
