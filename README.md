@@ -11,12 +11,6 @@ My personal solutions to some textbook problems
   * 2.4 Separation theorems and supporting hyperplanes (20, 23, 25, 26)
   * 2.5 Convex cones and generalized inequalities (31, 32, 35)
 
-## James R. Munkres, *Analysis on Manifolds*
-
-**ongoing**
-* Chapter 2. Differentiation
-  * 2.6 Continuously Differentiable Functions (3, 4, 5(a))
-  * 2.7 The Chain Rule (3)
 
 ## William C. Brown, *A Second Course in Linear Algebra*
 
