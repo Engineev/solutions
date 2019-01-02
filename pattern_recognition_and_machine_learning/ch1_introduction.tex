@@ -1,0 +1,62 @@
+%---------%---------%---------%---------%---------%---------%---------%---------
+\section{Introduction}
+\subsection{Example: Polynomial Curve Fitting}
+  \paragraph{1.}
+  \begin{proof}
+    Suppose that $E(w)$ attains it minimum at $w=w^*$, then the partials of $E$ 
+    are $0$ at $w^*$. Hence, it is a necessary condition that $D_iE(w)=0$ for 
+    each $i=0,\dots,m$, namely,
+    \begin{align*}
+      0=D_iE(w)=\sum_{n=1}^N\left(\sum_{j=0}^Mw_jx_n^j-t_n\right)x_n^i
+      \quad\Leftrightarrow\quad
+      \sum_{j=0}^M\left(\sum_{n=1}^Nx_n^{i+j}\right)w_j=\sum_{n=1}^Nt_nx_n^i,
+    \end{align*}
+    which is just (1.122) and (1.123). Meanwhile, since $E$ is a quadratic 
+    function in $w$ and is bounded below, $E$ has a unique minimum. Hence, the
+    above condition is also sufficient.
+  \end{proof}
+
+  \paragraph{2.}
+  \begin{solution}
+    $(A-\lambda I_{m+1})w=T$, where $I_{m+1}$ is the identity matrix.
+  \end{solution}
+% end
+\subsection{Probability Theory}
+  \paragraph{7.}
+  \begin{proof}
+    Make the change of variables $x=r\cos\theta$, $y=r\sin\theta$. Then
+    \begin{align*}
+      I^2
+      =\int_0^\infty\int_0^{2\pi}e^{-r^2/2\sigma^2}r\rd r\rd\theta
+      =\pi\int_0^\infty e^{-r^2/2\sigma^2}\rd r^2
+      = 2\pi\sigma^2.
+    \end{align*}
+    Hence, $I=(2\pi\sigma^2)^{1/2}$ and therefore $\int\mathcal{N}(x|0,\sigma^2)
+    =1$. Since $\int_{-\infty}^\infty$ is translation invariant, this implies 
+    that the general Gaussian distribution is normalized.
+  \end{proof}
+  
+  \paragraph{8.}
+  \begin{proof}
+    Make the change of variable $y=x-u$. Then
+    \begin{align*}
+      \Ex[x]
+      &=\int_{-\infty}^\infty\mathcal{N}(x|\mu,\sigma^2)x\rd x\\
+      &=\frac{1}{(2\pi\sigma^2)^{1/2}}\int_{-\infty}^\infty
+        \exp\left\{-\frac{1}{2\sigma^2}y^2\right\}(y+\mu)\rd y\\
+      &=\frac{1}{(2\pi\sigma^2)^{1/2}}\left\{
+        \int_{-\infty}^\infty\exp\left\{-\frac{1}{2\sigma^2}y^2\right\}y\rd y
+        +\mu\int_{-\infty}^\infty\exp\left\{-\frac{1}{2\sigma^2}y^2\right\}\rd y
+        \right\}.
+    \end{align*}
+    Since $\exp\{-y^2/2\sigma^2\}y$ is odd, the first term in the braces equals
+    $0$. Then by the normalization condition, $\Ex[x]=\mu$.\par
+    Differentiating the both sides of (1.48) with respect to $\sigma^2$ yields
+    \[
+      -\frac{1}{2\sigma^2}+\frac{1}{2\sigma^2}(\Ex[x^2]-2\mu E[x]+\mu^2)=0.
+    \]
+    Namely, $\Ex[x^2]=\mu^2+\sigma^2$. Thus, $\var[x]=\Ex[x^2]-\Ex[x]^2=
+    \sigma^2$.
+  \end{proof}
+% end
+

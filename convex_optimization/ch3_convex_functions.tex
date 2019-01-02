@@ -65,11 +65,34 @@
     Thus, $F$ is convex.
   \end{proof}
   
-  \paragraph{8. Second-order conditions for convexity}
+  \paragraph{8. Second-order condition for convexity}
   \begin{proof}
-    First we suppose the convexity of $f$. Then by definition, $\dom f$ is 
-    convex.
+    First we prove the case $f:\mathbb{R}\to\mathbb{R}$. If $f$ is convex, then
+    $\dom f$ is convex by definition. Meanwhile, for every $x$ and $t$, by the 
+    first-order condition,
+    \[
+      \frac{f(x+t)-f(x)-f\hp(x)t}{t^2}\ge 0.
+    \]
+    Let $t\to 0$ and we obtain $f^{\prime\prime}(x)\ge 0$. For the converse, 
+    $f^{\prime\prime}(x)$ implies that $f\hp$ is monotonically increasing. Thus,
+    by the mean-value theorem, there exists some $c$ between $x$ and $y$ such 
+    that
+    \[
+      f(y)-f(x)=f\hp(c)(y-x) \ge f\hp(x)(y-x),
+    \]
+    Namely, $f$ is convex.\par
+    Now we prove the general case. Recall that $f$ is convex iff $f$ is convex
+    along all lines. For fixed $x,u\in\mathbb{R}^n$, define $g(t)=f(x+tu)$. By
+    our previous result, $g$ is convex iff 
+    \begin{align*}
+      0\le g^{\prime\prime}(t)=u^T\nabla^2f(x_0+tu)u\quad\text{for all $t$.}
+    \end{align*}
+    Namely, $\nabla^2f(x)\succeq 0$ for all $x\in\mathbb{R}^n$.
   \end{proof}
+  
+%  \paragraph{9. Second-order conditions for convexity on an affine set}
+%  \begin{proof}
+%  \end{proof}
 
   \paragraph{13.}
   \begin{proof}
@@ -132,4 +155,257 @@
     which is negative definite since both $\alpha(\alpha-1)x_1^\alpha
     x_2^{1-\alpha}x_1^{-2}$ and $\det(\nabla^2 f)$ are negative.
   \end{solution}
+  
+  \paragraph{17.}
+  \begin{proof}
+    Put $z_k=(x_1^k,\dots,x_n^k)$. Then the Hessian of $f$ is
+    \[
+      \nabla^2f(x)=
+      (1-p)(\mathbf{1}^Tz_p)^{1/p-2}
+      (z_{p-1}z_{p-1}^T-\mathbf{1}^Tz_p\diag(z_{p-2})).
+    \]
+    Put $K=(1-p)(\mathbf{1}^Tz_p)^{1/p-2}$, a nonnegative constant. For every 
+    $v\in\mathbb{R}^n$,
+    \begin{align*}
+      v^T\nabla^2f(x)v
+      &=Kv^T(z_{p-1}z_{p-1}^T-\mathbf{1}^Tz_p\diag(z_{p-2}))v \\
+      &=K\left\{\left(\sum_{i=1}^nv_ix_i^{p-1}\right)^2-
+      \left(\sum_{i=1}^nx_i^p\right)
+      \left(\sum_{i=1}^nx_i^{p-2}v_i^2\right)\right\}\\
+      &\le 0,
+    \end{align*}
+    where the inequality comes from the Cauchy-Schwarz inequality $(a^Tb)^2\le
+    (a^Ta)(b^Tb)$ with $a_i=x_i^{p/2}$ and $b_i=x_i^{p/2-1}v_i$. Thus, $f$ is 
+    concave.
+  \end{proof}
+  
+  \paragraph{19. Nonnegative weighted sums and integrals}
+  \begin{proof}
+    $\,$\par
+    (a) For each $k=1,\dots,r$, let $f_k(x)=\sum_{i=1}^k x_[i]$, which is
+    convex. Put
+    \[
+      \beta_1=\alpha_1-\alpha_2,\quad
+      \beta_2=\alpha_2-\alpha_3,\quad
+      \dots\quad
+      \beta_r=\alpha_r.
+    \]
+    Since $\alpha_1\ge\alpha_2\ge\cdots\ge\alpha_r$, $\beta_i\ge 0$ for $i=1,
+    \dots,r$. Hence, $f=\beta_1f_1+\cdots+\beta_rf_r$, being a nonnegative
+    weighted sum of convex functions, is convex.\par
+    (b) Note that $T(x,\omega)$ is linear in $x$ for fixed $\omega$. Hence, it 
+    can be verified via definition the convexity of $\dom f$ and $-\log T(x,
+    \omega)$ is also convex in $x$. Hence, $f(x)=\int_{0}^{2\pi}\{-\log T(x,
+    \omega)\}\rd\omega$ is convex.
+  \end{proof}
+  
+  \paragraph{21.}
+  \begin{proof}
+    $\,$\par
+    (a) By Prob.20(a), $\|A^{(i)}x-b^{(i)}\|$ is convex for each $i=1,\dots,k$
+    and consequently $f$, the pointwise maximum of them, is convex.\par
+    (b) Let $E\subset\mathbb{R}^n$ be the collection of all vectors whose 
+    entries are $\pm 1$ or $0$. Then for each $c\in E$, $x\mapsto c^Tx$ defines 
+    a convex function. Since $f(x) = \max_{c\in E}c^Tx$, it is also convex.
+  \end{proof}
+  
+  \paragraph{22.(a)}
+  \begin{proof}
+    Put $g(y)=\log(\sum_{i=1}^ne^{y_i})$ and $h(x)=Ax+b$ where $A=[a_1,\dots,
+    a_n]^T$ and $b=[b_1,\dots,b_n]^T$. Then $j=g\circ h$ is convex on 
+    $\mathbb{R}^n$. Hence, $\dom f=\{x:\, j(x)<1\}$ is convex. Meanwhile, $-j$
+    is concave, $-\log$ is convex and the extension of it to $\mathbb{R}$ is
+    non-increasing. Therefore, $f(x)=-\log(-j(x))$ is convex.
+  \end{proof}
 % end
+\subsection{Operations that preserve convexity}
+  \paragraph{30. Convex hull or envelope of a function}
+  \begin{proof}
+    Let $h$ be any convex function such that $h(x)\le f(x)$ for all $x$. Then
+    $\epi f\subset\epi h$. Since $\conv\epi f$ is the smallest convex set that
+    contains $\epi f$ and $\epi h$ is convex as $h$ is convex, $\conv\epi f\
+    \subset\epi h$. Namely, $(x,t)\in\conv\epi f$ implies $(x,t)\in\epi h$, that
+    is, $h(x)\le t$. Take infimum on the both sides and we get $h(x)\le g(x)$.
+  \end{proof}
+  
+  \paragraph{31.}
+  \begin{proof}
+    $\,$\par
+    (a) Note that $g(0)=0$. Hence, if $t=0$, $g(tx)=g(0)=0=tg(x)$. For $t>0$, 
+    putting $\beta=\alpha/t$, 
+    \[
+      g(tx)=\inf_{\beta>0}\frac{f(\beta tx)}{\beta}=
+      t\inf_{\alpha>0}\frac{f(\alpha x)}{\alpha}=tg(x).
+    \]\par
+    (b) Let $h$ be any homogenous underestimator of $f$. For every $\vep>0$, by
+    definition, there is some $\beta$ such that
+    \[
+      g(x)+\vep\ge\frac{f(\beta x)}{\beta}\ge \frac{h(\beta x)}{\beta}=h(x).
+    \]
+    Since the choice of $\vep$ is arbitrary, this implies $g(x)\ge h(x)$.\par
+    (c) Consider the function $p:\dom f\times\mathbb{R}_{++}$, $(x,\alpha)
+    \mapsto f(\alpha x)/\alpha$. Since $\mathbb{R}_{++}$ is convex and $g(x)=
+    \inf_{\alpha>0}p(x,\alpha)$, $g$ is convex as long as $p$ is. Now we show
+    the convexity of $p$. Note that
+    \begin{align*}
+      (x,\alpha,s)\in\epi p 
+      &\quad\Longleftrightarrow\quad f(\alpha x)/\alpha\le s \\
+      &\quad\Longleftrightarrow\quad f(\alpha x)\le \alpha s \\
+      &\quad\Longleftrightarrow\quad (\alpha x,\alpha s)\in\epi f.
+    \end{align*}
+    As a consequence, $p$ is convex as $f$ is.
+  \end{proof}
+% end
+\subsection{Conjugate functions}
+  \paragraph{37.}
+    I assume that the space containing $\dom f$ is $\mathbb{S}^n$ so that $\dom
+    f^*\subset\mathbb{S}^n$.
+  \begin{proof}
+    Define $g(X, Y)=\tr(YX)-f(X)$. First we show that for fixed $Y\notin-S^n_+$, 
+    $g$, as a function of $X$, is unbounded above. Since $Y\notin -S^n_+$, there
+    exists some $\lambda_1>0$ and $u$ with $\|u\|=1$ such that $Yu=\lambda u$.
+    Suppose $Y=S\inv\Lambda S$ where $\Lambda=\diag(\lambda_1,\dots,\lambda_n)$.
+    Put $X_k=\diag(k,1,\dots,1)$. Then
+    \[
+      g(X_k,Y)=\tr(\Lambda X_k)-\tr\diag(1/k,1,\dots,1)=
+      \lambda_1k+\sum_{i=2}^n\lambda_i-\frac{1}{k}-n+1\to\infty
+    \]
+    as $k\to\infty$. Hence, $\dom f^*\subset-\mathbb{S}^n_+$.\par
+    Then for $Y\in-\mathbb{S}^n_{++}$, $\nabla_X g(X,Y)=Y+X^{-2}$, which equals
+    $0$ at $X=(-Y)^{-1/2}$. Hence, $f^*(Y)=g((-Y)^{-1/2}, Y)=-2\tr(-Y)^{1/2}$.
+    For $Y\in-\mathbb{S}^n_+$, there exists a sequence $(\vep_k)\subset
+    \mathbb{R}$ converges to $0$ and $Y+\vep_kI\in-\mathbb{S}^n_{++}$ for all 
+    $k$. Since $g(X,Y+\vep_k I)$ is bounded above and $g(X,Y+\vep_k I)\to g(X,
+    Y)$ uniformly, $g(X,Y)$ is also bounded above. Hence, $\dom f^*=-\mathbb{S}
+    ^n_+$. Finally, by the continuity of $f^*$, which comes from the convexity,
+    we conclude that $f^*(Y)=-2\tr(-Y)^{1/2}$ for all $y\in-\mathbb{S}^n_+$.
+  \end{proof}
+  
+  \paragraph{38. Young's inequality}
+    I assume that $f$ is continuous.
+  \begin{proof}
+    Since $\dom F=\mathbb{R}$ is closed and $F$ is continuous, $F$ is closed.
+    Meanwhile, since $f$ is increasing and $f\ge 0$, $F$ is convex. Hence, $F=
+    F^{++}$. Thus, it suffices to show that $G=F^*$.\par
+    Since $f$ is continuous, $F$ is differentiable. Hence, 
+    
+    Put $H(x,y)=yx-F(x)$. For fixed $y$,
+    \[
+      H(x,y)=yx-\int_0^xf(a)\rd a=\int_0^x\{y-f(a)\}\rd a
+    \]
+    attains its maximum at $x=g(y)$. Hence,
+    \begin{align*}
+      F^*(y)=H(g(y), y)=yg(y)-\int_0^{g(y)}f(a)\rd a
+      =G(y).
+    \end{align*}
+    Thus, $F$ and $G$ are conjugates. Consequently, $xy\le F(x)+G(y)$.
+  \end{proof}
+  
+  \paragraph{40. Gradient and Hessian of conjugate function}
+  \begin{proof}
+    $\,$\par
+    (a) The Legendre transformation yields
+    \begin{equation}
+      \label{eq:3.40}
+      f^*(\bar{y})=\bar{x}^T\nabla f(\bar{x})-f(\bar{x}).
+    \end{equation}
+    Differentiate \eqref{eq:3.40} with respect to $\bar{x}$ yields
+    \[
+      D_{\bar{x}}f^*(\bar{y})=
+      Df(\bar{x})+\bar{x}^T\nabla^2f(\bar{x})-Df(\bar{x})=
+      \bar{x}^T\nabla^2f(\bar{x}).
+    \]
+    Meanwhile, the chain rule yields
+    \[
+      D_{\bar{x}}f^*(\bar{y})=
+      D(f^*\circ\nabla f)(\bar{x})=
+      Df^*(\bar{y})\nabla^2f(\bar{x}).
+    \]
+    These two equations gives
+    \[
+      Df^*(\bar{y})=\bar{x}^T\nabla^2f(\bar{x})(\nabla^2f(\bar{x}))\inv=
+      \bar{x}^T.
+    \]
+    Namely, $\nabla f^*(\bar{y})=\bar{x}$.\par
+    (b) Differentiate $\nabla f^*(\bar{y})=\bar{x}$ with respect to $\bar{x}$
+    and we get $\nabla^2f^*(\bar{y})\nabla^2f(\bar{x})=I$. Thus, $\nabla^2f^*
+    (\bar{y})=\nabla^2f(\bar{x})\inv$.
+  \end{proof}
+% end
+\subsection{Quasiconvex functions}
+  \paragraph{43.}
+  \begin{proof}
+    Since $f$ is quasiconvex iff its restriction to every line is, it suffices
+    to prove the result for functions on $\mathbb{R}$. If $f:\mathbb{R}\to
+    \mathbb{R}$ is quasiconvex, then, by definition, $\dom f$ is convex and
+    for every $x,y\in\dom f$ with $f(x)\ge f(y)$ and $\theta\in(0,1]$,
+    \[
+      f(x+\theta(y-x))\le \max\{f(x),f(y)\}=f(x).
+    \]
+    Thus,
+    \[
+      f\hp(x)(y-x)=\lim_{\theta\to0}\frac{f(x+\theta(y-x))-f(x)}{\theta}\ge 0.
+    \]
+    For the converse, we argue by contradiction. Assume that there exists some
+    $x<y\in\dom f$ and $c\in(x,y)$ such that $f(c)>\max\{f(x),f(y)\}$. Define 
+    $D=\{z\in[x,y]:f(z)=f(c)\}$. Since $D$ is bounded, $d=\inf D>-\infty$. By
+    the continuity of $f$, $f(d)=f(c)>f(x)$. Namely, $d$ is the leftmost point
+    in $[x,y]$ the function value at which is $f(c)$. Similarly, we may find
+    the rightmost point $z$ in $[x,d]$ the function value at which is $f(x)$.
+    Since $f(d)>f(z)$, there exists some $\xi\in(z,d)$ such that $f\hp(\xi)>0$.
+    Meanwhile, by our construction and the continuity of $f$, $f(\xi)\ge f(d)=
+    f(x)\ge f(y)$. However, $f\hp(\xi)(y-\xi)>0$. Contradiction. Thus, such a
+    $c$ does not exist and, consequently, $f$ is quasiconvex.
+  \end{proof}
+% end
+\subsection{Log-concave and log-convex functions}
+  \paragraph{47.}
+  \begin{proof}
+    $f$ is log-concave iff $\log f$ is concave iff for every $x,y\in\dom f$,
+    \begin{align*}
+      \log f(y)-\log f(x)\le \frac{\nabla f(x)^T}{f(x)}(y-x) 
+      \quad\Longleftrightarrow\quad
+      \frac{f(y)}{f(x)} \le \exp\left(\frac{\nabla f(x)^T}{f(x)}(y-x)\right).
+    \end{align*}
+  \end{proof}
+  
+  \paragraph{54.}
+  \begin{proof}
+    (a) Some calculation yields
+    \[
+      f\hp(x)=\frac{1}{\sqrt{2\pi}}e^{-x^2/2},\quad
+      f^{\prime\prime}(x)=-\frac{x}{\sqrt{2\pi}}e^{-x^2/2}.
+    \]
+    For $x\ge 0$, clear that the left hand side is nonpositive while the right
+    hand side is nonnegative. Hence, $f^{\prime\prime}(x)f(x)\le f\hp(x)^2$.\par
+    (b) It follows immediately from the AM–GM inequality.\par
+    (c) Take exponentials on the both side of the inequality in (b) and we get
+    $e^{-t^2/2}\le e^{x^2/2-xt}$. Then integrating over $t$ gives the other
+    inequality.\par
+    (d) For $x\le 0$, by (c),
+    \[
+      -xe^{-x^2/2}\int_{-\infty}^xe^{-t^2/2}\rd t
+      \le -x\int_{-\infty}^xe^{-xt}\rd t
+      = e^{-x^2}.
+    \]
+    Thus, $f^{\prime\prime}(x)f(x)\le f\hp(x)^2$.
+  \end{proof}
+% end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

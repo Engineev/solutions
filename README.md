@@ -10,7 +10,21 @@ My personal solutions to some textbook problems
   * 2.3 Operations that preserve convexity (16, 18)
   * 2.4 Separation theorems and supporting hyperplanes (20, 23, 25, 26)
   * 2.5 Convex cones and generalized inequalities (31, 32, 35)
+* Chapter 3. Convex Functions
+  * 3.1 Definition of convexity (1, 3, 5, 8, 13)
+  * 3.2 Examples (16, 17, 19, 21, 22(a))
+  * 3.3 Operations that preserve convexity (30, 31)
+  * 3.4 Conjugate functions (37, 38, 40)
+  * 3.5 Quasiconvex functions (43)
+  * 3.6 Log-concave and log-convex functions (47, 54)
 
+
+## Christopher M. Bishop *Pattern Recognition and Machine Learning*
+
+**ongoing**
+* Chapter 1. Introduction
+  * 1.1 Example: Polynomial Curve Fitting (1, 2)
+  * 1.2 Probability Theory (7, 8)
 
 ## William C. Brown, *A Second Course in Linear Algebra*
 
