@@ -358,6 +358,39 @@
     $c$ does not exist and, consequently, $f$ is quasiconvex.
   \end{proof}
 % end
+\subsection{Log-concave and log-convex functions}
+  \paragraph{47.}
+  \begin{proof}
+    $f$ is log-concave iff $\log f$ is concave iff for every $x,y\in\dom f$,
+    \begin{align*}
+      \log f(y)-\log f(x)\le \frac{\nabla f(x)^T}{f(x)}(y-x) 
+      \quad\Longleftrightarrow\quad
+      \frac{f(y)}{f(x)} \le \exp\left(\frac{\nabla f(x)^T}{f(x)}(y-x)\right).
+    \end{align*}
+  \end{proof}
+  
+  \paragraph{54.}
+  \begin{proof}
+    (a) Some calculation yields
+    \[
+      f\hp(x)=\frac{1}{\sqrt{2\pi}}e^{-x^2/2},\quad
+      f^{\prime\prime}(x)=-\frac{x}{\sqrt{2\pi}}e^{-x^2/2}.
+    \]
+    For $x\ge 0$, clear that the left hand side is nonpositive while the right
+    hand side is nonnegative. Hence, $f^{\prime\prime}(x)f(x)\le f\hp(x)^2$.\par
+    (b) It follows immediately from the AM–GM inequality.\par
+    (c) Take exponentials on the both side of the inequality in (b) and we get
+    $e^{-t^2/2}\le e^{x^2/2-xt}$. Then integrating over $t$ gives the other
+    inequality.\par
+    (d) For $x\le 0$, by (c),
+    \[
+      -xe^{-x^2/2}\int_{-\infty}^xe^{-t^2/2}\rd t
+      \le -x\int_{-\infty}^xe^{-xt}\rd t
+      = e^{-x^2}.
+    \]
+    Thus, $f^{\prime\prime}(x)f(x)\le f\hp(x)^2$.
+  \end{proof}
+% end
 
 
 
