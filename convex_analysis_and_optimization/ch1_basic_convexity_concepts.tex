@@ -1,0 +1,578 @@
+\section{Basic Convexity Concepts}
+\setcounter{subsection}{1}
+\subsection{Convex Sets and Functions}
+  \paragraph{1.}
+  \begin{proof}
+    For every $y\in(\lambda_1+\lambda_2)C$, there is an $x\in C$ such that
+    \[
+      y=(\lambda_1+\lambda_2)x=\lambda_1x+\lambda_2x.
+    \]
+    Since $\lambda_ix\in\lambda_iC$, ($i=1,2$,) $y\in\lambda_1C+\lambda_2C$. 
+    Thus, $(\lambda_1+\lambda_2)C\subset\lambda_1C+\lambda_2C$. For the 
+    converse, suppose that $y_i=\lambda_ix_i\in\lambda_iC$. Then
+    \[
+      \lambda_1x_1+\lambda_2x_2=
+      (\lambda_1+\lambda_2)
+      \left(\frac{\lambda_1}{\lambda_1+\lambda_2}x_1+
+      \frac{\lambda_2}{\lambda_1+\lambda_2}x_2\right)=
+      (\lambda_1+\lambda_2)z.
+    \] 
+    By the convexity of $C$, $z\in C$. Hence, $\lambda_1x_1+\lambda_2x_2\in
+    (\lambda_1+\lambda_2)C$. Namely, $(\lambda_1+\lambda_2)C\supset\lambda_1C+
+    \lambda_2C$.\par
+    If $C$ is not convex, the statement may be false. For example, put $n=1$, 
+    $C=\{0,1\}$ and $\lambda_1=\lambda_2=1$. Then $(\lambda_1+\lambda_2)C=
+    \{0,2\}$ but $\lambda_1C+\lambda_2C=\{0,1,2\}$.
+  \end{proof}
+  
+  \paragraph{2.(d, e)}
+  \begin{proof}
+    $\,$\par
+    (d) Let $C$ be a cone and $x\in\bar{C}$. Then there is a sequence $\{x_k\}
+    \subset C$ with $x_k\to x$. For every positive $\lambda$, Clear that 
+    $\lambda x=\lim_{k\to\infty}\lambda x_k$ and $\lambda x_k\in C$. Namely,
+    $\{\lambda x_k\}\subset C$ converges to $\lambda x$. Hence, $\lambda x\in
+    \bar{C}$. Thus, $\bar{C}$ is a cone.\par
+    (e) Let $T$ a linear transformation on $\mathbb{R}^n$. Suppose $y=Tx$ for
+    some $x\in C$. Then $\lambda y=\lambda Tx=T(\lambda x)\in T(C)$. Hence, 
+    $T(C)$ is a cone. Suppose that there is an $v\in C$ such that $Tu=v$. Then
+    $T(\lambda u)=\lambda v\in C$. Hence, the inverse image is also a cone.
+  \end{proof}
+  
+  \paragraph{3. Lower Semicontinuity under Composition}
+  \begin{proof}
+    $\,$\par
+    (a) For every $x\in\mathbb{R}^n$ and $\{x_k\}$ converging to $x$, put $y_k
+    =f(x_k)$. Since $f$ is continuous, $y_k\to y=f(x)$. Hence,
+    \[
+      \liminf_{k\to\infty}h(x)=\liminf_{k\to\infty}g(y_k)\ge g(y)=h(x).
+    \]
+    Namely, $h$ is lower semicontinuous.\par
+    (b) First we show that for every $\{y_k\}\subset\mathbb{R}$, 
+    \begin{equation}
+      \label{eq:1.3}
+      \liminf_{k\to\infty}g(y_k) \ge g\left(\liminf_{k\to\infty}y_k\right).
+    \end{equation}
+    Put $y=\liminf y_k$. Since $y_k\ge y$ for every $k$ and $g$ is 
+    nondecreasing, $g(y_k)\ge g(y)$. Hence, $\liminf g(y_k)\ge g(y)$.\par
+    For every $x\in\mathbb{R}^n$ and $\{x_k\}$ converging to $x$, put $y_k=f
+    (x_k)$. Since $f$ is lower semicontinuous, $\liminf y_k\ge f(x)$. Hence,
+    \[
+      \liminf_{k\to\infty}h(x)=
+      \liminf_{k\to\infty}g(y_k)\ge
+      g\left(\liminf_{k\to\infty}y_k\right)\ge
+      g(f(x)),
+    \]
+    where the second and third inequalities come from \eqref{eq:1.3} and the
+    monotonicity of $g$ respectively. Thus, $h$ is lower semicontinuous.\par
+    To show that the monotonic nondecrease assumption is essential, put $n=1$
+    and define both $f$ and $g$ by
+    \[
+      f(x)=g(x)=\begin{cases}
+        1, & x<0 \\
+        -1,& x\ge 0
+      \end{cases}.
+    \]
+    Clear that both $f$ and $g$ are lower semicontinuous but $h=g\circ f$ takes
+    value $-1$ for $x<0$ and $1$ for $x\ge 0$ and therefore is not lower 
+    semicontinuous.
+  \end{proof}
+  
+  \paragraph{4. Convexity under Composition}
+  \begin{proof}
+    $\,$\par
+    (a) For every $\lambda\in[0,1]$ and $x,y\in C$,
+    \begin{align*}
+      h(\lambda x+(1-\lambda)y)
+      &=g(f(\lambda x+(1-\lambda)y))\\
+      &\le g(\lambda f(x)+(1-\lambda)f(y)) \\
+      &\le \lambda h(x)+(1-\lambda)h(y),
+    \end{align*}
+    where the first inequality comes from the monotonicity of $g$ and convexity
+    of $f$, and the second one comes from the convexity of $g$. Thus, $h$ is
+    convex. If $g$ is increasing and $f$ is strictly convex, then the first
+    inequality is strict, provided $\lambda\in(0,1)$ and $x\ne y$. Therefore,
+    $h$ is strictly convex.\par
+    (b) It follows from a similar argument.
+  \end{proof}
+  
+  \paragraph{5. Examples of Convex Functions}
+  \begin{proof}
+    $\,$\par
+    (a) For every $x\in\dom f$,
+    \[
+      \nabla^2f_1(x)=
+      K\left\{\left[\frac{1}{x_ix_j}\right]_{ij}
+      -n\diag\left\{\frac{1}{x_i^2}\right\}_i\right\},
+    \]
+    where $K=-(x_1\cdots x_n)^{1/n}/n^2<0$. For each $y\in\dom f_1$,
+    \begin{align*}
+      y^T\nabla^2f_1(x)y
+      &=\frac{K}{n^2}\left\{\left(\frac{\sum_{1=1}^n y_i/x_i}{n}\right)^2
+        -\frac{1}{n}\sum_{i=1}^n\frac{y_i^2}{x_i^2}\right\}
+      \ge 0,
+    \end{align*}
+    where the inequality comes from the RMS-AM inequality. Hence, $f_1$ is 
+    convex.\par
+    (b) For every $x\in\mathbb{R}^n$,
+    \[
+      \nabla^2f_2= 
+      K\left\{\left[e^{x_i}e^{x_j}\right]_{ij}
+      -\left(\sum_{i=1}^ne^{x_i}\right)\diag\{e^{x_i}\}\right\},
+    \]
+    where $K=-1/(e^{x_1}+\cdots+e^{x_n})^2<0$. For each $y\in\mathbb{R}^n$,
+    put $a=(e^{x_1/2},\dots,e^{x_n/2})$ and $b=(y_1e^{x_1/2},\dots,
+    y_ne^{x_n/2})$. Then
+    \begin{align*}
+      y^T\nabla^2f_2(x)y
+      &=K\left\{\left(\sum_{i=1}^ny_ie^{x_i}\right)^2
+       -\left(\sum_{i=1}^ne^{x_i}\right)
+        \left(\sum_{i=1}^ny_i^2e^{x_i}\right)\right\}\\
+      &=K\{(a^Tb)^2-(a^Ta)(b^Tb)\}
+      \ge 0,
+    \end{align*}
+    where the inequality comes from the Cauchy-Schwarz inequality. Thus, $f_2$
+    is convex.\par
+    (c) Since $\|\cdot\|:\mathbb{R}^n\to[0,\infty)$ is convex over 
+    $\mathbb{R}^n$ and the function $x\mapsto x^p$ ($p\ge 1$) is convex and 
+    nondecreasing on $[0,\infty)$, $f_3$ is convex by Prob. 1.4(a).\par
+    (d) $-f$ is convex and negative, and the function $x\mapsto -1/x$ is convex
+    and nondecreasing on $(-\infty,0)$, so, by Prob. 1.4(a), $f_4=-1/(-f)$
+    is convex.\par
+    (e) The function $g:x\mapsto \alpha x+\beta$ is convex and nondecreasing on
+    $\mathbb{R}$. Hence, $f_5=g\circ f$ is convex by Prob. 1.4(a).\par
+    (f) The function $g:x\mapsto e^{\beta x}$ is convex and nondecreasing on 
+    $\mathbb{R}$ and the function $h:x\mapsto x^TAx$ is convex since $A$ is
+    positive semidefinite. Hence, by Prob. 1.4(a), $f_6=g\circ h$ is convex.
+    \par
+    (g) For every $x,y\in\mathbb{R}^n$ and $\lambda\in[0,1]$,
+    \begin{align*}
+      f_7(\lambda x+(1-\lambda)y)
+      &=f(A(\lambda x+(1-\lambda)y)+b)\\
+      &=f(\lambda(Ax+b)+(1-\lambda)(Ay+b))\\
+      &\le\lambda f_7(x)+(1-\lambda)f_7(y),
+    \end{align*}
+    where the inequality comes from the convexity of $f$. Hence, $f_7$ is 
+    convex.
+  \end{proof}
+  
+  \paragraph{6. Ascent/Descent Behavior of a Convex Function}
+  \begin{proof}
+    $\,$\par
+    (a) Let $\lambda\in(0,1)$ be such that $x_2=\lambda_1x_1+(1-\lambda)x_3$.
+    Then
+    \[
+      \frac{f(x_2)-f(x_1)}{x_2-x_1}
+      \le\frac{\lambda f(x_1)+(1-\lambda)f(x_3)-f(x_1)}
+         {\lambda x_1+(1-\lambda)x_3-x_1}
+      =\frac{f(x_3)-f(x_1)}{x_3-x_1}.
+    \]
+    Similarly, we can show that
+    \[
+      \frac{f(x_3)-f(x_2)}{x_3-x_2}\ge\frac{f(x_3)-f(x_1)}{x_3-x_1}.
+    \]
+    Thus, 
+    \[
+      \frac{f(x_2)-f(x_1)}{x_2-x_1}\le\frac{f(x_3)-f(x_2)}{x_3-x_2}.
+    \]
+  \end{proof}
+  
+  \paragraph{7. Characterization of Differentiable Convex Functions}
+  \begin{proof}
+    If $f$ is convex over $C$, then by Proposition 1.2.5,
+    \[
+      f(y)-f(x)\ge\nabla f(x)^T(y-x),\quad
+      f(x)-f(y)\ge\nabla f(y)^T(x-y)
+    \]
+    for every $x,y\in C$. Sum up these two inequalities and we get
+    \begin{equation}
+      \label{eq:1.7}
+      (\nabla f(x)-\nabla f(y))^T(x-y)\ge 0.
+    \end{equation}\par
+    For the converse, we first prove a lemma: If $h:(a,b)\to\mathbb{R}$ is
+    differentiable and its derivative is nondecreasing, then it is convex.
+    By the mean value theorem, for every $x,y\in(a,b)$, $h(y)-h(x)=h\hp(\xi)
+    (y-x)$ where $\xi$ is between $x$ and $y$. Since $h\hp$ is nondecreasing, 
+    this implies that $h(y)-h(x)\ge h\hp(x)(y-x)$. Thus, $h$ is convex.\par
+    Now we suppose \eqref{eq:1.7} holds for every $x,y\in C$. Define $h:[0,1]
+    \to\mathbb{R}^n$ by $h(t)=x+t(y-x)$ and put $g=f\circ h$. Then
+    \[
+      Dg(t)=\nabla f(h(t))^T(y-x).
+    \]
+    Hence, for $1\ge t_2>t_1\ge 0$,
+    \[
+      Dg(t_2)-Dg(t_1)=
+      (\nabla f(h(t_2))-\nabla f(h(t_1))^T
+      \frac{h(t_2)-h(t_1)}{t_2-t_1}\ge 0.
+    \]
+    Namely, $Dg$ is nondecreasing. By our lemma, $g$ is convex. Since the 
+    choice of $x,y\in C$ are arbitrary, we conclude that $f$ is convex over 
+    $C$.
+  \end{proof}
+  
+  \paragraph{8. Characterization of Twice Continuously Differentiable Convex 
+  Functions}
+  \begin{proof}
+    We may assume without loss of generality that $0\in C$ and, in consequence, 
+    $S=\aff(C)$. If $\dim S=0$, then there is nothing to prove. Suppose $m=
+    \dim S>0$, let $Z\in\Hom(\mathbb{R}^m,S)$ be isometric\footnote{Consider 
+    the linear transformation $X$ which maps an orthonormal basis of 
+    $\mathbb{R}^m$ to an orthonormal basis of S. It can be verified that $X$ is 
+    an isometry and is bijective.} and define $g:\mathbb{R}^m\to\mathbb{R}$ by 
+    $u\mapsto f(Zu)$. Clear that $g$ is also twice continuously differentiable 
+    and $\nabla^2g=Z^T\nabla^2f Z$.\par
+    First we suppose that $y^T\nabla^2f(x)y\ge 0$ for all $x\in C$ and $y\in 
+    S$. Since $Z$ is an isometry, this implies that $u^TZ^T\nabla^2f(x)Zu\ge 
+    0$ for all $u\in\mathbb{R}^m$. Namely, $\nabla^2g(x)$ is positive 
+    semidefinite on $\mathbb{R}^m$. Therefore, by Prop. 1.2.6, $g$ is convex.
+    Thus, $f=g\circ Z\inv$ is also convex.\par
+    Now we suppose that $f$ is convex over $C$ and assume, to obtain a 
+    contradiction, that there is some $x\in C$ and $y\in S$ such that $y^T
+    \nabla^2f(x)y<0$. Suppose $y=Zu$. Then this implies that $u^T\nabla^2g(x)u
+    <0$. However, since $g$ is convex (as $f$ is) and $\mathbb{R}^m$ is open,
+    by Prop. 1.2.6(c), $\nabla^2g(x)$ should be positive semidefinite on
+    $\mathbb{R}^m$. Contradiction. Thus, $y^T\nabla^2f(x)y\ge 0$ for all $x\in 
+    C$ and $y\in S$.
+  \end{proof}
+  
+  \paragraph{9. Strong Convexity}
+  \begin{proof}
+    $\,$\par
+    (a) Note that (1.16) implies that when restricted to the line segment
+    connecting $x$ and $y$, the function $f$ has strictly increasing gradient.
+    Hence, the argument in Prob. 1.7, \textit{mutatis mutandis}, gives a proof 
+    of (a).\par
+    (b) First we suppose that $\nabla^2f(x)-\alpha I$ is positive semidefinite.
+    Then for every $y,x\in\mathbb{R}^n$, there exists some $\theta\in(0,1)$ and 
+    $z=x+\theta(y-x)$ such that
+    \begin{equation}
+      \label{eq:1.9.1}
+    \begin{split}
+      f(y)
+      &=f(x)+\nabla f(x)^T(y-x)+(y-x)^T\nabla^2f(z)(y-x)\\
+      &=f(x)+\nabla f(x)^T(y-x)+(y-x)^T(\nabla^2f(z)-\alpha I)(y-x)
+        +\alpha\|y-x\|^2\\
+      &\ge f(x)+\nabla f(x)^T(y-x)+\alpha\|y-x\|^2.
+    \end{split}
+    \end{equation}
+    Meanwhile, since $\nabla^2f(x)$ is positive semidefinite, $f$ is convex and
+    therefore
+    \begin{equation}
+      \label{eq:1.9.2}
+      f(y)-f(x)\le \nabla f(y)^T(y-x).
+    \end{equation}
+    The previous two inequalities imply (1.16), i.e., $f$ is strongly convex 
+    with coefficient $\alpha$.\par
+    Now suppose that (1.16) holds. For fixed $x$, let $u\in\mathbb{R}^n$ and 
+    $t\in\mathbb{R}$. Then there exists some $\theta_1,\theta_2\in(0,1)$ such
+    that
+    \begin{align*}
+      f(x+tu)&=f(x)+\nabla f(x)^Ttu+\frac{t^2}{2}u^T\nabla^2f(x+\theta_1tu)u,\\
+      f(x)&=f(x+tu)-\nabla f(x+tu)^Ttu+\frac{t^2}{2}u^T\nabla^2
+            f(x+\theta_2tu)u.
+    \end{align*}
+    Add these two equations and we get
+    \[
+      \frac{t^2}{2}u^T(\nabla^2f(x+\theta_1tu)+\nabla^2f(x+\theta_2tu))u
+      =(\nabla f(x+tu)-\nabla f(x))^Ttu \ge \alpha\|tu\|^2.
+    \]
+    Namely,
+    \[
+      \frac{1}{2}u^T(\nabla^2f(x+\theta_1tu)+\nabla^2f(x+\theta_2tu))u\ge 
+      \alpha\|u\|^2.
+    \]
+    Let $t\to 0$ and we obtain
+    \[
+      u^T\nabla^2f(x)u\ge \alpha\|u\|^2.
+    \]
+    Hence, all eigenvalues of $\nabla^2f(x)$ are no less than $\alpha$ and, in
+    consequence, $\nabla^2f(x)-\alpha I$ is positive semidefinite.
+  \end{proof}
+  
+  \paragraph{11. Arithmetic-Geometric Mean Inequality}
+  \begin{proof}
+    Since the function $x\mapsto -\log x$ is strictly convex on $(0,\infty)$.
+    \begin{align*}
+      -\log(\alpha_1x_1+\cdots+\alpha_nx_n)
+      &\le-\alpha_1\log x_1-\cdots-\alpha_n\log x_n\\
+      &=-\log(x_1^{\alpha_1}\cdots x_n^{\alpha_n}),
+    \end{align*}
+    where the equality is obtained when $x_1=\cdots=x_n$. Thus, 
+    $x_1^{\alpha_1}\cdots x_n^{\alpha_n}\le\alpha_1x_1+\cdots+\alpha_nx_n$ with
+    equality iff $x_1=\cdots=x_n$.
+  \end{proof}
+  
+  \paragraph{12.}
+  \begin{proof}
+    If $x=0$ or $y=0$, then the inequality is trivial. If both $x$ and $y$ are
+    nonzero, then, by Prob. 1.11, $x^{1/p}y^{1/q}\le x/p+y/q$. Replace $x$ and
+    $y$ with $x^p$ and $y^q$ respectively and we get $xy\le x^p/p+y^q/q$.\par
+    If all $y_i$ are zero or all $x_i$ are zero, then the inequality is 
+    trivial. If there exists some nonzero $y_i$ and some nonzero $x_i$, then, 
+    by the homogeneity, we may assume without loss of generality that
+    \[
+      \sum_{i=1}^n|x_i|^p=\sum_{i=1}^n|y_i|^q=1.
+    \]
+    Then, by Young's inequality,
+    \[
+      \sum_{i=1}^n|x_iy_i|\le
+      \frac{1}{p}\sum_{i=1}^n|x_i|^p+\frac{1}{q}\sum_{i=1}^n|y_i|^q
+      =\frac{1}{p}+\frac{1}{q}=1.
+    \]
+    Namely, Holder's inequality holds.
+  \end{proof}
+  
+  \paragraph{13.}
+  \begin{proof}
+    For $x\notin\dom f$, $f(x)=\inf\varnothing=\infty$. For every $x_1,x_2\in
+    \dom(f)$, since $C$ is convex, $x_\theta=(1-\theta)x_1+\theta x_2\in\dom
+    (f)$. By definition, for every $\vep>0$, there exists some $(x_1,w_1),(x_2,
+    w_2)\in C$ such that $w_i<f(x_i)+\vep$. Hence, 
+    \[
+      (1-\theta)w_1+\theta w_2<(1-\theta)f(x_1)+\theta f(x_2)+\vep.
+    \]
+    Since $C$ is convex, $(1-\theta)(x_1,w_1)+\theta(x_2,w_2)\in C$ and 
+    therefore
+    \[
+      f(x_\theta)\le (1-\theta)w_1+\theta w_2.
+    \]
+    These two inequalities, together with the fact that the choice of $\vep$ is
+    arbitrary, imply that $f(x_\theta)\le (1-\theta)f(x_1)+\theta f(x_2)$. 
+    Thus, $f$ is convex.
+  \end{proof}
+% end
+
+
+\subsection{Convex and Affine Hulls}
+  \paragraph{14.}
+  \begin{proof}
+    Given $\varnothing\ne X\subset\mathbb{R}^n$, let $C$ be the collection of
+    all convex combination of elements of $X$. Clear that $X\subset C$. 
+    Meanwhile, for every $x,y\in C$, they are the convex combination of points 
+    in $X$ and therefore so is $(1-\theta)x+\theta y$ for every $\theta\in(0,
+    1)$. Hence, $C$ is a convex set containing $X$. Thus, $\conv(X)\subset C$. 
+    For every $x\in C$, $x$ is a convex combination of points in $X$ and 
+    therefore is contained in any convex set containing $X$; See Fig. 1.3.1. 
+    Hence, $x\in\conv(C)$. Thus, $C=\conv(C)$.
+  \end{proof}
+  
+  \paragraph{15.}
+  \begin{proof}
+    Let $D=\bigcup_{x\in C}\{\gamma x:\,\gamma\ge 0\}$. It follows immediately
+    from the definition that $D\subset\cone(C)$. For every $x\in\cone(C)$. If
+    $x=0$, then clear that $x\in D$. If $x\ne 0$, then it can be written as
+    $x=\alpha_1x_1+\cdots+\alpha_mx_m$ where $m>0$, $\alpha_i>0$ and $x_i\in 
+    C$. Hence
+    \[
+      x=\frac{1}{\alpha}\sum\frac{\alpha_i}{\alpha}x_i
+      \quad\text{where }\alpha=\sum\alpha_i.
+    \]
+    Since $C$ is convex, $\sum\alpha_ix_i/\alpha\in C$ and therefore $x\in D$.
+    Thus, $D=\cone(C)$.
+  \end{proof}
+  
+  \paragraph{16.}
+  \begin{proof}
+    $\,$\par
+    (a) First we show that $C$ is closed. Suppose that $\{x_k\}\subset C$ 
+    converges to some $x\in\mathbb{R}^n$. Then for every $i\in I$ and $k=1,2,
+    \dots$, $a_i^Tx_k\le 0$. Let $k\to\infty$, by the continuity of the inner
+    product, $a_i^Tx\le 0$. Hence, $C$ is closed.\par
+    For the convexity, let $x,y\in C$ and $\theta\in(0,1)$. Then for every 
+    $i\in I$,
+    \[
+      a_i^T((1-\theta)x+\theta y)=(1-\theta)a_i^Tx+\theta a_i^Ty\le 0.
+    \]
+    Namely, $(1-\theta)x+\theta y\in C$. Thus, $C$ is convex.\par
+    Finally, since for all $\lambda>0$, $a_i^T(\lambda x)\le 0$ as long as
+    $a_i^Tx\le 0$. Hence, $C$ is cone. Thus, we conclude that $C$ is a closed
+    convex cone.\par
+    (b) Let $C$ be a cone. Suppose that $C$ is convex, then for every $x,y\in 
+    C$, $(x+y)/2\in C$. Hence, $x+y=2((x+y)/2)\in C$ as $C$ is a cone. Namely,
+    $C+C\subset C$. For the converse, suppose that $C+C\subset C$. For every
+    $x,y\in C$ and $\theta\in(0,1)$, since $C$ is a cone, $(1-\theta)x,\theta 
+    y\in C$ and therefore $(1-\theta)x+\theta y\in C+C\subset C$. Hence, $C$
+    is convex.\par
+    (c) For every $x\in C_1$ and $y\in C_2$,
+    \[
+      x+y=\frac{1}{2}(2x)+\frac{1}{2}(2y)=\conv\{2x,2y\}\subset
+      \conv(C_1\cup C_2).
+    \]
+    Hence, $C_1+C_2\subset\conv(C_1\cup C_2)$. For the converse, we show that
+    $C_1+C_2$ is a convex set containing $C_1\cup C_2$. Since $0\in C_1$, $C_2
+    \subset 0+C_2\subset C_1+C_2$. Similarly, $C_1\subset C_1+C_2$. Meanwhile,
+    by Prop. 1.2.1(b), $C_1+C_2$ is convex. Hence, $\conv(C_1\cup C_2)\subset
+    C_1+C_2$. Thus, $\conv(C_1\cup C_2)=C_1+C_2$.\par
+    Since $C_1$ and $C_2$ are cones, for $\alpha\in(0,1)$, $C_1=\alpha C_1$ and 
+    $C_2=(1-\alpha)C_2$ and therefore $C_1\cap C_2=\alpha C_1\cap(1-\alpha)
+    C_2$. For $\alpha\in\{0,1\}$, $\alpha C_1\cap(1-\alpha)C_2=\{0\}\in C_1\cap 
+    C_2$. Thus, $C_1\cap C_2=\bigcup_{\alpha\in[0,1]}(\alpha C_1\cap(1-\alpha)
+    C_2)$.
+  \end{proof}
+  
+  \paragraph{18. Convex Hulls, Affine Hulls, and Generated Cones}
+  \begin{proof}
+    $\,$\par
+    (a) We may assume without loss of generality that $0\in X$, so that the
+    affine hulls are subspaces of $\mathbb{R}^n$. Since $X$ is contained by 
+    $\conv(X)$ and $\cl(X)$, $\aff(X)$ is  contained by $\aff(\conv(X))$ and 
+    $\aff(\cl(X))$. For the converse, note that a convex combination of points
+    in $X$ is also a linear combination, hence $\conv(X)\subset\aff(X)$ and 
+    therefore $\aff(\conv(X))\subset\aff(X)$. Meanwhile, since finite 
+    dimensional vector spaces are all closed, $\cl(X)\subset\aff(X)$ and 
+    therefore $\aff(\cl(X))\subset\aff(X)$. Thus, $\aff(X)=\aff(\conv(X))=\aff
+    (\cl(X))$.\par
+    (b) Clear that $\cone(X)\subset\cone(\conv(X))$. For the converse, suppose
+    $x\in\cone(\conv(X))$. If $x=0$, then $x\in\cone(X)$ in a trivial way. If 
+    $x\ne 0$, then $x=\alpha_1x_1+\cdots+\alpha_px_p$ where $x_i\in\conv(X)$, 
+    $p>0$ and $\alpha_i>0$. Meanwhile, for each $i$, suppose that $x_i=
+    \beta_{i,1}x_{i,1}+\cdots+\beta_{i,q}x_{i,q}$ where $q>0$, $\beta_{i,j}>0$ 
+    and $\sum_j\beta_{i,j}=1$. Hence,
+    \[
+      x=\sum_i\alpha_i\sum_j\beta_{i,j}x_{i,j}=
+      \sum_{i,j}\alpha_i\beta_{i,j}x_{i,j}.
+    \]
+    Namely, $x$ is a positive combination of points in $X$ and therefore $x\in
+    \cone(X)$. Hence, $\cone(\conv(X))\subset\cone(X)$. Thus, $\cone(\conv(X))
+    =\cone(X)$.\par
+    (c) Since $\conv(X)\subset\cone(X)$, $\aff(\conv(X))\subset\aff(\cone(X))$.
+    Let $X=[-1,1]\times\{1\}\subset\mathbb{R}^2$. Then clear that $\aff(
+    \conv(X))$ is the line crossing $(0,1)$ and parallel to the $x$-axis while
+    $\aff(\cone(X))=\mathbb{R}^2$.\par
+    (d) Since $0\in\conv(X)\subset\cone(X)$, both $\aff(\conv(X))$ and $\aff
+    (\cone(X))$ are subspaces of $\mathbb{R}^n$. By part (c), we already have
+    $\aff(\conv(X))\subset\aff(\cone(X))$. Hence, we only need to show that 
+    $\dim\aff(\conv(X))\ge\dim\aff(\cone(X))$ to complete the proof. Suppose 
+    that $\dim\aff(\cone(X))=m$. By Prop. 1.3.1, there exists $b_1,\dots,b_m
+    \in X$ such that linearly independent and span $\aff(\cone(X))$. Note that
+    $\{b_1,\dots,b_m\}$ is also a set of linearly independent set in $\aff(
+    \conv(X))$. Hence, $\dim\aff(\conv(X))\ge m$. Thus, $\aff(\conv(X))=\aff
+    (\cone(X))$.
+  \end{proof}
+  
+  \paragraph{19.}
+  \begin{proof}
+    We denote these two representation by $f$ and $g$ respectively. For every
+    $(x,w)\in\conv(\bigcup_{i\in I}\epi(f_i))$, there exists some positive 
+    $\alpha_1,\dots,\alpha_m$ with $\sum\alpha_j=1$ and $(x_1,w_1),\allowbreak
+    \dots,\allowbreak(x_m,w_m)\in\bigcup\epi(f_i)$ such that $(x,w)=\sum_j
+    \alpha_j(x_j,w_j)$. Namely, for fix $x$,
+    \begin{align*}
+      f(x)=\inf\left\{\sum_j\alpha_jw_j:\,x=\sum_j\alpha_jx_j,\,
+      (x_j,w_j)\in\bigcup_{i}\epi(f_i),\,
+      \alpha_j\ge 0,\sum_j\alpha_j=1,m>0\right\}.
+    \end{align*}
+    By the definition of $\epi$, $(x_j,w_j)\in\bigcup_i\epi(f_i)$ implies 
+    $f_{i_j}(x_j)\le w_j$ for some $i_j$. Hence, $f(x)\ge g(x)$. Meanwhile,
+    since the union of graphs of $f_i$ is contained in $\bigcup\epi(f_i)$, 
+    $f(x)\le g(x)$. Thus, $f(x)=g(x)$.
+  \end{proof}
+  
+  \paragraph{20. Convexification of Nonconvex Functions}
+  \begin{proof}
+    $\,$\par
+    (a) The convexity follows from Prob. 13 immediately. For each $x$, let 
+    $f_x$ takes value $f(x)$ and $\infty$ for other points. Then $\{f_x\}$ is 
+    a collection of convex functions. Then, by Prob. 19, $F$ has the 
+    representation given.\par
+    (b) Put $M=\inf_{x\in\conv(X)}F(x)$. By definition, for all $y\in X\subset
+    \conv(X)$, $M\le F(y)$ and $F(y)\le f(y)$. Hence, $M\le\inf_{y\in X}f(y)$. 
+    For the converse, again by definition, for every $\vep>0$, there exists
+    some $x\in\conv(X)$ such that $M+\vep\ge F(x)$. By part (a), this implies
+    there exists nonnegative $\alpha_1,\dots,\alpha_m$ with $\sum\alpha_i=1$
+    and $x_1,\dots,x_m\in X$ such that $\sum\alpha_ix_i=x$ and $M+\vep\ge 
+    \sum\alpha_if(x_i)$. Since $\sum\alpha_if(x_i)$ is a weighted average of 
+    values of $f$, it is no less than $\inf_{x\in X}f(x)$. Since the choice of
+    $\vep>0$ is arbitrary, we conclude that $M\ge\inf_{x\in X}f(x)$. Thus,
+    $\inf_{x\in\conv(X)}F(x)=\inf_{x\in X}f(x)$.\par
+    (c) It follows immediately from part (b).
+  \end{proof}
+  
+  \paragraph{21. Minimization of Linear Functions}
+  \begin{proof}
+    Note that the convexification of $f:X\to\mathbb{R}$ is just $c^Tx$ with
+    domain $\conv(X)$. Hence, the equation follows from Prob. 20. Suppose that
+    the infimum of the left-hand side is attained, that is, there is some
+    $x^*\in\conv(X)$ such that $c^Tx^*=\inf_{x\in\conv(X)}c^Tx$. Then by the
+    definition of the convex hull, $x^*$ is the convex combination of some 
+    points $x_1,\dots,x_m$ of $X$ and, as $c^Tx$ is linear, $c^Tx^*$ is the
+    weighted average of $c^Tx_1,\dots,c^Tx_m$. As a consequence, $c^Tx^*\ge
+    \min\{c^Tx_1,\dots,c^Tx_m\}$. Thus, the infimum in the right-hand side can 
+    also be attained. For the converse, it is obvious.
+  \end{proof}
+  
+  \paragraph{22. Extension of Caratheodory's Theorem}
+  \begin{proof}
+    TODO % TODO: 1.22
+  \end{proof}
+  
+  \paragraph{23.}
+  \begin{proof}
+    Since $X$ is bounded, $\cl(X)$ is also bounded and therefore compact. 
+    Hence, by Prop. 1.3.2, $\conv(\cl(X))$ is compact. In consequence, $\cl(
+    \conv(\cl(X)))=\conv(\cl(X))$. Thus, $\cl(\conv(X))\subset\cl(\conv(\cl(X))
+    )=\conv(\cl(X))$. For the converse, it follows from the fact that $\conv
+    (\cl(\conv(X)))=\cl(\conv(X))$ and $\conv(\cl(X))\subset\conv(\cl(
+    \conv(X)))$. Thus, $\cl(\conv(X))=\conv(\cl(X))$. \par
+    If $X$ is compact, then it is bounded and closed. Hence, $\conv(X)=\conv
+    (\cl(X))=\cl(\conv(X))$. Namely, $\conv(X)$ is also closed. Meanwhile, 
+    $\conv(X)$ is bounded as $X$ is. Thus, $\conv(X)$ is compact.
+  \end{proof}
+  
+  \paragraph{24. Radon's Theorem}
+  \begin{proof}
+    TODO % TODO: 1.24
+  \end{proof}
+  
+  \paragraph{25. Helly's Theorem [Hel21]}
+  \begin{proof}
+    We use induction on the size of the collection. If the size is no more
+    than $n+1$, then the statement clearly holds. Assume that, for all 
+    collection of no more than $M$ sets, the statement holds. We show that the 
+    statement holds for every collection of $M+1$ sets.\par
+    Let $C_1,\dots,C_{m+1}$ be a collection of $M+1$ convex sets. For each $j=
+    1,\dots,M+1$, put $B_j=\bigcap_{i\ne j}C_i$. By the induction hypothesis,
+    all $B_j$ are nonempty. Choose $x_j\in B_j$ ($j=1,\dots,M+1$). Note that 
+    $M+1\ge n+2$. Hence, by Radon's Theorem, we can partition $\{1,\dots,M+1\}$
+    into to two sets $P$ and $Q$ such that
+    \[
+      D=\conv(\{x_p:\, p\in P\})\cap\conv(\{x_q:\, q\in Q\})\ne\varnothing.
+    \]
+    Let $x\in D$ and we show that $x\in\bigcap C_j$ to complete the proof. By
+    the construction of $B_j$, we know that for each $p\in P$, $x_p\in C_q$ for
+    every $q\in Q$. Since all $C_q$ are convex, $x$, a convex combination of 
+    $x_p$, belongs to all $C_q$. Similarly, we can show that $x$ belongs to all 
+    $C_p$. Thus, $x\in\bigcap C_j$. Namely, the intersection of $C_1,\dots,
+    C_{M+1}$ is nonempty.
+  \end{proof}
+  
+  \paragraph{26.}
+  \begin{proof}
+    First, clear that for any $I$, $\inf_x\max_i f_i(x)\le f^*$. For the 
+    converse, we assume, to obtain a contradiction, that for all index set $I$
+    with no more than $n+1$ indices, $\inf_x\max_i f_i(x)<f^*$. Then, putting
+    $X_i=\{x:\, f_i(x)<f^*\}$, $i=1,\dots,M$, this implies that every 
+    subcollection of $X_1,\dots,X_M$, provided it contains no more than $n+1$
+    sets, has nonempty intersection. Meanwhile, $X_i$ are convex sets as $f_i$
+    are convex functions. Hence, by Helly's theorem, $\bigcap_{i=1}^MX_i$ is
+    nonempty, which contradicts the infimum assumption of $f^*$. Thus, there 
+    exists some $I$ such that $\inf_x\max_i f_i(x)\ge f^*$ and therefore the
+    two values coincide.
+  \end{proof}
+% end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
