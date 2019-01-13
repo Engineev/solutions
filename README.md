@@ -10,7 +10,7 @@ My personal solutions to some textbook problems
 
 ## Stephen Boyd, Lieven Vandenberghe, *Convex Optimization*
 
-**ongoing**
+**Suspended**
 * Chapter 2. Convex Sets
   * 2.1 Definition of convexity (1, 2, 3, 4)
   * 2.2 Examples (5, 7, 8, 9.(a, b), 10)
@@ -25,13 +25,6 @@ My personal solutions to some textbook problems
   * 3.5 Quasiconvex functions (43)
   * 3.6 Log-concave and log-convex functions (47, 54)
 
-
-## Christopher M. Bishop *Pattern Recognition and Machine Learning*
-
-**ongoing**
-* Chapter 1. Introduction
-  * 1.1 Example: Polynomial Curve Fitting (1, 2)
-  * 1.2 Probability Theory (7, 8)
 
 ## William C. Brown, *A Second Course in Linear Algebra*
 
