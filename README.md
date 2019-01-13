@@ -26,12 +26,6 @@ My personal solutions to some textbook problems
   * 3.6 Log-concave and log-convex functions (47, 54)
 
 
-## William C. Brown, *A Second Course in Linear Algebra*
-
-**Suspended**
-* Chapter 1. Linear Algebra
-  * 1.3 Linear Transformation (9, 10)
-  * 1.4 Products and Direct Sums (2, 3, 4)
 
 ## Roger A. Horn, Charles R. Johnson, *Matrix Analysis*, 2nd ed
 
