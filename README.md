@@ -7,6 +7,7 @@ My personal solutions to some textbook problems
 * Chapter 1. Basic Convexity Concepts
   * 1.2 Convex Sets and Functions (1, 2.(d, e), 3, 4, 5, 6, 7, 8, 9, 11, 12, 13)
   * 1.3 Convex and Affine Hulls (14, 15, 16, 18, 19, 20, 21, 23, 25, 26)
+  * 1.4 Relative Interior, Closure, and Continuity (27, 28, 29, 31, 32, 34, 35.(a, b, c))
 
 ## Stephen Boyd, Lieven Vandenberghe, *Convex Optimization*
 

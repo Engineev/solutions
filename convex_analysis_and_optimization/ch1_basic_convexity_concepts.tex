@@ -560,6 +560,234 @@
     two values coincide.
   \end{proof}
 % end
+\subsection{Relative Interior, Closure, and Continuity}
+  \paragraph{27.}
+  \begin{proof}
+    Fix $x\in\ri(C)$ and, for every $\bar{x}\in\cl(C)$, put $x_\theta=(1-
+    \theta)x+\theta\bar{x}$. By the line segment principle, for every $\theta
+    \in[0,1)$, $x_\theta\in\ri(C)$. If $f(\bar{x})=\infty$, then $f(\bar{x})
+    \ge\gamma$ vacuously. If $f(\bar{x})<\infty$, then 
+    \[
+      (1-\theta)f(x)+\theta f(\bar{x})\ge f(x_\theta)\ge \gamma.
+    \]
+    Let $\theta\to 1$ and we get $f(\bar{x})\ge\gamma$.
+  \end{proof}
+  
+  \paragraph{28.}
+  \begin{proof}
+    By Prop. 1.4.5(b), we may assume without loss of generality that $0\in C$
+    and therefore $\aff(C)=S$. First, suppose that $x\in\ri(C)\subset C$. Then
+    there exists some $\delta>0$ such that $B\cap S\subset C$ where $B=\{y:\,
+    \|x-y\|<\delta\}$. For all $y\in B$, suppose $y=y_1+y_2$ where $y_1\in S$
+    and $y_2\in S^\perp$. Then $y-x=(y-y_1)+(y_1-x)$. Since $y_1-x\in S$, $y
+    -y_1\in S$. Therefore, 
+    \[
+      \|y-x\|^2=\|y-y_1\|^2+\|y_1-x\|
+      \quad\Rightarrow\quad
+      \|y_1-x\|\le \|y-x\|\le \delta.
+    \]
+    Hence, $y_1\in B\cap S\subset C$. As a consequence, $y=y_1+y_2\in C+
+    S^\perp$. Thus, $B\subset C+S^\perp$, implying that $\ri(C)\subset\inte(C+
+    S^\perp)\cap C$.\par
+    For the reverse inclusion, suppose $x\in\inte(C+S^\perp)\cap C$. Then, 
+    there exists some $\delta>0$ such that $B\subset C+S^\perp$. Hence,
+    \[
+      B\cap S\subset(C+S^\perp)\cap S
+      =\bigcup_{u\in S^\perp}\left\{(u+C)\cap S\right\}
+      =C.
+    \]
+    Thus, $x\in\ri(C)$ and therefore $\inte(C+S^\perp)\cap C\subset\ri(C)$.
+  \end{proof}
+  
+  \paragraph{29.}
+  \begin{proof}
+    $\,$\par
+    (a) Let $C\subset\mathbb{R}^n$ be a convex set of dimension $m$ and $S
+    \subset C$ the simplex whose dimension attains the maximum $m\hp$. Let 
+    $x_0,\dots,x_{m\hp}$ be the vertices of $S$.\par
+    First we show that $m\ge m\hp$. By definition, $x_1-x_0,\dots,x_{m\hp}-x_0$
+    are linearly independent. Hence, $\dim\aff(S)\ge m\hp$. Meanwhile, as $C
+    \supset S$, $\aff(C)\supset\aff(C)$. Thus, $m=\dim\aff(C)\ge\dim\aff(S)\ge 
+    m\hp$.\par
+    For the converse, we first show that $\aff(S)\supset\aff(C)$. For every
+    $x\in C$, $x$ is an affine combination of $x_0,\dots,x_{m\hp}$, otherwise,
+    $x_0,\dots,x_{m\hp},x$ are the vertices of a $(m\hp+1)$-dimensional 
+    simplex contained by $C$, which would contradict the maximum property of 
+    $S$. Thus, $\aff(S)\supset\aff(C)$, implying that $\dim\aff(S)\ge m$. By 
+    Prob. 18(a), $\aff(S)=\aff\{x_0,\dots,x_{m\hp}\}$. Hence, $m\hp=\dim\aff
+    (S)$. Thus, $m\hp\ge m$.\par
+    (b) Let $C$ be a nonempty convex set. If $\dim\aff(C)=0$, then the result
+    hold vacuously. Suppose $\dim\aff(C)=m>0$. Then, by part (a), there exists
+    a $m$-dimensional simplex $S\subset C$. By the previous discussion, we know
+    that $\aff(C)=\aff(S)$. Hence, it suffices to show that $S$ has a nonempty
+    interior. Let $x_0,\dots,x_m$ be the vertices of $S$. Put
+    \[
+      f(x)=x_0+\begin{bmatrix}
+        x_1-x_0 & \cdots x_m-x_0
+      \end{bmatrix}u,
+      \quad u\in\mathbb{R}^m.
+    \]
+    $f$ is an affine function from $\mathbb{R}^m$ to $\aff(S)$ and $S=f
+    (\tilde{S})$ where $\tilde{S}=\{u\in\mathbb{R}^m:\, 0\le u_i\le 1,i=1,
+    \dots,m\}$. Clear that $\tilde{S}$ has nonempty interior. Hence, $S$ also
+    nonempty interior relative to $\aff(C)$ as affine functions preserve the
+    norm.
+  \end{proof}
+  
+  \paragraph{31.}
+  \begin{proof}
+    $\,$\par
+    (a) Suppose that $x\in\ri(C)$ and assume, to obtain a contradiction, that 
+    there exists some $\bar{x}\in\aff(C)$ such that for all $\gamma>1$, 
+    \[
+      x_\gamma=x+(\gamma-1)(x-\bar{x})\notin C.
+    \]
+    Since $x_\gamma-x=(\gamma-1)(x-\bar{x})$, $x_\gamma\in\aff(C)$. Hence, for
+    all $\delta>0$, let $B_\delta=\{y:\, \|x-y\|<\delta\}$. Then, $x_{\delta/
+    2}\in B\cap\aff(C)$ but $x\notin C$, contradicting the assumption that $x$
+    is a relative interior point. Hence, for all $\bar{x}\in\aff(C)$, there is
+    some $\gamma>1$ such that $x+(\gamma-1)(x-\bar{x})\in C$. The converse
+    follows immediately from Prop. 1.4.1(c).\par
+    (b) Clear that $\cone(C)\subset\aff(C)$. For the reverse inclusion, suppose
+    $\bar{x}\in\aff(C)$. Since $0\in C$, $-\bar{x}\in\aff(C)$. Then, by part 
+    (a), there exists some $\gamma>1$ such that $(\gamma-1)\bar{x}\in C$. Thus,
+    \[
+      x=\frac{1}{\gamma-1}((\gamma-1)\bar{x})\in\cone(C).
+    \]
+    Hence, $\cone(C)\supset\aff(C)$. \par
+    (c) By Prob. 1.18, $\cone(X)=\cone(\conv(X))$ and $\aff(X)=\aff(\conv(X))$.
+    Since $0\in\ri(\conv(X))$, $\cone(\conv(X))=\aff(\conv(X))$, by part (b).
+    Thus, $\cone(X)=\aff(X)$.
+  \end{proof}
+  
+  \paragraph{32.}
+  \begin{proof}
+    $\,$\par
+    (a) If $0\in\ri(C)$, then, by Prob. 1.31, $\cone(X)=\aff(X)$. Thus, $\cone
+    (X)$ is closed. Now, suppose $0\notin\cl(C)$. Let $x\in\cl(\cone(X))$. Note
+    that $x\ne 0$. Let $(x^{(k)})\subset\cone(X)$ converge to $x$. By Prob. 15,
+    we may represent each $x^{(k)}$ by $x^{(k)}=\gamma_kx_k$ where $\gamma_k
+    >0$ and $x_k\in C$. We show that the sequence $(x_k,\gamma_k)$ is bounded.
+    The boundedness of $(x_k)\subset C$ comes from the compactness of $C$. 
+    Assume, to obtain a contradiction, that $\gamma_k$ is unbounded. Then, 
+    there is a subsequence $(\gamma_{k_j})$ which converges to $\infty$. Since
+    $0\notin\cl(C)$, there exists a positive $\delta$ such that $\|x_k\|>
+    \delta$ for each $k$. Hence,
+    \[
+      \lim_{j\to\infty}\|x^{(k_j)}\|=
+      \lim_{j\to\infty}|\gamma_{k_j}|\|x_{k_j}\|=\infty,
+    \]
+    which contradict the hypothesis $x^{(k)}\to x$. Hence, $(\gamma_k)$ is 
+    bounded and, therefore, so is $(x_k,\gamma_k)$. Then, it has a a 
+    subsequence converging to some point, say, $(\tilde{x},\gamma)$ and 
+    therefore $x=\gamma\tilde{x}$. Since $\gamma_k\ge 0$, $\gamma\ge 0$. And
+    by the closedness of $C$, $\tilde{x}\in C$. Thus, $x\in\cone(C)$. Namely,
+    $\cone(C)$ is closed.\par
+    (b) Let $C_1=\{(x,y)\in\mathbb{R}^2:\, x>0,y\ge 1/x\}$, which is a closed
+    convex set in $\mathbb{R}^2$. However, $\cone(X)=\{(x,y):\, x>0,y>0\}$ is
+    not closed.\par
+    Let $C_2=\{(x,y)\in\mathbb{R}^2:\, (x-1)^2+y^2\le 1\}$, which is convex and
+    compact but contains the origin. $\cone(C_2)$, the positive half plane, is
+    not closed.\par
+    (c) By Prop. 1.3.2, $\conv(C)$ is compact as $C$ is. Since the origin is 
+    not in the relative boundary of $\conv(C)$, by part (a), $\cone(\conv(C))$
+    is closed. Meanwhile, Prob. 1.18 implies $\cone(C)=\cone(\conv(C))$. Thus,
+    $\cone(C)$ is closed.
+  \end{proof}
+  
+  \paragraph{34.}
+  \begin{proof}
+    We shall construct special linear transformation and apply Prop. 1.4.4 to
+    show the result. Consider the space $V=\mathbb{R}^{n+m}$. Then $A$ is
+    characterized by the set $G=\{(x,Ax):\,x\in\mathbb{R}^n\}\subset V$, which,
+    by the linearity of $A$, is a subspace of $V$. Put $D=\mathbb{R}^n\times C$ 
+    and let $P:V\to\mathbb{R}^n$ be the projection mapping. Then, $A\inv\cdot 
+    C=T\cdot(G\cap D)$. Thus, by Prop. 1.4.4(a),
+    \begin{equation}
+      \label{eq:1.34-1}
+      \ri(A\inv\cdot C)=\ri(T\cdot(G\cap D))=T\cdot\ri(G\cap D).
+    \end{equation}
+    Since $G$ is a subspace, $\ri(G)=G$. Meanwhile, $\ri(G)=\mathbb{R}^n\times
+    \ri(C)$. Since $A\inv\cdot\ri(C)$ is nonempty, $\ri(G)$ and $\ri(D)$ has
+    nonempty intersection. Therefore, by Prop. 1.4.5,
+    \[
+      \ri(G\cap D)=\ri(G)\cap\ri(D)=G\cap(\mathbb{R}^n\times\ri(C))=
+      (A\inv\cdot\ri(C))\times\ri(C).
+    \]
+    Hence,
+    \[
+      T\cdot\ri(G\cap D)=T\cdot((A\inv\cdot\ri(C))\times\ri(C))=
+      A\inv\cdot\ri(C).
+    \]
+    This, together with \eqref{eq:1.34-1}, imply that $\ri(A\inv\cdot C)=A\inv
+    \cdot\ri(C)$.\par
+    From a similar argument we can obtain that 
+    \begin{align*}
+      \cl(A\inv\cdot C)\supset T\cdot\cl(G\cap D)=A\inv\cdot\cl(C).
+    \end{align*}
+    For the reverse direction, suppose $x\in\cl(A\inv\cdot C)$ and let $(x_k)
+    \subset A\inv\cdot C$ be a sequence converging to $x$. Suppose $y_k=Ax_k$,
+    which is contained in $C$. By the continuity of $A$, $y_k\to Ax=y$ as $x_k
+    \to x$. Note that $y\in\cl(C)$. Hence, $x\in A\inv\cdot\cl(C)$. Thus, $\cl
+    (A\inv\cdot C)\subset A\inv\cdot\cl(C)$, completing the proof.
+  \end{proof}
+  
+  \paragraph{35. Closure of a Convex Function}
+  \begin{proof}
+    $\,$\par
+    (a) By Prop. 1.2.2, $\cl f$ is lower semicontinuous. Let $g$ be a lower
+    semicontinuous function majorized by $f$. For $x\notin\dom f$, $(\cl f)(x)
+    =\infty\ge g(x)$. Suppose that $x\in\dom f$. Note that $(\cl f)(x)=\inf\{
+    w:\,(x,w)\in\cl(\epi f)\}$. Hence, for every $\vep>0$, there exists a
+    $(x,w)\in\cl(\epi f)$ such that $(\cl f)(x)+\vep>w$. Suppose that $(x_k,
+    w_k)\subset\epi f$ converges to $(x,w)$. Then
+    \[
+      g(x)\le\liminf_{k\to\infty}f(x_k)\le\lim_{k\to\infty}w_k
+      =w < (\cl f)(x)+\vep.
+    \]
+    Since the choice of $\vep>0$ is arbitrary, we conclude that $g(x)\le(\cl f)
+    (x)$.\par
+    (b) By definition, $\cl f$ is closed and, since the closure of the convex
+    set $\epi f$ is convex, $\cl f$ is convex. Since $f$ is proper, there 
+    exists some point at which $f$ is not $\infty$. In consequence, $\epi f$ is
+    nonempty and, therefore, so is $\cl(\epi f)$. Hence, there exists some 
+    point at which $\cl f$ is not $\infty$. To show that $\cl f>-\infty$, we 
+    argue by contradiction. Assume that $\cl(\epi f)$ contains a vertical line,
+    say, $L=\{(\bar{x},w):\, w\in\mathbb{R}\}$. Let $((\bar{x},w_k))$ be such
+    that $w_k\to-\infty$. Since $f$, a convex function, is continuous over
+    $\ri(\dom f)$, $\bar{x}$ can not be in $\ri(\dom f)$, otherwise $f$ will 
+    take value $-\infty$ at $\bar{x}$. Let $\bar{x}\ne x\in\dom f$ and fix $(x,
+    w)\in\ri(\epi f)$. Then, for every $\theta\in(0,1)$, by the line segment
+    principle, $(x_{\theta},w_{k,\theta})=(1-\theta)(x,w)+\theta(\bar{x},w_k)
+    \in\ri(\epi f)$. For each $\theta$, $\theta w_k\to-\infty$ as $k\to\infty$,
+    which implies that $\cl(\epi f)$ contains the vertical line $\{(x_\theta,w)
+    :\,w\in\mathbb{R}\}$. This is impossible by our preceding discussion as
+    $x_\theta\in\ri(\dom f)$. Thus, $\cl f>-\infty$. We conclude that $\cl f$ 
+    is a closed proper convex function. And it follows from the continuity of
+    $f$ over $\ri(\dom f)$ that $\cl f$ and $f$ coincide over $\ri(\dom f)$.
+    \par
+    (c) By part (a), $\cl f$ is lower semicontinuous and majorized by $f$. 
+    Hence,
+    \[
+      (\cl f)(y)\le\lim(\cl f)(y+\alpha(x-y))\le\lim f(y+\alpha(x-y)).
+    \]
+    For the converse, let $(x,w)\in\ri(\epi f)$. Then for each $\alpha\in
+    (0,1)$, by the line segment principle,
+    \[
+      (y, (\cl f)(y))+\alpha(x-y, w-(\cl f)(y))=
+      (y+\alpha(x-y), (\cl f)(y)+\alpha(w-(\cl f)(y)))\in
+      \ri(\epi f).
+    \]
+    Namely,
+    \[
+      f(y+\alpha(x-y))\le
+      (\cl f)(y)+\alpha(w-(\cl f)(y)).
+    \]
+    Let $\alpha\downarrow 0$ and we get $\lim f(y+\alpha(x-y))\le(\cl f)(y)$.
+    Thus, $\lim f(y+\alpha(x-y))=(\cl f)(y)$.
+  \end{proof}
+
+% end
 
 
 
