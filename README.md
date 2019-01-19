@@ -1,6 +1,33 @@
 # solutions
 My personal solutions to some textbook problems
 
+## H.L. Royden, *Real Analysis*, 3rd ed
+
+**Ongoing**
+* Chapter 3. Lebesgue Measure
+  * 3.1 Introduction (1, 2, 3)
+  * 3.2 Outer Measure (5, 6, 7, 8)
+  * 3.3 Measurable Sets and Lebesgue Measure (10, 11, 12, 13)
+  * 3.5 Measurable Functions (19, 21, 22.d, 23, 24)
+  * 3.6 Littlewood's Three Principles (30, 31)
+* Chapter 4. The Lebesgue Integral
+  * 4.2 The Lebesgue Integral of a Bounded Function (2)
+  * 4.3 The Integral of a Nonnegative Function (3, 5, 6, 7, 8, 9)
+  * 4.4 The General Lebesgue Integral (12, 13, 15.a, 16, 18)
+* Chapter 5. Differentiation and Integration
+  * 5.1 Differentiation of Monotone Functions (3, 4, 5.a)
+  * 5.2 Functions of Bounded Variation (7, 8, 9, 10.a, 11)
+  * 5.4 Absolute Continuity (12, 13, 14, 17.a, 18, 20, 21)
+  * 5.5 Convex Functions (23, 24, 25.a, 27, 28)
+* Chapter 6. The Classical Banach Spaces
+  * 6.1 The L^p Spaces (1, 2, 3, 4)
+  * 6.2 The Minkowski and Hölder Inequalities (8)
+  * 6.3 Convergence and Completeness (9, 10, 11, 13, 16, 17, 18)
+  * 6.4 Approximation in L^p (19)
+* Chapter 11. Measure and Integration
+  * 11.1 Measure Spaces (1, 3, 9.(a, b, c, d))
+
+
 ## Dimitri P. Bertsekas with Angelia Nedic and Asuman E. Ozdaglar, *Convex Analysis and Optimization*
 
 **ongoing**
@@ -62,29 +89,6 @@ My personal solutions to some textbook problems
   * 8.A Generalized Eigenvectors and Nilpotent Operators (3, 5, 7, 9, 13, 15)
   * 8.B Decomposition of an Operator (10)
 
-## H.L. Royden, *Real Analysis*, 3rd ed
-
-**Archived**
-* Chapter 3. Lebesgue Measure
-  * 3.1 Introduction (1, 2, 3)
-  * 3.2 Outer Measure (5, 6, 7, 8)
-  * 3.3 Measurable Sets and Lebesgue Measure (10, 11, 12, 13)
-  * 3.5 Measurable Functions (19, 21, 22.d, 23, 24)
-  * 3.6 Littlewood's Three Principles (30, 31)
-* Chapter 4. The Lebesgue Integral
-  * 4.2 The Lebesgue Integral of a Bounded Function (2)
-  * 4.3 The Integral of a Nonnegative Function (3, 5, 6, 7, 8, 9)
-  * 4.4 The General Lebesgue Integral (12, 13, 15.a, 16, 18)
-* Chapter 5. Differentiation and Integration
-  * 5.1 Differentiation of Monotone Functions (3, 4, 5.a)
-  * 5.2 Functions of Bounded Variation (7, 8, 9, 10.a, 11)
-  * 5.4 Absolute Continuity (12, 13, 14, 17.a, 18, 20, 21)
-  * 5.5 Convex Functions (23, 24, 25.a, 27, 28)
-* Chapter 6. The Classical Banach Spaces
-  * 6.1 The L^p Spaces (1, 2, 3, 4)
-  * 6.2 The Minkowski and Hölder Inequalities (8)
-  * 6.3 Convergence and Completeness (9, 10, 11, 13, 16, 17, 18)
-  * 6.4 Approximation in L^p (19)
 
 ## Erwin Kreyszig, *Introductory Functional Analysis with Applications*
 

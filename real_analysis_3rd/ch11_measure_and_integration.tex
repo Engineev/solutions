@@ -1,0 +1,98 @@
+\section{Measure and Integration}
+\subsection{Measure Spaces}
+  \paragraph{1.}
+  \begin{proof}
+    Put $B_1=A_1$ and $B_n=A_n\setminus A_{n-1}$ for $n\ge 2$. $(B_n)$ is a 
+    sequence of disjoint measurable sets. By the
+    countable additivity of $\mu$,
+    \[
+      \mu\left(\bigcup_{k=1}^\infty B_k\right)=
+      \sum_{k=1}^\infty\mu(B_k)=
+      \lim_{n\to\infty}\sum_{k=1}^n\mu(B_k)=
+      \lim_{n\to\infty}\mu\left(\bigcup_{k=1}^n B_k\right).
+    \]
+    Since $\bigcup_{k=1}^n B_k=\bigcup_{k=1}^n A_k$ for $k=1,\dots,n,\dots,
+    \infty$, this implies $\mu(\bigcup A_k)=\lim\mu(\bigcup_{k=1}^n A_k)$.
+  \end{proof}
+  
+  \paragraph{3.}
+  \begin{proof}
+    $\,$\par
+    (a) First,
+    \[
+      0=\mu(E_1\bigtriangleup E_2)=\mu(E_1\setminus E_2\cup E_2\setminus E_1)=
+      \mu(E_1\setminus E_2)+\mu(E_2\setminus E_1).
+    \]
+    Together with the nonnegativity of $\mu$, we conclude that $\mu(E_1
+    \setminus E_2)=\mu(E_2\setminus E_1)=0$. Note that
+    \[
+      \mu(E_1\cup E_2)=\mu(E_1\setminus E_2\cup E_2)=
+      \mu(E_1\setminus E_2)+\mu(E_2).
+    \]
+    Hence, $\mu(E_1\cup E_2)=\mu(E_2)$. Similarly, $\mu(E_1\cup E_2)=\mu(E_1)$.
+    Thus, $\mu(E_1)=\mu(E_2)$.\par
+    (b) Since $\mu(E_1\bigtriangleup E_2)=0$ and $E_2\setminus E_1\subset E_1
+    \bigtriangleup E_2$, by the completeness of $\mu$, $E_2\setminus E_1\in
+    \mathcal{B}$. Similarly, $E_1\setminus E_2\in\mathcal{B}$. In consequence,
+    $E_1\cap E_2 = E_1\setminus(E_1\setminus E_2)\in\mcal{B}$ and, therefore,
+    $E_2=(E_1\cap E_2)\cup(E_2\setminus E_1)\in\mcal{B}$.
+  \end{proof}
+  
+  \paragraph{9.}
+  \begin{proof}
+    $\,$\par
+    (a) First, we argue by contradiction to show that $\mcal{R}$ and $\mcal{R}$.
+    Assume that there exists some $E\in\mcal{R}\cap\mcal{R}\hp$, that is, $E\in
+    \mcal{R}$ and $E^c\in\mcal{R}$. Then $X=E\cup E^c\in\mcal{R}$, which 
+    contradict the assumption that $\mcal{R}$ is not a $\sigma$-algebra. Thus,
+    $\mcal{R}\cap\mcal{R}\hp=\varnothing$.\par
+    Clear that $\mcal{R}\cup\mcal{R}\hp$ is a $\sigma$-algebra containing 
+    $\mcal{R}$. Hence, $\mcal{R}\cup\mcal{R}\hp\supset\mcal{B}$. Meanwhile, since
+    $\mcal{B}=\sigma(\mcal{R})$, $\mcal{R}\cup\mcal{R}\hp\subset\mcal{B}$. Thus,
+    $\mcal{R}\cup\mcal{R}\hp=\mcal{B}$.\par
+    (b) Since $\varnothing\in\mcal{R}$, $\bar{\mu}\varnothing=\mu\varnothing=0$.
+    Meanwhile, clear that $\bar{\mu}$ is nonnegative. Let $(E_n)\subset\mcal{B}$
+    be a sequence of disjoint sets. By part (a), each $E_n$ is either a element
+    of $\mcal{R}$ or $\mcal{R}\hp$. If all $E_n\in\mcal{R}$, then by the 
+    countable additivity of $\mu$, $\mu(\bigcup E_n)=\sum\mu E_n$. Suppose there 
+    exists some $E_n$ in $\mcal{R}$ and some $E_m$ in $\mcal{R}\hp$. Let $F_1$ 
+    and $F_2$ be the union of theses sets respectively. Since $\sigma$-ring is 
+    closed under union, $F_1\in\mcal{R}$, and since $(\bigcup E_m)^c=\bigcap 
+    E_m^c$, $F_2\in\mcal{R\hp}$. Hence, $F_1\cup F_2\in\mcal{R}\hp$, otherwise,
+    $F_2=(F_1\cup F_2)\setminus F_1$ would be an element of $\mcal{R}$. 
+    Therefore, $\mu(\bigcup E_n)=\infty=\sum\mu E_n$. Thus, $\bar{\mu}$ is a 
+    measure on $\mcal{B}$.\par
+    (c) Clear that $\ubar{\mu}$ is nonnegative and $\ubar{\mu}\varnothing=0$.
+    Let $(E_n)\subset\mcal{B}$ be disjoint. Note that for $E\in\mcal{R}$, $\mu 
+    E=\sup\{\mu A:\,A\subset E,A\in\mcal{R}\}$. Hence, it suffices to show that
+    \[
+      M=\sup\left\{\mu A:\, A\subset\bigcup_n E_n,A\in\mcal{R}\right\}=
+      \sum_n\sup\{\mu A:\, A\subset E_n,A\in\mcal{R}\}=\sum_n M_n.
+    \]
+    By definition, for all $\vep>0$, there exists a sequence $(A_n)\subset
+    \mcal{R}$ such that $A_n\subset E_n$ and $M_n<\mu A_n+\vep/2^n$. Put $A=
+    \bigcup A_n$. Since $(A_n)$ are disjoint as $(E_n)$ are, 
+    \[
+      \sum M_n < \vep+\sum\mu A_n =\vep+\mu A.
+    \]
+    Meanwhile, since $A\subset\bigcup E_n$ and $A\in\mcal{R}$, $\mu A\le M$. 
+    Therefore, $\sum M_n<\vep+M$. Thus, $\sum M_n\le M$.\par
+    For the converse, similarly, for every $\vep>0$, there exists an $A\in
+    \mcal{R}$ such that $A\subset\bigcup E_n$ and $M-\vep>\mu A$. Put $A_n=E_n
+    \cap A$. If $E_n\in\mcal{R}$, $A_n\in\mcal{R}$ by definition. If $E_n\in
+    \mcal{R}\hp$, $A_n=A\setminus E_n^c\in\mcal{R}$. Hence, $A_n\in\mcal{R}$ for
+    each $n$. Thus,
+    \[
+      M-\vep<\mu A=\sum_n\mu A_n\le\sum_n M_n,
+    \]
+    implying that $M\le \sum M_n$. Therefore, $M=\sum M_n$, i.e., $\ubar{\mu}$ is
+    countably additive. Thus, we conclude that $\ubar{\mu}$ is a measure on
+    $\mcal{B}$.\par
+    (d) Clear that $\mu_\beta$ is nonnegative and $\mu_beta\varnothing=0$. The
+    preceding discussion, \textit{mutatis mutandis}, yields the countable 
+    additivity.
+  \end{proof}
+% end
+
+
+
