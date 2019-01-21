@@ -41,27 +41,27 @@
   \paragraph{9.}
   \begin{proof}
     $\,$\par
-    (a) First, we argue by contradiction to show that $\mcal{R}$ and $\mcal{R}$.
-    Assume that there exists some $E\in\mcal{R}\cap\mcal{R}\hp$, that is, $E\in
-    \mcal{R}$ and $E^c\in\mcal{R}$. Then $X=E\cup E^c\in\mcal{R}$, which 
-    contradict the assumption that $\mcal{R}$ is not a $\sigma$-algebra. Thus,
-    $\mcal{R}\cap\mcal{R}\hp=\varnothing$.\par
+    (a) First, we argue by contradiction to show that $\mcal{R}$ and 
+    $\mcal{R}$. Assume that there exists some $E\in\mcal{R}\cap\mcal{R}\hp$, 
+    that is, $E\in\mcal{R}$ and $E^c\in\mcal{R}$. Then $X=E\cup E^c\in
+    \mcal{R}$, which contradicts the assumption that $\mcal{R}$ is not a 
+    $\sigma$-algebra. Thus, $\mcal{R}\cap\mcal{R}\hp=\varnothing$.\par
     Clear that $\mcal{R}\cup\mcal{R}\hp$ is a $\sigma$-algebra containing 
-    $\mcal{R}$. Hence, $\mcal{R}\cup\mcal{R}\hp\supset\mcal{B}$. Meanwhile, since
-    $\mcal{B}=\sigma(\mcal{R})$, $\mcal{R}\cup\mcal{R}\hp\subset\mcal{B}$. Thus,
-    $\mcal{R}\cup\mcal{R}\hp=\mcal{B}$.\par
-    (b) Since $\varnothing\in\mcal{R}$, $\bar{\mu}\varnothing=\mu\varnothing=0$.
-    Meanwhile, clear that $\bar{\mu}$ is nonnegative. Let $(E_n)\subset\mcal{B}$
-    be a sequence of disjoint sets. By part (a), each $E_n$ is either a element
-    of $\mcal{R}$ or $\mcal{R}\hp$. If all $E_n\in\mcal{R}$, then by the 
-    countable additivity of $\mu$, $\mu(\bigcup E_n)=\sum\mu E_n$. Suppose there 
-    exists some $E_n$ in $\mcal{R}$ and some $E_m$ in $\mcal{R}\hp$. Let $F_1$ 
-    and $F_2$ be the union of theses sets respectively. Since $\sigma$-ring is 
-    closed under union, $F_1\in\mcal{R}$, and since $(\bigcup E_m)^c=\bigcap 
-    E_m^c$, $F_2\in\mcal{R\hp}$. Hence, $F_1\cup F_2\in\mcal{R}\hp$, otherwise,
-    $F_2=(F_1\cup F_2)\setminus F_1$ would be an element of $\mcal{R}$. 
-    Therefore, $\mu(\bigcup E_n)=\infty=\sum\mu E_n$. Thus, $\bar{\mu}$ is a 
-    measure on $\mcal{B}$.\par
+    $\mcal{R}$. Hence, $\mcal{R}\cup\mcal{R}\hp\supset\mcal{B}$. Meanwhile, 
+    since $\mcal{B}=\sigma(\mcal{R})$, $\mcal{R}\cup\mcal{R}\hp\subset
+    \mcal{B}$. Thus, $\mcal{R}\cup\mcal{R}\hp=\mcal{B}$.\par
+    (b) Since $\varnothing\in\mcal{R}$, $\bar{\mu}\varnothing=\mu\varnothing
+    =0$. Meanwhile, clear that $\bar{\mu}$ is nonnegative. Let $(E_n)\subset 
+    \mcal{B}$ be a sequence of disjoint sets. By part (a), each $E_n$ is either 
+    an element of $\mcal{R}$ or $\mcal{R}\hp$. If all $E_n\in\mcal{R}$, then by
+    the countable additivity of $\mu$, $\mu(\bigcup E_n)=\sum\mu E_n$. Suppose 
+    there exists some $E_n$ in $\mcal{R}$ and some $E_m$ in $\mcal{R}\hp$. Let 
+    $F_1$ and $F_2$ be the union of theses sets respectively. Since 
+    $\sigma$-ring is closed under union, $F_1\in\mcal{R}$, and since $(\bigcup 
+    E_m)^c=\bigcap E_m^c$, $F_2\in\mcal{R\hp}$. Hence, $F_1\cup F_2\in\mcal{R}
+    \hp$, otherwise, $F_2=(F_1\cup F_2)\setminus F_1$ would be an element of 
+    $\mcal{R}$. Therefore, $\mu(\bigcup E_n)=\infty=\sum\mu E_n$. Thus, $\bar{
+    \mu}$ is a measure on $\mcal{B}$.\par
     (c) Clear that $\ubar{\mu}$ is nonnegative and $\ubar{\mu}\varnothing=0$.
     Let $(E_n)\subset\mcal{B}$ be disjoint. Note that for $E\in\mcal{R}$, $\mu 
     E=\sup\{\mu A:\,A\subset E,A\in\mcal{R}\}$. Hence, it suffices to show that
@@ -80,19 +80,155 @@
     For the converse, similarly, for every $\vep>0$, there exists an $A\in
     \mcal{R}$ such that $A\subset\bigcup E_n$ and $M-\vep>\mu A$. Put $A_n=E_n
     \cap A$. If $E_n\in\mcal{R}$, $A_n\in\mcal{R}$ by definition. If $E_n\in
-    \mcal{R}\hp$, $A_n=A\setminus E_n^c\in\mcal{R}$. Hence, $A_n\in\mcal{R}$ for
-    each $n$. Thus,
+    \mcal{R}\hp$, $A_n=A\setminus E_n^c\in\mcal{R}$. Hence, $A_n\in\mcal{R}$
+    for each $n$. Thus,
     \[
       M-\vep<\mu A=\sum_n\mu A_n\le\sum_n M_n,
     \]
-    implying that $M\le \sum M_n$. Therefore, $M=\sum M_n$, i.e., $\ubar{\mu}$ is
-    countably additive. Thus, we conclude that $\ubar{\mu}$ is a measure on
+    implying that $M\le \sum M_n$. Therefore, $M=\sum M_n$, i.e., $\ubar{\mu}$ 
+    is countably additive. Thus, we conclude that $\ubar{\mu}$ is a measure on
     $\mcal{B}$.\par
     (d) Clear that $\mu_\beta$ is nonnegative and $\mu_beta\varnothing=0$. The
     preceding discussion, \textit{mutatis mutandis}, yields the countable 
     additivity.
   \end{proof}
 % end
+\subsection{Measurable Functions}
+  \paragraph{10.}
+  \begin{proof}
+    For every integers $n$ and $k$, let
+    \begin{align*}
+      &E_{n,k}=\{x:\, k2^{-n}\le f(x)<(k+1)2^{-n}\}, (k\le 2^{2n})\\
+      &E_{n,2^{2n}+1}=\{x:\, f(x)\ge(2^{2n}+1)2^{-n})\},\\
+      &\varphi_n=2^{-n}\sum_{k=0}^{2^{2n}+1}k\chi_{E_{n,k}}
+    \end{align*}
+    Since $f$ is measurable, all $E_{n,k}$ are measurable. Thus, $\langle
+    \varphi_n\rangle$ is a sequence of nonnegative simple functions. Clear that 
+    for fixed $n$, $\langle E_{n,k}\rangle_k$ are disjoint. Let $x\in X$ be 
+    fixed. If $x\in E_{n,k}$ for some $k\le 2^{2n}$, then $x\in E_{n+1,2k}\cup
+    E_{n+1,2k+1}$. Hence, $\varphi_{n+1}(x)\ge 2k/2^{-(n+1)}=\varphi_n(x)$. If
+    $x\in E_{n,2^{2n}+1}$, then $x\in E_{n+1,k\hp}$ for some $k\hp\ge
+    2^{2n+2}$. Hence, $\varphi_{n+1}(x)\ge 2k/2^{-(n+1)}=\varphi_n(x)$. Thus,
+    $\varphi_{n+1}\ge\varphi_n$ for all $n$.\par
+    Now, we show that $\varphi_n$ converges to $f$ pointwisely. Let $x\in X$ be
+    fixed. If $f(x)=\infty$, then $\varphi_n(x)=2^{-n}(2^{2n}+1)\to\infty$ as
+    $n\to\infty$. If $f(x)<\infty$, then $f(x)<2^{N}$ for some integer $N$. 
+    For all $n>N$, $x\in E_{n,k_n}$ where $k_n=\lfloor 2^nf(x)\rfloor$. Thus,
+    \[
+      f(x)-\varphi_n(x)=f(x)-2^{-n}\lfloor 2^nf(x)\rfloor\to 0
+    \]
+    as $n\to\infty$. Namely, $\varphi_n(x)\to f(x)$.\par
+    If the measure space is $\sigma$-finite, then let $(X_n)\subset X$ be a
+    sequence of measurable sets such that $X_n\subset X_{n+1}$, $\mu X_n<
+    \infty$ and $X=\bigcup X_n$. Replacing $E_{n,k}$ with $E_{n,k}\cap X_n$ 
+    yields a sequence $\langle\varphi_n\rangle$ satisfying all previous 
+    requirements and vanishing outside $X_n$ for each $n$.
+  \end{proof}
+  
+  \paragraph{11.}
+  \begin{proof}
+    Put $F_\alpha=\{x:\,f(x)\le\alpha\}$, $G_\alpha=\{x:\,g(x)\le\alpha\}$, 
+    $E=\{x:\,f(x)\ne g(x)\}$ and $E_\alpha=\{x\in E: g(x)\le\alpha\}$. Then
+    $G_\alpha=(F_\alpha\setminus E)\cup E_\alpha$. Since $F$ is measurable, all
+    $F_\alpha$ are measurable. Since $f=g$ a.e., $E$ is of measure zero. 
+    Meanwhile, since $\mu$ is complete, $E_\alpha\subset E$ is measurable. 
+    Thus, $G_\alpha$ is measurable. Namely, $g$ is measurable.
+  \end{proof}
+  
+  \paragraph{13.}
+  \begin{proof}
+    Note that $f_n$ converges to $f$ in measure iff for every $\vep>0$,
+    \begin{equation*}
+      \lim_{n\to\infty}\mu\{x\in X:\, |f_n(x)-f(x)|\ge\vep\}=0.
+    \end{equation*}\par
+    (a) By definition, for every $\vep_m=2^{-m}$, there exists some integer 
+    $N_m$ such that for all $n\ge N_m$, $\mu\{x:\,|f_n(x)-f(x)|\ge\vep_m\}<
+    \vep_m$. Consider the subsequence $\langle f_{N_m}\rangle_m$. We show that
+    it converges to $f$ almost everywhere. Put $E_m=\{x:\,|f_{N_m}-f(x)|\ge
+    \vep_m\}$ and $E=\limsup E_m$. Then, for each $k$,
+    \[
+      \mu E\le \bigcup_{m=k}^\infty E_m\le \sum_{m=k}^\infty 2^{-m+1}\to 0,
+      \quad\text{as}\quad k\to\infty.
+    \]
+    For every $x\notin E$, $x\notin\bigcup_{m=k}^\infty E_m$ for some $k$. Then
+    for all $m>k$, $|f_{N_m}(x)-f(x)|<\vep_{N_m}$. Hence, $f_{N_m}(x)\to f(x)$.
+    Namely, $f_{N_m}\to f$ almost everywhere.\par
+    (b) First we prove a lemma: Let $\langle E_n\rangle$ be a sequence of
+    measurable subset of $A$. Then $\limsup\mu E_n\le \mu(\limsup E_n)$. Let
+    $F_N=\bigcup_{n=N}^\infty E_n$. Clear that $F_{n+1}\subset F_n$ and $\mu 
+    F_1<\infty$. Hence, by Prop. 2, 
+    \[
+      \limsup\mu E_n\le \lim\mu F_n=
+      \mu\left(\bigcap_{n=1}^\infty F_n\right)=\mu(\limsup E_n).
+    \]
+    Thus, the lemma holds.\par
+    For fixed $\vep>0$, let $E_n=\{x\in A:\, |f_n(x)-f(x)|\ge\vep\}$. We
+    show that $\lim\mu E_n=0$. First, clear that $0\le\limsup\mu E_n$. 
+    Meanwhile, if $x\in\limsup E_n$, then $x$ belongs to infinitely many $E_n$.
+    As a consequence, $f_n$ does not converges to $f$ at $x$. Since $f_n$ 
+    converges to $f$ a.e., $\mu(\limsup E_n)=0$. Note that all $E_n\subset A$ 
+    are of finite measure. Hence, by the preceding lemma, $\limsup\mu E_n\le 
+    0$. Thus, $\lim\mu E_n=0$. Let $F_n$ denote $\{x\in X:\,|f_n(x)-f(x)|\ge
+    \vep\}$ and $G$ the collection of points at which $f_n$ does not converge
+    to $f$. Since all $f_n$ vanishes outside $A$, for a point outside to belong
+    to $F_n$, it has to belong to $G$, a set of measure zero. Therefore, $E_n
+    \subset F_n\subset E_n\cup G$, implying that $\mu F_n=\mu E_n$. Thus, $f_n$
+    converges to $f$ in measure.\par
+    (c) By definition, for each positive integer $k$, there is an integer $N_k$ 
+    such that for all $n,m\ge N_k$, $\mu\{x\in X:\,|f_n(x)-f_m(x)|\ge 2^{-k}\}<
+    2^{-k}$. We may assume without loss of generality that $N_k$ is increasing.
+    Put $E_k=\{x:\, |f_{N_{k+1}}-f_{N_k}|\ge 2^{-k}\}$ and $E=\limsup E_k$. By
+    our construction, $\mu E=0$. For $x\notin E$, $|f_{N_{k+1}}(x)-f_{N_k}(x))|
+    <2^{-k}$ for large $k$ and, therefore, the number series $\sum(f_{N_{k+1}}
+    (x)-f_{N_k}(x))$ converges to some point, say, $g(x)$. Hence, $f_{N_k}$
+    converges to $f=f_{N_1}+g$ almost everywhere. Since all $f_{N_k}$ are
+    measurable, $f$ is measurable.\par
+    Now we show that $f_n$ converges to $f$ in measure. Let $D$ be the set of
+    points at which $f_{N_k}$ does not converge to $f$. For every $\vep>0$,
+    let $F_n=\{x\in X\setminus D:\, |f_n(x)-f(x)|\ge\vep\}$. Note that for 
+    all sufficiently large $N_k$,
+    \begin{align*}
+      F_n
+      &\subset\{x\in X\setminus D:\,|f_n(x)-f_{N_k}(x)|+|f_{N_k}(x)-f(x)|
+      \ge\vep \}\\
+      &\subset\{x\in X\setminus D:\,|f_n(x)-f_{N_k}(x)|\ge\vep/2\},
+    \end{align*}
+    where the measure of the last set can be less than $\vep$ for sufficiently
+    large $n$ and $N_k$ as $\langle f\rangle$ is Cauchy in measure. Since $D$
+    is of measure zero, we conclude that $\langle f_n\rangle$ converges to $f$
+    in measure.
+  \end{proof}
+  
+  
+  \paragraph{16.}
+  \begin{proof}
+    Egoroff: Let $(X,\mcal{B},\mu)$ be a measure space and $E\subset X$ is of
+    finite measure. Let $\langle f_n\rangle$ be a sequence of measurable
+    functions which converge to some function $f$ a.e. on $E$. Then
+    for every $\eta>0$, there is a subset $A\subset E$ with $\mu A<\eta$ such
+    that $f_n$ converges to $f$ uniformly on $E\setminus A$.\par
+    We may assume without loss of generality that all $f_n$ vanish outside $E$.
+    Then, by Prob. 13(b), $f_n$ converges to $f$ in measure over $E$. Fix 
+    $\eta>0$. First, we construct $A$. Put $\delta_m=\delta/2^m$. For every 
+    $m$, there exists some integer $N_m$ and a measurable set $A_m$ with $\mu
+    A_m<\delta_m$ such that for all $n>N_m$ and $x\notin A_m$, $|f_n(x)-f(x)|<
+    \delta_m$. Put $A=\bigcup A_m$. Clear that $\mu A<\delta$.\par
+    Now we show that $f_n$ converges to $f$ uniformly on $E\setminus A$. Fix 
+    $x\in E\setminus A$. For every $\vep>0$, suppose there is an $m$ such that
+    $0<\delta_m<\vep$. For all $n>N_m$, since $x\notin A$, $|f_n(x)-f(x)|<
+    \delta_m<\vep$. Thus, $f_n\to f$ uniformly on $E\setminus A$.
+  \end{proof}
+% end
+
+
+
+
+
+
+
+
+
+
 
 
 

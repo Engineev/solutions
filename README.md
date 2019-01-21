@@ -26,6 +26,7 @@ My personal solutions to some textbook problems
   * 6.4 Approximation in L^p (19)
 * Chapter 11. Measure and Integration
   * 11.1 Measure Spaces (1, 3, 9.(a, b, c, d))
+  * 11.2 Measurable Functions (10, 11, 13, 16)
 
 
 ## Dimitri P. Bertsekas with Angelia Nedic and Asuman E. Ozdaglar, *Convex Analysis and Optimization*
