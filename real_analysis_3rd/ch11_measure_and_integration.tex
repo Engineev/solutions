@@ -38,6 +38,55 @@
     $E_2=(E_1\cap E_2)\cup(E_2\setminus E_1)\in\mcal{B}$.
   \end{proof}
   
+  \paragraph{7.}
+  \begin{proof}
+    Let $\mcal{B}_0$ be the collection of all sets $E=A\cup B$ where $B\in
+    \mcal{B}$ and $A\subset C$, $C\in\mcal{B}$, $\mu C=0$. Clear that $\mcal{B}
+    \subset\mcal{B}_0$. Now we show that it is a $\sigma$-algebra. Since $X\in
+    \mcal{B}$, $X\in\mcal{B}_0$. Let $E_n=A_n\cup B_n$ be a sequence of elements
+    of $\mcal{B}_0$. Then, $\bigcup E_n=(\bigcup A_n)\cup(\bigcup B_n)$ also
+    belongs to $\mcal{B}_0$ since $\bigcup B_n\in\mcal{B}$ and $\bigcup A_n
+    \subset\bigcup C_n$, which is a countable union of sets of measure zero. 
+    Hence, $\mcal{B}_0$ is closed under countable union. Now, let $E=A\cup B\in
+    \mcal{B}_0$. Note that
+    \[
+      E^c=A^c\cap B^c=(C\setminus A)\cup(B^c\setminus C),
+    \]
+    where $C\setminus A\subset C$ and $B^c\setminus C\in\mcal{B}$. Hence, 
+    $\mcal{B}_0$ is closed under complement. Thus, it is a $\sigma$-algebra.\par
+    We define $\mu_0:\mcal{B}_0\to[0,\infty]$ by $\mu_0 E=\mu_0(A\cup B)=\mu B$.
+    First, we show that it is well-defined, that is, if $E=A\hp\cup B\hp$, then
+    $\mu B=\mu B\hp$. Since $C\in\mcal{B}$ contains $A$, $(A\cup B)\setminus C
+    \in\mcal{B}$. Meanwhile, since $\mu C=0$,
+    \begin{equation}
+      \label{eq:11.7-1}
+      \mu B=\mu((A\cup B)\setminus C)=\mu(E\setminus C).
+    \end{equation}
+    Since $E\setminus C\subset E\cup C\hp$,
+    \begin{equation}
+      \label{eq:11.7-2}
+      \mu(E\setminus C)\le \mu(E\cup C\hp)=\mu((A\hp\cup B\hp)\cup C\hp)=
+      \mu B\hp,
+    \end{equation}
+    where the measurability of $E\cup C\hp$ and the last equality both comes 
+    from the fact that $A\hp\subset C\hp\in\mcal{B}$ and $\mu C\hp=0$. Combine
+    \eqref{eq:11.7-1} and \eqref{eq:11.7-2} and we get $\mu B\le\mu B\hp$.
+    Interchanging the role of $A\cup B$ and $A\hp\cup B\hp$ yields $\mu B\ge
+    \mu B\hp$. Hence, $\mu B=\mu B\hp$ and, in consequence, $\mu_0$ is
+    well-defined. Meanwhile, clear that for $E\in\mcal{B}$, $\mu E=\mu_0 E$.\par
+    Finally, we show that $\mu_0$ is a measure. Clear that $\mu_0$ is 
+    nonnegative and $\mu_0\varnothing=0$. Let $\langle E_n\rangle\subset
+    \mcal{B}_0$ be a sequence of disjoint sets. Then
+    \[
+      \mu_0\left(\bigcup E_n\right)=
+      \mu_0\left(\bigcup A_n \cup \bigcup B_n\right)=
+      \mu\left(\bigcup B_n\right)=
+      \sum\mu B_n=
+      \sum\mu_0 E_n.
+    \]
+    Namely, $\mu_0$ is countably additive. Thus, $\mu_0$ is a measure.
+  \end{proof}
+  
   \paragraph{9.}
   \begin{proof}
     $\,$\par
@@ -219,7 +268,100 @@
     \delta_m<\vep$. Thus, $f_n\to f$ uniformly on $E\setminus A$.
   \end{proof}
 % end
-
+\subsection{Integration}
+  \paragraph{19.}
+  \begin{proof}
+    Since $|\int_E f|\le \int_E|f|$, it suffices to show the result for
+    nonnegative $f$. Fix $\vep>0$. By definition, there is a nonnegative simple
+    function $\varphi=\sum_{i=1}^n c_i\chi_{E_i}$ such that $\int f<\int
+    \varphi+\vep/2$. Put $M=\max_ic_i$ and $\delta=\vep/2Mn$. Then, for every
+    measurable $E$ with $\mu E<\delta$, we have
+    \[
+      \int_E f<\int_E\varphi+\vep/2=
+      \sum_{i=1}^nc_i\mu(E_i\cap E)+\vep/2\le
+      Mn\delta+\vep/2=\vep.
+    \]
+  \end{proof}
+  
+  \paragraph{20.}
+  \begin{proof}
+    We show here Fatou's Lemma: Let $\langle f_n\rangle$ be a sequence of 
+    nonnegative measurable functions which converges to a function $f$ in
+    measure on a measurable set $E$. Then $\int_E f\le\lowlim\int_E f_n$.\par
+    Since the collection of limits point of $\int_E f_n$ forms a closed set, 
+    there exists a subsequence $\langle f_{n_k}\rangle_k$ such that $\lim\int_E
+    f_{n_k}=\liminf\int_E f_n$. Since $f_{n_k}$ also converges to $f$ in 
+    measure, by Prob. 13(a), there is a subsequence $\langle f_{n_{k_j}}\rangle$
+    which converges to $f$ a.e. on $E$. Hence, by Theorem 10,
+    \[
+      \int_E f\le \liminf_j \int_E f_{n_{k_j}}=
+      \lim_j \int_E f_{n_{k_j}}=
+      \liminf_n\int_E f_n.
+    \]
+  \end{proof}
+  
+  \paragraph{21.}
+  \begin{proof}
+    $\,$\par
+    (a) We may assume without loss of generality that $f$ is nonnegative since 
+    replacing $f$ by $|f|$ dose not change the integrability and the set $E=
+    \{x:\,f(x)\ne 0\}$. For every positive integer $n$, since $\int f<\infty$, 
+    the set $E_n=\{x:\, f(x)\ge 1/n\}$ is of finite measure. Thus, $E=
+    \bigcup_{n=1}^\infty E_n$ is of $\sigma$-finite measure.\par
+    (b) It follows immediately from part (a) and Prop. 7.\par
+    (c) If $f\ge 0$, then the existence of such a $\varphi$ comes directly from
+    the definition. For general cases, let $f=f^+-f^-$ and $\varphi^+,\varphi^-$
+    two simple functions such that
+    \[
+      \int|f^+-\varphi^+|<\vep/2
+      \quad\text{and}\quad
+      \int|f^--\varphi^-|<\vep/2.
+    \]
+    Note that $\varphi=\varphi^+-\varphi^-$ is also a simple function and
+    \[
+      \int|f-\varphi|\le
+      \int|f^+-\varphi^+|+\int|f^--\varphi^-|
+      <\vep.
+    \]
+  \end{proof}
+  
+  \paragraph{22.}
+  \begin{proof}
+    $\,$\par
+    (a) Clear that $\nu$ is nonnegative and $\nu\varnothing=0$. Let $\langle 
+    E_n\rangle$ be a sequence of disjoint measurable sets and $E=\bigcup_n E_n$.
+    By Corollary 14, we have
+    \[
+      \nu E=\int_E g\rd\mu=
+      \int_E\sum g\chi_{E_n}\rd\mu=
+      \sum\int_E g\chi_{E_n}\rd\mu=
+      \sum\int_{E_n}g\rd\mu=
+      \sum\nu E_n.
+    \]
+    Thus, $\nu$ is a measure.\par
+    (b) First, we show the identity for an arbitrary simple function $\varphi=
+    \sum_{k=1}^n c_k\chi_{E_k}$ where $E_k$ are disjoint.
+    \[
+      \int\varphi\rd\nu=
+      \sum_{k=1}^nc_k\nu E_k=
+      \sum_{k=1}^nc_k\int g\chi_{E_k}\rd\mu=
+      \int \varphi g\rd\mu.
+    \]\par
+    Let $f$ be a nonnegative measurable function and $\langle\varphi_n\rangle$ a
+    increasing sequence of simple functions converging to $f$, the existence of
+    which is guaranteed by Prop. 7. Then, By the monotone convergence theorem,
+    \[
+      \int f\rd\nu=\lim\int\varphi_n\rd\nu=\lim\int\varphi_n g\rd\mu.
+    \]
+    Note that $\langle\varphi_ng\rangle$ is a increasing sequence of functions
+    converging to $fg$ and with $\varphi_ng\le fg$. Hence, again by the monotone
+    convergence theorem,
+    \[
+      \lim\int\varphi_n g\rd\mu=\int fg\rd\mu.
+    \]
+    Thus, $\int f\rd\nu=\int fg\rd\mu$.
+  \end{proof}
+% end
 
 
 
