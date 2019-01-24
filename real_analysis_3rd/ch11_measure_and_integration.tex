@@ -362,6 +362,24 @@
     Thus, $\int f\rd\nu=\int fg\rd\mu$.
   \end{proof}
 % end
+\subsection{General Convergence Theorems}
+  \paragraph{24.}
+  \begin{proof}
+    Since $\mu_n E$ is increasing for every $E$, such limits do exists. Clear 
+    that $\mu$ is nonnegative and $\mu\varnothing=0$. Let $\langle E_k\rangle$ 
+    be a sequence of disjoint measurable sets. Then
+    \[
+      \mu\left(\bigcup_{k=1}^\infty E_k\right)=
+      \lim_{n\to\infty}\mu_n\left(\bigcup_{k=1}^n E_k\right)=
+      \lim_{n\to\infty}\sum_{k=1}^\infty\mu_n(E_k).
+    \]
+    Since for fixed $k$, $\mu_n(E_k)\le\mu_{n+1}(E_k)$, it is valid to change 
+    the order of the limit and the summation, which implies that $\mu(\bigcup
+    E_k)=\sum\mu E_k$. Thus, $\mu$ is a measure.
+  \end{proof}
+  
+  % TODO: 11.26
+% end
 
 
 

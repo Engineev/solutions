@@ -28,6 +28,7 @@ My personal solutions to some textbook problems
   * 11.1 Measure Spaces (1, 3, 7, 9.(a, b, c, d))
   * 11.2 Measurable Functions (10, 11, 13, 16)
   * 11.3 Integration (19, 20, 21, 22)
+  * 11.4 General Convergence Theorems (24)
 
 
 ## Dimitri P. Bertsekas with Angelia Nedic and Asuman E. Ozdaglar, *Convex Analysis and Optimization*
