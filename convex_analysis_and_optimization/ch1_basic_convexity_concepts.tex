@@ -786,7 +786,44 @@
     Let $\alpha\downarrow 0$ and we get $\lim f(y+\alpha(x-y))\le(\cl f)(y)$.
     Thus, $\lim f(y+\alpha(x-y))=(\cl f)(y)$.
   \end{proof}
-
+% end
+\subsection{Recession Cones}
+  \paragraph{36.}
+    "$C\cap M$ is bounded" should be "$\cl(C)\cap M$ is bounded".
+  \begin{proof}
+    Since $\cl(C)$ is convex as $C$ is and $\cl(C)\cap\bar{M}$ is bounded iff
+    $C\cap\bar{M}$ is, we may assume without loss of generality that $C$ is
+    closed. By the recession cone theorem, the boundedness of the nonempty 
+    closed convex set $C\cap M$ implies that $R_{C\cap M}=\{0\}$. Meanwhile, 
+    since both $C$ and $M$ are closed convex sets and their intersection is
+    nonempty, again by the recession cone theorem, $R_{C\cap M}=R_C\cap R_M$.
+    Since, $\bar{M}$ is an affine set parallel to $M$, $R_{\bar{M}}=R_M$. 
+    Hence, $R_C\cap R_{\bar{M}}=R_{C\cap M}=\{0\}$. If $C\cap\bar{M}$ is 
+    empty, then it is bounded vacuously. If it is nonempty, then $R_{C\cap
+    \bar{M}}=R_C\cap R_{\bar{M}}=\{0\}$, implying that $C\cap\bar{M}$ is
+    bounded.
+  \end{proof}
+  
+  \paragraph{39. Recession Cones of Relative Interiors}
+  \begin{proof}
+    $\,$\par
+    (a) Since $\ri(C)=\ri(\cl(C))$ and $\cl(C)$ is closed, it follows from 
+    Prop. 1.5.1(d) that $R_{\ri(C)}=R_{\cl(C)}$.\par
+    (b) By part (a), $y\in R_{\ri(C)}$ iff $y\in R_{\cl(C)}$ iff, by Prop. 
+    1.5.1(b), there is an $x\in\ri(C)$ such that $x+\alpha y\in\cl(C)$ for all
+    $\alpha\ge 0$. By the line segment principle, for all $\alpha\ge 0$, $x+
+    \alpha y\in\ri(C)$ as long as $x+(\alpha+1)y\in\cl(C)$. This, together 
+    with $\ri(C)\subset\cl(C)$, imply that $y\in R_{\ri(C)}$ iff there is an
+    $x\in\ri(C)$ such that $x+\alpha y\in\ri(C)$ for all $\alpha\ge 0$.\par
+    (c) By Prop. 1.5.1, $R_{\cl(C)}\subset R_{\cl(\bar{C})}$ as $\cl(C)
+    \subset \cl(\bar{C})$ and both of them are convex and closed. By Prob. 38,
+    $R_C\subset R_{\cl(C)}$. By part (a), $R_{\cl(\bar{C})}=R_{\ri(\bar{C})}
+    =R_{\bar{C}}$. Thus, $R_C\subset R_{\bar{C}}$.\par
+    For an example showing the necessity of $\bar{C}=\ri(\bar{C})$, let $C=
+    \{(x_1,x_2):\, x_1\ge 0, 0\le x_2\le 1\}$ and $\bar{C}=\{(x_1,x_2):\,
+    x_1\ge 0, 0\le x_2<2\}\cup\{(0,2)\}$. Clear that $C\subset\bar{C}$ but
+    $(1,0)$, a direction in $R_C$, does not belongs to $R_{\bar{C}}$.
+  \end{proof}
 % end
 
 
