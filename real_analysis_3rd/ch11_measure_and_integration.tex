@@ -354,8 +354,8 @@
       \int f\rd\nu=\lim\int\varphi_n\rd\nu=\lim\int\varphi_n g\rd\mu.
     \]
     Note that $\langle\varphi_ng\rangle$ is a increasing sequence of functions
-    converging to $fg$ and with $\varphi_ng\le fg$. Hence, again by the monotone
-    convergence theorem,
+    converging to $fg$ and with $\varphi_ng\le fg$. Hence, again by the 
+    monotone convergence theorem,
     \[
       \lim\int\varphi_n g\rd\mu=\int fg\rd\mu.
     \]
@@ -377,8 +377,99 @@
     the order of the limit and the summation, which implies that $\mu(\bigcup
     E_k)=\sum\mu E_k$. Thus, $\mu$ is a measure.
   \end{proof}
-  
   % TODO: 11.26
+% end
+\subsection{Signed Measures}
+  \paragraph{27.}
+  \begin{proof}
+    $\,$\par
+    (a) Consider the usual Lebesgue measure on $\mathbb{R}$. Let $A$ be any
+    countable subset of $\mathbb{R}$ and $B=\mathbb{R}\setminus A$. Clear that
+    $A$ is negative set while $B$ is a positive set. Namely, $A$ and $B$ form a 
+    Hahn decomposition of $\mathbb{R}$ for $\mu$.\par
+    (b) Let $\{A_1,B_1\}$ and $\{A_2,B_2\}$ be two Hahn decomposition of $X$ 
+    for $\nu$ and $A_1$ and $A_2$ are two positive sets. We show that $A_1
+    \bigtriangleup A_2$ is a null set. Since the roles of $A_1$ and $A_2$ are 
+    interchangeable, it suffices to show that $A_1\setminus A_2$ is a null set.
+    Since $A_1$ is positive, every subset $E\subset A_1\setminus A_2\subset 
+    A_1$ is of nonnegative measure. Meanwhile, $A_1\setminus A_2$ is also 
+    contained in $B_2$, a negative set. Hence, $\nu E\le 0$. Thus, $\nu E=0$,
+    implying that $A_1\bigtriangleup A_2$ is a null set.
+  \end{proof}
+  
+  \paragraph{28.}
+  \begin{proof}
+    Let $\nu=\nu^+-\nu^-$ be the Jordan decomposition of $\nu$ and $A$ and $B$
+    be such that $X=A\cup B$ and $\nu^+(A)=\nu^-(B)=0$. For every $E\subset A$,
+    \[
+      \nu E=\nu^+E-\nu^-E=-\nu^-E\le 0.
+    \]
+    Hence, $A$ is a negative set. Similarly, $B$ is positive set. Thus, $\{A,
+    B\}$ is a Hahn decomposition of $X$.\par
+    Let $\nu=\nu_1+\nu_2$ be another Jordan decomposition of $\nu$ and $\{C,
+    D\}$ be the corresponding Hahn decomposition. By Prob. 27(b), $\{A,B\}$ and
+    $\{C,D\}$ only differ by two null sets. Thus, $\nu_1=\nu^+$ and $\nu_2=
+    \nu^-$. Namely, the decomposition is unique.
+  \end{proof}
+  
+  \paragraph{31.}
+  \begin{proof}
+    Clear that
+    \begin{align*}
+      \left|\int_E f\rd\nu\right|
+      \le \left|\int_E f\rd\nu^+\right|+\left|\int_E f\rd\nu^-\right|
+      \le M\nu^+E+M\nu^-E=M|\nu|(E).
+    \end{align*}
+    Let $\{A,B\}$ be the corresponding Hahn decomposition of $X$ and $A$ is the
+    positive set. Then define $f$ by
+    \[
+      f(x)=\begin{cases}
+        1, & x\in A,\\
+        -1, & x\notin A.
+      \end{cases}
+    \]
+    Clear that $|f|\le 1$ and
+    \[
+      \int_E f\rd\nu=
+      \int_E f\rd\nu^+-\int_E f\rd\nu^-=
+      \mu^+(A\cap E)+\nu^-(A\cap B)=
+      |\nu|(E).
+    \]
+  \end{proof}
+  
+  \paragraph{32.}
+  \begin{proof}
+    $\,$\par
+    (a) Put $\mu\wedge\nu=\frac{1}{2}(\mu+\nu-|\mu-\nu|)$, which can be 
+    verified to be a measure. For every $E\subset X$, suppose $\mu E\le\nu E$. 
+    Then
+    \[
+      (\mu\wedge\nu)(E)=
+      \frac{1}{2}(\mu E+\nu E-|\mu-\nu|(E))=
+      \frac{1}{2}(\mu E+\nu E-\nu E+\mu E)=
+      \mu E.
+    \]
+    Similarly, $(\mu\wedge\nu)(E)=\nu E$ if $\nu E\le\mu E$. Hence, $\mu
+    \wedge\nu$ is smaller than both $\mu$ and $\nu$. Note that $(\mu\wedge\nu)
+    (E)=\min\{\mu E, \nu E\}$. Thus, clear that it is larger than any other
+    signed measure smaller than $\mu$ and $\nu$.\par
+    (b) Put $\mu\vee\nu=\frac{1}{2}(|\mu-\nu|+\mu+\nu)$. The previous argument,
+    \textit{mutatis mutandis}, shows that $(\mu\vee\nu)(E)=\max\{\mu E,\nu E
+    \}$. Thus, it is the smallest measure larger than $\mu$ and $\nu$. 
+    Meanwhile, clear that $\mu\wedge\nu+\mu\vee\nu=\mu+\nu$.\par
+    (c) Suppose that $\mu$ and $\nu$ are mutually singular and let $\{A,B\}$
+    be such that $A\cup B=X$ $\mu A=\nu B=0$. Then
+    \[
+      (\mu\wedge\nu)(E)\le(\mu\wedge\nu)(E\cap A)+(\mu\wedge\nu)(E\cap B)
+      \le\mu A+\nu B=0.
+    \]
+    For the converse, suppose that $\mu\wedge\nu=0$. If $\mu=0$ or $\nu=0$, 
+    then $\mu\perp\nu$ holds vacuously. Suppose that both $\mu$ and $\nu$ are
+    nonzero. Since the roles of $\mu$ and $\nu$ are interchangeable, we may
+    assume without loss of generality that $\mu E=0$ and $\nu E>0$ for some
+    measurable $E$. Then, $\mu E^c\ne 0$, forcing $\nu E^c$ to be zero. 
+    Therefore, $\mu E=\nu E^c=0$, implying that $\mu\perp\nu$.
+  \end{proof}
 % end
 
 
