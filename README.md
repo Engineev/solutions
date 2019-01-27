@@ -29,6 +29,7 @@ My personal solutions to some textbook problems
   * 11.2 Measurable Functions (10, 11, 13, 16)
   * 11.3 Integration (19, 20, 21, 22)
   * 11.4 General Convergence Theorems (24)
+  * 11.5 Signed Measures (27, 28, 31, 32)
 
 
 ## Dimitri P. Bertsekas with Angelia Nedic and Asuman E. Ozdaglar, *Convex Analysis and Optimization*
