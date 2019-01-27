@@ -39,7 +39,7 @@ My personal solutions to some textbook problems
   * 1.3 Convex and Affine Hulls (14, 15, 16, 18, 19, 20, 21, 23, 25, 26)
   * 1.4 Relative Interior, Closure, and Continuity (27, 28, 29, 31, 32, 34, 35.(a, b, c))
 * Chapter 2. Convexity and Optimization
-  * 1.1 Global and Local Minima (2, 3)
+  * 1.1 Global and Local Minima (2, 3, 4)
 
 ## Stephen Boyd, Lieven Vandenberghe, *Convex Optimization*
 

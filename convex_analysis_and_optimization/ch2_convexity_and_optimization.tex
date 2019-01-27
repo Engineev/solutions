@@ -71,6 +71,42 @@
     which contradicts the assumption that $x^*$ minimizes $F_c$. Thus, $x^*
     \in X$ and, therefore, $x^*$ minimizes $f$ over $X$.
   \end{proof}
+
+  \paragraph{3. Ekeland's Variational Principle [Eke74]}
+  \begin{proof}
+    First we consider the problem of minimizing $F(x)=f(x)+\delta\|x-\bar{x}\|$ 
+    over $\mathbb{R}^n$. Let $S=\{x:\, F(x)\le f(\bar{x})\}$. For $x\in
+    \mathbb{R}^n$ with $\|x-\bar{x}\|>\vep/\delta$,
+    \[
+      F(x)=f(x)+\delta\|x-\bar{x}\|>f(x)+\vep>f(\bar{x})
+    \]
+    and, therefore, can not belong to $S$. Hence, $S$ is bounded. Meanwhile, 
+    $S$ is nonempty since, at least, $\bar{x}\in S$. Furthermore, $F$ is a 
+    closed proper function as $f$ is. Thus, by Prop. 2.2.1(b), the set $O$ of 
+    minima of $F$ is nonempty and compact.\par
+    Note that $F$ is constant over the compact set $O$ and the function 
+    $\delta\|x-\bar{x}\|$ is continuous. Hence, $f(x)=F(x)-\delta\|x-\bar{x}\|$
+    attains its minimum over $O$ at some point $\tilde{x}\in O$. By our
+    previous result, we know that $\tilde{x}\in O\subset S$ and. In 
+    consequence, $\|\bar{x}-\tilde{x}\|\le\vep/\delta$ and $f(\tilde{x})\le 
+    F(\tilde{x})\le f(\bar{x})$.\par
+    Finally, we show that $\tilde{x}$ is the unique minimizer of the function 
+    $G(x)=f(x)+\delta\|x-\tilde{x}\|$ over $\mathbb{R}^n$. Let $x$ be an 
+    arbitrary point in $\mathbb{R}^n$. If $x\in O$,
+    \[
+      G(\tilde{x})=f(\tilde{x})\le f(x)\le G(x).
+    \]
+    where the equality can only be attained at $x=\tilde{x}$. If $x\notin O$, 
+    then
+    \begin{equation*}
+      F(\tilde{x})<F(x)
+      \quad\Rightarrow\quad
+      f(\tilde{x})<f(x)+\delta\|x-\bar{x}\|-\delta\|\tilde{x}-\bar{x}\|
+      \le f(x)+\delta\|x-\tilde{x}\|.
+    \end{equation*}
+    Hence, $\tilde{x}$ is a minimizer of $G$. Since these two inequalities are
+    both strict whenever $x\ne\tilde{x}$, $\tilde{x}$ is the unique minimizer.
+  \end{proof}
 % end
 
 
