@@ -471,7 +471,174 @@
     Therefore, $\mu E=\nu E^c=0$, implying that $\mu\perp\nu$.
   \end{proof}
 % end
-
+\subsection{The Radon-Nikodym Theorem}
+  \paragraph{33.}
+  \begin{proof}
+    Suppose $X=\bigcup_{n=1}^\infty X_i$ and $\mu X_i<\infty$ for each $n$
+    and $X_i$ are disjoint. Then both $\mu|_{X_i}$ and $\nu|_{X_i}$, the 
+    restrictions to $X_i$, are finite. In consequence, by the Radon-Nikodym
+    theorem for finite measure, there is a nonnegative measurable function 
+    $f_i:X_i\to\mathbb{R}$ such that $\nu(E\cap X_i)=\int_{(E\cap X_i)}
+    f_i\rd\mu$. Without loss of generality, we may consider $f_i$ to be a
+    function on $X$ (instead of $X_i$) that vanishes outside $X_i$.\par
+    Put $f=\sum f_i$. Since $X_i$ are disjoint and $f_i$ vanishes outside $X_i$,
+    the summation does make sense. Meanwhile, clear that $f$ is nonnegative and
+    measurable. Note that for each measurable $E$,
+    \[
+      \nu E=\sum_{n=1}^\infty\nu(E\cap X_i)=
+      \sum_{n=1}^\infty\int_E f_i\rd\mu=
+      \int_E f\rd\mu,
+    \]
+    where the last equality comes from Corollary 14. Namely, $\nu E=\int_E 
+    f\rd\mu$.\par
+    Finally, we show that $f$ is unique up to almost equality. Let $g$ be a
+    nonnegative measurable function with this property. Then, $g|_{X_i}$, the
+    restriction of $g$ to $X_i$, equals to $f_i$ a.e. [$\mu$]. Thus, $g=f$
+    a.e. [$\mu$].
+  \end{proof}
+  
+  \paragraph{34. Radon-Nikodym derivatives}
+  \begin{proof}
+    $\,$\par
+    (a) It suffices to show the result for simple functions. Let $\varphi=
+    \sum_{k=1}^nc_k\chi_{E_k}$ be a simple function. Then
+    \begin{equation*}
+      \int \varphi\,\rd\nu=\sum_{k=1}^nc_i\nu E_k.
+    \end{equation*}
+    Meanwhile,
+    \[
+      \int \varphi\left[\frac{\rd\nu}{\rd\mu}\right]\,\rd\mu=
+      \sum_{k=1}^n c_k\int_{E_k}\left[\frac{\rd\nu}{\rd\mu}\right]\,\rd\mu=
+      \sum_{k=1}^nc_i\nu E_k.
+    \]
+    Thus, $\int\varphi\,\rd\nu=\int\varphi[\rd\nu/\rd\mu]\rd\mu$.
+  \end{proof}
+  
+  \paragraph{35.}
+  \begin{proof}
+    $\,$\par
+    (d) Let $\rho_0,\rho_1$ be two measures with $\rho_0\perp\mu$, $\rho_1\ll
+    \mu$ and $\nu=\rho_0+\rho_1$. We show that $\rho_0=\nu_0$ and $\rho_1
+    =\nu_1$. Since $\nu_0\perp\mu$ and $\rho_0\perp\mu$, there exists measurable
+    $A,B$ and $C,D$ such that $A\cup B=C\cup D=X$, $A\cap B=C\cap D=\varnothing$
+    and $\nu_0A=\mu B=\rho_0C=\mu D=0$. Put $U=A\cap C$ and $V=B\cup D$. Note
+    that
+    \begin{align*}
+      U\cup V=(A\cap C)\cup(B\cup D)=(A\cup B\cup D)\cap(C\cup B\cup D)=X,\\
+      U\cap V=(A\cap C)\cap(B\cup D)=(A\cap C\cap B)\cup(C\cap B\cap D)=
+      \varnothing.
+    \end{align*}
+    For every measurable $E$, if $E\subset U$, then $\nu_0E=\rho_0E=0$ and
+    $(\nu_0+\nu_1)(E)=(\rho_0+\rho_1)(E)$ implies that $\nu_1 E=\rho_1 E$. 
+    If $E\subset V$, then $\mu E=0$, implying that $\nu_1E=\rho_1E=0$ and,
+    therefore, $\nu_0E=\rho_0E$. Since $U$ and $V$ partitions $X$, this implies
+    that $\nu_0=\rho_0$ and $\nu_1=\rho_1$ for all measurable $E$. 
+  \end{proof}
+  
+  \paragraph{36.}
+  \begin{proof}
+    We show that: Let $(X,\mcal{B},\mu)$ be a $\sigma$-finite signed measure
+    space, and let $\nu$ be a signed measure on $\mcal{B}$ with $\nu\ll\mu$.
+    Then there is a measurable function such that for all measurable $E$ we have
+    $\nu E=\int_E f\,\rd\mu$. Furthermore, the function $f$ is unique up to 
+    almost equality with respect to $\mu$.\par
+    Let $\mu=\mu^+-\mu^-$ and $\nu=\nu^+-\nu^-$ be the Jordan decompositions.
+    Clear that $\nu^+\ll\mu^+$ and $\nu^-\ll\mu^-$. Hence, by the Radon-Nikodym
+    theorem for measures, there exists nonnegative $g$ and $h$ such that
+    \[
+      \nu^+E=\int_E g\,\rd\mu^+
+      \quad\text{and}\quad
+      \nu^-E=\int_E h\,\rd\mu^-
+    \]
+    for all measurable $E$. Put $f=g-h$. Clear that it is measurable. Meanwhile,
+    \[
+      \nu E=\nu^+E-\nu^-E=
+      \int_E g\,\rd\mu^+-\int_E h\,\rd\mu^-=
+      \int_E (g-h)\,\rd\mu
+    \]
+    where the last equality comes from the mutual singularity of $\mu^+$ and
+    $\mu^-$. And the argument in Prob. 33, \textit{mutatis mutandis}, gives the
+    uniqueness.
+  \end{proof}
+  
+  \paragraph{40.}
+  \begin{proof}
+    Let $I$ denote the index set of $\{X_\alpha\}$ and, just for convenience,
+    let $\sum_J$ denote $\sum_{\alpha\in J}\mu(E\cap X_\alpha)$.\par
+    (a) First, we suppose that $E$ is of finite measure. Let $J$ be any finite
+    index subset of $I$. Then, since $X_\alpha$ are disjoint, $\mu E\ge\sum_J$. 
+    Hence, $\mu E\ge\sum_I$. For the converse, since, by our previous result, 
+    all $\sum_J$ are bounded by $\mu E$, $\sum_I$ is finite. For each positive
+    integer $n$, there is a finite subset $J_n$ of $I$ such that $\sum_I-1/n<
+    \sum_{J_n}$. Put
+    \[
+      J=\bigcup_{n=1}^\infty J_n
+      \quad\text{and}\quad
+      Y=\bigcup_{\beta\in J}X_\beta.
+    \]
+    We show that (1) $\mu(Y\cap E)\le\sum_I$ and (2) $\mu E=\mu(Y\cap E)$ to
+    complete the proof. Since $\{X_\beta\}_{\beta\in J}$ is a countable 
+    collection of disjoint sets,
+    \[
+      \mu(Y\cap E)=\sum_{\beta\in J}\mu(X_\beta\cap E)\le
+      \sum_{\alpha\in I}\mu(X_\beta\cap E).
+    \]
+    Namely, (1) holds. To show (2), we first show that, for each $\alpha\in I$, 
+    the set $X_\alpha\cap(E\setminus Y)$ is of measure zero. Assume, to obtain
+    a contradiction, that there is some $\alpha$ such that $\mu(X_\alpha\cap(
+    E\setminus Y))=\delta>0$. Since
+    \[
+      X_\alpha\cap(E\setminus Y)=
+      X_\alpha\cap E\cap\left(\bigcap_{\beta\in J}X_\beta^c\right),
+    \]
+    this implies that $\alpha\notin J_n$ for all $n$ and $\mu(X_\alpha\cap E)=
+    \delta$. Since $\delta>1/n$ for some large $n$, this leads to the 
+    contradiction
+    \[
+      \sum_{J_n\cup\{\alpha\}}=\sum_{J_n}+\mu(X_\alpha\cap E)
+      >\sum_I-\frac{1}{n}+\delta\ge\sum_I.
+    \]
+    Hence, $\mu(X_\alpha\cap(E\setminus Y))=0$ for all $n$ and, therefore, 
+    $\mu(E\setminus Y)=0$. Note that $E\setminus(Y\cap E)=E\setminus Y$, this
+    implies that $\mu(E\setminus(Y\cap E))=0$. In consequence, $\mu E=\mu(Y\cap
+    E)$. Thus, $\mu E\le\sum_I$.\par
+    Now suppose $\mu E=\infty$. If all $\sum_J$ are finite
+  \end{proof}
+  
+  \paragraph{40.}
+  \begin{proof}
+    Let $I$ denote the index set of $\{X_\alpha\}$. Fix a measurable $E$. Put
+    \[
+      J=\{\alpha\in I:\,\mu(E\cap X_\alpha)>0\}
+      \quad\text{and}\quad
+      Y=\bigcup_{\beta\in J}X_\beta.
+    \]
+    First we show that $\mu E=\mu(E\cap Y)$. Clear that $\mu E\ge\mu(E\cap Y)$.
+    For the converse, consider the set $E\setminus(E\cap Y)=E\setminus Y$. For
+    every $X_\alpha$, if $\alpha\notin J$, by the construction of $J$, $\mu(
+    X_\alpha\cap(E\setminus Y))=0$. If $\alpha\in J$, then
+    \[
+      X_\alpha\cap(E\setminus Y)=
+      X_\alpha\cap E\cap\left(\bigcap_{\beta\in J}X_\beta\right)=
+      \varnothing.
+    \]
+    As a result, $\mu(X_\alpha\cap(E\setminus Y))=0$ for all $\alpha\in I$. 
+    Since $\{X_\alpha\}$ is a decomposition, this implies that $\mu(E\setminus 
+    Y)=0$. Therefore, $\mu E\le \mu(E\cap Y)$. Thus, $\mu E=\mu(E\cap Y)$.\par
+    (a) For each positive integer $n$, put
+    \[
+      J_n=\{\alpha\in I:\,\mu(E\cap X_\alpha)>1/n\}.
+    \]
+    Clear that $J=\bigcup_n J_n$. If $J$ is uncountable, then there must exist
+    some uncountable $J_n$, which implies that $\mu E=\sum\mu(X_\alpha\cap E)=
+    \infty$. If $J$ is countable, then
+    \[
+      \mu E=\mu(E\cap Y)=\sum_{\beta\in J}\mu(E\cap X_\beta)=
+      \sum_{\alpha\in I}\mu(E\cap X_\alpha).
+    \]
+    Thus, $\mu E=\sum\mu(E\cap X_\alpha)$.
+  \end{proof}
+% end
 
 
 
