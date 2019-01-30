@@ -31,6 +31,7 @@ My personal solutions to some textbook problems
   * 11.4 General Convergence Theorems (24)
   * 11.5 Signed Measures (27, 28, 31, 32)
   * 11.6 The Radon-Nikodym Theorem (33, 34.a, 35.d, 36, 40.a)
+  * 11.7 The L^p Spaces (41, 42, 43, 44, 45)
 
 
 ## Dimitri P. Bertsekas with Angelia Nedic and Asuman E. Ozdaglar, *Convex Analysis and Optimization*

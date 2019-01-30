@@ -639,6 +639,91 @@
     Thus, $\mu E=\sum\mu(E\cap X_\alpha)$.
   \end{proof}
 % end
+\subsection{The $L^p$ Spaces}
+  \paragraph{41.}
+  \begin{proof}
+    First, we prove the following lemma: For $a,b\ge 0$, $|a-b|^p\le 2|a^p-
+    b^p|$. It suffices to show that $(a-b)^p\le 2(a^p-b^p)$ for all $a\ge b\ge 
+    0$. If $p=1$, then the inequality holds trivially. Suppose $p>1$ and put
+    $h(x)=(x-b)^p-2(x^p-b^p)$. Clear that $h(b)=0$. Meanwhile, for $x\ge b$, 
+    \[
+      h\hp(x)=p(x-b)^{p-1}-2px^{p-1}=px^{p-1}
+      \left(\left(1-\frac{b}{x}\right)^{p-1}-2\right)<0.
+    \]
+    Thus, $h(x)\le 0$ for all $x\ge b$, which implies that $|a-b|^p\le 2|a^p-
+    b^p|$ for all $a,b\ge 0$.\par
+    Since $|f|^p$ is integrable, by Prob. 21(a), the set on which $f$ does not
+    vanish is of $\sigma$-finite measure. Hence, $\int|f|^p=\sup\int\varphi$
+    as $\varphi$ ranges over all simple functions that each vanishes outside a 
+    set of finite measure. Thus, for every $\vep>0$, there is a nonnegative 
+    simple function $\tilde{\varphi}\le|f|^p$, vanishing outside a set $E$ of 
+    finite measure, such that $\int(|f|^p-\tilde{\varphi})<\vep^p/2$. Put 
+    $\varphi=\sqrt[p]{\tilde{\varphi}}$, which is also a nonnegative simple 
+    function that vanishes outside $E$. Meanwhile, by the previous inequality,
+    \[
+      \|f-\varphi\|_p^p=
+      \int|f-\varphi|^p\le
+      2\int(|f|^p-\tilde{\varphi})<
+      \vep^p.
+    \]
+    Namely, Prop. 26 holds.
+  \end{proof}
+  
+  \paragraph{42.}
+  \begin{proof}
+    We may assume without loss of generality that $g$ is nonnegative. Assume, 
+    to obtain a contradiction, that $\esssup|g|>M$, that is, the measure of
+    $E=\{t:\,g(t)>M+\eta\}$ is nonzero for some positive $\eta$. Meanwhile,
+    since $\mu$ is finite, $\mu E<\infty$. Let $\varphi=\chi_E$, which is 
+    clearly a simple function. Then
+    \[
+      \left|\int g\varphi\right|\ge
+      (M+\eta)\mu E>
+      M\|\varphi\|_1.
+    \]
+    Contradiction. Hence, $\esssup|g|\le M$, implying that $g\in L^\infty$.
+  \end{proof}
+  
+  \paragraph{43.}
+    The case $p=1$ is left undone. 
+  \begin{proof}
+    Suppose that $p>1$.
+    Let $\langle X_n\rangle$ be such that $\mu X_n<\infty$ and $X=\bigcup X_n$.
+    Furthermore, we may assume without loss of generality that $X_n$ are 
+    disjoint. Put $g_n=\sum g\chi_{X_n}$. By Lemma 27, for $n$, $g\chi_{X_n}\in 
+    L^q$ and $\|g_n\|_q\le M$. Since $g_n\to g$, by Fatou's lemma, $\|g\|_q\le
+    M$. Thus, $g\in L^q$.
+  \end{proof}
+  
+  \paragraph{44.}
+  \begin{proof}
+    Note that
+    \[
+      \int|f|^p=\sum\int|f|^p\chi_{E_n}=\sum\int|f_n|^p=\sum\|f_n\|^p.
+    \]
+    Thus, $f\in L^p$ iff $\sum\|f_n\|^p<\infty$.
+  \end{proof}
+  
+  \paragraph{45.}
+  \begin{proof}
+    For every $f\in L^p$ with $\|f\|_p=1$,
+    \[
+      \int|fg|\le \|f\|_p\|g\|_q = \|g\|_q.
+    \]
+    Hence, $\|F\|\le\|g\|_q$. For the reverse inequality, put
+    \[
+      f=(\sgn g)|g|^{q-1}=(\sgn g)|g|^{p/q}.
+    \]
+    Note that $|f|^p=|g|^q$. Therefore, $g\in L^q$ implies $f\in L^q$. 
+    Meanwhile, $\|f\|_p^p=\|g\|_q^q$. Hence, 
+    \[
+      \|F\|\|f\|_p \ge |F(f)| = \int|g|^q = \|g\|_q^q
+      \quad\Rightarrow\quad
+      \|F\|\ge\|g\|_q.
+    \]
+    Thus, $\|F\|=\|g\|_q$.
+  \end{proof}
+% end
 
 
 
