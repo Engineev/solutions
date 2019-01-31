@@ -1,0 +1,28 @@
+\section{Measure and Outer Measure}
+\subsection{Outer Measure and Measurability}
+  \paragraph{1.}
+  \begin{proof}
+    Suppose that $E\subset X$ and there is a measurable $B$ with $\bar{\mu}B=0$
+    such that $E\subset B$. We show that $E$ is measurable, that is, for every
+    $A\subset X$ with finite outer measure, $\mu^*(A)\ge\mu^*(A\cap E)+\mu^*(
+    A\cap E^c)$. Since $A\cap E\subset E\subset B$ and $\mu^*$ is monotone,
+    $\mu^*(A\cap E)\le\mu^*(B)=\bar{\mu}B=0$. Again by the monotonicity, $\mu^*(
+    A)\ge\mu^*(A\cap E^c)$. Thus, $E$ is measurable, implying that $\bar{\mu}$
+    is complete.
+  \end{proof}
+
+  \paragraph{2.}
+  \begin{proof}
+    From the countable subadditivity we obtain that $\mu^*(A\cap E)\le\sum\mu^*
+    (A\cap E_i)$. For the converse, first we consider just $E_1$ and $E_2$. 
+    Since $E_1$ is measurable,
+    \[
+      \mu^*(A\cap E)=\mu^*(A\cap E\cap E_1)+\mu^*(A\cap E\cap E_1^c)
+      \ge\mu^*(A\cap E_1)+\mu^*(A\cap E_2).
+    \]
+    By induction on $n$ we get $\mu^*(A\cap E)\ge\sum_{i=1}^n\mu^*(A\cap E_i)$.
+    Let $n\to\infty$ and the proof is completed.
+  \end{proof}
+% end
+
+
