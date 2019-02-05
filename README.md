@@ -34,6 +34,7 @@ My personal solutions to some textbook problems
   * 11.7 The L^p Spaces (41, 42, 43, 44, 45)
 * Chapter 12. Measure and Outer Measure
   * 11.1 Outer Measure and Measurability (1, 2)
+  * 11.2 The Extension Theorem (4, 7)
 
 
 ## Dimitri P. Bertsekas with Angelia Nedic and Asuman E. Ozdaglar, *Convex Analysis and Optimization*
