@@ -36,36 +36,6 @@ My personal solutions to some textbook problems
   * 11.1 Outer Measure and Measurability (1, 2)
   * 11.2 The Extension Theorem (4, 7)
 
-
-## Dimitri P. Bertsekas with Angelia Nedic and Asuman E. Ozdaglar, *Convex Analysis and Optimization*
-
-**ongoing**
-* Chapter 1. Basic Convexity Concepts
-  * 1.2 Convex Sets and Functions (1, 2.(d, e), 3, 4, 5, 6, 7, 8, 9, 11, 12, 13)
-  * 1.3 Convex and Affine Hulls (14, 15, 16, 18, 19, 20, 21, 23, 25, 26)
-  * 1.4 Relative Interior, Closure, and Continuity (27, 28, 29, 31, 32, 34, 35.(a, b, c))
-* Chapter 2. Convexity and Optimization
-  * 1.1 Global and Local Minima (2, 3, 4)
-
-## Stephen Boyd, Lieven Vandenberghe, *Convex Optimization*
-
-**Suspended**
-* Chapter 2. Convex Sets
-  * 2.1 Definition of convexity (1, 2, 3, 4)
-  * 2.2 Examples (5, 7, 8, 9.(a, b), 10)
-  * 2.3 Operations that preserve convexity (16, 18)
-  * 2.4 Separation theorems and supporting hyperplanes (20, 23, 25, 26)
-  * 2.5 Convex cones and generalized inequalities (31, 32, 35)
-* Chapter 3. Convex Functions
-  * 3.1 Definition of convexity (1, 3, 5, 8, 13)
-  * 3.2 Examples (16, 17, 19, 21, 22(a))
-  * 3.3 Operations that preserve convexity (30, 31)
-  * 3.4 Conjugate functions (37, 38, 40)
-  * 3.5 Quasiconvex functions (43)
-  * 3.6 Log-concave and log-convex functions (47, 54)
-
-
-
 ## Roger A. Horn, Charles R. Johnson, *Matrix Analysis*, 2nd ed
 
 **Suspended**
