@@ -1,0 +1,65 @@
+\section{Measure and Outer Measure}
+\subsection{Outer Measure and Measurability}
+  \paragraph{1.}
+  \begin{proof}
+    Suppose that $E\subset X$ and there is a measurable $B$ with $\bar{\mu}B=0$
+    such that $E\subset B$. We show that $E$ is measurable, that is, for every
+    $A\subset X$ with finite outer measure, $\mu^*(A)\ge\mu^*(A\cap E)+\mu^*(
+    A\cap E^c)$. Since $A\cap E\subset E\subset B$ and $\mu^*$ is monotone,
+    $\mu^*(A\cap E)\le\mu^*(B)=\bar{\mu}B=0$. Again by the monotonicity, $\mu^*(
+    A)\ge\mu^*(A\cap E^c)$. Thus, $E$ is measurable, implying that $\bar{\mu}$
+    is complete.
+  \end{proof}
+
+  \paragraph{2.}
+  \begin{proof}
+    From the countable subadditivity we obtain that $\mu^*(A\cap E)\le\sum\mu^*
+    (A\cap E_i)$. For the converse, first we consider just $E_1$ and $E_2$. 
+    Since $E_1$ is measurable,
+    \[
+      \mu^*(A\cap E)=\mu^*(A\cap E\cap E_1)+\mu^*(A\cap E\cap E_1^c)
+      \ge\mu^*(A\cap E_1)+\mu^*(A\cap E_2).
+    \]
+    By induction on $n$ we get $\mu^*(A\cap E)\ge\sum_{i=1}^n\mu^*(A\cap E_i)$.
+    Let $n\to\infty$ and the proof is completed.
+  \end{proof}
+% end
+\subsection{The Extension Theorem}
+  \paragraph{4.}
+  \begin{proof}
+    $\,$\par
+    (a) Since $\{D_j\}$ partitions $A$, $C_i\subset A$ for each $i$ and 
+    $\mcal{C}$ is closed under intersection, by condition (i), $\mu C_i=\sum_j 
+    \mu(C_i\cap D_j)$. Similarly for $\mu D_j$. Thus,
+    \[
+      \sum_i\mu C_i=\sum_{i,j}\mu(C_i\cap D_j)=
+      \sum_j\sum_i\mu(C_i\cap D_j)=\sum_j\mu D_j.
+    \]
+    This result implies that the definition of $\mu$ on $\mcal{A}$ is 
+    well-defined. \par
+    (b) Since every $A\in\mcal{A}$ is a finite union of sets of $\mcal{C}$, it
+    suffices to show that $\mu C\ge\sum\mu C_i$. Then, from this condition, the
+    countably additivity follows. Since $\mu$ is nonnegative and monotone, 
+    $\mu C\ge\sum_{i=1}^n\mu C_i$ for all positive integer $n$. Let $n\to\infty$
+    and we get $\mu C\ge\sum\mu C_i$.
+  \end{proof}
+
+  \paragraph{7.}
+  \begin{proof}
+    To prove the "if" part, let $\vep_n=1/n$ and $A_n\in\mcal{A}_\delta$ be such
+    that $\mu^*(E\setminus A_n)<\vep_n$. Put $A=\bigcup A_n$. Since the 
+    collection of $\mu^*$-measurable sets is a $\sigma$-algebra, $A$ is 
+    measurable. Meanwhile, since $\mu^*(E\setminus A)\le\mu^*(E\setminus 
+    A_n)<\vep_n$, $E\setminus A$ is of $\mu^*$-measure zero. Hence, it is 
+    measurable. Thus, $E=A\cup(E\setminus A)$ is also measurable.\par
+    For the converse, suppose that $E$ is measurable and let $\vep>0$ be fixed.
+    Note that $E^c$ is also measurable. Hence, by Prop. 6, there is a set $A\in
+    \mcal{A}_\sigma$ with $E^c\subset A$ and
+    \[
+      \vep>\mu^*(A\setminus E^c)=\mu^*(A\cap E).
+    \]
+    Then, $A^c\in\mcal{A}_\delta$, $A^c\subset E$ and $\mu^*(E\setminus A^c)=
+    \mu^*(E\cap E)<\vep$.
+  \end{proof}
+% end
+

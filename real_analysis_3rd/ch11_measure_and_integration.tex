@@ -1,0 +1,737 @@
+\section{Measure and Integration}
+\subsection{Measure Spaces}
+  \paragraph{1.}
+  \begin{proof}
+    Put $B_1=A_1$ and $B_n=A_n\setminus A_{n-1}$ for $n\ge 2$. $(B_n)$ is a 
+    sequence of disjoint measurable sets. By the
+    countable additivity of $\mu$,
+    \[
+      \mu\left(\bigcup_{k=1}^\infty B_k\right)=
+      \sum_{k=1}^\infty\mu(B_k)=
+      \lim_{n\to\infty}\sum_{k=1}^n\mu(B_k)=
+      \lim_{n\to\infty}\mu\left(\bigcup_{k=1}^n B_k\right).
+    \]
+    Since $\bigcup_{k=1}^n B_k=\bigcup_{k=1}^n A_k$ for $k=1,\dots,n,\dots,
+    \infty$, this implies $\mu(\bigcup A_k)=\lim\mu(\bigcup_{k=1}^n A_k)$.
+  \end{proof}
+  
+  \paragraph{3.}
+  \begin{proof}
+    $\,$\par
+    (a) First,
+    \[
+      0=\mu(E_1\bigtriangleup E_2)=\mu(E_1\setminus E_2\cup E_2\setminus E_1)=
+      \mu(E_1\setminus E_2)+\mu(E_2\setminus E_1).
+    \]
+    Together with the nonnegativity of $\mu$, we conclude that $\mu(E_1
+    \setminus E_2)=\mu(E_2\setminus E_1)=0$. Note that
+    \[
+      \mu(E_1\cup E_2)=\mu(E_1\setminus E_2\cup E_2)=
+      \mu(E_1\setminus E_2)+\mu(E_2).
+    \]
+    Hence, $\mu(E_1\cup E_2)=\mu(E_2)$. Similarly, $\mu(E_1\cup E_2)=\mu(E_1)$.
+    Thus, $\mu(E_1)=\mu(E_2)$.\par
+    (b) Since $\mu(E_1\bigtriangleup E_2)=0$ and $E_2\setminus E_1\subset E_1
+    \bigtriangleup E_2$, by the completeness of $\mu$, $E_2\setminus E_1\in
+    \mathcal{B}$. Similarly, $E_1\setminus E_2\in\mathcal{B}$. In consequence,
+    $E_1\cap E_2 = E_1\setminus(E_1\setminus E_2)\in\mcal{B}$ and, therefore,
+    $E_2=(E_1\cap E_2)\cup(E_2\setminus E_1)\in\mcal{B}$.
+  \end{proof}
+  
+  \paragraph{7.}
+  \begin{proof}
+    Let $\mcal{B}_0$ be the collection of all sets $E=A\cup B$ where $B\in
+    \mcal{B}$ and $A\subset C$, $C\in\mcal{B}$, $\mu C=0$. Clear that $\mcal{B}
+    \subset\mcal{B}_0$. Now we show that it is a $\sigma$-algebra. Since $X\in
+    \mcal{B}$, $X\in\mcal{B}_0$. Let $E_n=A_n\cup B_n$ be a sequence of elements
+    of $\mcal{B}_0$. Then, $\bigcup E_n=(\bigcup A_n)\cup(\bigcup B_n)$ also
+    belongs to $\mcal{B}_0$ since $\bigcup B_n\in\mcal{B}$ and $\bigcup A_n
+    \subset\bigcup C_n$, which is a countable union of sets of measure zero. 
+    Hence, $\mcal{B}_0$ is closed under countable union. Now, let $E=A\cup B\in
+    \mcal{B}_0$. Note that
+    \[
+      E^c=A^c\cap B^c=(C\setminus A)\cup(B^c\setminus C),
+    \]
+    where $C\setminus A\subset C$ and $B^c\setminus C\in\mcal{B}$. Hence, 
+    $\mcal{B}_0$ is closed under complement. Thus, it is a $\sigma$-algebra.\par
+    We define $\mu_0:\mcal{B}_0\to[0,\infty]$ by $\mu_0 E=\mu_0(A\cup B)=\mu B$.
+    First, we show that it is well-defined, that is, if $E=A\hp\cup B\hp$, then
+    $\mu B=\mu B\hp$. Since $C\in\mcal{B}$ contains $A$, $(A\cup B)\setminus C
+    \in\mcal{B}$. Meanwhile, since $\mu C=0$,
+    \begin{equation}
+      \label{eq:11.7-1}
+      \mu B=\mu((A\cup B)\setminus C)=\mu(E\setminus C).
+    \end{equation}
+    Since $E\setminus C\subset E\cup C\hp$,
+    \begin{equation}
+      \label{eq:11.7-2}
+      \mu(E\setminus C)\le \mu(E\cup C\hp)=\mu((A\hp\cup B\hp)\cup C\hp)=
+      \mu B\hp,
+    \end{equation}
+    where the measurability of $E\cup C\hp$ and the last equality both comes 
+    from the fact that $A\hp\subset C\hp\in\mcal{B}$ and $\mu C\hp=0$. Combine
+    \eqref{eq:11.7-1} and \eqref{eq:11.7-2} and we get $\mu B\le\mu B\hp$.
+    Interchanging the role of $A\cup B$ and $A\hp\cup B\hp$ yields $\mu B\ge
+    \mu B\hp$. Hence, $\mu B=\mu B\hp$ and, in consequence, $\mu_0$ is
+    well-defined. Meanwhile, clear that for $E\in\mcal{B}$, $\mu E=\mu_0 E$.\par
+    Finally, we show that $\mu_0$ is a measure. Clear that $\mu_0$ is 
+    nonnegative and $\mu_0\varnothing=0$. Let $\langle E_n\rangle\subset
+    \mcal{B}_0$ be a sequence of disjoint sets. Then
+    \[
+      \mu_0\left(\bigcup E_n\right)=
+      \mu_0\left(\bigcup A_n \cup \bigcup B_n\right)=
+      \mu\left(\bigcup B_n\right)=
+      \sum\mu B_n=
+      \sum\mu_0 E_n.
+    \]
+    Namely, $\mu_0$ is countably additive. Thus, $\mu_0$ is a measure.
+  \end{proof}
+  
+  \paragraph{9.}
+  \begin{proof}
+    $\,$\par
+    (a) First, we argue by contradiction to show that $\mcal{R}$ and 
+    $\mcal{R}$. Assume that there exists some $E\in\mcal{R}\cap\mcal{R}\hp$, 
+    that is, $E\in\mcal{R}$ and $E^c\in\mcal{R}$. Then $X=E\cup E^c\in
+    \mcal{R}$, which contradicts the assumption that $\mcal{R}$ is not a 
+    $\sigma$-algebra. Thus, $\mcal{R}\cap\mcal{R}\hp=\varnothing$.\par
+    Clear that $\mcal{R}\cup\mcal{R}\hp$ is a $\sigma$-algebra containing 
+    $\mcal{R}$. Hence, $\mcal{R}\cup\mcal{R}\hp\supset\mcal{B}$. Meanwhile, 
+    since $\mcal{B}=\sigma(\mcal{R})$, $\mcal{R}\cup\mcal{R}\hp\subset
+    \mcal{B}$. Thus, $\mcal{R}\cup\mcal{R}\hp=\mcal{B}$.\par
+    (b) Since $\varnothing\in\mcal{R}$, $\bar{\mu}\varnothing=\mu\varnothing
+    =0$. Meanwhile, clear that $\bar{\mu}$ is nonnegative. Let $(E_n)\subset 
+    \mcal{B}$ be a sequence of disjoint sets. By part (a), each $E_n$ is either 
+    an element of $\mcal{R}$ or $\mcal{R}\hp$. If all $E_n\in\mcal{R}$, then by
+    the countable additivity of $\mu$, $\mu(\bigcup E_n)=\sum\mu E_n$. Suppose 
+    there exists some $E_n$ in $\mcal{R}$ and some $E_m$ in $\mcal{R}\hp$. Let 
+    $F_1$ and $F_2$ be the union of theses sets respectively. Since 
+    $\sigma$-ring is closed under union, $F_1\in\mcal{R}$, and since $(\bigcup 
+    E_m)^c=\bigcap E_m^c$, $F_2\in\mcal{R\hp}$. Hence, $F_1\cup F_2\in\mcal{R}
+    \hp$, otherwise, $F_2=(F_1\cup F_2)\setminus F_1$ would be an element of 
+    $\mcal{R}$. Therefore, $\mu(\bigcup E_n)=\infty=\sum\mu E_n$. Thus, $\bar{
+    \mu}$ is a measure on $\mcal{B}$.\par
+    (c) Clear that $\ubar{\mu}$ is nonnegative and $\ubar{\mu}\varnothing=0$.
+    Let $(E_n)\subset\mcal{B}$ be disjoint. Note that for $E\in\mcal{R}$, $\mu 
+    E=\sup\{\mu A:\,A\subset E,A\in\mcal{R}\}$. Hence, it suffices to show that
+    \[
+      M=\sup\left\{\mu A:\, A\subset\bigcup_n E_n,A\in\mcal{R}\right\}=
+      \sum_n\sup\{\mu A:\, A\subset E_n,A\in\mcal{R}\}=\sum_n M_n.
+    \]
+    By definition, for all $\vep>0$, there exists a sequence $(A_n)\subset
+    \mcal{R}$ such that $A_n\subset E_n$ and $M_n<\mu A_n+\vep/2^n$. Put $A=
+    \bigcup A_n$. Since $(A_n)$ are disjoint as $(E_n)$ are, 
+    \[
+      \sum M_n < \vep+\sum\mu A_n =\vep+\mu A.
+    \]
+    Meanwhile, since $A\subset\bigcup E_n$ and $A\in\mcal{R}$, $\mu A\le M$. 
+    Therefore, $\sum M_n<\vep+M$. Thus, $\sum M_n\le M$.\par
+    For the converse, similarly, for every $\vep>0$, there exists an $A\in
+    \mcal{R}$ such that $A\subset\bigcup E_n$ and $M-\vep>\mu A$. Put $A_n=E_n
+    \cap A$. If $E_n\in\mcal{R}$, $A_n\in\mcal{R}$ by definition. If $E_n\in
+    \mcal{R}\hp$, $A_n=A\setminus E_n^c\in\mcal{R}$. Hence, $A_n\in\mcal{R}$
+    for each $n$. Thus,
+    \[
+      M-\vep<\mu A=\sum_n\mu A_n\le\sum_n M_n,
+    \]
+    implying that $M\le \sum M_n$. Therefore, $M=\sum M_n$, i.e., $\ubar{\mu}$ 
+    is countably additive. Thus, we conclude that $\ubar{\mu}$ is a measure on
+    $\mcal{B}$.\par
+    (d) Clear that $\mu_\beta$ is nonnegative and $\mu_beta\varnothing=0$. The
+    preceding discussion, \textit{mutatis mutandis}, yields the countable 
+    additivity.
+  \end{proof}
+% end
+\subsection{Measurable Functions}
+  \paragraph{10.}
+  \begin{proof}
+    For every integers $n$ and $k$, let
+    \begin{align*}
+      &E_{n,k}=\{x:\, k2^{-n}\le f(x)<(k+1)2^{-n}\}, (k\le 2^{2n})\\
+      &E_{n,2^{2n}+1}=\{x:\, f(x)\ge(2^{2n}+1)2^{-n})\},\\
+      &\varphi_n=2^{-n}\sum_{k=0}^{2^{2n}+1}k\chi_{E_{n,k}}
+    \end{align*}
+    Since $f$ is measurable, all $E_{n,k}$ are measurable. Thus, $\langle
+    \varphi_n\rangle$ is a sequence of nonnegative simple functions. Clear that 
+    for fixed $n$, $\langle E_{n,k}\rangle_k$ are disjoint. Let $x\in X$ be 
+    fixed. If $x\in E_{n,k}$ for some $k\le 2^{2n}$, then $x\in E_{n+1,2k}\cup
+    E_{n+1,2k+1}$. Hence, $\varphi_{n+1}(x)\ge 2k/2^{-(n+1)}=\varphi_n(x)$. If
+    $x\in E_{n,2^{2n}+1}$, then $x\in E_{n+1,k\hp}$ for some $k\hp\ge
+    2^{2n+2}$. Hence, $\varphi_{n+1}(x)\ge 2k/2^{-(n+1)}=\varphi_n(x)$. Thus,
+    $\varphi_{n+1}\ge\varphi_n$ for all $n$.\par
+    Now, we show that $\varphi_n$ converges to $f$ pointwisely. Let $x\in X$ be
+    fixed. If $f(x)=\infty$, then $\varphi_n(x)=2^{-n}(2^{2n}+1)\to\infty$ as
+    $n\to\infty$. If $f(x)<\infty$, then $f(x)<2^{N}$ for some integer $N$. 
+    For all $n>N$, $x\in E_{n,k_n}$ where $k_n=\lfloor 2^nf(x)\rfloor$. Thus,
+    \[
+      f(x)-\varphi_n(x)=f(x)-2^{-n}\lfloor 2^nf(x)\rfloor\to 0
+    \]
+    as $n\to\infty$. Namely, $\varphi_n(x)\to f(x)$.\par
+    If the measure space is $\sigma$-finite, then let $(X_n)\subset X$ be a
+    sequence of measurable sets such that $X_n\subset X_{n+1}$, $\mu X_n<
+    \infty$ and $X=\bigcup X_n$. Replacing $E_{n,k}$ with $E_{n,k}\cap X_n$ 
+    yields a sequence $\langle\varphi_n\rangle$ satisfying all previous 
+    requirements and vanishing outside $X_n$ for each $n$.
+  \end{proof}
+  
+  \paragraph{11.}
+  \begin{proof}
+    Put $F_\alpha=\{x:\,f(x)\le\alpha\}$, $G_\alpha=\{x:\,g(x)\le\alpha\}$, 
+    $E=\{x:\,f(x)\ne g(x)\}$ and $E_\alpha=\{x\in E: g(x)\le\alpha\}$. Then
+    $G_\alpha=(F_\alpha\setminus E)\cup E_\alpha$. Since $F$ is measurable, all
+    $F_\alpha$ are measurable. Since $f=g$ a.e., $E$ is of measure zero. 
+    Meanwhile, since $\mu$ is complete, $E_\alpha\subset E$ is measurable. 
+    Thus, $G_\alpha$ is measurable. Namely, $g$ is measurable.
+  \end{proof}
+  
+  \paragraph{13.}
+  \begin{proof}
+    Note that $f_n$ converges to $f$ in measure iff for every $\vep>0$,
+    \begin{equation*}
+      \lim_{n\to\infty}\mu\{x\in X:\, |f_n(x)-f(x)|\ge\vep\}=0.
+    \end{equation*}\par
+    (a) By definition, for every $\vep_m=2^{-m}$, there exists some integer 
+    $N_m$ such that for all $n\ge N_m$, $\mu\{x:\,|f_n(x)-f(x)|\ge\vep_m\}<
+    \vep_m$. Consider the subsequence $\langle f_{N_m}\rangle_m$. We show that
+    it converges to $f$ almost everywhere. Put $E_m=\{x:\,|f_{N_m}-f(x)|\ge
+    \vep_m\}$ and $E=\limsup E_m$. Then, for each $k$,
+    \[
+      \mu E\le \bigcup_{m=k}^\infty E_m\le \sum_{m=k}^\infty 2^{-m+1}\to 0,
+      \quad\text{as}\quad k\to\infty.
+    \]
+    For every $x\notin E$, $x\notin\bigcup_{m=k}^\infty E_m$ for some $k$. Then
+    for all $m>k$, $|f_{N_m}(x)-f(x)|<\vep_{N_m}$. Hence, $f_{N_m}(x)\to f(x)$.
+    Namely, $f_{N_m}\to f$ almost everywhere.\par
+    (b) First we prove a lemma: Let $\langle E_n\rangle$ be a sequence of
+    measurable subset of $A$. Then $\limsup\mu E_n\le \mu(\limsup E_n)$. Let
+    $F_N=\bigcup_{n=N}^\infty E_n$. Clear that $F_{n+1}\subset F_n$ and $\mu 
+    F_1<\infty$. Hence, by Prop. 2, 
+    \[
+      \limsup\mu E_n\le \lim\mu F_n=
+      \mu\left(\bigcap_{n=1}^\infty F_n\right)=\mu(\limsup E_n).
+    \]
+    Thus, the lemma holds.\par
+    For fixed $\vep>0$, let $E_n=\{x\in A:\, |f_n(x)-f(x)|\ge\vep\}$. We
+    show that $\lim\mu E_n=0$. First, clear that $0\le\limsup\mu E_n$. 
+    Meanwhile, if $x\in\limsup E_n$, then $x$ belongs to infinitely many $E_n$.
+    As a consequence, $f_n$ does not converges to $f$ at $x$. Since $f_n$ 
+    converges to $f$ a.e., $\mu(\limsup E_n)=0$. Note that all $E_n\subset A$ 
+    are of finite measure. Hence, by the preceding lemma, $\limsup\mu E_n\le 
+    0$. Thus, $\lim\mu E_n=0$. Let $F_n$ denote $\{x\in X:\,|f_n(x)-f(x)|\ge
+    \vep\}$ and $G$ the collection of points at which $f_n$ does not converge
+    to $f$. Since all $f_n$ vanishes outside $A$, for a point outside to belong
+    to $F_n$, it has to belong to $G$, a set of measure zero. Therefore, $E_n
+    \subset F_n\subset E_n\cup G$, implying that $\mu F_n=\mu E_n$. Thus, $f_n$
+    converges to $f$ in measure.\par
+    (c) By definition, for each positive integer $k$, there is an integer $N_k$ 
+    such that for all $n,m\ge N_k$, $\mu\{x\in X:\,|f_n(x)-f_m(x)|\ge 2^{-k}\}<
+    2^{-k}$. We may assume without loss of generality that $N_k$ is increasing.
+    Put $E_k=\{x:\, |f_{N_{k+1}}-f_{N_k}|\ge 2^{-k}\}$ and $E=\limsup E_k$. By
+    our construction, $\mu E=0$. For $x\notin E$, $|f_{N_{k+1}}(x)-f_{N_k}(x))|
+    <2^{-k}$ for large $k$ and, therefore, the number series $\sum(f_{N_{k+1}}
+    (x)-f_{N_k}(x))$ converges to some point, say, $g(x)$. Hence, $f_{N_k}$
+    converges to $f=f_{N_1}+g$ almost everywhere. Since all $f_{N_k}$ are
+    measurable, $f$ is measurable.\par
+    Now we show that $f_n$ converges to $f$ in measure. Let $D$ be the set of
+    points at which $f_{N_k}$ does not converge to $f$. For every $\vep>0$,
+    let $F_n=\{x\in X\setminus D:\, |f_n(x)-f(x)|\ge\vep\}$. Note that for 
+    all sufficiently large $N_k$,
+    \begin{align*}
+      F_n
+      &\subset\{x\in X\setminus D:\,|f_n(x)-f_{N_k}(x)|+|f_{N_k}(x)-f(x)|
+      \ge\vep \}\\
+      &\subset\{x\in X\setminus D:\,|f_n(x)-f_{N_k}(x)|\ge\vep/2\},
+    \end{align*}
+    where the measure of the last set can be less than $\vep$ for sufficiently
+    large $n$ and $N_k$ as $\langle f\rangle$ is Cauchy in measure. Since $D$
+    is of measure zero, we conclude that $\langle f_n\rangle$ converges to $f$
+    in measure.
+  \end{proof}
+  
+  
+  \paragraph{16.}
+  \begin{proof}
+    Egoroff: Let $(X,\mcal{B},\mu)$ be a measure space and $E\subset X$ is of
+    finite measure. Let $\langle f_n\rangle$ be a sequence of measurable
+    functions which converge to some function $f$ a.e. on $E$. Then
+    for every $\eta>0$, there is a subset $A\subset E$ with $\mu A<\eta$ such
+    that $f_n$ converges to $f$ uniformly on $E\setminus A$.\par
+    We may assume without loss of generality that all $f_n$ vanish outside $E$.
+    Then, by Prob. 13(b), $f_n$ converges to $f$ in measure over $E$. Fix 
+    $\eta>0$. First, we construct $A$. Put $\delta_m=\delta/2^m$. For every 
+    $m$, there exists some integer $N_m$ and a measurable set $A_m$ with $\mu
+    A_m<\delta_m$ such that for all $n>N_m$ and $x\notin A_m$, $|f_n(x)-f(x)|<
+    \delta_m$. Put $A=\bigcup A_m$. Clear that $\mu A<\delta$.\par
+    Now we show that $f_n$ converges to $f$ uniformly on $E\setminus A$. Fix 
+    $x\in E\setminus A$. For every $\vep>0$, suppose there is an $m$ such that
+    $0<\delta_m<\vep$. For all $n>N_m$, since $x\notin A$, $|f_n(x)-f(x)|<
+    \delta_m<\vep$. Thus, $f_n\to f$ uniformly on $E\setminus A$.
+  \end{proof}
+% end
+\subsection{Integration}
+  \paragraph{19.}
+  \begin{proof}
+    Since $|\int_E f|\le \int_E|f|$, it suffices to show the result for
+    nonnegative $f$. Fix $\vep>0$. By definition, there is a nonnegative simple
+    function $\varphi=\sum_{i=1}^n c_i\chi_{E_i}$ such that $\int f<\int
+    \varphi+\vep/2$. Put $M=\max_ic_i$ and $\delta=\vep/2Mn$. Then, for every
+    measurable $E$ with $\mu E<\delta$, we have
+    \[
+      \int_E f<\int_E\varphi+\vep/2=
+      \sum_{i=1}^nc_i\mu(E_i\cap E)+\vep/2\le
+      Mn\delta+\vep/2=\vep.
+    \]
+  \end{proof}
+  
+  \paragraph{20.}
+  \begin{proof}
+    We show here Fatou's Lemma: Let $\langle f_n\rangle$ be a sequence of 
+    nonnegative measurable functions which converges to a function $f$ in
+    measure on a measurable set $E$. Then $\int_E f\le\lowlim\int_E f_n$.\par
+    Since the collection of limits point of $\int_E f_n$ forms a closed set, 
+    there exists a subsequence $\langle f_{n_k}\rangle_k$ such that $\lim\int_E
+    f_{n_k}=\liminf\int_E f_n$. Since $f_{n_k}$ also converges to $f$ in 
+    measure, by Prob. 13(a), there is a subsequence $\langle f_{n_{k_j}}\rangle$
+    which converges to $f$ a.e. on $E$. Hence, by Theorem 10,
+    \[
+      \int_E f\le \liminf_j \int_E f_{n_{k_j}}=
+      \lim_j \int_E f_{n_{k_j}}=
+      \liminf_n\int_E f_n.
+    \]
+  \end{proof}
+  
+  \paragraph{21.}
+  \begin{proof}
+    $\,$\par
+    (a) We may assume without loss of generality that $f$ is nonnegative since 
+    replacing $f$ by $|f|$ dose not change the integrability and the set $E=
+    \{x:\,f(x)\ne 0\}$. For every positive integer $n$, since $\int f<\infty$, 
+    the set $E_n=\{x:\, f(x)\ge 1/n\}$ is of finite measure. Thus, $E=
+    \bigcup_{n=1}^\infty E_n$ is of $\sigma$-finite measure.\par
+    (b) It follows immediately from part (a) and Prop. 7.\par
+    (c) If $f\ge 0$, then the existence of such a $\varphi$ comes directly from
+    the definition. For general cases, let $f=f^+-f^-$ and $\varphi^+,\varphi^-$
+    two simple functions such that
+    \[
+      \int|f^+-\varphi^+|<\vep/2
+      \quad\text{and}\quad
+      \int|f^--\varphi^-|<\vep/2.
+    \]
+    Note that $\varphi=\varphi^+-\varphi^-$ is also a simple function and
+    \[
+      \int|f-\varphi|\le
+      \int|f^+-\varphi^+|+\int|f^--\varphi^-|
+      <\vep.
+    \]
+  \end{proof}
+  
+  \paragraph{22.}
+  \begin{proof}
+    $\,$\par
+    (a) Clear that $\nu$ is nonnegative and $\nu\varnothing=0$. Let $\langle 
+    E_n\rangle$ be a sequence of disjoint measurable sets and $E=\bigcup_n E_n$.
+    By Corollary 14, we have
+    \[
+      \nu E=\int_E g\rd\mu=
+      \int_E\sum g\chi_{E_n}\rd\mu=
+      \sum\int_E g\chi_{E_n}\rd\mu=
+      \sum\int_{E_n}g\rd\mu=
+      \sum\nu E_n.
+    \]
+    Thus, $\nu$ is a measure.\par
+    (b) First, we show the identity for an arbitrary simple function $\varphi=
+    \sum_{k=1}^n c_k\chi_{E_k}$ where $E_k$ are disjoint.
+    \[
+      \int\varphi\rd\nu=
+      \sum_{k=1}^nc_k\nu E_k=
+      \sum_{k=1}^nc_k\int g\chi_{E_k}\rd\mu=
+      \int \varphi g\rd\mu.
+    \]\par
+    Let $f$ be a nonnegative measurable function and $\langle\varphi_n\rangle$ a
+    increasing sequence of simple functions converging to $f$, the existence of
+    which is guaranteed by Prop. 7. Then, By the monotone convergence theorem,
+    \[
+      \int f\rd\nu=\lim\int\varphi_n\rd\nu=\lim\int\varphi_n g\rd\mu.
+    \]
+    Note that $\langle\varphi_ng\rangle$ is a increasing sequence of functions
+    converging to $fg$ and with $\varphi_ng\le fg$. Hence, again by the 
+    monotone convergence theorem,
+    \[
+      \lim\int\varphi_n g\rd\mu=\int fg\rd\mu.
+    \]
+    Thus, $\int f\rd\nu=\int fg\rd\mu$.
+  \end{proof}
+% end
+\subsection{General Convergence Theorems}
+  \paragraph{24.}
+  \begin{proof}
+    Since $\mu_n E$ is increasing for every $E$, such limits do exists. Clear 
+    that $\mu$ is nonnegative and $\mu\varnothing=0$. Let $\langle E_k\rangle$ 
+    be a sequence of disjoint measurable sets. Then
+    \[
+      \mu\left(\bigcup_{k=1}^\infty E_k\right)=
+      \lim_{n\to\infty}\mu_n\left(\bigcup_{k=1}^n E_k\right)=
+      \lim_{n\to\infty}\sum_{k=1}^\infty\mu_n(E_k).
+    \]
+    Since for fixed $k$, $\mu_n(E_k)\le\mu_{n+1}(E_k)$, it is valid to change 
+    the order of the limit and the summation, which implies that $\mu(\bigcup
+    E_k)=\sum\mu E_k$. Thus, $\mu$ is a measure.
+  \end{proof}
+  % TODO: 11.26
+% end
+\subsection{Signed Measures}
+  \paragraph{27.}
+  \begin{proof}
+    $\,$\par
+    (a) Consider the usual Lebesgue measure on $\mathbb{R}$. Let $A$ be any
+    countable subset of $\mathbb{R}$ and $B=\mathbb{R}\setminus A$. Clear that
+    $A$ is negative set while $B$ is a positive set. Namely, $A$ and $B$ form a 
+    Hahn decomposition of $\mathbb{R}$ for $\mu$.\par
+    (b) Let $\{A_1,B_1\}$ and $\{A_2,B_2\}$ be two Hahn decomposition of $X$ 
+    for $\nu$ and $A_1$ and $A_2$ are two positive sets. We show that $A_1
+    \bigtriangleup A_2$ is a null set. Since the roles of $A_1$ and $A_2$ are 
+    interchangeable, it suffices to show that $A_1\setminus A_2$ is a null set.
+    Since $A_1$ is positive, every subset $E\subset A_1\setminus A_2\subset 
+    A_1$ is of nonnegative measure. Meanwhile, $A_1\setminus A_2$ is also 
+    contained in $B_2$, a negative set. Hence, $\nu E\le 0$. Thus, $\nu E=0$,
+    implying that $A_1\bigtriangleup A_2$ is a null set.
+  \end{proof}
+  
+  \paragraph{28.}
+  \begin{proof}
+    Let $\nu=\nu^+-\nu^-$ be the Jordan decomposition of $\nu$ and $A$ and $B$
+    be such that $X=A\cup B$ and $\nu^+(A)=\nu^-(B)=0$. For every $E\subset A$,
+    \[
+      \nu E=\nu^+E-\nu^-E=-\nu^-E\le 0.
+    \]
+    Hence, $A$ is a negative set. Similarly, $B$ is positive set. Thus, $\{A,
+    B\}$ is a Hahn decomposition of $X$.\par
+    Let $\nu=\nu_1+\nu_2$ be another Jordan decomposition of $\nu$ and $\{C,
+    D\}$ be the corresponding Hahn decomposition. By Prob. 27(b), $\{A,B\}$ and
+    $\{C,D\}$ only differ by two null sets. Thus, $\nu_1=\nu^+$ and $\nu_2=
+    \nu^-$. Namely, the decomposition is unique.
+  \end{proof}
+  
+  \paragraph{31.}
+  \begin{proof}
+    Clear that
+    \begin{align*}
+      \left|\int_E f\rd\nu\right|
+      \le \left|\int_E f\rd\nu^+\right|+\left|\int_E f\rd\nu^-\right|
+      \le M\nu^+E+M\nu^-E=M|\nu|(E).
+    \end{align*}
+    Let $\{A,B\}$ be the corresponding Hahn decomposition of $X$ and $A$ is the
+    positive set. Then define $f$ by
+    \[
+      f(x)=\begin{cases}
+        1, & x\in A,\\
+        -1, & x\notin A.
+      \end{cases}
+    \]
+    Clear that $|f|\le 1$ and
+    \[
+      \int_E f\rd\nu=
+      \int_E f\rd\nu^+-\int_E f\rd\nu^-=
+      \mu^+(A\cap E)+\nu^-(A\cap B)=
+      |\nu|(E).
+    \]
+  \end{proof}
+  
+  \paragraph{32.}
+  \begin{proof}
+    $\,$\par
+    (a) Put $\mu\wedge\nu=\frac{1}{2}(\mu+\nu-|\mu-\nu|)$, which can be 
+    verified to be a measure. For every $E\subset X$, suppose $\mu E\le\nu E$. 
+    Then
+    \[
+      (\mu\wedge\nu)(E)=
+      \frac{1}{2}(\mu E+\nu E-|\mu-\nu|(E))=
+      \frac{1}{2}(\mu E+\nu E-\nu E+\mu E)=
+      \mu E.
+    \]
+    Similarly, $(\mu\wedge\nu)(E)=\nu E$ if $\nu E\le\mu E$. Hence, $\mu
+    \wedge\nu$ is smaller than both $\mu$ and $\nu$. Note that $(\mu\wedge\nu)
+    (E)=\min\{\mu E, \nu E\}$. Thus, clear that it is larger than any other
+    signed measure smaller than $\mu$ and $\nu$.\par
+    (b) Put $\mu\vee\nu=\frac{1}{2}(|\mu-\nu|+\mu+\nu)$. The previous argument,
+    \textit{mutatis mutandis}, shows that $(\mu\vee\nu)(E)=\max\{\mu E,\nu E
+    \}$. Thus, it is the smallest measure larger than $\mu$ and $\nu$. 
+    Meanwhile, clear that $\mu\wedge\nu+\mu\vee\nu=\mu+\nu$.\par
+    (c) Suppose that $\mu$ and $\nu$ are mutually singular and let $\{A,B\}$
+    be such that $A\cup B=X$ $\mu A=\nu B=0$. Then
+    \[
+      (\mu\wedge\nu)(E)\le(\mu\wedge\nu)(E\cap A)+(\mu\wedge\nu)(E\cap B)
+      \le\mu A+\nu B=0.
+    \]
+    For the converse, suppose that $\mu\wedge\nu=0$. If $\mu=0$ or $\nu=0$, 
+    then $\mu\perp\nu$ holds vacuously. Suppose that both $\mu$ and $\nu$ are
+    nonzero. Since the roles of $\mu$ and $\nu$ are interchangeable, we may
+    assume without loss of generality that $\mu E=0$ and $\nu E>0$ for some
+    measurable $E$. Then, $\mu E^c\ne 0$, forcing $\nu E^c$ to be zero. 
+    Therefore, $\mu E=\nu E^c=0$, implying that $\mu\perp\nu$.
+  \end{proof}
+% end
+\subsection{The Radon-Nikodym Theorem}
+  \paragraph{33.}
+  \begin{proof}
+    Suppose $X=\bigcup_{n=1}^\infty X_i$ and $\mu X_i<\infty$ for each $n$
+    and $X_i$ are disjoint. Then both $\mu|_{X_i}$ and $\nu|_{X_i}$, the 
+    restrictions to $X_i$, are finite. In consequence, by the Radon-Nikodym
+    theorem for finite measure, there is a nonnegative measurable function 
+    $f_i:X_i\to\mathbb{R}$ such that $\nu(E\cap X_i)=\int_{(E\cap X_i)}
+    f_i\rd\mu$. Without loss of generality, we may consider $f_i$ to be a
+    function on $X$ (instead of $X_i$) that vanishes outside $X_i$.\par
+    Put $f=\sum f_i$. Since $X_i$ are disjoint and $f_i$ vanishes outside $X_i$,
+    the summation does make sense. Meanwhile, clear that $f$ is nonnegative and
+    measurable. Note that for each measurable $E$,
+    \[
+      \nu E=\sum_{n=1}^\infty\nu(E\cap X_i)=
+      \sum_{n=1}^\infty\int_E f_i\rd\mu=
+      \int_E f\rd\mu,
+    \]
+    where the last equality comes from Corollary 14. Namely, $\nu E=\int_E 
+    f\rd\mu$.\par
+    Finally, we show that $f$ is unique up to almost equality. Let $g$ be a
+    nonnegative measurable function with this property. Then, $g|_{X_i}$, the
+    restriction of $g$ to $X_i$, equals to $f_i$ a.e. [$\mu$]. Thus, $g=f$
+    a.e. [$\mu$].
+  \end{proof}
+  
+  \paragraph{34. Radon-Nikodym derivatives}
+  \begin{proof}
+    $\,$\par
+    (a) It suffices to show the result for simple functions. Let $\varphi=
+    \sum_{k=1}^nc_k\chi_{E_k}$ be a simple function. Then
+    \begin{equation*}
+      \int \varphi\,\rd\nu=\sum_{k=1}^nc_i\nu E_k.
+    \end{equation*}
+    Meanwhile,
+    \[
+      \int \varphi\left[\frac{\rd\nu}{\rd\mu}\right]\,\rd\mu=
+      \sum_{k=1}^n c_k\int_{E_k}\left[\frac{\rd\nu}{\rd\mu}\right]\,\rd\mu=
+      \sum_{k=1}^nc_i\nu E_k.
+    \]
+    Thus, $\int\varphi\,\rd\nu=\int\varphi[\rd\nu/\rd\mu]\rd\mu$.
+  \end{proof}
+  
+  \paragraph{35.}
+  \begin{proof}
+    $\,$\par
+    (d) Let $\rho_0,\rho_1$ be two measures with $\rho_0\perp\mu$, $\rho_1\ll
+    \mu$ and $\nu=\rho_0+\rho_1$. We show that $\rho_0=\nu_0$ and $\rho_1
+    =\nu_1$. Since $\nu_0\perp\mu$ and $\rho_0\perp\mu$, there exists measurable
+    $A,B$ and $C,D$ such that $A\cup B=C\cup D=X$, $A\cap B=C\cap D=\varnothing$
+    and $\nu_0A=\mu B=\rho_0C=\mu D=0$. Put $U=A\cap C$ and $V=B\cup D$. Note
+    that
+    \begin{align*}
+      U\cup V=(A\cap C)\cup(B\cup D)=(A\cup B\cup D)\cap(C\cup B\cup D)=X,\\
+      U\cap V=(A\cap C)\cap(B\cup D)=(A\cap C\cap B)\cup(C\cap B\cap D)=
+      \varnothing.
+    \end{align*}
+    For every measurable $E$, if $E\subset U$, then $\nu_0E=\rho_0E=0$ and
+    $(\nu_0+\nu_1)(E)=(\rho_0+\rho_1)(E)$ implies that $\nu_1 E=\rho_1 E$. 
+    If $E\subset V$, then $\mu E=0$, implying that $\nu_1E=\rho_1E=0$ and,
+    therefore, $\nu_0E=\rho_0E$. Since $U$ and $V$ partitions $X$, this implies
+    that $\nu_0=\rho_0$ and $\nu_1=\rho_1$ for all measurable $E$. 
+  \end{proof}
+  
+  \paragraph{36.}
+  \begin{proof}
+    We show that: Let $(X,\mcal{B},\mu)$ be a $\sigma$-finite signed measure
+    space, and let $\nu$ be a signed measure on $\mcal{B}$ with $\nu\ll\mu$.
+    Then there is a measurable function such that for all measurable $E$ we have
+    $\nu E=\int_E f\,\rd\mu$. Furthermore, the function $f$ is unique up to 
+    almost equality with respect to $\mu$.\par
+    Let $\mu=\mu^+-\mu^-$ and $\nu=\nu^+-\nu^-$ be the Jordan decompositions.
+    Clear that $\nu^+\ll\mu^+$ and $\nu^-\ll\mu^-$. Hence, by the Radon-Nikodym
+    theorem for measures, there exists nonnegative $g$ and $h$ such that
+    \[
+      \nu^+E=\int_E g\,\rd\mu^+
+      \quad\text{and}\quad
+      \nu^-E=\int_E h\,\rd\mu^-
+    \]
+    for all measurable $E$. Put $f=g-h$. Clear that it is measurable. Meanwhile,
+    \[
+      \nu E=\nu^+E-\nu^-E=
+      \int_E g\,\rd\mu^+-\int_E h\,\rd\mu^-=
+      \int_E (g-h)\,\rd\mu
+    \]
+    where the last equality comes from the mutual singularity of $\mu^+$ and
+    $\mu^-$. And the argument in Prob. 33, \textit{mutatis mutandis}, gives the
+    uniqueness.
+  \end{proof}
+  
+  \paragraph{40.}
+  \begin{proof}
+    Let $I$ denote the index set of $\{X_\alpha\}$ and, just for convenience,
+    let $\sum_J$ denote $\sum_{\alpha\in J}\mu(E\cap X_\alpha)$.\par
+    (a) First, we suppose that $E$ is of finite measure. Let $J$ be any finite
+    index subset of $I$. Then, since $X_\alpha$ are disjoint, $\mu E\ge\sum_J$. 
+    Hence, $\mu E\ge\sum_I$. For the converse, since, by our previous result, 
+    all $\sum_J$ are bounded by $\mu E$, $\sum_I$ is finite. For each positive
+    integer $n$, there is a finite subset $J_n$ of $I$ such that $\sum_I-1/n<
+    \sum_{J_n}$. Put
+    \[
+      J=\bigcup_{n=1}^\infty J_n
+      \quad\text{and}\quad
+      Y=\bigcup_{\beta\in J}X_\beta.
+    \]
+    We show that (1) $\mu(Y\cap E)\le\sum_I$ and (2) $\mu E=\mu(Y\cap E)$ to
+    complete the proof. Since $\{X_\beta\}_{\beta\in J}$ is a countable 
+    collection of disjoint sets,
+    \[
+      \mu(Y\cap E)=\sum_{\beta\in J}\mu(X_\beta\cap E)\le
+      \sum_{\alpha\in I}\mu(X_\beta\cap E).
+    \]
+    Namely, (1) holds. To show (2), we first show that, for each $\alpha\in I$, 
+    the set $X_\alpha\cap(E\setminus Y)$ is of measure zero. Assume, to obtain
+    a contradiction, that there is some $\alpha$ such that $\mu(X_\alpha\cap(
+    E\setminus Y))=\delta>0$. Since
+    \[
+      X_\alpha\cap(E\setminus Y)=
+      X_\alpha\cap E\cap\left(\bigcap_{\beta\in J}X_\beta^c\right),
+    \]
+    this implies that $\alpha\notin J_n$ for all $n$ and $\mu(X_\alpha\cap E)=
+    \delta$. Since $\delta>1/n$ for some large $n$, this leads to the 
+    contradiction
+    \[
+      \sum_{J_n\cup\{\alpha\}}=\sum_{J_n}+\mu(X_\alpha\cap E)
+      >\sum_I-\frac{1}{n}+\delta\ge\sum_I.
+    \]
+    Hence, $\mu(X_\alpha\cap(E\setminus Y))=0$ for all $n$ and, therefore, 
+    $\mu(E\setminus Y)=0$. Note that $E\setminus(Y\cap E)=E\setminus Y$, this
+    implies that $\mu(E\setminus(Y\cap E))=0$. In consequence, $\mu E=\mu(Y\cap
+    E)$. Thus, $\mu E\le\sum_I$.\par
+    Now suppose $\mu E=\infty$. If all $\sum_J$ are finite
+  \end{proof}
+  
+  \paragraph{40.}
+  \begin{proof}
+    Let $I$ denote the index set of $\{X_\alpha\}$. Fix a measurable $E$. Put
+    \[
+      J=\{\alpha\in I:\,\mu(E\cap X_\alpha)>0\}
+      \quad\text{and}\quad
+      Y=\bigcup_{\beta\in J}X_\beta.
+    \]
+    First we show that $\mu E=\mu(E\cap Y)$. Clear that $\mu E\ge\mu(E\cap Y)$.
+    For the converse, consider the set $E\setminus(E\cap Y)=E\setminus Y$. For
+    every $X_\alpha$, if $\alpha\notin J$, by the construction of $J$, $\mu(
+    X_\alpha\cap(E\setminus Y))=0$. If $\alpha\in J$, then
+    \[
+      X_\alpha\cap(E\setminus Y)=
+      X_\alpha\cap E\cap\left(\bigcap_{\beta\in J}X_\beta\right)=
+      \varnothing.
+    \]
+    As a result, $\mu(X_\alpha\cap(E\setminus Y))=0$ for all $\alpha\in I$. 
+    Since $\{X_\alpha\}$ is a decomposition, this implies that $\mu(E\setminus 
+    Y)=0$. Therefore, $\mu E\le \mu(E\cap Y)$. Thus, $\mu E=\mu(E\cap Y)$.\par
+    (a) For each positive integer $n$, put
+    \[
+      J_n=\{\alpha\in I:\,\mu(E\cap X_\alpha)>1/n\}.
+    \]
+    Clear that $J=\bigcup_n J_n$. If $J$ is uncountable, then there must exist
+    some uncountable $J_n$, which implies that $\mu E=\sum\mu(X_\alpha\cap E)=
+    \infty$. If $J$ is countable, then
+    \[
+      \mu E=\mu(E\cap Y)=\sum_{\beta\in J}\mu(E\cap X_\beta)=
+      \sum_{\alpha\in I}\mu(E\cap X_\alpha).
+    \]
+    Thus, $\mu E=\sum\mu(E\cap X_\alpha)$.
+  \end{proof}
+% end
+\subsection{The $L^p$ Spaces}
+  \paragraph{41.}
+  \begin{proof}
+    First, we prove the following lemma: For $a,b\ge 0$, $|a-b|^p\le 2|a^p-
+    b^p|$. It suffices to show that $(a-b)^p\le 2(a^p-b^p)$ for all $a\ge b\ge 
+    0$. If $p=1$, then the inequality holds trivially. Suppose $p>1$ and put
+    $h(x)=(x-b)^p-2(x^p-b^p)$. Clear that $h(b)=0$. Meanwhile, for $x\ge b$, 
+    \[
+      h\hp(x)=p(x-b)^{p-1}-2px^{p-1}=px^{p-1}
+      \left(\left(1-\frac{b}{x}\right)^{p-1}-2\right)<0.
+    \]
+    Thus, $h(x)\le 0$ for all $x\ge b$, which implies that $|a-b|^p\le 2|a^p-
+    b^p|$ for all $a,b\ge 0$.\par
+    Since $|f|^p$ is integrable, by Prob. 21(a), the set on which $f$ does not
+    vanish is of $\sigma$-finite measure. Hence, $\int|f|^p=\sup\int\varphi$
+    as $\varphi$ ranges over all simple functions that each vanishes outside a 
+    set of finite measure. Thus, for every $\vep>0$, there is a nonnegative 
+    simple function $\tilde{\varphi}\le|f|^p$, vanishing outside a set $E$ of 
+    finite measure, such that $\int(|f|^p-\tilde{\varphi})<\vep^p/2$. Put 
+    $\varphi=\sqrt[p]{\tilde{\varphi}}$, which is also a nonnegative simple 
+    function that vanishes outside $E$. Meanwhile, by the previous inequality,
+    \[
+      \|f-\varphi\|_p^p=
+      \int|f-\varphi|^p\le
+      2\int(|f|^p-\tilde{\varphi})<
+      \vep^p.
+    \]
+    Namely, Prop. 26 holds.
+  \end{proof}
+  
+  \paragraph{42.}
+  \begin{proof}
+    We may assume without loss of generality that $g$ is nonnegative. Assume, 
+    to obtain a contradiction, that $\esssup|g|>M$, that is, the measure of
+    $E=\{t:\,g(t)>M+\eta\}$ is nonzero for some positive $\eta$. Meanwhile,
+    since $\mu$ is finite, $\mu E<\infty$. Let $\varphi=\chi_E$, which is 
+    clearly a simple function. Then
+    \[
+      \left|\int g\varphi\right|\ge
+      (M+\eta)\mu E>
+      M\|\varphi\|_1.
+    \]
+    Contradiction. Hence, $\esssup|g|\le M$, implying that $g\in L^\infty$.
+  \end{proof}
+  
+  \paragraph{43.}
+    The case $p=1$ is left undone. 
+  \begin{proof}
+    Suppose that $p>1$.
+    Let $\langle X_n\rangle$ be such that $\mu X_n<\infty$ and $X=\bigcup X_n$.
+    Furthermore, we may assume without loss of generality that $X_n$ are 
+    disjoint. Put $g_n=\sum g\chi_{X_n}$. By Lemma 27, for $n$, $g\chi_{X_n}\in 
+    L^q$ and $\|g_n\|_q\le M$. Since $g_n\to g$, by Fatou's lemma, $\|g\|_q\le
+    M$. Thus, $g\in L^q$.
+  \end{proof}
+  
+  \paragraph{44.}
+  \begin{proof}
+    Note that
+    \[
+      \int|f|^p=\sum\int|f|^p\chi_{E_n}=\sum\int|f_n|^p=\sum\|f_n\|^p.
+    \]
+    Thus, $f\in L^p$ iff $\sum\|f_n\|^p<\infty$.
+  \end{proof}
+  
+  \paragraph{45.}
+  \begin{proof}
+    For every $f\in L^p$ with $\|f\|_p=1$,
+    \[
+      \int|fg|\le \|f\|_p\|g\|_q = \|g\|_q.
+    \]
+    Hence, $\|F\|\le\|g\|_q$. For the reverse inequality, put
+    \[
+      f=(\sgn g)|g|^{q-1}=(\sgn g)|g|^{p/q}.
+    \]
+    Note that $|f|^p=|g|^q$. Therefore, $g\in L^q$ implies $f\in L^q$. 
+    Meanwhile, $\|f\|_p^p=\|g\|_q^q$. Hence, 
+    \[
+      \|F\|\|f\|_p \ge |F(f)| = \int|g|^q = \|g\|_q^q
+      \quad\Rightarrow\quad
+      \|F\|\ge\|g\|_q.
+    \]
+    Thus, $\|F\|=\|g\|_q$.
+  \end{proof}
+% end
+
+
+
+
+
+
+
+
+
+
+

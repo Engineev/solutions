@@ -1,0 +1,119 @@
+\section{Convexity and Optimization}
+\subsection{Global and Local Minima}
+  \paragraph{2. Lipschitz Continuity of Convex Functions}
+  \begin{proof}
+    First, we construct a compact subset $Z$ containing $X$. Put 
+    \[
+      Z=\{z:\,\|z-x\|\le 1\text{ for some $x\in \cl X$} \}.
+    \]
+    Since $X$ is bounded, $Z$ is also bounded. Let $(z_n)\subset Z$ be a 
+    sequence converging to some point $z$. Let $(x_n)\subset\cl X$ be such that
+    $\|x_n-z_n\|\le 1$. Since $\cl X$ is bounded, $(x_n)$ has a convergent 
+    subsequence $(x_{n_k})$ converging to some point $x$. Since $\cl X$ is 
+    closed, $x\in X$. By the continuity of the norm, we have
+    \[
+      1\ge\lim_{k\to\infty}\|x_{n_k}-z_{n_k}\|=\|x-z\|.
+    \]
+    Hence, $z\in Z$, implying that $Z$ is closed. Thus, $Z$ is compact.\par
+    Now, we show that $f$ is Lipschitz continuous over $X$. Fix $x,y\in X$.
+    Let $z=y+(y-x)/\|y-x\|$. Note that $z\in Z$ and
+    \[
+      y=\frac{\|y-x\|}{\|y-x\|+1}z+\frac{1}{\|y-x\|+1}x.
+    \]
+    Since $f$ is convex, we have
+    \[
+      f(y)=\frac{\|y-x\|}{\|y-x\|+1}f(z)+\frac{1}{\|y-x\|+1}f(x)
+      \,\Rightarrow\,
+      f(y)-f(x)\le\|y-x\| (f(z)-f(y)).
+    \]
+    By Prop. 1.4.6, $f$ is continuous. And since $Z$ is compact, $f$ can 
+    attain its minimum and maximum on $Z$. Hence,
+    \[
+      f(y)-f(x) \le \|y-x\|\left(\max_{z\in Z}f(z)-\min_{z\in Z}f(z)\right)
+      =L\|y-x\|.
+    \]
+    Interchange the roles of $x$ and $y$ and we get $|f(y)-f(x)|\le L\|y-x\|$.
+    Namely, $f$ is Lipschitz continuous.
+  \end{proof}
+  
+  \paragraph{3. Exact Penalty Functions}
+  \begin{proof}
+    $\,$\par
+    (a) First, suppose $x^*$ minimizes $f$ over $X$. For every $x\in Y$, fix
+    $\vep>0$. Let $z\in X$ be such that $\|z-x\|<\inf_{y\in X}\|y-x\|+\vep$.
+    Then
+    \begin{align*}
+      F_c(x)+c\vep
+      &=f(x)+c\left(\inf_{y\in X}\|y-x\|+\vep\right)\\
+      &>f(x)+c\|z-x\|\\
+      &\ge f(x)+\frac{c}{L}|f(z)-f(x)|\\
+      &\ge f(x)+|f(z)-f(x)|\\
+      &\ge f(z)\\
+      &\ge f(x^*).
+    \end{align*}
+    Hence, $x^*$ also minimizes $F_c(x)$ over $Y$. \par
+    (b) Note that for fixed $x$, to minimize $\|y-x\|$ over $X$, it suffices
+    to minimize it over $X\cap B$ where $B$ is a closed ball centered at $x$
+    and $X\cap B\ne\varnothing$. Since $X$ is closed and $B$ is compact; and
+    $\|\cdot\|$ is continuous, the infimum can be attained.\par
+    We argue by contradiction. Suppose that $x^*$ minimizes $F_c$ over $Y$
+    and assume $x^*\notin\delta$. Since $X$ is closed, this implies that 
+    $\min_{y\in X}\|y-x^*\|=\|y^*-x^*\|=\delta>0$. Hence, $f(y^*)\ne f(x^*)$ 
+    and
+    \begin{align*}
+      F_c(x^*)
+      &=f(x^*)+c\|y^*-x^*\|\\
+      &\ge f(x^*)+\frac{c}{L}|f(y^*)-f(x^*)|\\
+      &>f(x^*)+|f(y^*)-f(x^*)|\\
+      &\ge f(y^*)\\
+      &=F_c(y^*),
+    \end{align*}
+    which contradicts the assumption that $x^*$ minimizes $F_c$. Thus, $x^*
+    \in X$ and, therefore, $x^*$ minimizes $f$ over $X$.
+  \end{proof}
+
+  \paragraph{3. Ekeland's Variational Principle [Eke74]}
+  \begin{proof}
+    First we consider the problem of minimizing $F(x)=f(x)+\delta\|x-\bar{x}\|$ 
+    over $\mathbb{R}^n$. Let $S=\{x:\, F(x)\le f(\bar{x})\}$. For $x\in
+    \mathbb{R}^n$ with $\|x-\bar{x}\|>\vep/\delta$,
+    \[
+      F(x)=f(x)+\delta\|x-\bar{x}\|>f(x)+\vep>f(\bar{x})
+    \]
+    and, therefore, can not belong to $S$. Hence, $S$ is bounded. Meanwhile, 
+    $S$ is nonempty since, at least, $\bar{x}\in S$. Furthermore, $F$ is a 
+    closed proper function as $f$ is. Thus, by Prop. 2.2.1(b), the set $O$ of 
+    minima of $F$ is nonempty and compact.\par
+    Note that $F$ is constant over the compact set $O$ and the function 
+    $\delta\|x-\bar{x}\|$ is continuous. Hence, $f(x)=F(x)-\delta\|x-\bar{x}\|$
+    attains its minimum over $O$ at some point $\tilde{x}\in O$. By our
+    previous result, we know that $\tilde{x}\in O\subset S$ and. In 
+    consequence, $\|\bar{x}-\tilde{x}\|\le\vep/\delta$ and $f(\tilde{x})\le 
+    F(\tilde{x})\le f(\bar{x})$.\par
+    Finally, we show that $\tilde{x}$ is the unique minimizer of the function 
+    $G(x)=f(x)+\delta\|x-\tilde{x}\|$ over $\mathbb{R}^n$. Let $x$ be an 
+    arbitrary point in $\mathbb{R}^n$. If $x\in O$,
+    \[
+      G(\tilde{x})=f(\tilde{x})\le f(x)\le G(x).
+    \]
+    where the equality can only be attained at $x=\tilde{x}$. If $x\notin O$, 
+    then
+    \begin{equation*}
+      F(\tilde{x})<F(x)
+      \quad\Rightarrow\quad
+      f(\tilde{x})<f(x)+\delta\|x-\bar{x}\|-\delta\|\tilde{x}-\bar{x}\|
+      \le f(x)+\delta\|x-\tilde{x}\|.
+    \end{equation*}
+    Hence, $\tilde{x}$ is a minimizer of $G$. Since these two inequalities are
+    both strict whenever $x\ne\tilde{x}$, $\tilde{x}$ is the unique minimizer.
+  \end{proof}
+% end
+
+
+
+
+
+
+
+
+
