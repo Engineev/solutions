@@ -148,6 +148,106 @@
     $\mT_1$. Similarly, we assert that $\mT_3$ is also finer than $\mT_2$.
   \end{proof}
 % end
+\subsection{Closed Sets and Limit Points}
+  \paragraph{2.}
+  \begin{proof}
+    Since $A$ is a subset of $Y\subset X$, $X\setminus A=(Y\setminus A)\cup
+    (X\setminus Y)$. Since $A$ is closed in $Y$ and $Y$ in closed in $X$, this
+    implies that $X\setminus A$ is open. Thus, $A$ is closed in $X$.
+  \end{proof}
+  
+  \paragraph{4.}
+  \begin{proof}
+    Since $A$ is closed in $X$, $A^c$ is open in $X$. Hence, $U\setminus A=
+    U\cap A^c$ is open. Similarly, $A\setminus U$ is closed.
+  \end{proof}
+  
+  \paragraph{6.}
+  \begin{proof}
+    $\,$\par
+    (a) For any $x\in X$, if the neighborhood $U$ of $x$ intersects $A$, then
+    it intersects $B$ since $A\subset B$. Thus, $\bar{A}\subset\bar{B}$.\par
+    (b) Since $\overline{A\cup B}$ is the smallest closed set containing $A
+    \cup B$ and $\bar{A}\cup\bar{B}$ is closed set containing $A\cup B$, 
+    $\overline{A\cup B}\subset\bar{A}\cup\bar{B}$. For the reverse inclusion,
+    suppose that $x\in\bar{A}\cup\bar{B}$. If $x\in\bar{A}$, then all its 
+    neighborhood intersects $A\cup B\supset A$. Hence, $x\in\overline{A\cup 
+    B}$. Similarly for the case $x\in\bar{B}$. Therefore, $\bar{A}\cup\bar{B}
+    \subset\overline{A\cup B}$. Thus, $\overline{A\cup B}=\bar{A}\cup\bar{B}$.
+    \par
+    (c) The previous argument, \textit{mutatis mutandis}, yields the inclusion.
+    Let $X=\mathbb{R}$ and $A_n=[0,1/n]$. Then, $\overline{\bigcup A_n}=[0,1]$
+    and $\bigcup\bar{A}_n=[0,1)$, which do not coincide.
+  \end{proof}
+  
+  \paragraph{8.}
+  \begin{proof}
+    $\,$\par
+    (a) We show that the equality holds. Since $\overline{A\cap B}$ is the
+    smallest closed set containing $A\cap B$ and clear that $\bar{A}\cap
+    \bar{B}$ is closed set containing $A\cap B$, $\overline{A\cap B}\subset
+    \bar{A}\cap\bar{B}$. For the reverse inclusion, suppose that $x\in\bar{A}
+    \cap\bar{B}$, then every neighborhood of $x$ intersects both $A$ and $B$.
+    Hence, $x\in\overline{A\cap B}$. Thus, $\overline{A\cap B}=\bar{A}\cap
+    \bar{B}$.\par
+    (b) The previous argument, \textit{mutatis mutandis}, shows that 
+    $\overline{\bigcap A_\alpha}\subset\bigcap\bar{A}_\alpha$. The reverse
+    inclusion does not hold in general. For example, let $X=\mathbb{R}$ and
+    $A_n=(0,1/n)$. Then $\overline{\bigcap A_n}=\varnothing$ but $\bigcap\bar{
+    A_n}=\{0\}$.\par
+    (c) We show that $\overline{A\setminus B}\supset\bar{A}\setminus\bar{B}$.
+    \[
+      \bar{A}\setminus\bar{B}\subset
+      \bar{A}\setminus B=
+      \bar{A}\cap B^c\subset
+      \bar{A}\cap\overline{(B^c)}=
+      \overline{A\cap B^c}=
+      \overline{A\setminus B}
+    \]
+    where the second equality comes from part (a). The reverse inclusion does
+    not hold in general. For example, let $X=\mathbb{R}$, $A=[0,1]$ and $B=(0,
+    1)$. Then $\overline{A\setminus B}=\{0,1\}$ but $\bar{A}\setminus\bar{B}=
+    \varnothing$.
+  \end{proof}
+  
+  \paragraph{10.}
+  \begin{proof}
+    Let $X$ be a simply ordered set and $\mcal{T}$ the order topology for $X$.
+    If $X$ contains only one single point, then, vacuously, $\mcal{T}$ is 
+    Hausdorff. Otherwise, let $a<b$ be two distinct point in $X$. If $(a,b)\ne
+    \varnothing$, that is, there exists some $c$ with $a<c<b$, then $[-\infty,
+    c)$ and $(c,\infty]$ are two disjoint open sets containing $a$ and $b$
+    respectively.  If $(a,b)=\varnothing$, then $[-\infty,b)\setminus(a,b)$ and 
+    $(a,\infty]\setminus(a,b)$ are two such sets. Thus, we conclude that 
+    $\mcal{T}$ is Hausdorff. (The case where the $\pm\infty$ can not be 
+    attained is similar.)
+  \end{proof}
+  
+  \paragraph{12.}
+  \begin{proof}
+    Let $Y$ be a subspace of the Hausdorff space $X$. Let $a,b$ be two distinct
+    points of $Y$. Since $X$ is Hausdorff, there are two disjoint sets $U$ and 
+    $V$ which contain $a$ and $b$ respectively and are open in $X$. Hence, 
+    $U\cap Y$ and $V\cap Y$ are two disjoint open sets in $Y$ containing $a$
+    and $b$ respectively. Thus, $Y$ is also Hausdorff.
+  \end{proof}
+  
+  \paragraph{14.}
+  \begin{proof}
+    Let $\mcal{T}$ be the finite complement topology on $\mathbb{R}$. We show
+    that for the sequence $(x_n)$ converges to every point of $\mathbb{R}$.
+    Let $x$ be an arbitrary point of $\mathbb{R}$ and $U$ an neighborhood of 
+    $x$. Since $U$ is open and nonempty, $U^c$ is finite. Hence, $U^c$ contains
+    at most finitely many points in $(x_n)$. Thus, $x_n\in U$ for all 
+    sufficiently large $n$. Namely, $x_n\to x$.
+  \end{proof}
+  
+  \paragraph{21.(b)}
+  \begin{solution}
+    $A=(-\infty,1)\cup(1,2]\cup\{3\}\cup([4,5]\cap\mathbb{Q})\cup(6,7)\cup
+    (7,8]$.
+  \end{solution}
+% end
 
 
 
