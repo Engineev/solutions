@@ -7,6 +7,7 @@ My personal solutions to some textbook problems
 * Chapter 2. Topological Spaces and Continuous Functions
   * 13 Basis for a Topology (1, 4, 5, 6, 8)
   * 16 The Subspace Topology (1, 2, 4, 6, 7, 9, 10)
+  * 17 Closed Sets and Limit Points (2, 4, 6, 8, 10, 12, 14, 21.b)
 
 ## H.L. Royden, *Real Analysis*, 3rd ed
 
