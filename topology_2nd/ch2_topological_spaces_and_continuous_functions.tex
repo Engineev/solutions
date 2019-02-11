@@ -242,11 +242,95 @@
     sufficiently large $n$. Namely, $x_n\to x$.
   \end{proof}
   
-  \paragraph{21.(b)}
+  \paragraph{21.b}
   \begin{solution}
     $A=(-\infty,1)\cup(1,2]\cup\{3\}\cup([4,5]\cap\mathbb{Q})\cup(6,7)\cup
     (7,8]$.
   \end{solution}
+% end
+\subsection{Continuous Functions}
+  \paragraph{1.}
+  \begin{proof}
+    For every open set $V$ in $\mathbb{R}$, put $U=f\inv(V)$. Since the 
+    collection of open intervals forms a basis for the topology on 
+    $\mathbb{R}$, it suffices to show that for each $x\in U$, there is an open
+    interval $I$ containing $x$ such that $I\subset U$ to conclude that $U$ is
+    open. Put $y=f(x)$. Since $V$ is open, there is a $\vep>0$ such that $J=
+    (y-\vep,y+\vep)\subset V$. By the $\vep-\delta$ condition, there is a 
+    $\delta>0$ such that for all $x\hp\in(x-\delta,x+\delta)=I$, $f(x\hp)\in
+    J\subset V$. Namely, $I\subset U$. Thus, $f$ is continuous in the sense of
+    the open set definition.
+  \end{proof}
+  
+  \paragraph{3.}
+  \begin{proof}
+    $\,$\par
+    (a) $i$ is continuous iff every open set in $X$ is open in $X\hp$ iff 
+    $\mcal{T}\subset\mcal{T}\hp$, i.e., $\mcal{T}\hp$ is finer than $\mcal{T}$.
+    \par
+    (b) By part (a), $\mcal{T}$ is finer than $\mcal{T}\hp$ and \textit{vice 
+    versa}. Hence, $\mcal{T}=\mcal{T}\hp$.
+  \end{proof}
+  
+  \paragraph{5.}
+  \begin{proof}
+    Clear that $f(x)=a+t(b-a)$ is a homeomorphism in both cases.
+  \end{proof}
+  
+  \paragraph{7.a}
+  \begin{proof}
+    Let $x$ be a point in $\mathbb{R}_l$ and put $y=f(x)\in\mathbb{R}$. For
+    every open interval $J$ containing $y$, since $f$ is continuous from the
+    right, there exists a $\delta>0$ such that $f(I)\subset J$ where $I=[x, x+
+    \delta)$. Since $I$ is open in $\mathbb{R}_l$, this implies that $f$ is
+    continuous when considered as a function from $\mathbb{R}_l$ to 
+    $\mathbb{R}$.
+  \end{proof}
+  
+  \paragraph{9.}
+  \begin{proof}
+    $\,$\par
+    (a) It follows from the pasting lemma and the fact that the finite union of 
+    closed sets is still closed.\par
+    (b) Put $A_0=\{0\}$ and $A_n=(-\infty,-1/n]\cup[1/n,\infty)$. Clear that 
+    $\{A_n\}_{n=0}^\infty$ is a sequence of closed set whose union is 
+    $\mathbb{R}$. Define $f:\mathbb{R}\to\mathbb{R}$ by $f(0)=0$ and $f(x)=1$
+    for all $x\ne 0$. Clear that $f$ is not continuous but $f|_{A_n}$ are all
+    continous.\par
+    (c) By Theorem 18.1.4, it suffices to show that $f$ is continuous at every
+    $x\in X$. For each $x$, let $U$ be the neighborhood of $x$ that only 
+    intersects finitely many $A_\alpha$. Let $\{A_k\}_{k\in K}$ denote the 
+    collection of such $A_\alpha$. Since $U$ is open, each $U\cap A_k$ is 
+    closed in $U$. Hence, part (a), $f|_U$ is continuous and, therefore, $f$ is
+    continuous at $x\in U$. Thus, $f$ is continuous on $X$.
+  \end{proof}
+  
+  \paragraph{11.}
+  \begin{proof}
+    Let $y_0\in Y$ be fixed, we show that $h(x)=F(x\times y_0)$ is continuous.
+    Let $x\in X$ be fixed and let $V$ be a neighborhood of $h(x)=F(x\times 
+    y_0)$. Since $F$ is continuous, by Theorem 18.1.4, there is a basis 
+    neighborhood $A\times B$ of $x\times y_0$ such that $F(A\times B)\subset 
+    V$. Note that $h(A)=F(A\times\{y_0\})\subset F(A\times B)\subset V$. 
+    Hence, $h$ is continuous. Since the roles of $X$ and $Y$ are 
+    interchangeable, this implies that $F$ is continuous in each variable
+    separately.
+  \end{proof}
+  
+  \paragraph{13.}
+  \begin{proof}
+    Let $g_1$ and $g_2$ be continuous extensions of $f$. Clear that $g_1=g_2$ 
+    on $A$. For every limit point $x$ of $A$, let $V_1$ and $V_2$ be 
+    neighborhoods of $g_1(x)$ and $g_2(x)$ respectively. Since both $g_1$ and 
+    $g_2$ are continuous, by Theorem 18.1.4, there exists neighborhoods $U_1$ 
+    and $U_2$ of $x$ such that $g_1(U_1)\subset V_1$ and $g_2(U_2)\subset V_2$. 
+    Since $x$ is a limit point of $A$. $A$ intersects both $U_1$ and $U_2$. 
+    Hence, there exists some $x^*\in A$ such that $g_i(x^*)\in V_i$ for 
+    $i=1,2$. Since $g_1(x^*)=g_2(x^*)$, this implies that $V_1$ and $V_2$ 
+    intersect. As the choice of neighborhoods $V_1$ and $V_2$ are arbitrary, 
+    this, by the definition of a Hausdorff space, implies that $g_1(x)=g_2(x)$.
+    Namely, if the extension exists, it is unique.
+  \end{proof}
 % end
 
 
