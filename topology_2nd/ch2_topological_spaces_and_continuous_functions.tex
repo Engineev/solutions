@@ -332,7 +332,93 @@
     Namely, if the extension exists, it is unique.
   \end{proof}
 % end
-
+\subsection{The Product Topology}
+  \paragraph{1.}
+  \begin{proof}
+    We show the result for the box topology $\mcal{T}_B$. For every $U
+    \in\mcal{T}_B$ and $x=(x_\alpha)\in U$, let $\prod_{\alpha\in J}U_\alpha 
+    \subset U$ be a basis neighborhood of $x$, where each $U_\alpha$ is open in 
+    $X_\alpha$. Again, let $B_\alpha\in\mcal{B}_\alpha$ be a basis neighborhood
+    of $x_\alpha$ which is contained by $U_\alpha$. Then, $x\in\prod B_\alpha
+    \subset U$. Thus, the collection described is a basis for the box topology.
+    Similarly for the product topology.
+  \end{proof}
+  
+  \paragraph{5.}
+  \begin{proof}
+    Since the box topology is finer than the product topology. Hence, if $f$
+    is continuous with respect to the box topology, it is continuous with 
+    respect to the product topology and, therefore, each $f_\alpha$ is 
+    continuous by Theorem 19.6.
+  \end{proof}
+  
+  \paragraph{7.}
+  \begin{proof}
+    We show that, in the box topology, $\mathbb{R}^\infty$ is closed and, as a
+    result, its closure is $\mathbb{R}^\infty$ itself. Suppose that $(y_n)
+    \notin\mathbb{R}^\infty$, that is, $(y_n)$ has subsequence whose elements 
+    are all nonzero. Define $(\vep_n)$ 
+    \[
+      \vep_n=\begin{cases}
+        1, & y_n=0, \\
+        y_n/2, & y_n\ne 0.
+      \end{cases}
+    \]
+    Then $\prod(y_n-\vep_n,y_n+\vep_n)$ is a neighborhood of $(y_n)$ in the box
+    topology. And it does not intersect $\mathbb{R}^\infty$. Hence, for $(y_n)$
+    to be a limit point of $\mathbb{R}^\infty$, it must belong to $\mathbb{R}
+    ^\infty$. Thus, $\mathbb{R}^\infty$ is closed in the box topology and 
+    its closure is $\mathbb{R}^\infty$.\par
+    We show that, in the product topology, the closure of $\mathbb{R}^\infty$
+    is $\mathbb{R}^\omega$. Clear that $\mathbb{R}^\omega$ is closed and 
+    contains $\mathbb{R}^\infty$. For every $(y_n)\in\mathbb{R}^\omega$, let 
+    $(\prod_{n=1}^N(y_n-\vep,y_n+\vep_n))\times\mathbb{R}^\omega$ be a basis 
+    neighborhood of $(y_n)$, where $0<\vep_n\le\infty$. Then the sequence 
+    $(x_n)$ defined by $x_k=y_k$ for $k=1,\dots,N$ and $x_k=0$ for $k>N$ 
+    belongs to both $\mathbb{R}^\infty$ and the neighborhood of $(y_n)$. Thus, 
+    $\mathbb{R}^\omega\subset \overline{\mathbb{R}^\infty}$ in the product 
+    topology, which implies that $\mathbb{R}^\omega=\overline{\mathbb{R}
+    ^\infty}$.
+  \end{proof}
+  
+  \paragraph{10.}
+  \begin{proof}
+    $\,$\par
+    (a) Let
+    \[
+      \mcal{B}=\{f_\alpha\inv(U_\alpha) \,|\, \forall\alpha\in J,\,\forall
+      U_\alpha\text{ open in $X_\alpha$}\}.
+    \]
+    Clear that $\mcal{B}$ contains $X$. Hence, $\mcal{B}$ serves as a subbasis
+    for a topology $\mcal{T}$ on $A$. By the definition of $\mcal{B}$, each
+    $f_\alpha$ is continuous with respect to $\mcal{T}$. Note that for every
+    topology $\mcal{T}\hp$ on $A$ that makes every $f_\alpha$ continuous, 
+    $\mcal{B}\subset\mcal{T}\hp$. As a result, $\mcal{T}\subset\mcal{T}\hp$.
+    Thus, $\mcal{T}$ is the unique coarsest topology on $A$ relative to which
+    each $f_\alpha$ is continuous.\par
+    (b) It follows immediately from the previous discussion.\par
+    (c) The "only if" part comes from Theorem 18.2(c) immediately. For the "if"
+    part, suppose that all $f_\alpha\circ g$ are continuous. Assume, to obtain
+    a contradiction, that there is an subbasis element $W$ in $A$ whose inverse 
+    image $g\inv(W)$ is not open. Suppose $W=f_\alpha\inv(U_\alpha)$ where 
+    $U_\alpha$ is open in $X_\alpha$. Then $g\inv(W)=g\inv(f_\alpha\inv(
+    U_\alpha))=(f_\alpha\circ g)\inv(U_\alpha)$, which is open as $f_\alpha
+    \circ g$ is continuous. Contradiction. Thus, $g$ is continuous.\par
+    (d) Let $E$ be an open set in $A$. We show that $f(E)$ is open in $Z$. For
+    every $x\in f(E)$, suppose $f(a)=x$. Since $E$ is open, there is a basis
+    neighborhood $B$ of $a$ with $B\subset E$. Note that $x\in f(B)\subset
+    f(E)$. Now we show that $f(B)$ is open in $Z$ to complete the proof. Since
+    $B$ is a basis element, we may write $B$ as $B=\cap_{\beta\in I}B_\beta$
+    where $I$ is a finite subset of $J$ and $B_\beta=f_\beta\inv(U_\beta)$
+    for some open set $U_\beta$ in $X_\beta$. Hence,
+    \[
+      f(B)=f\left(\bigcap_{\beta\in I}f_\beta\inv(U_\beta)\right)=
+      Z\cap\left(\bigcap_{\beta\in I}U_\beta\right).
+    \]
+    Namely, $f(B)$ is open in $Z$. Thus, the image under $f$ of each open set
+    in $A$ is open in $Z$.
+  \end{proof}
+% end
 
 
 

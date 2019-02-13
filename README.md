@@ -9,6 +9,7 @@ My personal solutions to some textbook problems
   * 16 The Subspace Topology (1, 2, 4, 6, 7, 9, 10)
   * 17 Closed Sets and Limit Points (2, 4, 6, 8, 10, 12, 14, 21.b)
   * 18 Continuous Functions (1, 3, 5, 7.a, 9, 11, 13)
+  * 19 The Product Topology (1, 5, 7, 10)
 
 ## H.L. Royden, *Real Analysis*, 3rd ed
 
