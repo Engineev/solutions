@@ -44,6 +44,12 @@ My personal solutions to some textbook problems
   * 11.1 Outer Measure and Measurability (1, 2)
   * 11.2 The Extension Theorem (4, 7)
 
+## Martin Aigner, *A Course in Enumeration*
+
+**Ongoing**
+* Chapter 1. Fundamental Coefficients
+  * 1.1 Elementary Counting Principles (2, 3, 5, 8, 11)
+
 ## Roger A. Horn, Charles R. Johnson, *Matrix Analysis*, 2nd ed
 
 **Suspended**

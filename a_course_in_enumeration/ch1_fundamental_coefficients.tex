@@ -1,0 +1,105 @@
+\section{Fundamental Coefficients}
+\subsection{Elementary Counting Principles}
+  \paragraph{2.}
+  \begin{solution}
+    We compute $N=\#\{(i,j,k)\in\mathbb{N}^3\,|\,i+j+k=151,\max\{i,j,k\}\le 
+    75\}$. For fixed $1\le i\le 75$, $j$ can be chosen between $76-i$ and $75$.
+    Thus,
+    \[
+      N=\sum_{i=1}^{75}\sum_{j=76-i}^{75}1=\sum_{i=1}^{75}i=2850.
+    \]
+  \end{solution}
+  
+  \paragraph{3.}
+  \begin{proof}
+    The number of subsets of $\{1,\dots,n+1\}$ is $2^{n+1}$. Classify these 
+    subsets according the biggest elements in them. The number of subsets whose
+    biggest elements are $k$ equals to the number of subsets of $\{1,\dots,k\}$
+    containing $k$, that is, $2^{k-1}$. Thus,
+    \[
+      2^{n+1}=1+\sum_{k=1}^{n+1}2^{k-1}
+      \quad\Rightarrow\quad
+      2^{n+1}-1=\sum_{k=0}^n 2^k.
+    \]\par
+    Similarly, we may classify these subsets according to the biggest two 
+    elements. Then
+    \[
+      2^{n+1}-1-(n+1)=\sum_{i=1}^n\sum_{j=i+1}^{n+1}2^{i-1}=
+      \sum_{i=1}^n2^{i-1}(n-i+1)=\sum_{i=1}^n2^{i-1}(n-i)+2^n-1.
+    \]
+    Thus, $\sum_{k=1}^n(n-k)2^{k-1}=2^n-n-1$.
+  \end{proof}
+
+  \paragraph{5.}
+  \begin{proof}
+    We count the number $N$ of triples in $\{1,\dots,n+1\}$. By definition, 
+    $N=\binom{n+1}{3}$. Let $S_k$ be the collection of triples the last
+    elements of which are $k$. Then $|S_k|=\binom{k-1}{2}$. Thus
+    \[
+      \binom{n+1}{3}=\sum_{k=3}^{n+1}\binom{k-1}{2}=\sum_{k=2}^n\binom{k}{2}
+      =\sum_{k=1}^n\binom{k}{2}.
+    \]
+  \end{proof}
+  
+  \paragraph{8.}
+  \begin{proof}
+    Let $E$ be valid $k$-subset. If $1\in  E$, then we need to choose $k-1$
+    numbers from $3,\dots,n$ so that no pair of consecutive integers exists. 
+    The number of possible choices is $f(n-2,k-1)$. If $1\notin E$, then we 
+    need to choose $k$ numbers from $2,\dots,n$ such that no pair of 
+    consecutive integers exists. The number of possible choices is $f(n-1,k)$.
+    Hence, we obtain the recurrence relation
+    \[
+      f(n,k)=f(n-2,k-1)+f(n-1,k).
+    \]\par
+    Now we argue by induction on $n$. Clear that $f(n,0)=1$ for all $n$, 
+    $f(2,1)=2$ and $f(n,k)=0$ for all $n<2k-1$, all satisfying $f(n,k)=
+    \binom{n-k+1}{k}$. Assume that for all $m<n$, $f(m,k)=\binom{m-k+1}{k}$ 
+    holds. Thus,
+    \[
+      f(n,k)=f(n-2,k-1)+f(n-1,k)=
+      \binom{n-k}{k-1}+\binom{n-k}{k}=\binom{n-k+1}{k}.
+    \]
+    Let $s(n)$ denote $\sum_{k=0}^nf(n,k)$. Then
+    \begin{align*}
+      s(n-1)+s(n-2)
+      &=f(n-1,0)+\sum_{k=1}^{n-1}f(n-1,k)+\sum_{k=1}^{n-1}f(n-2,k-1) \\
+      &=1+\sum_{k=1}^{n-1}\{f(n-1,k)+f(n-2,k-1)\} \\
+      &= f(n,0)+\sum_{k=1}^{n-1}f(n,k)=\sum_{k=0}^{n-1}f(n,k)=s(n).
+    \end{align*}
+    This recurrence relation, together with the fact $s(1)=2$ and $s(2)=3$, 
+    imply that $s(n)=F_{n+2}$.
+  \end{proof}
+  
+  \paragraph{11.}
+  \begin{proof}
+    We argue by contradiction. Let $S_p=\{p+9k\,|\,p+9k\le 100, p=0,1,\dots\}$, 
+    $p=1,\dots,9$. Clear that $\{S_p\}$ partitions $\{1,\dots,100\}$; $|S_1|
+    =12$ and $|S_p|=11$ for $p=2,\dots,9$. If $A$ does not contain two numbers 
+    with difference $9$. Then for each $p$, no consecutive elements of $S_p$ 
+    can belong to $A$, which implies that $|S_p\cap A|\le 6$. Hence, $|A|=
+    \sum_{p=1}^9|S_p\cap A|\le 54$. Contradiction. Thus, $A$ must contain two
+    numbers with difference $9$.\par
+    For the case $|A|=54$, this is not true. For a counterexample, put
+    \[
+      A=\bigcup_{p=1}^9\{p+9k\,|\,p+9k\le 100, k=1,3,5,\dots\}.
+    \]
+  \end{proof}
+% end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
