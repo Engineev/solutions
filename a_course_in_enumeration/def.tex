@@ -1,0 +1,53 @@
+\documentclass[12pt, a4paper]{article}
+%---------%---------%---------%---------%---------%---------%---------%---------
+\usepackage[margin=1in]{geometry}
+\usepackage{
+    color,
+    clrscode,
+    amssymb,
+    amsmath,
+    listings,
+    fontspec,
+    xcolor,
+    supertabular,
+    multirow,
+    mathtools,
+    mathrsfs,
+    amsthm,
+    systeme,
+    amsfonts,
+    chngcntr
+}
+\definecolor{bgGray}{RGB}{36, 36, 36}
+\usepackage[
+    colorlinks,
+    linkcolor=bgGray,
+    anchorcolor=blue,
+    citecolor=green
+]{hyperref}
+\newfontfamily\courier{Courier}
+
+\newcommand{\vep}{\varepsilon}
+
+\newenvironment{solution}
+  {\begin{proof}[Solution]}
+  {\end{proof}}
+\newcommand{\rd}{\mathrm{d}}
+\newcommand{\inv}{^{-1}}
+\newcommand{\hp}{^\prime}
+\newcommand{\mT}{\mathcal{T}}
+\newcommand{\mcal}{\mathcal}
+\newcommand{\lhs}{\text{L.H.S}}
+\newcommand{\rhs}{\text{R.H.S}}
+
+\DeclareMathOperator*\lowlim{\underline{lim}}
+\DeclareMathOperator*\uplim{\overline{lim}}
+\DeclareMathOperator*\esssup{ess\,sup}
+\def\upint{\mathchoice
+    {\mkern13mu\overline{\vphantom{\intop}\mkern7mu}\mkern-20mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+  \int}
+\def\lowint{\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}
+
