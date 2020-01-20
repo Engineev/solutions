@@ -1,16 +1,6 @@
 # solutions
 My personal solutions to some textbook problems
 
-## James R. Munkres, *Topology*, 2nd ed
-
-**ongoing**
-* Chapter 2. Topological Spaces and Continuous Functions
-  * 13 Basis for a Topology (1, 4, 5, 6, 8)
-  * 16 The Subspace Topology (1, 2, 4, 6, 7, 9, 10)
-  * 17 Closed Sets and Limit Points (2, 4, 6, 8, 10, 12, 14, 21.b)
-  * 18 Continuous Functions (1, 3, 5, 7.a, 9, 11, 13)
-  * 19 The Product Topology (1, 5, 7, 10)
-
 ## H.L. Royden, *Real Analysis*, 3rd ed
 
 **Ongoing**
@@ -46,27 +36,6 @@ My personal solutions to some textbook problems
   * 11.1 Outer Measure and Measurability (1, 2)
   * 11.2 The Extension Theorem (4, 7)
 
-## Martin Aigner, *A Course in Enumeration*
-
-**Ongoing**
-* Chapter 1. Fundamental Coefficients
-  * 1.1 Elementary Counting Principles (2, 3, 5, 8, 11)
-  * 1.2 Subsets and Binomial Coefficients (12, 13, 17, 18)
-
-## Roger A. Horn, Charles R. Johnson, *Matrix Analysis*, 2nd ed
-
-**Suspended**
-* Chapter 1. Eigenvalues, Eigenvectors and Similarity
-  * 1.0 Introduction (Completed)
-  * 1.1 The eigenvalue-eigenvector equation (Odd)
-  * 1.2 The characteristic polynomial and algebraic multiplicity (Even - {12})
-  * 1.3 Similarity ([1, 15], 17, 19, 20.(b, g, h, i), 23, [28, 31], 33)
-  * 1.4 Left and right eigenvectors and geometric multiplicity (Even - {8, 16})
-* Chapter 2. Unitary Similarity and Unitary Equivalence
-  * 2.1 Unitary matrices and the QR factorization (8, 10, 11, 12, 23)
-  * 2.3 Unitary and real orthogonal triangularizations (9)
-* Chapter 5. Norms for Vectors and Matrices
-  * 5.1 Definitions of norms and inner products (1, 2, 4.a, 6, 10, 12)
 
 ## Sheldon Axler, *Linear Algebra Done Right*, 3rd ed
 
