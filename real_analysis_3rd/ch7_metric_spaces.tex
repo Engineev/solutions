@@ -1,0 +1,87 @@
+\section{Metric Spaces}
+\setcounter{subsection}{6}
+\subsection{Compact Metric Space}
+\paragraph{27.}
+\begin{proof}
+  If $\rho(F, K) > 0$, then clear that $F\cap K = \varnothing$. For the reverse
+  direction, consider the function $h(x) = \rho(x, F)= \inf_{y\in F}\rho(x,y)$.
+  Clear that for $x\in K$, $h(x) \le \rho(K, F)$.
+
+  First, we show that $h$ is continuous. Let $x$ be fixed. For every
+  $x\hp \in X$
+  \[
+    h(x) \le \rho(x, y) \le \rho(x, x\hp) + \rho(x\hp, y),
+    \quad\forall y\in F.
+  \]
+  Take infimum on the right hand side and we get
+  \[
+    h(x) \le \rho(x, x\hp) + h(x\hp)
+    \quad\Rightarrow\quad
+    h(x) - h(x\hp) \le \rho(x, x\hp).
+  \]
+  Similarly, we have $h(x\hp) - h(x) \le \rho(x, x\hp)$. Thus, $h$ is
+  continuous.
+  
+  Since $K$ is compact and $h$ is continuous, $h$ attains its infimum $c$
+  at some point $x_0 \in K$. Assume, to obtain a contradiction, that $c = 0$.
+  Then, for every $\vep > 0$, there is a $y \in F$ s.t. $\rho(x_0, y) < \vep$.
+  Namely, $x_0$ is a cluster point of $F$. Since $F$ is closed, $x_0 \in F$, 
+  which contradicts with $F\cap K=\varnothing$. Thus, $c > 0$ and therefore
+  $\rho(F, K) > 0$.
+\end{proof}
+
+\paragraph{28.}
+\begin{proof}
+  $\,$\par
+  (a) Let $\vep > 0$ be fixed. Since $f$ is uniformly continuous, there exists
+  some $\delta > 0$ s.t. for every $x_1,x_2\in X$ with $\rho(x_1, x_2) < 
+  \delta$, $\rho(f(x_1), f(x_2)) < \vep$. Let $B\subset X$ be a ball with
+  radius $\delta/2$. Then $f(B) \subset Y$ is contained by some ball of 
+  radius $\vep$. Hence, we can cover $Y$ with finitely many balls of radius
+  $\vep$ as long as we can cover $X$ with finitely many balls of radius 
+  $\delta / 2$ and this can be done since $X$ is totally bounded.
+  
+  (b) Clear that $X = (0, 1)$ is totally bounded while $Y = (1, \infty)$ is
+  not. The function $1/x$ a continuous function that maps $X$ onto $Y$. Hence,
+  the result does not hold. 
+\end{proof}
+
+
+\paragraph{29.}
+\begin{proof}
+  $\,$\par
+  (a) First, by the definition of open cover and open sets, $\varphi(x) > 0$.
+  Meanwhile, since $X$ is compact, it is bounded and, therefore, 
+  $\varphi(x) < \infty$.
+  
+  (b) Let $x$ be fixed and $r$ be such that there exists some $O\in \mcal{U}$
+  with $B_{x, r}\subset O$. Let $s = r - \rho(x, y)$. If $s \le 0$, then
+  clear that $s \le \varphi(y)$. If $s > 0$, then we have $B_{y, s}
+  \subset B_{x, r} \subset O$. Hence, $s \le \varphi(y)$. Thus, 
+  $r - \rho(x, y) \le \varphi(y)$. Take supremum on the left hand side and we
+  get $\varphi(x) - \rho(x, y) \le \varphi(y)$.
+  
+  (c) It follows immediately from (b).
+  
+  (d) Let $(x_n)$ be a sequence s.t. $\varphi(x_n) \to \vep$. Since $X$ is
+  sequentially compact, $(x_n)$ has a convergent subsequence. For the sake of 
+  convenience, we assume the subsequence is $(x_n)$ itself. Suppose $x_n
+  \to x$. Since $\varphi$ is continuous, $\varphi(x) = \lim\varphi(x_n) = 
+  \vep$. Thus, by (a), $\vep > 0$.
+  
+  (e) Let $\delta$ be any positive number that is less than $\vep$. For every
+  $x$, since $\delta < \vep = \inf\varphi$, $\delta < \varphi(x)$ and,
+  therefore, $B_{x, \delta} \subset O$ for some $O \in \mcal{U}$.
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+

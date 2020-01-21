@@ -1,6 +1,11 @@
 # solutions
 My personal solutions to some textbook problems
 
+## James R. Munkres, *Analysis on Manifolds*
+
+**Ongoing**
+
+
 ## H.L. Royden, *Real Analysis*, 3rd ed
 
 **Ongoing**
@@ -24,6 +29,8 @@ My personal solutions to some textbook problems
   * 6.2 The Minkowski and Hölder Inequalities (8)
   * 6.3 Convergence and Completeness (9, 10, 11, 13, 16, 17, 18)
   * 6.4 Approximation in L^p (19)
+* Chapter 7. Metric Spaces
+  * 7.7 Compact Metric Spaces (27, 28, 29)
 * Chapter 11. Measure and Integration
   * 11.1 Measure Spaces (1, 3, 7, 9.(a, b, c, d))
   * 11.2 Measurable Functions (10, 11, 13, 16)
