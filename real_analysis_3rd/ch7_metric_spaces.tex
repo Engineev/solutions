@@ -74,6 +74,48 @@
   therefore, $B_{x, \delta} \subset O$ for some $O \in \mcal{U}$.
 \end{proof}
 
+\subsection{Baire Category}
+\paragraph{31.(a)}
+\begin{proof}
+  Suppose that $F$ is nowhere dense. Since $F$ is closed, $F^c$ is dense.
+  Therefore, for every point $x\in F$, every neighborhood of $x$ contains a
+  point of $F^c$. Thus, $F$ contains to open set. For the reverse direction, 
+  since $F$ contains no open set, every neighborhood of every $x\in X$ contains
+  a point in $F^c$, which implies that $F^c$ is dense.
+\end{proof}
+
+\paragraph{34.}
+\begin{proof}
+  For the first part, it suffices to show that $\partial E$ is nowhere dense
+  for any set $E \subset X$. Since $\partial E$ is closed and contains no open
+  set, by 31.(a), it is nowhere dense.
+  
+  For the second part, assume, to obtain a contradiction, that $F$ is not
+  nowhere dense. Then by 31.(a), it contains an nonempty open set $O$. By
+  32.(a), $O$ is also meager, which contradicts the Baire category theorem. 
+\end{proof}
+
+\paragraph{35.}
+\begin{proof}
+  Let $E$ be a subset set of the complete metric space $X$. If $E$ is residual,
+  then $E^c = \bigcup_n K_n$ where $K_n$ are nowhere dense sets. Hence, 
+  \[
+    E = \bigcap K_n^c \supset \bigcap (\cl K_n)^c.
+  \]
+  Note that $(\cl K_n)^c$ is a $G_\delta$. Meanwhile, since each $(\cl K_n)^c$
+  is a dense open set and $X$ is complete, By the theorem of Baire, 
+  $\bigcap (\cl K_n)^c$ is also dense. The proof of the reverse direction is
+  similar.
+\end{proof}
+
+\paragraph{39.}
+\begin{proof}
+  Let $E_m$ has the same meaning as in the proof of Theorem 32. Let $O := 
+  \bigcup_m E_m^\circ$. By Prop. 31, $O$ is a dense residual open set. For
+  every $x\in O$, $x \in E_m^\circ$ for some $m$. Since $E_m^\circ$ is open,
+  there is a neighborhood $U$ of $x$ which is contained by $E_m^\circ$. Thus,
+  $\mcal{F}$ is uniformly bounded by $m$ in $U$.
+\end{proof}
 
 
 
