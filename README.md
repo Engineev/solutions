@@ -33,6 +33,8 @@ My personal solutions to some textbook problems
   * 7.7 Compact Metric Spaces (27, 28, 29)
   * 7.8 Baire Category (31.a, 34, 35, 39)
   * 7.10 The Ascoli-Arzela Theorem (47, 49, 50)
+* Chapter 8. Topological Spaces
+  * 8.1 Fundamental Notions (3, 7, 10.(a, b))
 * Chapter 11. Measure and Integration
   * 11.1 Measure Spaces (1, 3, 7, 9.(a, b, c, d))
   * 11.2 Measurable Functions (10, 11, 13, 16)

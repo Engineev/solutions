@@ -1,0 +1,39 @@
+\section{Topological Spaces}
+\subsection{Fundamental Notions}
+\paragraph{3.}
+\begin{proof}
+  If $A$ is open, then clear that $x \in A \subset A$. For the converse, let 
+  $E = \bigcup_{x\in A}O_x$ where $x\in O_x \subset A$. Since $O_x\subset A$,
+  $E \subset A$. Meanwhile, for every $x\in A$, $x \in O_x\subset E$. Hence, 
+  $A = E$. Thus, $A$ is open since $E$ is the union of open sets.
+\end{proof}
+
+\paragraph{7.}
+\begin{proof}
+  $\,$\par
+  (a) We argue by contradiction. Assume $x \in F^c$. Since $F$ is closed, $F^c$
+  is open and therefore there is neighborhood $O$ of $x$ s.t. $O \cap F
+  \ne \varnothing$, which contradicts the fact that $x$ is a cluster point.
+  Thus, $x \in F$.
+  
+  (b) Let $y := f(x)$ and $y_n := f(x_n)$. Let $O$ be an arbitrary
+  neighborhood of $y$. Since $f$ is continuous, there is a neighborhood $U$ of
+  $x$ s.t. $f(U) \subset O$. Since $x = \lim x_n$, there is an integer $N$ s.t.
+  $x_n \in U$ for every $n > N$. Hence, $y_n = f(x_n) \in f(U) \subset O$ for
+  all $n > N$. Thus, $y_n \to y$.
+  
+  (c) The previous argument, \textit{mutatis mutandis}, yields the result.
+\end{proof}
+
+\paragraph{10.}
+\begin{proof}
+  $\,$\par
+  (a) Suppose that both $A_1$ and $A_2$ are open.
+  Let $f_1 := f|_{A_1}$, $x\in A$ and $y = f(x)$. We may assume without
+  loss of generality that $x \in A_1$. For every neighborhood $O$ of $y$, since
+  $f_1$ is continuous, there is a neighborhood $A_1\cap U$ s.t. $f(A_1\cap U)
+  \subset O$ where $U$ is an open set of $X$. Since $A_1\cap U$ is still open,
+  $f$ is continuous at $x$. Thus, $f$ is continuous.
+  
+  (b) Let $f(x) = 0$ on $A_1 = (-1, 0)$ and $f(x) = 1$ on $A_2 = [0, 1]$.
+\end{proof}
