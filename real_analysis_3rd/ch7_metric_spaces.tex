@@ -118,7 +118,43 @@
 \end{proof}
 
 
+\setcounter{subsection}{9}
+\subsection{The Ascoli-Arzel\'{a} Theorem}
+\paragraph{47.}
+\begin{proof}
+  Let $x$ be an arbitrary fixed point in $X$ and $(x_n)\subset X$ a sequence
+  that converges to $x$. Clear that $K = \{x\}\cup(x_n)$ is (sequently)
+  compact. Hence, $f_n$ converges to $f$ uniformly on $K$. Thus, $f$ is also
+  continuous on $K$ and therefore at $x$. Namely, $f$ is continuous. 
+\end{proof}
 
+\paragraph{49.}
+\begin{proof}
+  Let $x$ be an arbitrary point in $X$. For every $\vep > 0$, since $\mcal{F}$
+  is equicontinuous, there is an open neighborhood $O$ of $x$ s.t. 
+  $\sigma(f(x), f(y)) < \vep$ for every $y\in O$ and $f\in\mcal{F}$. Now, for
+  every $f^+\in \mcal{F}^+$, suppose $f_n \to f$. We have
+  \[
+    \sigma(f^+(x), f^+(y)) 
+    = \sigma\left(\lim_n f_n(x), \lim_m f_m(y)\right) 
+    = \lim_n\lim_m \sigma(f_n(x), f_m(y)) \le \vep,
+  \]
+  where the second equality comes from the continuity of $\sigma$ and the last
+  inequality comes from the equicontinuity of $\mcal{F}$.
+\end{proof}
+
+\paragraph{50.} I assume that the norm on $C[0, 1]$ is the sup norm. 
+\begin{proof}
+  Let $\mcal{F} := \{f\in C[0, 1]\mid \|f\|_\alpha \le 1 \}$. First, we show
+  that $\mcal{F}$ is equicontinuous. By the definition of $\|\cdot\|_\alpha$,
+  $f\in\mcal{F}$ only if it is bounded by $1$ and $|f(x) - f(y)| \le 
+  |x - y|^\alpha$ for all $x, y \in [0, 1]$. For every $x\in X$ and $\vep > 0$,
+  consider the $\sqrt[\alpha]{\vep}$-ball $B$ centered at $x$. For every
+  $y \in B$, $|f(x) - f(y)| \le |x - y|^\alpha < \vep$. Hence, $\mcal{F}$ is
+  equicontinuous. Let $(f_n)$ be a sequence in $\mcal{F}$. Since $f_n$ is
+  bounded by $1$, by Corollary 41, $(f_n)$ contains a convergent subsequence. 
+  Thus, $\mcal{F}$ is a (sequently) compact subset of $C[0, 1]$.
+\end{proof}
 
 
 
