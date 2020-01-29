@@ -1,10 +1,6 @@
 # solutions
 My personal solutions to some textbook problems
 
-## James R. Munkres, *Analysis on Manifolds*
-
-**Ongoing**
-
 
 ## H.L. Royden, *Real Analysis*, 3rd ed
 
@@ -35,6 +31,7 @@ My personal solutions to some textbook problems
   * 7.10 The Ascoli-Arzela Theorem (47, 49, 50)
 * Chapter 8. Topological Spaces
   * 8.1 Fundamental Notions (3, 7, 10.(a, b))
+  * 8.2 Bases and Countability (11, 13, 16)
 * Chapter 11. Measure and Integration
   * 11.1 Measure Spaces (1, 3, 7, 9.(a, b, c, d))
   * 11.2 Measurable Functions (10, 11, 13, 16)

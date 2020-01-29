@@ -37,3 +37,70 @@
   
   (b) Let $f(x) = 0$ on $A_1 = (-1, 0)$ and $f(x) = 1$ on $A_2 = [0, 1]$.
 \end{proof}
+
+\subsection{Bases and Contability}
+\paragraph{11.}
+\begin{proof}
+  $\,$\par
+  (a) Suppose for every $B\in\mcal{B}$ containing $x$, there is a $y\in 
+  B\cap E$. Let $O$ be an arbitrary open set containing $x$. By the definition
+  of bases, there is a base set $B$ s.t. $x \in B \subset \mcal{B}$. Thus,
+  $O\cap E \supset B\cap E \ne \varnothing$. Namely, $x \in \cl E$. The
+  reversed direction follows immediately from the definition of cluster points.
+  
+  (b) If there is sequence in $E$ that converges to $x$, clear that $x\in
+  \cl E$. Now we show the reverse. Let $\mcal{B}_x = (B_k)$ be a countable base
+  at $x$ and $S_n = \bigcap_{k=1}^n B_k$. Choose $x_n \in S_n$. For every
+  open set $O$ containing $x$, there exists a $B_m$ s.t. $x \in B_m
+  \subset O$. Hence, for every $n > m$, $x_n \in S_n\subset S_m
+  \subset S_m \subset O$. Thus, $x_n \to x$.
+  
+  (c) It follows immediately from (b).
+\end{proof}
+
+\paragraph{13.}
+\begin{proof}
+  By the construction of $\mcal{B}$ and Prop. 5, $\mcal{B}$ is a base for some
+  topology on $X$. Let $\mcal{T}$ be a topology containing $\mcal{C}$. Since
+  $X \in \mcal{T}$ and $\mcal{T}$ is closed under finite intersection,
+  $\mcal{T} \supset \mcal{B}$. Thus, $\mcal{T}$ contains the topology generated
+  by $\mcal{B}$. Since the choice of $\mcal{T}$ is arbitrary, we conclude that
+  $\mcal{B}$ is a base for the weakest topology containing $\mcal{C}$.
+\end{proof}
+
+
+\paragraph{16.}
+\begin{proof}
+  Let $\mcal{B}$ be a countable base for the topology on $X$ and 
+  $\mcal{U}$ an open cover of $X$. For each $B\in\mcal{B}$, if there is
+  some $U \in \mcal{U}$ with $B \subset U$, then pick that $U$. This yields
+  a at most countable subset $\mcal{V}$ of $\mcal{U}$. Now we show that 
+  $\mcal{V}$ covers $X$. For every $x\in X$, since $\mcal{U}$ covers $X$, there
+  is a $U\in\mcal{U}$ s.t. $x\in U$. Meanwhile, since $\mcal{B}$ is a base, 
+  there is a $B \in \mcal{B}$ s.t. $x\in B \subset U$. Hence, by our
+  construction, there is a $U\hp \in \mcal{U}$ containing $x$ is picked. Thus,
+  $x$ is covered by $\mcal{V}$.
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
