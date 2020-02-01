@@ -82,12 +82,189 @@
   $x$ is covered by $\mcal{V}$.
 \end{proof}
 
+\subsection{The Separation Axioms and Continuous Real-Valued Functions}
+\paragraph{18.}
+\begin{proof}
+  $\,$\par
+  (a) If $x \ne y$. then $d(x, y) > 0$. It suffices to choose the open balls
+  of radius $d(x, y) / 2$ centered at $x$ and $y$ respectively.
+  
+  (b) Let $O_1 = \{x\mid \rho(x, F_1) < \rho(x, F_2) \}$ and $O_2 = \{
+  x\mid \rho(x, F_1) > \rho(x, F_2)\}$. Clear that $O_1$ and $O_2$ are
+  disjoint. Since $F_1$ and $F_2$ are closed and disjoint, $\rho(F_1, F_2)
+  > 0$. Hence, for every $x\in F_1$, $\rho(x, F_1) = 0$ and $\rho(x, F_2)
+  > 0$. Therefore, $F_1 \subset O_1$. Similarly, $F_2 \subset O_2$. Meanwhile,
+  for every $x\in O_1$, the open ball centered at $x$ and of radius 
+  $(\rho(x, F_2) - \rho(x, F_1))/3$ is contained in $O_1$. Therefore, $O_1$ is
+  open and similarly for $O_2$. Thus, $X$ is normal.
+\end{proof}
+
+\paragraph{20.}
+\begin{proof}
+  If $f$ is continuous, then clear that $\{x\mid f(x) < a\} = 
+  f\inv((-\infty, a))$ and $\{x\mid f(x) > a\} = f\inv((a, \infty))$ are open.
+  Now we show the reverse. For every open interval $(a, b)$, $f\inv((a, b))
+  = f\inv((a, \infty))\cap f\inv((-\infty, a))$ is open. Meanwhile, every open
+  set $O$ in $\mathbb{R}$ is a union $\bigcup I_\alpha$of open intervals. Thus,
+  $f\inv(O) = \bigcup f\inv(I_\alpha)$ is open. Namely, $f$ is continuous. 
+  The second results follows immediately from $\{f \ge a\}$ is closed iff
+  $\{f < a\}$ is open.
+\end{proof}
+
+\paragraph{23.}
+  It seems that in (a), the Hausdorff condition is not necessary. 
+\begin{proof}
+  $\,$\par
+  (a) First, suppose that $X$ is normal. Let $G = O^c$. $F$ and $G$
+  are disjoint closed set and, therefore, there are disjoint open sets $U$ and
+  $V$ s.t. $F\subset U$ and $G\subset V$. To show $\cl U\subset O$, note that
+  $O = G^c \supset V^c \supset U$, since $U$ and $V$ are disjoint. Since $V^c$
+  is closed, $V^c \supset \cl U$. Thus, $F\subset U$ and $\cl U \subset O$.
+  
+  For the reverse, let $F_1$ and $F_2$ be two disjoint closed sets. Then
+  $F_1^c$ is an open set containing $F_2$ and therefore there exists an open
+  $U_2$ s.t. $F_2 \subset U_2$ and $\cl U_2\subset F_1^c$. Note that $\cl U_2$
+  and $F_1$ are again disjoint closed sets. Hence, similarly, we can find an
+  open $U_1$ s.t. $F_1\subset U_1$ and $\cl U_1 \subset (\cl U_2)^c$. Thus, 
+  $X$ is normal.  
+
+  (b) We index the sequence by $n$ instead of $r$. Suppose that $N$ is the
+  smallest integer s.t. $r = p2^{-N} < 1$. By (a), we may find a open set
+  $U_{N}$ s.t. $F\subset U_N$ and $\cl U_N\subset O$. Now, $U_N$ is again an
+  open set containing $F$ and therefore we can find $U_{N+1}$ s.t. 
+  $F\subset U_{N+1}$ and $\cl U_{N+1} \subset U_N$. Proceed iteratively and 
+  we get the required sequence. 
+  
+  (c) Clear that $0 \le f \le 1$, $\equiv 0$ on $F$ and $f\equiv 1$ on $O^c$. 
+  Hence, it suffices to show the continuity. For every $x \in X$ and $\vep> 0$,
+  choose $r_1, r_2 \in \mathbb{Q}$ such that 
+  \[
+    f(x) - \vep < r_1 < f(x) < r_2 < f(x) + \vep.
+  \]
+  Let $U = U_{r_2} \setminus \cl U_{r_1}$. Clear that $U$ is open. Meanwhile,
+  \[
+    f(x) < r_2 \quad\Rightarrow\quad
+    \inf\{r\mid x \in U_r\} < r_2 \quad\Rightarrow\quad
+    \exists r < r_2 \text{ s.t. } x \in U_r.
+  \]
+  Hence, $x \in U_{r_2}$. If $x \in \cl U_{r_1}$, then $x \in U_r$ for all
+  $r > r_1$ since $U_r \supset \cl U_{r_1}$ and, therefore, $f(x) \le r_1$. 
+  Contradiction. Thus, $x \notin U_{r_1}$. Hence, $U$ is an open neighborhood
+  of $x$. For every $y \in U$, clear that $f(x) < r_2$. Also, $y \notin 
+  \cl U_{r_1}$ implies that $f(y) \ge r_1$. Hence, $f(U)\subset (f(x) - \vep,
+  f(x) + \vep)$. Thus, $f$ is continuous. 
+  
+  (d) If $X$ is normal, then clear that the function described in (c) satisfies
+  the requirements. For the reverse, let $O_1 = \{x\mid f(x) < 1/2\}$ and 
+  $O_2 = \{x \mid f(x) > 1/2\}$. Clear that $O_1$ and $O_2$ are disjoint and
+  since $f$ is continuous, they are open. Meanwhile, as $f\equiv 0$ on $A$
+  and $f\equiv 1$ on $B$, $O_1$ contains $A$ and $O_2$ contains $B$. Thus,
+  $X$ is normal.
+\end{proof}
+
+\paragraph{24.}
+  The function in (f) should be $g = \varphi k / (1 - |\varphi k|)$.
+\begin{proof}
+  $\,$\par
+  (a) Obvious.
+  
+  (b) Clear that $B$ and $C$ are disjoint. Since $f$ is continuous, so is
+  $h$ and therefore $B$ and $C$ are closed. By Urysohn's lemma, there exists
+  continuous $0 \le h_{1, B}, h_{1, C} \le 1$ s.t. $h_{1, B} \equiv 1$ (resp. 
+  $h_{1, C} \equiv 1$) on $B$ (resp. $C$) and vanishes on $C$ (resp. $B$). Let
+  $h_1 = (-h_{1, B} + h_{1, C}) / 3$. Then $h_1 \equiv -1/3$ on $B$ and 
+  $h_1 \equiv 1/3$ on $C$. Meanwhile, $h_1$ is continuous and $|h_1| \le 1/3$.
+  Let $x \in A$. If $h(x) \le -1/3$, then $|h(x) - h_1(x)| = |h(x) + 1/3| <
+  2/3$. Similarly for $x$ with $h(x) \ge 1/3$. If $-1/3 < h(x) < 1/3$, then
+  $|h(x) - h_1(x)| < |h(x)| + |h_1(x)| \le 2/3$. Thus, $|h - h_1| < 2/3$.
+  
+  (c) Suppose that we have constructed $h_n$. Let $s_n = \sum_{i=1}^n h_i$. Let
+  \[
+    B_n = \{x \mid h(x) - s(x) < -2^n/3^{n+1}\}
+    \quad\text{and}\quad
+    C_n = \{x \mid h(x) - s(x) > -2^n/3^{n+1}\}.
+  \]
+  The previous argument, \textit{mutatis mutandis}, yields a continuous 
+  function $h_{n+1}$ s.t. $|h_{n+1}| < 2^n/3^{n+1}$ and $|h - s_n - h_{n+1}|
+  = |h - s_{n+1}| < 2^{n+1} / 3^{n+1}$ for all $x \in A$.
+  
+  (d) By the Weierstrass $M$-test, $h_n$ is uniformly summable. Hence,
+  $k = \sum_{n=1}^\infty h_n$ is continuous as each $h_n$ is. Clear that $|k|
+  \le 1$. Moreover, by the estimation in (c), $h = k$ on $A$. 
+  
+  (e) By Urysohn's lemma, there is a continuous function $\varphi$ on $X$ s.t.
+  $\varphi \equiv 1$ on $A$ and $\varphi \equiv 0$ on $\{x\mid k(x) = 1\}$.
+  
+  (f) Let $g = \varphi k / (1 - |\varphi k|)$. By (e), $g$ is well-defined on 
+  entire $X$. Also, $g$ is continuous and for $x \in A$
+  \[
+    g(x) = \frac{\varphi(x) k(x)}{1 - |\varphi(x) k (x)|}
+    = \frac{1\times h(x)}{1 - |1\times h(x)|}
+    = \frac{\frac{f}{1 + |f|}}{1 - \frac{|f|}{1 + |f|}}
+    = f.
+  \]
+\end{proof}
+
+\paragraph{26.}
+\begin{proof}
+  Let $\mcal{J}$ be the topology generated by $\mcal{F}$. Since every
+  $f \in \mcal{F}$ is continuous, $\mcal{J} \subset \mcal{T}$. Let $O \in
+  \mcal{T}$. For every $x \in O$, there is a continuous function $f\in\mcal{F}$
+  s.t. $f(x) = 1$ and vanishes on $O^c$. Namely, 
+  \[
+    U_x := f\inv (\mathbb{R}\setminus\{0\}) \in \mcal{J}
+  \]
+  is an open set with $x \in U_x \subset O$. Clear that $O = \bigcup_x U_x$.
+  Thus, $O \in \mcal{J}$. Namely, $\mcal{T} = \mcal{J}$.
+\end{proof}
 
 
+\subsection{Connectedness}
+\paragraph{32.}
+\begin{proof}
+  Assume that $G$ is not connected and let $(O_1, O_2)$ be a separation of $G$.
+  Since each $G_\alpha$ is connected, $G_\alpha$ is contained by exactly
+  one of $O_1$ and $O_2$ since otherwise $(G_\alpha\cap O_1, G_\alpha\cap O_2)$
+  would be a separation of $G_\alpha$. Thus, there are two of $\{G_\alpha\}$
+  s.t. one is contained by $O_1$ and the other contained by $O_2$ and hence 
+  they have no point in common. Contradiction.
+\end{proof}
 
+\paragraph{33.}
+\begin{proof}
+  Assume that $B$ is not connected and let $(O_1, O_2)$ be a separation of $B$.
+  Since $A$ is connected, either $A\cap O_1$ or $A\cap O_2$ is empty. Assume
+  without loss of generality that $A\cap O_2 = \varnothing$. Then, $O_2
+  \subset \partial A$ and therefore has empty interior. Contradiction. 
+\end{proof}
 
-
-
+\paragraph{35.}
+\begin{proof}
+  $\,$\par
+  (a) If $X$ is not connected, then we choose two points $x, y$ from each set
+  of a separation. Clear that they can not be connected by some arc since the
+  image of $[0, 1]$ under a continuous map is still connected.
+  
+  (b) Assume that $X$ is not connected and let $(O_1, O_2)$ be a separation.
+  Since each of $X_1=\{(x, y) \mid x = 0, -1\le y \le 1\}$ and $X_2\{(x, y)
+  \mid y = \sin x, 0 < x \le 1\}$ is connected, they are contained in, say,
+  $O_1$ and $O_2$ respectively. Clear that any neighborhood of $(0, 0)$
+  contains points in $X_2$ and therefore $O_1\cap O_2 \ne \varnothing$. 
+  Contradiction. 
+  
+  Now we show that $X$ is not arcwise connected. (TODO)
+  
+  (c) Let $x \in G$ and $H$ be the points of $G$ that can be connected to $x$
+  by a polygonal arc. For every $y \in H$, since $G$ is open, there is an open
+  ball $B$ centered at $y$ with $B \subset G$. Clear that we can connect every
+  $z \in B$ by the arc connecting $x$ and $y$, and the segment from $y$ to $z$.
+  Thus, $H$ is open. Now, we show that $K = G\setminus H$ is open. Let $y$ be
+  a point in $K$ and $B$ a small open ball centered at $y$ that is contained in
+  $G$. Assume, to obtain a contradiction, that $B \cap H \ne \varnothing$. Then
+  the previous argument, \textit{mutatis mutandis}, show that $y$ can be
+  connected to $x$. Contradiction. Thus, $H$ is both open and closed in $G$.
+  Since $G$ is connected, $H = G$. Thus, $G$ is arcwise connected. 
+\end{proof}
 
 
 

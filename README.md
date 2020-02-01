@@ -32,6 +32,9 @@ My personal solutions to some textbook problems
 * Chapter 8. Topological Spaces
   * 8.1 Fundamental Notions (3, 7, 10.(a, b))
   * 8.2 Bases and Countability (11, 13, 16)
+  * 8.3 The Separation Axioms and Continuous Real-Valued Functions 
+        (18, 20, 23, 24, 26)
+  * 8.4 Connectedness (32, 33, 35)
 * Chapter 11. Measure and Integration
   * 11.1 Measure Spaces (1, 3, 7, 9.(a, b, c, d))
   * 11.2 Measurable Functions (10, 11, 13, 16)
