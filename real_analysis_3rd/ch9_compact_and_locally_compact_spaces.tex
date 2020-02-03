@@ -1,0 +1,41 @@
+\section{Compact and Locally Compact Spaces}
+\subsection{Compact Spaces}
+
+\paragraph{2.}
+  I further assume that $X$ is Hausdorff. 
+\begin{proof}
+  Assume, to obtain a contradiction, that $F_n = K_n\setminus O \ne\varnothing$
+  for every $n$. Since $F_n \supset F_{n+1}$, $\{F_n\}$ is collection of closed
+  subsets of compact set $K_1$ with finite intersection property. Hence, 
+  $\bigcap F_n$ is nonempty, contradicting with $\bigcap K_n \subset O$. 
+\end{proof}
+
+\paragraph{3.}
+\begin{proof}
+  Let $F$ be a closed set and $x \notin F$. Since $X$ is Hausdorff, for every
+  $y \in F$, there are two disjoint open sets $U_y$ and $O_y$ s.t. $y \in U_y$
+  and $x \in O_y$. Since $X$ is compact, so is $F$. Note that $\{U_y\}$ is an
+  open cover for $F$. Hence, it has a finite subcover $\{U_{y_i}\}_{i=1}^n$.
+  Let $U = \bigcup U_{y_i}$ and $O = \bigcap O_{y_i}$. Clear that they are
+  disjoint open sets s.t. $F \subset U$ and $x \in O$.
+\end{proof}
+
+\paragraph{6.}
+\begin{proof}
+  Let $\vep > 0$ be fixed. Since $\mcal{F}$ is equicontinuous, for every 
+  $x \in X$, there is a neighborhood $O_x$ s.t. for every $x\hp \in X$,
+  $\sigma(f(x), f(x\hp)) < \vep$. Clear that $\{O_x\}$ is an open cover and
+  since $X$ is compact, it has a finite subcover $\{O_{x_i}\}_{i=1}^m$. 
+  
+  For $x_i$, since $f_n(x_i) \to f(x_i)$, there is an integer $N_i$ s.t. for  
+  every $n > N$, $\sigma(f_n(x_i), f(x_i)) < \vep$. Since $\sigma(f_n(x_i), 
+  f_n(x)) < \vep$ holds for all $n$, $\sigma(f(x_i), f(x)) \le \vep$.
+  Hence, for every $x \in O_{x_i}$ and $n > N$,
+  \[
+    \sigma(f_n(x), f(x))
+    \le \sigma(f_n(x), f_n(x_i)) + \sigma(f_n(x_i), f(x_i)) 
+      + \sigma(f(x_i), f(x))
+    < 3\vep.
+  \]
+  Let $N = \max N_{x_i}$ and we get the desired result.
+\end{proof}

@@ -35,6 +35,8 @@ My personal solutions to some textbook problems
   * 8.3 The Separation Axioms and Continuous Real-Valued Functions 
         (18, 20, 23, 24, 26)
   * 8.4 Connectedness (32, 33, 35)
+* Chapter 9. Compact and Locally Compact Spaces
+  * 9.1 Compact Spaces (2, 3, 6)
 * Chapter 11. Measure and Integration
   * 11.1 Measure Spaces (1, 3, 7, 9.(a, b, c, d))
   * 11.2 Measurable Functions (10, 11, 13, 16)
