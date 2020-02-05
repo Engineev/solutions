@@ -39,3 +39,97 @@
   \]
   Let $N = \max N_{x_i}$ and we get the desired result.
 \end{proof}
+
+\subsection{Countable Compactness and the Bolzano-Weierstrass Property}
+\paragraph{9.}
+\begin{proof}
+  $\,$\par
+  (a) It follows immediately from the definition and Problem 8.20.
+  
+  (b) For every $\alpha \in \mathbb{R}$,
+  \[
+    f + g < \alpha
+    \quad\text{iff}\quad
+    f < \alpha - g 
+    \quad\text{iff}\quad 
+    \exists q\in \mathbb{Q} \text{ s.t. } f < q,\, q < \alpha - g.
+  \]
+  Hence, 
+  \[
+    \{f + g < \alpha\} 
+    = \bigcup_{q \in \mathbb{Q}} \{f < q\} \cap \{g < \alpha - q\},
+  \]
+  which is open. Thus, $f + g$ is also upper semicontinuous. 
+  
+  (c) Since $(f_n)$ is a decreasing sequence, we can write $f(x) = \inf_n
+  f_n(x)$. Hence, for every $\alpha \in \mathbb{R}$, $f < \alpha$ iff there
+  exists some $n$ s.t. $f_n(x) < \alpha$. Hence,
+  \[
+    \{f < \alpha\} = \bigcup_n \{f_n < \alpha\},
+  \]
+  which is open. Thus, $f$ is also upper semicontinuous. 
+  
+  (d) Note that $(f_n - f)$ is a decreasing sequence of upper semicontinuous
+  functions that converges to $0$. Hence, by Dini's theorem, the convergence is
+  uniform.
+  
+  (e) Suppose that $x \in \{f < \alpha\}$. Let $\vep$ be a positive real
+  number. Since $f_n \to f$ uniformly, there is an integer $n$ s.t. 
+  $|f(y) - f_n(y)| < \vep$ for all $y \in X$. Meanwhile, since $f_n$ is upper
+  semicontinuous, there is a $\delta > 0$ s.t. for every $y$ in the
+  $\delta$-ball $B$ centered at $x$, $f_n(y) < f_n(x) + \vep$. Hence, for every
+  $y \in B$,
+  \begin{align*}
+    f(y) = f(y) - f_n(y) + f_n(y) - f_n(x) + f_n(x) - f(x) + f(x) 
+    \le 3\vep + f(x). 
+  \end{align*}
+  Thus, for sufficiently small $\vep > 0$, we have $B \subset \{f < \alpha\}$.
+  Namely, $\{f < \alpha\}$ is open whence $f$ is upper semicontinuous. 
+\end{proof}
+
+\paragraph{10.}
+\begin{proof}
+  $\,$\par
+  (i. $\Rightarrow$ iii.) Let $f$ be a bounded continuous real-valued function
+  and $M := \sup f < \infty$. Let $F_n = \{f \ge M - 1/n\}$. Since $f$ is
+  continuous, $F_n$ is closed. Note that $(F_n)$ is a countable family of
+  closed sets with finite intersection property. Hence, $\bigcap F_n =
+  \{f \ge M\}$ is nonempty as $X$ is countably compact. Namely, the maximum
+  can be attained. 
+  
+  (iii. $\Rightarrow$ ii.) Let $f$ be a continuous function and assume, to
+  obtain a contradiction, that $f$ is unbounded. Then the function 
+  $-1/(|f| + 1)$ is a continuous bounded function whose maximum can not be 
+  attained. Contradiction.
+  
+  (ii. $\Rightarrow$ i.) Assume, to obtain a contradiction, that $X$ does not
+  have the Bolzano-Weierstrass property, that is, there is a sequence $(x_n)$
+  in $X$ that has no cluster point. Then $F := \{x_n\}_{n=1}^\infty$ is closed.
+  Define $f: F \to \mathbb{R}$ by $f(x_n) = n$. Note that $f$ is continuous on
+  $F$ and by Tietze's extension theorem, it can be continuously extended to 
+  $X$. However, $f$ is unbounded, contradicting (ii.). Thus $X$ has the
+  Bolzano-Weierstrass and, therefore, is countably compact. 
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
