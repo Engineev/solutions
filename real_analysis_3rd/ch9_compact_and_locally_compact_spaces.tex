@@ -111,8 +111,25 @@
   Bolzano-Weierstrass and, therefore, is countably compact. 
 \end{proof}
 
+\subsection{Products of Compact Spaces}
+\paragraph{13.}
+\begin{proof}
+  Let $E$ be a closed and bounded set in $\mathbb{R}^n$. Then it is contained
+  in some closed cube $K = \prod_{i=1}^n[a_i, b_i]$. By Tychonoff's theorem,
+  $K$ is compact. Thus, $K$, a closed subset of a compact set, is also compact.
+\end{proof}
 
-
+\paragraph{15.}
+\begin{proof}
+  Let $X = \prod_{n=1}^\infty$ be the product of sequentially compact spaces
+  $(X_n)$. Let $(x_n)$ be a sequence in $X$. Since $X_1$ is sequentially
+  compact, we may choose a subsequence $x_n^1$ of $x_n$ s.t. the first
+  coordinate of $(x_n^1)$ converges to some $x^1$. Similarly, from $(x_n^1)$ we
+  may choose a subsequence $x_n^2$ whose second coordinate converges to some
+  $x^2$. Proceed inductively and we get a sequence of sequence. Finally,
+  consider the sequence $(x_n^n)$. Since each coordinate converges and we are
+  dealing with the product topology, $x_n^n$ converges to $(x_1, x_2, \dots)$.
+\end{proof}
 
 
 

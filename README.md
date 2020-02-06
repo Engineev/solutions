@@ -38,6 +38,7 @@ My personal solutions to some textbook problems
 * Chapter 9. Compact and Locally Compact Spaces
   * 9.1 Compact Spaces (2, 3, 6)
   * 9.2 Countably Compactness and the Bolzano-Weierstrass Property (9, 10)
+  * 9.3 Products of Compact Spaces (13, 15)
 * Chapter 11. Measure and Integration
   * 11.1 Measure Spaces (1, 3, 7, 9.(a, b, c, d))
   * 11.2 Measurable Functions (10, 11, 13, 16)
