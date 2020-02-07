@@ -1,8 +1,10 @@
 # solutions
 My personal solutions to some textbook problems
 
+## F. G. Friedlander, M. Joshi, *Introduction to the Theory of Distributions*, 2nd ed
+* Chapter 1. Test Functions and Distributions (2, 5, 6, 7, 9)
 
-## H.L. Royden, *Real Analysis*, 3rd ed
+## H. L. Royden, *Real Analysis*, 3rd ed
 
 **Ongoing**
 * Chapter 3. Lebesgue Measure

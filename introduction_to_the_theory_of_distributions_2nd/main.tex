@@ -1,0 +1,106 @@
+\input{def.tex}
+
+\DeclareMathOperator{\supp}{supp}
+
+\title{Solutions to \\ \textit{Introduction to the Theory of Distirbutions}}
+\author{Yunwei Ren}
+\date{}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\vspace{1cm}
+
+\section{Test Functions and Distributions}
+\paragraph{1.2}
+\begin{proof}
+  It suffices to show that $f \equiv 0$ on an open set $O$ iff the restriction
+  of the distribution $\langle f, \cdot\rangle$ onto $O$ is the zero
+  distribution. Suppose that $\langle f, \cdot\rangle|_O \equiv 0$ since the
+  other direction is obvious. Assume, to obtain a contradiction, that
+  $f(x) > 0$ for some $x \in O$. Since $f$ is continuous, there is an open
+  neighborhood $U \subset O$ s.t. $f > \vep$ on $U$ for some $\vep > 0$. Choose
+  a small closed ball $B \subset U$ centered at $x$ and let $\psi$ be the 
+  cutoff function with $\supp\psi \subset U$, $0 \le \psi \le 1$ and
+  $\psi \equiv 1$ on $B$. Then
+  \[
+    0 = \langle f, \psi\rangle = \int_U f\psi > \vep\mu(B) > 0,
+  \]
+  where $\mu(B)$ is the measure of $B$. Contradiction. Thus, $f \le 0$.
+  Similarly, we can show $f \ge 0$. Therefore, $f \equiv 0$ on $O$.
+  
+  The result is not true for $f \in L_1^{\mrm{loc}}(\mathbb{R}^n)$ in general
+  since add a function which is zero a.e. to $f$ does not change the
+  distribution but will change the support of $f$. 
+\end{proof}
+
+\paragraph{1.5}
+\begin{proof}
+  For every compact $K \subset (0, \infty)$, there is an integer $N$ s.t. 
+  $1/k \notin K$ for all $k > N$. Hence, for every $\phi \in C^\infty_c(0,
+  \infty)$ with $\supp \phi \subset K$, 
+  \[
+    |\langle u, \phi\rangle| 
+    = \left|\sum_{k=0}^N \partial^k \phi(1/k)\right|
+    \le \sum_{k=0}^N \sup|\partial^k \phi|.
+  \]
+  Thus, $u$ is a distribution on $(0, \infty)$. 
+  
+  Assume, to obtain a contradiction, that $u = v|_{(0, \infty)}$ for some 
+  $v \in \mscr{D}\hp(\R)$. Let $f \in C^\infty_c(\R)$ be a cutoff function
+  with $f \equiv 1$ on $[-1, 1]$. Then, the distribution $fu$ (cf. Sec. 2.5)
+  is of infinite order since its restriction to $1/m$ is $\delta^{(m)}$ for
+  every positive integer $m$. However, since $fu$ is compactly supported, it
+  must have a finite order (cf. Sec. 3.1). Contradiction. 
+\end{proof}
+
+\paragraph{1.6}
+\begin{proof}
+  It follows immediately from the Riesz-Markov theorem.
+\end{proof}
+
+\paragraph{1.7}
+  I am not sure whether the second part can be proved since if we put
+  $f_\vep \equiv 0$ for some $\vep \in (0, 1)$, the asymptotic behavior will
+  not change.
+\begin{proof}
+  It suffices to show $\int f_\vep\phi \to \phi(0)$ as $\vep\to 0$. Let 
+  $B_\vep = \{|x| \le \vep\}$. We have
+  \begin{align*}
+    \left|\int f_\vep \phi - \phi(0)\right|
+    &= \left|\int_{B_\vep} f_\vep (\phi - \phi(0)) \right| \\
+    &\le \sup_{x \in B_\vep}|\phi(x) - \phi(0)| \int|f_\vep| \\
+    &\le \mu\sup_{x \in B_\vep}|\phi(x) - \phi(0)| .
+  \end{align*}
+  Since $\phi\in C^\infty(\R^n)$, $\sup_{x\in B_\vep}|\phi(x) - \phi(0)|
+  \to 0$ as $\vep \to 0$. Thus, $f_\vep \to \delta$ in $\mscr{D}\hp(\R^n)$.
+\end{proof}
+
+\paragraph{1.9}
+\begin{proof}
+  Let $u_n(x) := \sum_{k=-n}^n c_ke^{ikx}$. For every $\phi \in
+  C^\infty_c(\R)$, by repeatedly using integration by parts, we have
+  \begin{align*}
+    \langle u_n, \phi\rangle 
+    &= \int\sum_{k=-n}^n c_k e^{ikx}\phi(x)\rd x \\
+    &= \sum_{k=-n}^n c_k \int e^{ikx}\phi(x)\rd x \\
+    &= \sum_{k=-n}^n c_k \left(\frac{-1}{ik}\right)^{m+2}
+      \int e^{ikx}\partial^{m+2}\phi(x)\rd x. \\
+  \end{align*}
+  Note that $c_k \left(\frac{-1}{ik}\right)^{m+2} \le O(1/k^2)$ and the 
+  $\int e^{ikx}\partial^{m+2}\phi(x)\rd x$ is bounded. Thus, $\lim 
+  \langle u_n, \phi\rangle$ converges for every $\phi$, whence $u$ converges
+  in $\mscr{D}\hp(\R)$.
+\end{proof}
+
+\end{document}
+
+
+
+
+
+
+
+
+
