@@ -132,8 +132,79 @@
 \end{proof}
 
 
+\subsection{Locally Compact Spaces}
+\paragraph{18.}
+\begin{proof}
+  For every $x \in K$, since $X$ is locally compact, there is an open set 
+  $O_x$ with $\cl O_x$ compact. Note that $\{O_x\}_{x\in K}$ is an open cover
+  for the compact set $K$. Hence, it has a finite subcover
+  $\{O_{x_i}\}_{i=1}^n$. Then, $O = \bigcup_{i=1}^n O_{x_i}$ is an open set
+  containing $K$ whose closure is compact. 
+\end{proof}
 
+\paragraph{19.}
+\begin{proof}
+  $\,$\par
+  (a) Since $X$ is a locally compact Hausdorff space and $K$ is compact, there
+  exists an open set $V$ with compact closure s.t. $V\supset K$. Since 
+  $\cl V$ is compact, it is normal. Therefore, by Urysohn's lemma, there is
+  a continuous function $f: \cl V \to [0, 1]$ s.t. $f\equiv 1$ on $K$ and
+  $f\equiv 0$ on $\partial V$. Extend $f$ to $X$ by setting $f \equiv 0$
+  outsides $\cl V$. Then $f$ is continuous and $f \equiv 1$ on $K$. Meanwhile,
+  since $\supp f\subset \cl V$, it is also compact.
+\end{proof}
 
+\paragraph{24.}
+  Assume that $X$ is also Hausdorff.
+\begin{proof}
+  $\,$\par
+  (a) Clear that if $F$ is closed, so is $F\cap K$ for each closed compact
+  $K$. For the reverse, we show that $F^c$ is open.
+  Let $x \notin F$. Since $X$ is locally compact, there is a neighborhood $U$
+  of $x$ whose closure is compact. If $F\cap\cl U = \varnothing$, then we are
+  done. If $F\cap \cl U \ne \varnothing$, then by the hypothesis, it is closed.
+  Therefore, $U\setminus(F\cap\cl U)$ is again an open neighborhood of $x$.
+  Since $X$ is a locally compact Hausdorff space, we can find an open
+  neighborhood $V$ with $\cl V \subset U\setminus(F\cap\cl U)$. In both cases,
+  $F^c$ is open. 
+  
+  (b) Suppose that for each closed compact $K$, $F\cap K$ is closed. For every
+  $x \in \cl F$, since $X$ is first-countable, there exists a sequence $(x_n)
+  \subset F$ which converges to $x$. Then $E := \{x\}\cup\{x_n\}_{n=1}^\infty$
+  is closed and compact. Thus, by the hypothesis, $F\cap E$ is also closed,
+  which implies that $x \in F$. Hence, $F$ is closed. 
+\end{proof}
+
+\paragraph{26.}
+  Assume that $X$ is Hausdorff.
+\begin{proof}
+  Let $x$ be an arbitrary point in $X$ and $V$ any neighborhood of $x$. Since 
+  $X$ is a locally compact Hausdorff space, we may choose a open neighborhood
+  $U_1$ of $x$ whose closure is compact and contained by $V$. Since $O_1$ is
+  dense, $U_1\cap O_1$ is a nonempty neighborhood of $x$. Then, choose a 
+  neighborhood $U_2$ of $x$ s.t. $\cl U$ is compact and $\cl U \subset 
+  U_1\cap O_1$. Proceed inductively and we get a sequence $(U_n)$ s.t.
+  $\cl U_n$ is compact and $\cl U_{n+1} \subset O_n\cap U_n$.
+  
+  Since $(\cl U_n)$ is a nested sequence of compact sets, $\bigcap \cl U_n$
+  is nonempty. Choose $x_* \in \bigcap\cl U_n$. For every $O_n$, $x_*
+  \in \cl U_{n+1} \subset O_n$. Thus, $x_* \in V\cap\bigcap_{n=1}^\infty O_n$.
+  Namely, $\bigcap_{n=1}^\infty O_n$ is dense.
+\end{proof}
+
+\paragraph{29.}
+\begin{proof}
+  $\,$\par
+  (a) Let $F$ be a closed subset of a locally compact space $X$. For every 
+  $x\in F\subset X$, there is a neighborhood $U$ of $x$ whose closure is 
+  compact in $X$. Then, $U\cap F$ is also compact. Thus, $F$ is locally
+  compact.
+  
+  (b) Let $O$ be an open subset of a locally compact Hausdorff space $X$. For
+  every $x\in O \subset X$, there is a neighborhood $U$ of $x$ whose closure is
+  compact in $X$ and contained by $O$. Note that $\cl U$ is also compact in
+  $O$. Thus, $O$ is locally compact.
+\end{proof}
 
 
 
